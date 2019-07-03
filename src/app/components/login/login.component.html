@@ -1,0 +1,39 @@
+<div class="login-container">
+	<div class="box_login">
+		<div class="col-lg-8 modal_login">
+			<form class="form-horizontal" [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value, userForm.valid)">
+				<div class="image_form_login">
+					<img class="logo_login" src="./assets/imgs/logo.png" alt="">
+				</div>
+				<div class="formulario_login">
+					<div class="form-group">
+						<div class="input">
+							<div class="input-group login-form">
+								<label  class="col-sm-12 control-label control-login">Usuario</label>
+								<div class="col-sm-12">
+									<input formControlName="email" type="text" class="form-control" placeholder="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input">
+							<div class="input-group login-form">
+								<label  class="col-sm-12 control-label control-login">Contraseña</label>
+								<div class="col-sm-12">
+									<input formControlName="password" type="password" class="form-control" placeholder="">
+									<!-- <i class="far" [ngClass]="{'fa-eye': passwordType=='password', 'fa-eye-slash': passwordType=='text'}" (click)="hideShowPassword()"></i>
+ -->								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12">
+						<button class="btn btn-login btn-primary" type="submit">Ingresar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
