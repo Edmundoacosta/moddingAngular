@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(user, valid){
   	if (valid) {
-  		this._modService.login(user).then((res) => {
+  		this._modService.login({user: user}).then((res) => {
 	  		console.log(res);
 	  	});
   	}
