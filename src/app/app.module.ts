@@ -11,7 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { ModdingService } from './providers/moddinpc.service';
-
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { ModdingService } from './providers/moddinpc.service';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [
     ModdingService
