@@ -10,18 +10,16 @@ body {
 ul.dropdown-lr {
   width: 300px;
 }
+.dropdown-menu[_ngcontent-c1]{
+    left: inherit;
+    right: 0;
+}
 
 .dropdown-menu {
     left: inherit;
     right: 0;
 }
-.dropdown-menu[_ngcontent-c1]{
-    left : 0;
-    right: inherit;
-}
-.fas fa-search {
-    background : black;
-}
+
 /* mobile fix */
 @media (max-width: 768px) {
 	.dropdown-lr h3 {
