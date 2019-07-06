@@ -1,0 +1,17 @@
+@import "../../../variables";
+
+footer {
+	background: $thirdC;
+	hr {
+		margin: 0.25rem 0;
+	}
+	p {
+		margin: 0.5rem 0;
+	}
+	a {
+		color: #000;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
