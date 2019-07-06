@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { ModdingService } from './providers/moddinpc.service';
+import { FooterComponent } from './layouts/footer/footer.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ModdingService } from './providers/moddinpc.service';
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
