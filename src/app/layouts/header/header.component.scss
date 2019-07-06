@@ -1,0 +1,27 @@
+@import "../../../variables";
+
+nav {
+	background: $secondC;
+}
+body {
+    padding-top: 90px;
+}
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
+}
+
+.dropdown-menu {
+    left: inherit;
+    right: 0;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+	}
+}
