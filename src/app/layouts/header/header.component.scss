@@ -19,6 +19,9 @@ ul.dropdown-lr {
     left : 0;
     right: inherit;
 }
+.fas fa-search {
+    background : black;
+}
 /* mobile fix */
 @media (max-width: 768px) {
 	.dropdown-lr h3 {
