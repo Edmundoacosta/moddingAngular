@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { ModdingService } from './providers/moddinpc.service';
+import { NovedadesComponent } from './components/novedades/novedades.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ModdingService } from './providers/moddinpc.service';
     HeaderComponent,
     LoginComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    NovedadesComponent
   ],
   imports: [
     BrowserModule,
