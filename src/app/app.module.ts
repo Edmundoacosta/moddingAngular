@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { ModdingService } from './providers/moddinpc.service';
 import { NovedadesComponent } from './components/novedades/novedades.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NovedadesComponent } from './components/novedades/novedades.component';
     LoginComponent,
     HomeComponent,
     FooterComponent,
-    NovedadesComponent
+    NovedadesComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
