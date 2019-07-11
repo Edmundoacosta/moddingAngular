@@ -1,0 +1,27 @@
+.dots {
+	&:after {
+		display: inline-block;
+	    margin: 0 0 9px 15px;
+	    height: 3px;
+	    content: " ";
+	    text-shadow: none;
+	    background-color: #00bd56;
+	    width: 60px;
+	}
+
+	&:before {
+		display: inline-block;
+	    margin: 0 15px 9px 0;
+	    height: 3px;
+	    content: " ";
+	    text-shadow: none;
+	    background-color: #00bd56;
+	    width: 60px;
+	}
+}
+
+.member_img {
+	border-radius: 50%;
+	border: 2.5px solid transparent;
+	background-image: linear-gradient(to left, #32FF6A 0%,#25e859 50%,#1fd14e 51%,#00bd56 100%);
+}

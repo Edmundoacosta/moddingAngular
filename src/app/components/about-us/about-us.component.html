@@ -1,0 +1,38 @@
+<div class="about_us">
+	<h2 class="text-center my-4 dots">ECOPLEASURE</h2>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-4">
+	            <div class="imgAbt">
+	                <img src="https://picsum.photos/300" />
+	            </div>
+	        </div>
+	        <div class="col-md-8">
+	            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis optio molestiae, ipsam totam error facilis perferendis quae recusandae eos natus aperiam repellat eaque provident, reiciendis aliquid dolores, molestias beatae delectus.</p>
+	        </div>
+	    </div>
+	</div>
+	<h2 class="text-center my-4 dots">Misión Visión</h2>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-8">
+	        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis optio molestiae, ipsam totam error facilis perferendis quae recusandae eos natus aperiam repellat eaque provident, reiciendis aliquid dolores, molestias beatae delectus.</p>
+	        </div>
+	        <div class="col-md-4">
+	            <div class="imgAbt">
+	                <img src="https://picsum.photos/300" />
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<h2 class="text-center my-4 dots">El Equipo</h2>
+	<div class="container">
+		<div class="d-flex flex-row justify-content-between">
+			<div class="d-flex flex-column align-items-center team-member" *ngFor="let member of team">
+				<img class="member_img" src="https://picsum.photos/200" alt="">
+				<b class="mt-2">{{member.name}}</b>
+				<p>{{member.career}}</p>
+			</div>
+		</div>
+	</div>
+</div>
