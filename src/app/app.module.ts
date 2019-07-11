@@ -15,6 +15,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ModdingService } from './providers/moddinpc.service';
 import { NovedadesComponent } from './components/novedades/novedades.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { RegistroComponent } from './components/registro/registro.component';
     HomeComponent,
     FooterComponent,
     NovedadesComponent,
-    RegistroComponent
+    RegistroComponent,
+    CategoriesComponent,
+    CategoryViewComponent
   ],
   imports: [
     BrowserModule,
