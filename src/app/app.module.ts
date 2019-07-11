@@ -27,7 +27,7 @@ import { CategoryViewComponent } from './components/categories/category-view/cat
     HomeComponent,
     FooterComponent,
     NovedadesComponent,
-    NotfoundComponent
+    NotfoundComponent,
     RegistroComponent,
     CategoriesComponent,
     CategoryViewComponent

@@ -18,7 +18,7 @@ export class CategoryViewComponent implements OnInit {
   			let name = params.type;
   			this.category = name.charAt(0).toUpperCase() + name.slice(1);
   			});
-  		});
+  		};
   }
 
-}
+

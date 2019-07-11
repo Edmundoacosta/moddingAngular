@@ -15,15 +15,14 @@ const routes: Routes = [
 	{path: 'home', component: HomeComponent},
 	{path: 'login', component: LoginComponent},
 	{path: 'novedades', component: NovedadesComponent},
-	{path: 'notfound', component: NotfoundComponent},
-	{path: '**', redirectTo: '/notfound'}
 	{path: 'sobre_nosotros', component: AboutUsComponent},
-	{path: 'novedades', component: NovedadesComponent},
 	{path: 'registro', component: RegistroComponent},
   
 	{ path: 'categoria', component: CategoriesComponent, children: [
 		{ path: ':type', component: CategoryViewComponent, pathMatch: 'full'},
-	]},	
+	]},
+	{path: 'notfound', component: NotfoundComponent},
+	{path: '**', redirectTo: '/notfound'}
 ];
 
 @NgModule({
