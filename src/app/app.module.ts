@@ -10,6 +10,7 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 import { ModdingService } from './providers/moddinpc.service';
 
@@ -18,6 +19,7 @@ import { ModdingService } from './providers/moddinpc.service';
     AppComponent,
     HeaderComponent,
     LoginComponent,
+    AboutUsComponent,
     HomeComponent,
     FooterComponent
   ],
