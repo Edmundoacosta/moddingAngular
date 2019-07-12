@@ -1,6 +1,86 @@
 <div class="container">
     <h3 class="h3">{{ category }}</h3>
-    <div class="row">
+    <div *ngFor="let item of products; let i ='index'">
+        <div *ngIf="i%4 == 0" class="row">
+            <div *ngIf="i < products.length" class="col-md-3 col-sm-6">
+                <div class="product-grid6">
+                    <div class="product-image6">
+                        <a href="#">
+                            <img class="pic-1" src="{{products[i].image}}">
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">{{products[i].name}}</a></h3>
+                        <div class="price">${{products[i].price}}
+                        </div>
+                    </div>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div *ngIf="i + 1 < products.length" class="col-md-3 col-sm-6">
+                <div class="product-grid6">
+                    <div class="product-image6">
+                        <a href="#">
+                            <img class="pic-1" src="{{products[i+1].image}}">
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">{{products[i+1].name}}</a></h3>
+                        <div class="price">${{products[i+1].price}}
+                        </div>
+                    </div>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div *ngIf="i + 2 < products.length" class="col-md-3 col-sm-6">
+                <div class="product-grid6">
+                    <div class="product-image6">
+                        <a href="#">
+                            <img class="pic-1" src="{{products[i+2].image}}">
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">{{products[i+2].name}}</a></h3>
+                        <div class="price">${{products[i+2].price}}
+                        </div>
+                    </div>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div *ngIf="i + 3 < products.length" class="col-md-3 col-sm-6">
+                <div class="product-grid6">
+                    <div class="product-image6">
+                        <a href="#">
+                            <img class="pic-1" src="{{products[i+3].image}}">
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">{{products[i+3].name}}</a></h3>
+                        <div class="price">${{products[i+3].price}}
+                        </div>
+                    </div>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="product-grid6">
                 <div class="product-image6">
@@ -77,6 +157,6 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <hr>
