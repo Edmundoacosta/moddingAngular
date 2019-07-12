@@ -6,6 +6,10 @@ nav {
 body {
     padding-top: 90px;
 }
+
+a.nav-link.active-link {
+    color: #000000;
+}
 /* General sizing */
 ul.dropdown-lr {
   width: 300px;
