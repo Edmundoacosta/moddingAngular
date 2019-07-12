@@ -1,17 +1,17 @@
 <div class="container">
     <h3 class="h3">{{ category }}</h3>
-    <div *ngFor="let item of products; let i ='index'">
+    <div *ngFor="let item of realdata; let i ='index'">
         <div *ngIf="i%4 == 0" class="row">
-            <div *ngIf="i < products.length" class="col-md-3 col-sm-6">
+            <div *ngIf="i < realdata.length" class="col-md-3 col-sm-6">
                 <div class="product-grid6">
                     <div class="product-image6">
                         <a href="#">
-                            <img class="pic-1" src="{{products[i].image}}">
+                            <img class="pic-1" src="{{realdata[i].image}}">
                         </a>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#">{{products[i].name}}</a></h3>
-                        <div class="price">${{products[i].price}}
+                        <h3 class="title"><a href="#">{{realdata[i].name}}</a></h3>
+                        <div class="price">${{realdata[i].price}}
                         </div>
                     </div>
                     <ul class="social">
@@ -21,16 +21,16 @@
                     </ul>
                 </div>
             </div>
-            <div *ngIf="i + 1 < products.length" class="col-md-3 col-sm-6">
+            <div *ngIf="i + 1 < realdata.length" class="col-md-3 col-sm-6">
                 <div class="product-grid6">
                     <div class="product-image6">
                         <a href="#">
-                            <img class="pic-1" src="{{products[i+1].image}}">
+                            <img class="pic-1" src="{{realdata[i+1].image}}">
                         </a>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#">{{products[i+1].name}}</a></h3>
-                        <div class="price">${{products[i+1].price}}
+                        <h3 class="title"><a href="#">{{realdata[i+1].name}}</a></h3>
+                        <div class="price">${{realdata[i+1].price}}
                         </div>
                     </div>
                     <ul class="social">
@@ -40,16 +40,16 @@
                     </ul>
                 </div>
             </div>
-            <div *ngIf="i + 2 < products.length" class="col-md-3 col-sm-6">
+            <div *ngIf="i + 2 < realdata.length" class="col-md-3 col-sm-6">
                 <div class="product-grid6">
                     <div class="product-image6">
                         <a href="#">
-                            <img class="pic-1" src="{{products[i+2].image}}">
+                            <img class="pic-1" src="{{realdata[i+2].image}}">
                         </a>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#">{{products[i+2].name}}</a></h3>
-                        <div class="price">${{products[i+2].price}}
+                        <h3 class="title"><a href="#">{{realdata[i+2].name}}</a></h3>
+                        <div class="price">${{realdata[i+2].price}}
                         </div>
                     </div>
                     <ul class="social">
@@ -59,16 +59,16 @@
                     </ul>
                 </div>
             </div>
-            <div *ngIf="i + 3 < products.length" class="col-md-3 col-sm-6">
+            <div *ngIf="i + 3 < realdata.length" class="col-md-3 col-sm-6">
                 <div class="product-grid6">
                     <div class="product-image6">
                         <a href="#">
-                            <img class="pic-1" src="{{products[i+3].image}}">
+                            <img class="pic-1" src="{{realdata[i+3].image}}">
                         </a>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#">{{products[i+3].name}}</a></h3>
-                        <div class="price">${{products[i+3].price}}
+                        <h3 class="title"><a href="#">{{realdata[i+3].name}}</a></h3>
+                        <div class="price">${{realdata[i+3].price}}
                         </div>
                     </div>
                     <ul class="social">

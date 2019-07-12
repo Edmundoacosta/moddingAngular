@@ -94,6 +94,7 @@ export class CategoryViewComponent implements OnInit {
       category: 'compu',
     }
   ];
+  public realdata:Array<any> = [];
   constructor(
   	public activatedRoute: ActivatedRoute
   	) { }
@@ -101,9 +102,10 @@ export class CategoryViewComponent implements OnInit {
   ngOnInit() {
   	this.activatedRoute.params
   		.subscribe(params => {
+        let copy = JSON.parse(JSON.stringify(this.products))
   			let name = params.type;
   			this.category = name.charAt(0).toUpperCase() + name.slice(1);
-        this.products = this.products.filter(prod => prod.category == params.type);
+        this.realdata = copy.filter(prod => prod.category == params.type);
   			});
   		};
   }
