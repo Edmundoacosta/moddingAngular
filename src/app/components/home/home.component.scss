@@ -1,5 +1,237 @@
-.video {
+@import "../../../variables";
+.carousel-inner {
     width: 100%;
     overflow: hidden;
-    height: 300px;
+    height: auto;
 }
+#t-pro {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    letter-spacing: 17px;
+	font-weight: bold;
+	width: 100%;
+}
+/*Now the styles*/
+* {
+	padding: 0;
+}
+/*Time to apply widths for accordian to work
+Width of image = 640px
+total images = 5
+so width of hovered image = 640px
+width of un-hovered image = 40px - you can set this to anything
+so total container width = 640 + 40*4 = 800px;
+default width = 800/5 = 160px;
+*/
+
+.accordian {
+	width: 720px; height: 320px;
+	overflow: hidden;
+	
+	
+	margin: 20px auto;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+	width: 1200px;
+	/*This will give ample space to the last item to move
+	instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 160px;
+	float: left;
+	
+	border-left: 1px solid #888;
+	
+	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	
+	/*Transitions to give animation effect*/
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	/*If you hover on the images now you should be able to 
+	see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 40px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+}
+
+/*Image title styles*/
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0; bottom: 0;	
+width: 640px;	
+
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 16px;
+}
+/*
+.versus{
+    position: absolute;
+    background: #f7f8f9;
+    border-radius: 100%;
+    border: 1px solid #9361D4;
+    color: #A788D1;
+    font-size: 1.25em;
+    height: 78px;
+    left: 50%;
+    margin-left: -39px;
+    padding-top: 22px;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 78px;
+    z-index: 4;
+ }
+ */
+.divided {
+    position: relative;
+}
+.divided p {
+	text-align: justify; 
+}
+#right {
+	text-align: right;
+}
+.divided::after {
+    background: linear-gradient(#f0f7fd 0, #813FD9 50%, #f0f7fd 100%);
+    width: 1px;
+    top: 100px;
+    bottom: 100px;
+    left: 50%;
+    height: auto;
+    right: auto;
+    position: absolute;
+}
+
+@media (max-width: 768px) {
+    .divided::after {
+        background: linear-gradient(90deg, #f0f7fd 0, #813FD9 50%, #f0f7fd 100%);
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        right: 20px;
+        height: 1px;
+        width: 100%;
+    }   
+}
+
+
+.border-top-0 {
+     border-top:0!important;
+}
+ .border-right-0 {
+     border-right: 0!important;
+}
+ .border-left-0 {
+     border-left: 0!important;
+}
+ .border-bottom-0 {
+     border-bottom: 0!important;
+}
+ @media (min-width: 576px) {
+     .border-sm-top {
+         border-top: 1px solid #dee2e6!important;
+    }
+     .border-sm-right {
+         border-right: 1px solid #dee2e6!important;
+    }
+     .border-sm-left {
+         border-left: 1px solid #dee2e6!important;
+    }
+     .border-sm-bottom {
+         border-bottom: 1px solid #dee2e6!important;
+    }
+     .border-sm-top-0 {
+         border-top:0!important;
+    }
+     .border-sm-right-0 {
+         border-right: 0!important;
+    }
+     .border-sm-left-0 {
+         border-left: 0!important;
+    }
+     .border-sm-bottom-0 {
+         border-bottom: 0!important;
+    }
+}
+ @media (min-width: 768px) {
+     .border-md-top {
+         border-top: 1px solid #dee2e6!important;
+    }
+     .border-md-right {
+         border-right: 1px solid #dee2e6!important;
+    }
+     .border-md-left {
+         border-left: 1px solid #dee2e6!important;
+    }
+     .border-md-bottom {
+         border-bottom: 1px solid #dee2e6!important;
+    }
+     .border-md-top-0 {
+         border-top:0!important;
+    }
+     .border-md-right-0 {
+         border-right: 0!important;
+    }
+     .border-md-left-0 {
+         border-left: 0!important;
+    }
+     .border-md-bottom-0 {
+         border-bottom: 0!important;
+    }
+}
+ @media (min-width: 992px) {
+     .border-lg-top {
+         border-top: 1px solid #dee2e6!important;
+    }
+     .border-lg-right {
+         border-right: 1px solid #dee2e6!important;
+    }
+     .border-lg-left {
+         border-left: 1px solid #dee2e6!important;
+    }
+     .border-lg-bottom {
+         border-bottom: 1px solid #dee2e6!important;
+    }
+     .border-lg-top-0 {
+         border-top:0!important;
+    }
+     .border-lg-right-0 {
+         border-right: 0!important;
+    }
+     .border-lg-left-0 {
+         border-left: 0!important;
+    }
+     .border-lg-bottom-0 {
+         border-bottom: 0!important;
+    }
+}
+ @media (min-width: 1200px) {
+}
+ 

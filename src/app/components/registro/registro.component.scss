@@ -1,11 +1,12 @@
+@import "../../../variables";
 .btn {
-    color: black;
-    background-color: #01DF01;
-    border-color: darkgreen;
+    color: #fff;
+    background-color: $fifthC;
+    border-color: $fifthC;
 }
 a {
     text-decoration: none;
-    color: #01DF01;
+    color: $fifthC;
 }
 /* Hide HTML5 Up and Down arrows. */
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
