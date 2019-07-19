@@ -22,4 +22,15 @@ export class ModdingService {
 	      });
 	    });
 	}
+
+	register(params){
+		return new Promise((resolve, reject) => {
+			this.http.post(url + '/users/register', params)
+			.subscribe(res => {
+				resolve(res);
+			}, (err) => {
+				reject(err);
+			})
+		})
+	}
 }
