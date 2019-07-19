@@ -6,9 +6,23 @@ nav {
 body {
     padding-top: 90px;
 }
-
+.user {
+    padding: 0px 20px;
+}
+a {
+    text-decoration: none;
+    color: $fifthC;
+}
 a.nav-link.active-link {
     color: #000000;
+}
+#categorydiv a{
+    color: black;
+}
+.btn-success {
+    color: #fff;
+    background-color: $fifthC;
+    border-color: $fifthC;
 }
 /* General sizing */
 ul.dropdown-lr {
@@ -26,6 +40,7 @@ ul.dropdown-lr {
     left: inherit;
     right: 0;
 }
+
 
 /* mobile fix */
 @media (max-width: 768px) {
