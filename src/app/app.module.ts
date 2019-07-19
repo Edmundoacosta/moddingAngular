@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { SessionService } from './providers/session.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -12,11 +12,13 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ModdingService } from './providers/moddinpc.service';
+import { SessionService } from './providers/session.service';
 import { NovedadesComponent } from './components/novedades/novedades.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
+import { DigitOnlyModule } from '@uiowa/digit-only';
 
 @NgModule({
   declarations: [
@@ -35,13 +37,15 @@ import { CategoryViewComponent } from './components/categories/category-view/cat
   imports: [
     BrowserModule,
     HttpModule,
+    DigitOnlyModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [
-    ModdingService
+    ModdingService,
+    SessionService
   ],
   bootstrap: [AppComponent]
 })
