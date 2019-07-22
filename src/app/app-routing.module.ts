@@ -9,6 +9,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
+import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -17,12 +18,14 @@ const routes: Routes = [
 	{path: 'novedades', component: NovedadesComponent},
 	{path: 'sobre_nosotros', component: AboutUsComponent},
 	{path: 'registro', component: RegistroComponent},
+	{path: 'zona_gamer', component: ZonaGamerComponent},
   
 	{ path: 'categoria', component: CategoriesComponent, children: [
 		{ path: ':type', component: CategoryViewComponent, pathMatch: 'full'},
 	]},
 	{path: 'notfound', component: NotfoundComponent},
 	{path: '**', redirectTo: '/notfound'}
+	
 ];
 
 @NgModule({
