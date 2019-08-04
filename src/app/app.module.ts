@@ -19,6 +19,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
 import { DigitOnlyModule } from '@uiowa/digit-only';
 import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
+import { PersonalizacionComponent } from './components/personalizacion/personalizacion.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component
     RegistroComponent,
     CategoriesComponent,
     CategoryViewComponent,
-    ZonaGamerComponent
+    ZonaGamerComponent,
+    PersonalizacionComponent
   ],
   imports: [
     BrowserModule,
