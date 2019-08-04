@@ -7,31 +7,36 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./category-view.component.scss']
 })
 export class CategoryViewComponent implements OnInit {
-	public category:string = '';
+  public category:string = '';
+  public subcategory:string ='';
   public products:Array<any> = [
     {
       name: 'Lorem Ipsum Dolor Sit.',
       price: '11.00',
       image: 'https://picsum.photos/300',
       category: 'refrigeracion',
+      subcategory: 'Bloque CPU',
     },
     {
       name: 'Lorem Ipsum Dolor Sit.',
       price: '8.00',
       image: 'https://picsum.photos/300',
       category: 'refrigeracion',
+      subcategory: 'Bloque GPU',
     },
     {
       name: 'Lorem Ipsum Dolor Sit.',
       price: '11.00',
       image: 'https://picsum.photos/300',
       category: 'refrigeracion',
+      subcategory: 'Tubos',
     },
     {
       name: 'Lorem Ipsum Dolor Sit.',
       price: '11.00',
       image: 'https://picsum.photos/300',
       category: 'refrigeracion',
+      subcategory: 'Radiador',
     },
     {
       name: 'Lorem Ipsum Dolor Sit.',

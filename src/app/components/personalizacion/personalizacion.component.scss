@@ -1,4 +1,4 @@
-@import "../../../../variables";
+@import "../../../variables";
 .product-grid6,.product-grid6 .product-image6{overflow:hidden}
 .product-grid6{font-family:'Open Sans',sans-serif;text-align:center;position:relative;transition:all .5s ease 0s}
 .product-grid6:hover{box-shadow:0 0 10px rgba(0,0,0,.3)}
@@ -22,17 +22,15 @@
 .product-grid6 .social li a:hover:after,.product-grid6 .social li a:hover:before{opacity:1}
 
 #navspy {
-    position: fixed;
+    position: relative;
     width: 100%;
-    background: $firstC ;
     z-index: 1;
+    margin-bottom: 15px;
 }
 .h3 {
     width: 100%;
     max-width: 980px;
-    padding: 3.5rem 0px 2rem;
-    margin: 0px auto;
-    top: 100px;
+    margin: 0px 0px 15px 0px;
 }
 /* mobile fix */
 @media (max-width: 768px) {

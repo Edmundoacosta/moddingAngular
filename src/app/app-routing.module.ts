@@ -10,6 +10,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
 import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
+import { PersonalizacionComponent } from './components/personalizacion/personalizacion.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
 	{path: 'sobre_nosotros', component: AboutUsComponent},
 	{path: 'registro', component: RegistroComponent},
 	{path: 'zona_gamer', component: ZonaGamerComponent},
+	{path: 'personalizacion', component: PersonalizacionComponent},
   
 	{ path: 'categoria', component: CategoriesComponent, children: [
 		{ path: ':type', component: CategoryViewComponent, pathMatch: 'full'},

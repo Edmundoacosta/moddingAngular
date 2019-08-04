@@ -1,112 +1,93 @@
-<div>
-        <nav id="navspy" class="navbar navbar-dark">
-            <a class="navbar-brand" href="#">{{category}}</a>
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#navspy-fat">@fat</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#mdo">@mdo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#navspy-fat">@fat</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#mdo">@mdo</a>
-                    </li>
-                    <li class="nav-item">
-                            <a class="nav-link" href="#navspy-fat">@fat</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#mdo">@mdo</a>
-                        </li>
-                </ul>
-        </nav>                  
-</div>
+<nav id="navspy">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-cpu-tab" data-toggle="tab" href="#nav-cpu" role="tab" aria-controls="nav-cpu" aria-selected="true">Bloque CPU</a>
+    </div>
+</nav>
 
-<section>
-    <div class="container" data-spy="scroll" data-target="#navspy" data-offset="0">
-        <h3 class="h3" id="navspy-fat">NOMBRE DE LA SUBCATEGORIA</h3>
-        <div *ngFor="let item of realdata; let i ='index'">
-            <div *ngIf="i%4 == 0" class="row">
-                <div *ngIf="i < realdata.length" class="col-md-3 col-sm-6"  id="fat">
-                    <div class="product-grid6">
-                        <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="{{realdata[i].image}}">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">{{realdata[i].name}}</a></h3>
-                            <div class="price">${{realdata[i].price}}
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-cpu" role="tabpanel" aria-labelledby="nav-mod-tab">
+        <section>
+            <div class="container" data-spy="scroll" data-target="#navspy" data-offset="0">
+                <h3 class="h3" id="navspy-fat">{{category}}</h3>
+                <div *ngFor="let item of realdata; let i ='index'">
+                    <div *ngIf="i%4 == 0" class="row">
+                        <div *ngIf="i < realdata.length" class="col-md-3 col-sm-6"  id="fat">
+                            <div class="product-grid6">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{realdata[i].image}}">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">{{realdata[i].name}}</a></h3>
+                                    <div class="price">${{realdata[i].price}}
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div *ngIf="i + 1 < realdata.length" class="col-md-3 col-sm-6">
-                    <div class="product-grid6">
-                        <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="{{realdata[i+1].image}}">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">{{realdata[i+1].name}}</a></h3>
-                            <div class="price">${{realdata[i+1].price}}
+                        <div *ngIf="i + 1 < realdata.length" class="col-md-3 col-sm-6">
+                            <div class="product-grid6">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{realdata[i+1].image}}">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">{{realdata[i+1].name}}</a></h3>
+                                    <div class="price">${{realdata[i+1].price}}
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div *ngIf="i + 2 < realdata.length" class="col-md-3 col-sm-6">
-                    <div class="product-grid6">
-                        <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="{{realdata[i+2].image}}">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">{{realdata[i+2].name}}</a></h3>
-                            <div class="price">${{realdata[i+2].price}}
+                        <div *ngIf="i + 2 < realdata.length" class="col-md-3 col-sm-6">
+                            <div class="product-grid6">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{realdata[i+2].image}}">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">{{realdata[i+2].name}}</a></h3>
+                                    <div class="price">${{realdata[i+2].price}}
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div *ngIf="i + 3 < realdata.length" class="col-md-3 col-sm-6">
-                    <div class="product-grid6">
-                        <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="{{realdata[i+3].image}}">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">{{realdata[i+3].name}}</a></h3>
-                            <div class="price">${{realdata[i+3].price}}
+                        <div *ngIf="i + 3 < realdata.length" class="col-md-3 col-sm-6">
+                            <div class="product-grid6">
+                                <div class="product-image6">
+                                    <a href="#">
+                                        <img class="pic-1" src="{{realdata[i+3].image}}">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">{{realdata[i+3].name}}</a></h3>
+                                    <div class="price">${{realdata[i+3].price}}
+                                    </div>
+                                </div>
+                                <ul class="social">
+                                    <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
+        <hr>
+        </section>        
     </div>
-<hr>
-</section>
+</div>
+
