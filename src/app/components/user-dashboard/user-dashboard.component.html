@@ -27,11 +27,193 @@
   <div class="col-9">
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        
+        <form>   
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input class="form-control" type="text" placeholder="Nombres del user" readonly>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" type="text" placeholder="Apellidos del user" readonly>
+            </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" placeholder="Dirección de envio" readonly>
+              </div>
+              <div class="form-group col-md-6">
+                <input class="form-control" type="text" placeholder="Correo Electronico" readonly>
+              </div>
+          </div>
+        </form>
       </div>
-      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        <div class="p-4">
+          <h3>Ordenes</h3>
+            <table class="table table-bordered track_tbl">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>ID</th>
+                  <th>Estado</th>
+                  <th>Distribuidor</th>
+                  <th>Fecha/Hora</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="active">
+                  <td class="track_dot">
+                    <span class="track_line"></span>
+                  </td>
+                      <td>01</td>
+                      <td>Dispatched from distibutor address</td>
+                      <td>Flipkart</td>
+                      <td>31/07/2018 22:24:PM</td>
+                </tr>
+                <tr>
+                  <td class="track_dot">
+                    <span class="track_line"></span>
+                  </td>
+                      <td>01</td>
+                      <td>Dispatched from distibutor address</td>
+                      <td>Flipkart</td>
+                      <td>31/07/2018 22:24:PM</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="row shop-tracking-status">
+    
+            <div class="col-md-12">
+                <div class="well">
+            
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputOrderTrackingID" class="col-sm-2 control-label">Order ID</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputOrderTrackingID" value="" placeholder="# Introduce el número de ID">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" id="shopGetOrderStatusID" class="btn btn-success">Ver El Estado</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <h4>El Estado De Tu Orden:</h4>
+        
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="prefix">Fecha De Orden: </span>
+                            <span class="badge badge-success">12.12.2013</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="prefix">Última Actualización: </span>
+                            <span class="badge badge-success">12.15.2013</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="prefix">Comentarios: </span>
+                            <span class="badge badge-success">customer's comment goes here</span>
+                        </li>
+                        <li class="list-group-item">Puedes ver el último estado de tu orden en el siguiente link:
+                            <span class="badge badge-success">
+                              <a href="//tracking/link/goes/here">//tracking/link/goes/here</a>
+                            </span>
+                        </li>
+                    </ul>
+        
+                    <div class="order-status">
+        
+                        <div class="order-status-timeline">
+                            <!-- class names: c0 c1 c2 c3 and c4 -->
+                            <div class="order-status-timeline-completion c3"></div>
+                        </div>
+        
+                        <div class="image-order-status image-order-status-new active img-circle">
+                            <span class="status">Aceptado</span>
+                            <div class="icon"></div>
+                        </div>
+                        <div class="image-order-status image-order-status-active active img-circle">
+                            <span class="status">En Proceso</span>
+                            <div class="icon"></div>
+                        </div>
+                        <div class="image-order-status image-order-status-intransit active img-circle">
+                            <span class="status">Enviado</span>
+                            <div class="icon"></div>
+                        </div>
+                        <div class="image-order-status image-order-status-delivered active img-circle">
+                            <span class="status">Entregado</span>
+                            <div class="icon"></div>
+                        </div>
+                        <div class="image-order-status image-order-status-completed active img-circle">
+                            <span class="status">Completado</span>
+                            <div class="icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+        <form>
+            <div class="form-group row">
+                <label for="colFormLabel" class="col-form-label">Mi Dirección Actual</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" placeholder="Dirección Actual" readonly>
+                </div>
+            </div>
+        </form>
+        <h1>Actualizar Dirección</h1>
+        <form> 
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Dirección</label>
+              <input formControlName="address" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Código Postal
+                <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
+                  <i class="fa fa-question-circle"></i>
+                </a>
+              </label>
+              <input digitOnly maxlength="5" formControlName="postalcode" type="number" class="form-control">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Departamento</label>
+                <select formControlName="department" class="form-control">
+                  <option value="">Seleccione...</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label>País</label>
+                <select disabled class="form-control">
+                  <option selected="">Perú</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-block"> Actualizar </button>
+          </div>
+        </form>
+      </div>
+      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+        <h1>Actualizar Contraseña</h1>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-5">
+                <input placeholder="Nueva Contraseña" formControlName="password" class="form-control" type="password">
+            </div> 
+            <div class="form-group col-md-5">
+                <input placeholder="Confirmar Contraseña" formControlName="password2" class="form-control" type="password">
+            </div>
+            <div class="form-group col-md-2">
+                <button type="submit" class="btn btn-block"> Actualizar </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

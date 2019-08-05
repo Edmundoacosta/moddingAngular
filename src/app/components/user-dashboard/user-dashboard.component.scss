@@ -52,3 +52,85 @@ a {
         color: $secondC;
     }
 }
+.col-9 {
+  -webkit-box-flex: 0;
+  flex: 0 0 75%;
+  max-width: 75%;
+  margin: 10px auto;
+}
+h1 {
+  text-align: center;
+}
+.btn {
+  color: #fff;
+  background-color: $secondC;
+  border-color: $fifthC;
+}
+.track_tbl td.track_dot {
+  width: 50px;
+  position: relative;
+  padding: 0;
+  text-align: center;
+}
+.track_tbl td.track_dot:after {
+  content: "\f111";
+  font-family: FontAwesome;
+  position: absolute;
+  margin-left: -5px;
+  top: 11px;
+}
+.track_tbl td.track_dot span.track_line {
+  background: #000;
+  width: 3px;
+  min-height: 50px;
+  position: absolute;
+  height: 101%;
+}
+.track_tbl tbody tr:first-child td.track_dot span.track_line {
+  top: 30px;
+  min-height: 25px;
+}
+.track_tbl tbody tr:last-child td.track_dot span.track_line {
+  top: 0;
+  min-height: 25px;
+  height: 10%;
+}
+.shop-tracking-status .form-horizontal{margin-bottom:50px}
+.shop-tracking-status .order-status{margin-top:150px;position:relative;margin-bottom:150px}
+.shop-tracking-status .order-status-timeline{height:12px;border:1px solid #aaa;border-radius:7px;background:#eee;box-shadow:0px 0px 5px 0px #C2C2C2 inset}.shop-tracking-status .order-status-timeline .order-status-timeline-completion{height:8px;margin:1px;border-radius:7px;background:$secondC;width:0px}
+.shop-tracking-status .order-status-timeline .order-status-timeline-completion.c1{width:22%}
+.shop-tracking-status .order-status-timeline .order-status-timeline-completion.c2{width:46%}
+.shop-tracking-status .order-status-timeline .order-status-timeline-completion.c3{width:70%}
+.shop-tracking-status .order-status-timeline .order-status-timeline-completion.c4{width:100%}
+.shop-tracking-status .image-order-status{border:1px solid #ddd;padding:7px;box-shadow:0px 0px 10px 0px #999;background-color:#fdfdfd;position:absolute;margin-top:-35px} 
+.shop-tracking-status .image-order-status.active{box-shadow:0px 0px 10px 0px black}.shop-tracking-status .image-order-status.active .status{color:$secondC;text-shadow:0px 0px 1px #777}
+.shop-tracking-status .image-order-status .icon{height:40px;width:40px;background-size:contain;background-position:no-repeat}
+.shop-tracking-status .image-order-status .status{position:absolute;text-shadow:1px 1px #eee;color:#333;transform:rotate(-30deg);-webkit-transform:rotate(-30deg);width:180px;top:-50px;left:50px}.shop-tracking-status .image-order-status .status:before{font-family:FontAwesome;content:"\f053";padding-right:5px}
+.shop-tracking-status .image-order-status-new{left:0}.shop-tracking-status .image-order-status-new .icon{background-image: url('https://image.flaticon.com/icons/png/512/15/15457.png')}
+.shop-tracking-status .image-order-status-active{left:22%}.shop-tracking-status .image-order-status-active .icon{background-image: url('https://cdn0.iconfinder.com/data/icons/time-pear-ui-2px/24/synchronize-512.png')}
+.shop-tracking-status .image-order-status-intransit{left:45%}.shop-tracking-status .image-order-status-intransit .icon{background-image: url('https://cdn.iconscout.com/icon/premium/png-512-thumb/shipped-3-581678.png')}
+.shop-tracking-status .image-order-status-delivered{left:70%}.shop-tracking-status .image-order-status-delivered .icon{background-image: url('https://cdn4.iconfinder.com/data/icons/transportation-45/32/189-01-512.png')}
+.shop-tracking-status .image-order-status-delivered .status{top:85px;left:-180px;transform:rotate(-30deg);-webkit-transform:rotate(-30deg);text-align:right}.shop-tracking-status .image-order-status-delivered .status:before{display:none}
+.shop-tracking-status .image-order-status-delivered .status:after{font-family:FontAwesome;content:"\f054";padding-left:5px;vertical-align:middle}
+.shop-tracking-status .image-order-status-completed{right:0px}.shop-tracking-status .image-order-status-completed .icon{background-image: url('https://png.pngtree.com/svg/20161227/99e8de449e.svg')}
+.shop-tracking-status .image-order-status-completed .status{top:85px;left:-180px;transform:rotate(-30deg);-webkit-transform:rotate(-30deg);text-align:right}.shop-tracking-status .image-order-status-completed .status:before{display:none}
+.shop-tracking-status .image-order-status-completed .status:after{font-family:FontAwesome;content:"\f054";padding-left:5px;vertical-align:middle}
+
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+	}
+}
