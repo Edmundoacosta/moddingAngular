@@ -1,0 +1,54 @@
+@import "../../../variables";
+.profile {
+    margin: 10px 0;
+  }
+  
+  /* Profile sidebar */
+  .profile-sidebar {
+    padding: 20px 0 10px 0;
+    background: #fff;
+    box-shadow:1px 1px 10px rgba(0,0,0,0.3)
+  }
+  
+  .profile-userpic img {
+    float: none;
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+  }
+  
+  .profile-usertitle {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .profile-usertitle-name {
+    color: #5a7391;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top:5px;
+    margin-bottom: 7px;
+  }
+  .img-circle {
+      border-radius: 50%;
+  }
+  
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: black;
+    background-color: $secondC;
+}
+.col-3 {
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+a {
+    color: black;
+    &:hover {
+        text-decoration: none;
+        color: $secondC;
+    }
+}

@@ -20,6 +20,7 @@ import { CategoryViewComponent } from './components/categories/category-view/cat
 import { DigitOnlyModule } from '@uiowa/digit-only';
 import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
 import { PersonalizacionComponent } from './components/personalizacion/personalizacion.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PersonalizacionComponent } from './components/personalizacion/personali
     CategoriesComponent,
     CategoryViewComponent,
     ZonaGamerComponent,
-    PersonalizacionComponent
+    PersonalizacionComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
