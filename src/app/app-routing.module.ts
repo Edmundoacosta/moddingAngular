@@ -11,6 +11,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
 import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
 import { PersonalizacionComponent } from './components/personalizacion/personalizacion.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
 	{path: 'registro', component: RegistroComponent},
 	{path: 'zona_gamer', component: ZonaGamerComponent},
 	{path: 'personalizacion', component: PersonalizacionComponent},
+	{path: 'user_dashboard', component: UserDashboardComponent},
   
 	{ path: 'categoria', component: CategoriesComponent, children: [
 		{ path: ':type', component: CategoryViewComponent, pathMatch: 'full'},
