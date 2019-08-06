@@ -12,6 +12,7 @@ import { CategoryViewComponent } from './components/categories/category-view/cat
 import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
 import { PersonalizacionComponent } from './components/personalizacion/personalizacion.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -23,6 +24,7 @@ const routes: Routes = [
 	{path: 'zona_gamer', component: ZonaGamerComponent},
 	{path: 'personalizacion', component: PersonalizacionComponent},
 	{path: 'user_dashboard', component: UserDashboardComponent},
+	{path: 'cart', component: CartComponent},
   
 	{ path: 'categoria', component: CategoriesComponent, children: [
 		{ path: ':type', component: CategoryViewComponent, pathMatch: 'full'},
