@@ -17,11 +17,7 @@ export class AboutUsComponent implements OnInit {
 		},
 		{
 			name: 'Edmundo Enrique Acosta Chalam',
-			career: 'Desarrollador Frontend'
-		},
-		{
-			name: 'Laydi Lorem Ipsum Equisde',
-			career: 'Administración'
+			career: 'Desarrollador FullStack'
 		}
 	]
   constructor() { }

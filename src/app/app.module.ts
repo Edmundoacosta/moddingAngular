@@ -21,6 +21,8 @@ import { DigitOnlyModule } from '@uiowa/digit-only';
 import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
 import { PersonalizacionComponent } from './components/personalizacion/personalizacion.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     CategoryViewComponent,
     ZonaGamerComponent,
     PersonalizacionComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ShoppingCartComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,
