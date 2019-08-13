@@ -13,7 +13,6 @@ export class ModdingService {
 	constructor(private http: HttpClient){}
 
 	setHeaders(){
-		console.log(localStorage.getItem('token'));
 		this.headers = new HttpHeaders({
 	      'Content-Type': 'application/json',
 	      'Authorization': 'Token ' + localStorage.getItem('token')
@@ -46,6 +45,18 @@ export class ModdingService {
 		this.setHeaders();
 		return new Promise((resolve, reject) => {
 			this.http.get(`${url}/users/user`, { headers: this.headers})
+				.subscribe(res => {
+					resolve(res);
+				}, (err) => {
+					reject(err);
+				});
+		})
+	}
+
+	updateUser(user){
+		this.setHeaders();
+		return new Promise((resolve, reject) => {
+			this.http.put(`${url}/users/user`, user, { headers: this.headers})
 				.subscribe(res => {
 					resolve(res);
 				}, (err) => {

@@ -1,16 +1,14 @@
 <div class="container">
   <div class="row profile">
-  <div class="col-md-3">
-    <div class="profile-sidebar">
-      <div class="profile-usertitle">
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <div class="profile-usertitle">
           <img src="https://picsum.photos/300" class="img-circle" width="100px">
-    
-        <div class="profile-usertitle-name">
-        UserName
+          <div class="profile-usertitle-name">
+            {{user.firstname + ' ' + user.lastname}}
+          </div>
         </div>
-      </div>
-
-      <div class="profile-usermenu">
+        <div class="profile-usermenu">
         <div class="row">
           <div class="col-3">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -27,24 +25,36 @@
   <div class="col-9">
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        <form>   
-          <div class="form-row">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Nombres</label>
+            <input [(ngModel)]="user.firstname" disabled class="form-control" type="text" name="firstname">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Apellidos</label>
+            <input  [(ngModel)]="user.lastname" disabled class="form-control" type="text" name="lastname">
+          </div>
+        </div>
+        <div class="form-row">
             <div class="form-group col-md-6">
-              <input disabled class="form-control" type="text" placeholder="Nombres del usuario">
+              <label>Dirección 1</label>
+              <input  [(ngModel)]="user.address1" disabled class="form-control" type="text" name="address">
             </div>
             <div class="form-group col-md-6">
-              <input disabled class="form-control" type="text" placeholder="Apellidos del usuario">
+              <label>Dirección 2</label>
+              <input  [(ngModel)]="user.address2" disabled class="form-control" type="text" name="address">
             </div>
-          </div>
-          <div class="form-row">
-              <div class="form-group col-md-6">
-                <input disabled class="form-control" type="text" placeholder="Dirección de envio">
-              </div>
-              <div class="form-group col-md-6">
-                <input disabled class="form-control" type="text" placeholder="Correo Electronico">
-              </div>
-          </div>
-        </form>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Número de Celular</label>
+              <input [(ngModel)]="user.phone" disabled class="form-control" type="text" name="phone">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Correo Electrónico</label>
+              <input [(ngModel)]="user.email" disabled class="form-control" type="text" name="email">
+            </div>
+        </div>
       </div>
       <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
         <div class="p-4">
@@ -154,21 +164,49 @@
             </div> 
         </div>
       </div>
-      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-        <form>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-form-label">Mi Dirección Actual</label>
-                <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="Dirección Actual" readonly>
-                </div>
-            </div>
-        </form>
-        <h1>Actualizar Dirección</h1>
-        <form> 
+    <!--ACTUALIZACION ADDRESS 1 -->
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+      <h1>Actualizar Dirección 1</h1>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Dirección</label>
+            <input [(ngModel)]="user.address1" class="form-control" type="text" name="address">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Código Postal
+              <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
+                <i class="fa fa-question-circle"></i>
+              </a>
+            </label>
+            <input [(ngModel)]="user.postalcode" name="postalcode" digitOnly maxlength="5" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Departamento</label>
+              <select [(ngModel)]="user.department" class="form-control">
+                <option value="">Seleccione...</option>
+                <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
+              </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label>País</label>
+              <select disabled class="form-control">
+                <option selected="">Perú</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group">
+            <button (click)="updateAddress()" class="btn btn-block">Actualizar</button>
+        </div>
+     
+      <!--ACTUALIZACION ADDRESS 2 -->
+    
+        <h1>Actualizar Dirección 2</h1>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label>Dirección</label>
-              <input formControlName="address" type="text" class="form-control">
+              <input [(ngModel)]="user.address2" class="form-control" type="text" name="address">
             </div>
             <div class="form-group col-md-6">
               <label>Código Postal
@@ -176,14 +214,15 @@
                   <i class="fa fa-question-circle"></i>
                 </a>
               </label>
-              <input digitOnly maxlength="5" formControlName="postalcode" type="number" class="form-control">
+              <input [(ngModel)]="user.postalcode" name="postalcode" digitOnly maxlength="5" type="number" class="form-control">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label>Departamento</label>
-                <select formControlName="department" class="form-control">
+                <select [(ngModel)]="user.department" class="form-control">
                   <option value="">Seleccione...</option>
+                  <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
@@ -194,26 +233,26 @@
             </div>
           </div>
           <div class="form-group">
-              <button type="submit" class="btn btn-block"> Actualizar </button>
+              <button (click)="updateAddress()" class="btn btn-block">Actualizar</button>
           </div>
-        </form>
       </div>
+      <!-- ACTUALIZACION CONTRASEÑA  -->
       <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
         <h1>Actualizar Contraseña</h1>
-        <form>
-          <div class="form-row">
-            <div class="form-group col-md-5">
-                <input placeholder="Nueva Contraseña" formControlName="password" class="form-control" type="password">
-            </div> 
-            <div class="form-group col-md-5">
-                <input placeholder="Confirmar Contraseña" formControlName="password2" class="form-control" type="password">
-            </div>
-            <div class="form-group col-md-2">
-                <button type="submit" class="btn btn-block"> Actualizar </button>
-            </div>
+        <div class="form-row">
+          <div class="form-group col-md-5">
+              <input [(ngModel)]="user.password" placeholder="Nueva Contraseña" name="password" class="form-control" type="password">
+          </div> 
+          <div class="form-group col-md-5">
+              <input [(ngModel)]="user.password2" placeholder="Confirmar Contraseña" name="password2" class="form-control" type="password">
           </div>
-        </form>
+          <div class="form-group col-md-2">
+              <button (click)="updateAddress()" class="btn btn-block"> Actualizar </button>
+          </div>
+        </div>
       </div>
+
+
     </div>
   </div>
 </div>
