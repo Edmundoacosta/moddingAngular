@@ -22,6 +22,7 @@ import { PersonalizacionComponent } from './components/personalizacion/personali
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
   imports: [
     BrowserModule,
     HttpModule,
+    ModalModule.forRoot(),
     DigitOnlyModule,
     FormsModule,
     HttpClientModule,
