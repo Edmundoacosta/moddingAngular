@@ -51,4 +51,12 @@ export class HeaderComponent implements OnInit {
 	  	});
   	}
   }
+
+  logout() {
+      localStorage.removeItem('token');
+      this.router.navigate(['/home']);
+      setTimeout(() => {
+        location.reload();
+      }, 200);
+  }
 }

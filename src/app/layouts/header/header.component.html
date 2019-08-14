@@ -1,5 +1,7 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" routerLink="/home">ENVI-C</a>
+    <a class="navbar-brand" routerLink="/home">
+      <img id="logoE" src="./assets/imagenes/logos/logo-envi-c.png" alt="">
+    </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,14 +43,20 @@
               <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
             </form>
           </div>
-          <div class= "user">
-              <a (click)="openModal(loginModal)" data-toggle="modal">
-                <button class="btn btn-outline-warning mr-sm-2 col-lg-20" type="submit"><i class="fa fa-user"></i></button>
-              </a>
+          <!-- DROPDOWN USER LOGIN/LOGOUT -->  
+          <div class="mr-sm-3 col-lg-20">
+              <div class="dropdown">
+                <button (click)="openModal(loginModal)" data-toggle="modal" class="btn btn-outline-warning"><i class="fa fa-user"></i></button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" (click)="openModal(loginModal)" data-toggle="modal">Perfil</a>
+                  <a class="dropdown-item" (click)="logout()">Cerrar Sesión</a>
+                </div>
+              </div>
           </div>
+
           <div>
             <a routerLink="/shopping_cart">
-                <button class="btn btn-outline-warning mr-sm-2 col-lg-20" type="submit"><i class="fa fa-shopping-cart"></i>
+                <button class="btn btn-outline-warning mr-sm-2 col-lg-20" type="button"><i class="fa fa-shopping-cart"></i>
                   <span class="badge badge-outline">0</span>
                 </button>
             </a>
@@ -68,7 +76,7 @@
               <div class="box_login">
                 <div class="modal_login">
                     <div class="image_form_login">
-                      <img class="logo_login" src="./assets/imagenes/logo-color.png" alt="">
+                      <img class="logo_login" src="./assets/imagenes/logos/logo-color.png" alt="">
                     </div>
 
                     <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value, userForm.valid)">

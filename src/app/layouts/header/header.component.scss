@@ -11,7 +11,6 @@ body {
 }
 a {
     text-decoration: none;
-    color: $fifthC;
 }
 a.nav-link.active-link {
     color: #000000;
@@ -26,10 +25,6 @@ a.nav-link.active-link {
 ul.dropdown-lr {
   width: 300px;
 }
-.dropdown-menu[_ngcontent-c1]{
-    left: inherit;
-    right: 0;
-}
 #categorydiv {
     left: 0;
     right: inherit;
@@ -41,6 +36,18 @@ ul.dropdown-lr {
 .logo_login {
     width: 100%;
     height: auto;
+}
+#logoE {
+    width: 100%;
+    width: 30px;
+    height: 30px;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+  
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
 }
 
 /* mobile fix */
