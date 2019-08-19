@@ -21,6 +21,26 @@ export class AboutUsComponent implements OnInit {
 			career: 'Desarrollador FullStack'
 		}
 	]
+	public valores:Array<any> = [
+		{
+			name: 'Creatividad'
+		},
+		{
+			name: 'Respeto'
+		},
+		{
+			name: 'Honestidad'
+		},
+		{
+			name: 'Puntualidad'
+		},
+		{
+			name: 'Calidad de Servicio'
+		},
+		{
+			name: 'Responsabilidad'
+		}
+	]
   constructor() { }
 
   ngOnInit() {

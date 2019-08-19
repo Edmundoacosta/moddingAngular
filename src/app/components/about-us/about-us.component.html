@@ -1,4 +1,69 @@
+<div class="container">
+	<nav id="navspy">
+		<div class="nav nav-tabs justify-content-center" id="nav-1-tab" role="tablist">
+			<a class="nav-item nav-link active" id="nav-1-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-mod" aria-selected="true">QUIENES SOMOS</a>
+			<a class="nav-item nav-link" id="nav-2-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">MISIÓN</a>
+			<a class="nav-item nav-link" id="nav-3-tab" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">VISIÓN</a>
+			<a class="nav-item nav-link" id="nav-4-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-4" aria-selected="false">VALORES</a>
+			<a class="nav-item nav-link" id="nav-5-tab" data-toggle="tab" href="#nav-5" role="tab" aria-controls="nav-5" aria-selected="false">EQUIPO</a>
+		</div>
+	</nav>
+
+
+	<div class="tab-content" id="nav-tabContent">
+		<div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab">
+			<div class="row">
+				<div class="col-md-8">
+					<p>Somos una empresa peruana que se inicia con la necesidad y esperanza de contribuir en el bienestar Social, Económico, Ambiental y Cultural, mediante la Innovación Tecnológica promovida por nuestra marca Envi-C.  Ser una contribución para mejorar el planeta ofreciendo tecnología amigable con el medio ambiente, innovando tecnologías más limpias, que permita un mundo mejor para todos.</p>
+				</div>
+				<div class="col-md-4">
+					<div class="imgAbt">
+						<img id="img" src="./assets/imagenes/logos/logo-color.png" />
+					</div>
+				</div>
+	    	</div>
+		</div>
+
+		<div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">
+			<p>Adoptar un modelo de sistema de trabajo eficiente, ofreciendo productos y servicios con innovación tecnológica personalizada, inspirados y orientados hacia una cultura de sustentabilidad, con precios accesibles y de calidad. Así como también ser una herramienta de aprendizaje para inspirar a soluciones que contribuyan en el bienestar Social, Económico, Ambiental y Cultural.</p>
+		</div>
+
+		<div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab">
+			<p>Contribuir con la humanidad con tecnología ecológica, alcanzable dentro de los próximos 15 años, logrando tener impacto en las próximas 7 generaciones en el aspecto Social, Económico, Ambiental y Cultural, brindado así una mejor calidad de vida para todos, en mira del desarrollo hacia una cultura de sostenibilidad.</p>
+		</div>
+
+		<div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-4-tab">
+			<div class="row mbr-justify-content-center">
+				<div class="col-lg-6 mbr-col-md-10" *ngFor="let member of valores">
+					<div class="wrap">
+						<div class="ico-wrap">
+								<i class="fa fa-users mbr-iconfont"></i>
+						</div>
+						<div class="text-wrap vcenter">
+							<p class="mbr-fonts-style text1 mbr-text display-6">{{member.name}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade" id="nav-5" role="tabpanel" aria-labelledby="nav-5-tab">
+			<div class="container">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column align-items-center team-member" *ngFor="let member of team">
+						<img class="member_img" src="https://picsum.photos/200" alt="">
+						<b class="mt-2">{{member.name}}</b>
+						<p>{{member.career}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--
 <div class="about_us">
+	
 	<h2 class="text-center my-4 dots">EcoGozo</h2>
 	<div class="container">
 	    <div class="row">
@@ -35,7 +100,7 @@
 				<p><strong>Vision</strong>: Contribuir con la humanidad con tecnología ecológica, alcanzable dentro de los próximos 15 años, logrando tener impacto en las próximas 7 generaciones en el aspecto Social, Económico, Ambiental y Cultural, brindado así una mejor calidad de vida para todos, en mira del desarrollo hacia una cultura de sostenibilidad.</p>
 			</div>
 	    </div>
-	</div>
+	</div> 
 	<h2 class="text-center my-4 dots">El Equipo</h2>
 	<div class="container">
 		<div class="d-flex flex-row justify-content-between">
@@ -46,4 +111,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>-->
