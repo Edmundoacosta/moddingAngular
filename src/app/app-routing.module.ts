@@ -13,6 +13,8 @@ import { PersonalizacionComponent } from './components/personalizacion/personali
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ItemDetailComponent } from "./components/item-detail/item-detail.component";
+import { AdminComponent } from './components/admin/admin.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -30,6 +32,9 @@ const routes: Routes = [
 		{ path: ':type', component: CategoryViewComponent, pathMatch: 'full'},
 	]},
 	{path: 'notfound', component: NotfoundComponent},
+	{ path: 'admin', component: AdminComponent, children: [
+		{ path: 'dashboard', component: DashboardComponent, pathMatch: 'full'}
+	]},
 	{path: '**', redirectTo: '/notfound'}
 	
 ];
