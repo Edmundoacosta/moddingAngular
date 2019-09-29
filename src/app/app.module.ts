@@ -25,6 +25,7 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
     ShoppingCartComponent,
     ItemDetailComponent,
     AdminComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { ItemDetailComponent } from "./components/item-detail/item-detail.component";
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -33,7 +34,8 @@ const routes: Routes = [
 	]},
 	{path: 'notfound', component: NotfoundComponent},
 	{ path: 'admin', component: AdminComponent, children: [
-		{ path: 'dashboard', component: DashboardComponent, pathMatch: 'full'}
+		{ path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},
+		{ path: 'dashboard/users', component: UsersListComponent,pathMatch: 'full'}
 	]},
 	{path: '**', redirectTo: '/notfound'}
 	
