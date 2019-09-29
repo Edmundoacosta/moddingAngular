@@ -25,6 +25,10 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { Checkout1Component } from './components/checkout/checkout1/checkout1.component';
+import { Checkout2Component } from './components/checkout/checkout2/checkout2.component';
+import { Checkout3Component } from './components/checkout/checkout3/checkout3.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
     ShoppingCartComponent,
     ItemDetailComponent,
     AdminComponent,
-    DashboardComponent
+    DashboardComponent,
+    CheckoutComponent,
+    Checkout1Component,
+    Checkout2Component,
+    Checkout3Component
   ],
   imports: [
     BrowserModule,

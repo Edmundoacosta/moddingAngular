@@ -44,7 +44,7 @@
           </div>
           <div class="mr-sm-2 col-lg-20">
               <div class="dropdown">
-                <button (click)="openModal(loginModal)" data-toggle="modal" class="btn btn-ec"><i class="fa fa-user"></i></button>
+                <button (click)="openModal(loginModal)" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil"  class="btn btn-ec"><i class="fa fa-user"></i></button>
               </div>
           </div>
 
@@ -57,7 +57,7 @@
         </div>
         <div>
           <div class="dropdown">
-            <button (click)="logout()" data-toggle="modal" class="btn btn-ec"><i class="fa fa-sign-out"></i></button>
+            <button (click)="logout()" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión" class="btn btn-ec"><i class="fa fa-sign-out"></i></button>
           </div>
       </div>
   </div>
