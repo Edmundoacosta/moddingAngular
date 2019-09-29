@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionService } from '../../providers/session.service';
 import { ModdingService } from '../../providers/moddinpc.service';
@@ -33,12 +33,15 @@ export class HeaderComponent implements OnInit {
   		password: ['', Validators.required]
     })
   }
+  hello(){
+
+  }
 
   openModal(template: TemplateRef<any>) {
     if (this.logged) {
       this.router.navigate(['/user_dashboard']);
     } else {
-      this.modalService.show(template);
+      this.modalRef = this.modalService.show(template);
     }
   }
 
