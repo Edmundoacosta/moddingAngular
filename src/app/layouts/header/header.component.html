@@ -42,9 +42,9 @@
               <input class="form-control mr-sm-2 col-lg-20" type="search" placeholder="Buscar..." aria-label="Search">
             </form>
           </div>
-          <div class="mr-sm-3 col-lg-20">
+          <div class="mr-sm-2 col-lg-20">
               <div class="dropdown">
-                <button (click)="openModal(loginModal)" data-toggle="modal" class="btn btn-ec"><i class="fa fa-user"></i></button>
+                <button (click)="openModal(loginModal)" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil"  class="btn btn-ec"><i class="fa fa-user"></i></button>
               </div>
           </div>
 
@@ -55,6 +55,11 @@
                 </button>
             </a>
         </div>
+        <div>
+          <div class="dropdown">
+            <button (click)="logout()" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión" class="btn btn-ec"><i class="fa fa-sign-out"></i></button>
+          </div>
+      </div>
   </div>
 </nav>
 
@@ -94,9 +99,8 @@
                         </div>
                       </div>
 
-                      <div class="form-group py-4">
-                        <button (click)="modalRef.hide()" class="btn btn-outline-secondary btn-lg" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-                        <button (click)="onSubmit()" class="btn btn-success btn-lg float-right" id="btnLogin">Iniciar Sesión</button>
+                      <div class="form-group text-center my-5">
+                        <button (click)="onSubmit()" class="btn btn-success btn-lg" id="btnLogin">Iniciar Sesión</button>
                       </div>
 
                       <div>

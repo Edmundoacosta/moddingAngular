@@ -15,6 +15,10 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { ItemDetailComponent } from "./components/item-detail/item-detail.component";
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { Checkout1Component} from './components/checkout/checkout1/checkout1.component';
+import { Checkout2Component} from './components/checkout/checkout2/checkout2.component';
+import { Checkout3Component} from './components/checkout/checkout3/checkout3.component';
 import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 
 const routes: Routes = [
@@ -36,6 +40,11 @@ const routes: Routes = [
 	{ path: 'admin', component: AdminComponent, children: [
 		{ path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},
 		{ path: 'dashboard/users', component: UsersListComponent,pathMatch: 'full'}
+	]},
+	{ path: 'Checkout', component: CheckoutComponent, children: [
+		{ path: 'Checkout1', component: Checkout1Component, pathMatch: 'full'},
+		{ path: 'Checkout2', component: Checkout2Component, pathMatch: 'full'},
+		{ path: 'Checkout3', component: Checkout3Component, pathMatch: 'full'}
 	]},
 	{path: '**', redirectTo: '/notfound'}
 	

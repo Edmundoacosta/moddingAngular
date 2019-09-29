@@ -25,6 +25,10 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { Checkout1Component } from './components/checkout/checkout1/checkout1.component';
+import { Checkout2Component } from './components/checkout/checkout2/checkout2.component';
+import { Checkout3Component } from './components/checkout/checkout3/checkout3.component';
 import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 
 @NgModule({
@@ -46,6 +50,10 @@ import { UsersListComponent } from './components/admin/dashboard/users-list/user
     ItemDetailComponent,
     AdminComponent,
     DashboardComponent,
+    CheckoutComponent,
+    Checkout1Component,
+    Checkout2Component,
+    Checkout3Component,
     UsersListComponent
   ],
   imports: [

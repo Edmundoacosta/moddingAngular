@@ -1,0 +1,11 @@
+@import "../../../../variables";
+
+.btn-ec {
+    color: $thirdC;
+    border: 1px solid $thirdC;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: $thirdC;
+    }
+}

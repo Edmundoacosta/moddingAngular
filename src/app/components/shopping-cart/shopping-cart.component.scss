@@ -1,3 +1,4 @@
+@import "../../../variables";
 /* Global settings */
 .container {
     margin: 20px auto;
@@ -55,13 +56,12 @@
   /* Apply clearfix in a few places */
   /* Apply dollar signs */
   .product .product-price:before, .product .product-line-price:before, .totals-value:before {
-    content: '$';
+    content: 'S/.';
   }
    
   /* Body/Header stuff */
   body {
     padding: 0px 30px 30px 20px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 100;
   }
    
@@ -101,7 +101,6 @@
   }
   .product .product-details .product-title {
     margin-right: 20px;
-    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
   }
   .product .product-details .product-description {
     margin: 5px 20px 5px 0;
@@ -113,14 +112,15 @@
   .product .remove-product {
     border: 0;
     padding: 4px 8px;
-    background-color: #c66;
+    background-color: $secondC;
     color: #fff;
     font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
     font-size: 12px;
     border-radius: 3px;
   }
   .product .remove-product:hover {
-    background-color: #a44;
+    background-color: $thirdC;
+    color: #fff;
   }
    
   /* Totals section */
@@ -141,23 +141,20 @@
     width: 21%;
     text-align: right;
   }
-  .totals .totals-item-total {
-    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
-  }
-   
   .checkout {
     float: right;
     border: 0;
     margin-top: 20px;
     padding: 6px 25px;
-    background-color: #6b6;
+    background-color: $secondC;
     color: #fff;
     font-size: 25px;
     border-radius: 3px;
   }
    
   .checkout:hover {
-    background-color: #494;
+    background-color: $thirdC;
+    color : #fff;
   }
    
   /* Make adjustments for tablet */
@@ -225,7 +222,7 @@
     }
    
     .product .product-line-price:before {
-      content: 'Item Total: $';
+      content: 'Item Total: S/.';
     }
    
     .totals .totals-item label {
