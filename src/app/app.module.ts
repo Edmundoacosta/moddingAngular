@@ -23,6 +23,8 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AdminComponent } from './components/admin/admin.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     PersonalizacionComponent,
     UserDashboardComponent,
     ShoppingCartComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    AdminComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
