@@ -42,12 +42,15 @@ ul.dropdown-lr {
     width: 30px;
     height: 30px;
 }
-.dropdown:hover>.dropdown-menu {
-    display: block;
-}
-  
-.dropdown>.dropdown-toggle:active {
-    pointer-events: none;
+
+.btn-ec {
+    color: $thirdC;
+    border: 1px solid $thirdC;
+
+    &:hover {
+        color: #FFFFFF;
+        background-color: $thirdC;
+    }
 }
 
 /* mobile fix */

@@ -1,10 +1,10 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" routerLink="/home">
-      <img id="logoE" src="./assets/imagenes/logos/logo-envi-c.png" alt="">
-    </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <a class="navbar-brand" routerLink="/home">
+    <img id="logoE" src="./assets/imagenes/logos/logo-envi-c.png" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -40,23 +40,17 @@
           <div>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2 col-lg-20" type="search" placeholder="Buscar..." aria-label="Search">
-              <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
             </form>
           </div>
-          <!-- DROPDOWN USER LOGIN/LOGOUT -->  
           <div class="mr-sm-3 col-lg-20">
               <div class="dropdown">
-                <button (click)="openModal(loginModal)" data-toggle="modal" class="btn btn-outline-warning"><i class="fa fa-user"></i></button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" (click)="openModal(loginModal)" data-toggle="modal">Perfil</a>
-                  <a class="dropdown-item" (click)="logout()">Cerrar Sesión</a>
-                </div>
+                <button (click)="openModal(loginModal)" data-toggle="modal" class="btn btn-ec"><i class="fa fa-user"></i></button>
               </div>
           </div>
 
           <div>
             <a routerLink="/shopping_cart">
-                <button class="btn btn-outline-warning mr-sm-2 col-lg-20" type="button"><i class="fa fa-shopping-cart"></i>
+                <button class="btn btn-ec mr-sm-2 col-lg-20" type="button"><i class="fa fa-shopping-cart"></i>
                   <span class="badge badge-outline">0</span>
                 </button>
             </a>
