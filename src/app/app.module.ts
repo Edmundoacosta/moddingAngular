@@ -29,6 +29,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Checkout1Component } from './components/checkout/checkout1/checkout1.component';
 import { Checkout2Component } from './components/checkout/checkout2/checkout2.component';
 import { Checkout3Component } from './components/checkout/checkout3/checkout3.component';
+import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { Checkout3Component } from './components/checkout/checkout3/checkout3.co
     CheckoutComponent,
     Checkout1Component,
     Checkout2Component,
-    Checkout3Component
+    Checkout3Component,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

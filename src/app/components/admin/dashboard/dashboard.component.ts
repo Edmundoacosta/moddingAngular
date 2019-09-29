@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+	public adminViews = [
+		{
+			icon: 'fa-users',
+			name: 'Usuarios',
+			link: 'users'
+		},
+		{
+			icon: 'fa-users',
+			name: 'Productos',
+			link: 'products'
+		},
+		{
+			icon: 'fa-users',
+			name: 'Categorias',
+			link: 'categories'
+		},
+		{
+			icon: 'fa-users',
+			name: 'Novedades',
+			link: 'new'
+		}
+	];
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
+  }
+
+  goTo(link){
+  	this.router.navigate(['/admin/dashboard/' + link]);
+  	console.log('/admin/dashboard/' + link)
   }
 
 }

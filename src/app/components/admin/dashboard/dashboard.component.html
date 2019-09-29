@@ -1,3 +1,28 @@
-<p>
-  dashboard works!
-</p>
+<div class="container">
+	<h2>Dashboard</h2>
+	<div class="tabs-panel row">
+		<div *ngFor="let tab of adminViews" class="col-lg-3" (click)="goTo(tab.link)">
+			<div class="tab">
+				<div class="icon">
+					<i [ngClass]="tab.icon" class="fa mbr-iconfont"></i>
+				</div>
+				<div class="text">
+					<h3>{{tab.name}}</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mt-3"></div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="tab">
+				<div class="icon">
+					<i class="fa fa-users mbr-iconfont"></i>
+				</div>
+				<div class="text">
+					<h3>ZONA GAAAAMER</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

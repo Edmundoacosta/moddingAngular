@@ -19,6 +19,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Checkout1Component} from './components/checkout/checkout1/checkout1.component';
 import { Checkout2Component} from './components/checkout/checkout2/checkout2.component';
 import { Checkout3Component} from './components/checkout/checkout3/checkout3.component';
+import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -37,7 +38,8 @@ const routes: Routes = [
 	]},
 	{path: 'notfound', component: NotfoundComponent},
 	{ path: 'admin', component: AdminComponent, children: [
-		{ path: 'dashboard', component: DashboardComponent, pathMatch: 'full'}
+		{ path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},
+		{ path: 'dashboard/users', component: UsersListComponent,pathMatch: 'full'}
 	]},
 	{ path: 'Checkout', component: CheckoutComponent, children: [
 		{ path: 'Checkout1', component: Checkout1Component, pathMatch: 'full'},
