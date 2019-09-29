@@ -33,9 +33,6 @@ export class HeaderComponent implements OnInit {
   		password: ['', Validators.required]
     })
   }
-  hello(){
-
-  }
 
   openModal(template: TemplateRef<any>) {
     if (this.logged) {
