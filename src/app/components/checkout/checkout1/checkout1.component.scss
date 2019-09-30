@@ -1,11 +1,54 @@
 @import "../../../../variables";
 
-.btn-ec {
-    color: $thirdC;
-    border: 1px solid $thirdC;
+.ec-active {
+    color: $secondC;
+    background-color: $thirdC;
 
     &:hover {
-        color: #FFFFFF;
+        color: #fff;
         background-color: $thirdC;
     }
+}
+.ec-desactive {
+    color: $thirdC;
+
+    &:hover {
+        color: $secondC;
+    }
+}
+.dots {
+	&:after {
+		display         : inline-block;
+		margin          : 0 0 9px 15px;
+		height          : 3px;
+		content         : " ";
+		text-shadow     : none;
+		background-color: $secondC;
+        width           : 60px;
+        color: $thirdC;
+	}
+
+	&:before {
+		display         : inline-block;
+		margin          : 0 15px 9px 0;
+		height          : 3px;
+		content         : " ";
+		text-shadow     : none;
+		background-color: $secondC;
+        width           : 60px;
+        color: $thirdC;
+	}
+}
+a {
+    text-decoration: none;
+    color: $secondC;
+}
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
 }

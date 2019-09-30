@@ -7,15 +7,11 @@ import { ModdingService } from '../../../../providers/moddinpc.service';
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
-	public users:Array<any> = [];
-  constructor(public modServ: ModdingService) { }
+  constructor() { }
 
   ngOnInit() {
-  	this.modServ.getAllUsers()
-  		.then((res) => {
-  			console.log(res);
-  			this.users = res.result;
-  		});
+  	
+  		}
   }
 
-}
+
