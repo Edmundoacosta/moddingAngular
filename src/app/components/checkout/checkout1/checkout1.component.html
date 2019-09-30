@@ -1,7 +1,88 @@
 <div class="container">
-    <ul class="nav nav-pills nav-justified my-5">
-        <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Adresse</a></li>
-        <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Bezahlmethode</a></li>
-        <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Bestellübersicht</a></li>
-    </ul>
+    <div class="form-group text-center">
+        <button  class="btn mx-2 mt-4 mb-2 ec-active" >Datos de Envio</button>
+        <button  class="btn mx-2 mt-4 mb-2 ec-desactive">Metodo de Pago</button>
+        <button  class="btn mx-2 mt-4 mb-2 ec-desactive">Realizar Pedido</button>
+    </div>
+    <div class="text-center">
+        <h3 class="dots">Datos De Envio</h3>
+    </div>
+    <div class="my-5">
+        <div class="form-row">
+            <div class="col form-group">
+                <label>Nombres</label>
+                <input [(ngModel)]="user.firstname"  class="form-control" type="text" name="firstname">
+            </div>
+            <div class="col form-group">
+                <label>Apellidos</label>
+                <input  [(ngModel)]="user.lastname" class="form-control" type="text" name="lastname">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col form-group">
+                <label>Tipo de Identificación</label>
+                <select class="form-control">
+                    <option selected="">DNI</option>
+                    <option selected="">Pasaporte</option>
+                </select>
+            </div>
+            <div class="col form-group">
+                <label>Número de Identificación</label>
+                <input [(ngModel)]="user.dni" digitOnly maxlength="8" name="dni" type="text" class="form-control">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Dirección</label>
+            <input [(ngModel)]="user.address1" name="address1" type="text" class="form-control">
+        </div>
+
+        <div class="form-row">
+            <div class="col form-group">
+                <label>Distrito</label>
+                <select [(ngModel)]="user.distric" class="form-control">
+                    <option value="">Seleccione...</option>
+                    <option *ngFor="let dis of allDistrics" [value]="dis">{{dis}}</option>
+                </select>
+            </div>
+            <div class="col form-group">
+                <label>Código Postal
+                    <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
+                        <i class="fa fa-question-circle"></i>
+                    </a>
+                </label>
+                <input [(ngModel)]="user.postalcode" digitOnly maxlength="5" name="postalcode" type="number" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col form-group">
+                <label>Departamento</label>
+                <select [(ngModel)]="user.department" class="form-control">
+                    <option value="">Seleccione...</option> 
+                    <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
+                </select>
+            </div>
+            <div class="col form-group">
+                <label>País</label>
+                <select disabled class="form-control">
+                    <option selected="">Perú</option>
+                </select>
+            </div>
+        </div> 
+
+        <div class="form-row">
+            <div class="col form-group">
+                <label>Correo Electrónico</label>
+                <input [(ngModel)]="user.email" name="email" type="email" class="form-control">
+            </div>
+            <div class="col form-group">
+                <label>Número de Celular</label>
+                <input [(ngModel)]="user.phone" digitOnly maxlength="9" name="phone" type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="form-group text-right">
+        <button routerLink="/Checkout/Checkout2" class="btn btn-lg mb-2 ec-active" role="button" aria-pressed="true">Siguiente</button>
+    </div>
 </div>

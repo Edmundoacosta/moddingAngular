@@ -1,0 +1,50 @@
+@import "../../../../variables";
+
+.ec-active {
+    color: $secondC;
+    background-color: $thirdC;
+
+    &:hover {
+        color: #fff;
+        background-color: $thirdC;
+    }
+}
+.ec-desactive {
+    color: $thirdC;
+
+    &:hover {
+        color: $secondC;
+    }
+}
+.dots {
+	&:after {
+		display         : inline-block;
+		margin          : 0 0 9px 15px;
+		height          : 3px;
+		content         : " ";
+		text-shadow     : none;
+		background-color: $secondC;
+        width           : 60px;
+        color: $thirdC;
+	}
+
+	&:before {
+		display         : inline-block;
+		margin          : 0 15px 9px 0;
+		height          : 3px;
+		content         : " ";
+		text-shadow     : none;
+		background-color: $secondC;
+        width           : 60px;
+        color: $thirdC;
+	}
+}
+
+.logo {
+    width: 200px;
+    height: 50px;
+}
+.qr {
+    width: 300px;
+    height: 300px;
+}
