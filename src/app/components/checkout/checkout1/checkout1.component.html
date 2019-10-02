@@ -1,13 +1,14 @@
 <div class="container">
     <div class="form-group text-center">
         <button  class="btn mx-2 mt-4 mb-2 ec-active" >Datos de Envio</button>
-        <button  class="btn mx-2 mt-4 mb-2 ec-desactive">Metodo de Pago</button>
         <button  class="btn mx-2 mt-4 mb-2 ec-desactive">Realizar Pedido</button>
+        <button  class="btn mx-2 mt-4 mb-2 ec-desactive">Metodos de Pago</button>
     </div>
     <div class="text-center">
         <h3 class="dots">Datos De Envio</h3>
     </div>
-    <div class="my-5">
+    <div class="my-3">
+            <p class="card-text"><small class="text-muted">Recuerde que en caso usted no pueda estar presente para recibir el pedido, deberá dejar una copia de su DNI firmada.</small></p>
         <div class="form-row">
             <div class="col form-group">
                 <label>Nombres</label>
@@ -22,8 +23,10 @@
             <div class="col form-group">
                 <label>Tipo de Identificación</label>
                 <select class="form-control">
-                    <option selected="">DNI</option>
-                    <option selected="">Pasaporte</option>
+                    <option selected="">Seleccione...</option>
+                    <option>DNI</option>
+                    <option>RUC</option>
+                    <option>Pasaporte</option>
                 </select>
             </div>
             <div class="col form-group">
@@ -80,6 +83,18 @@
                 <label>Número de Celular</label>
                 <input [(ngModel)]="user.phone" digitOnly maxlength="9" name="phone" type="text" class="form-control">
             </div>
+        </div>
+<!--Solo si el cliente escoge RUC para factura-->
+        <div class="form-row">
+                <p class="card-text mx-2 "><small class="text-muted">La Dirección de la empresa se utilizará para la facturación mas no para el envio, si desea que el envio sea en la dirección especificada a continuación , deberá ingresar esta misma dirección en el campo dirección de arriba.</small></p>
+            <div class="col form-group">
+                <label>Razón Social</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="col form-group">
+                <label>Dirección de la Empresa</label>
+                <input type="text" class="form-control">
+            </div>  
         </div>
     </div>
     <div class="form-group text-right">

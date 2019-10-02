@@ -1,14 +1,86 @@
 <div class="container">
     <div class="form-group text-center">
         <button routerLink="/Checkout/Checkout1"  class="btn mx-2 mt-4 mb-2 ec-desactive" >Datos de Envio</button>
-        <button routerLink="/Checkout/Checkout2" class="btn mx-2 mt-4 mb-2 ec-desactive" >Metodo de Pago</button>
-        <button  class="btn mx-2 mt-4 mb-2 ec-active">Realizar Pedido</button>
+        <button routerLink="/Checkout/Checkout2" class="btn mx-2 mt-4 mb-2 ec-desactive" >Realizar Pedido</button>
+        <button  class="btn mx-2 mt-4 mb-2 ec-active">Metodos de Pago</button>
     </div>
     <div class="text-center">
-        <h3 class="dots">Realizar Pedido</h3>
+        <h3 class="dots">Metodos de Pago</h3>
     </div>
+    <!--Transferencia Deposito-->
+    <div>
+      <div>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <h5 class="text-left">Transferencia o Deposito Bancario</h5>
+      </div>
+        <h4 class="text-center">Datos de Nuestras Cuentas</h4>
+        <div class="form-row my-5">
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                    <img class="card-img-top " src="../../../../assets/imagenes/metodo de pago/logo bcp.png" alt="">
+                    <h5 class="card-title">Nro : 0011-0816-0200676680</h5>
+                    <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
+                    <p class="card-text">Puedes utilizar esta App para realizar el pago.</p>
+                    <div class="form-group text-center">
+                        <img class="applogo" src="../../../../assets/imagenes/metodo de pago/yape logo.jpg" alt="">
+                    </div>
+                    <p class="card-text">Solo escanea el QR en la App, ingresa el importe total del pedido y listo.</p>
+                    <img class="card-img-bottom" src="../../../../assets/imagenes/metodo de pago/codigo qr prueba.jpg" alt="">
+                    <p class="card-text">Recuerda que una vez realizado el pago tienes que confirmar la transferencia o deposito enviandonos tu comprobante de pago o screenshot a nuestro WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                    <img class="card-img-top" src="../../../../assets/imagenes/metodo de pago/logo interbank.png" alt="">
+                    <h5 class="card-title">Nro : 0011-0816-0200676680</h5>
+                    <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
+                    <p class="card-text">Puedes utilizar esta App para realizar el pago.</p>
+                    <div class="form-group text-center">
+                        <img class="applogo" src="../../../../assets/imagenes/metodo de pago/tunki logo.jpg" alt="">
+                    </div>
+                    <p class="card-text">Solo escanea el QR en la App, ingresa el importe total del pedido y listo.</p>
+                    <img class="card-img-bottom" src="../../../../assets/imagenes/metodo de pago/codigo qr prueba2.jpg" alt="">
+                    <p class="card-text">Recuerda que una vez realizado el pago tienes que confirmar la transferencia o deposito enviandonos tu comprobante de pago o screenshot a nuestro WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin Transferencia deposito-->
+    <!--Pago con tarjeta de credito o debito-->
+    <div>
+      <div>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
+        <h5 class="text-left">Pago con Tarjeta de Crédito o Débito</h5>
+      </div>
+    </div>
+
+    <div class="card my-4">
+        <div class="card-body">
+            <p class="card-text">Este método de pago tiene un recargo adicional del 4.071%, el monto total se cancela con su tarjeta de crédito o débito al momento de la entrega del producto en su dirección de envio.</p>
+            <h5 class="card-text">Aceptamos estos tipos de tarjetas :</h5>
+        </div>
+        <img class="card-img-bottom" src="../../../../assets/imagenes/metodo de pago/logo_todas_las_tarjetas.png" alt="Card image cap">
+    </div>
+    <!--Fin Pago con tarjeta de credito o debito-->
+    <!--Visanet Pago Link-->
+    <div>
+      <div>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option3" checked>
+        <h5 class="text-left">VisaNet Pago Link</h5>
+      </div>
+    </div>
+
+    <div class="card my-4">
+        <div class="card-body">
+            <p class="card-text">Este método de pago tiene un recargo adicional del 4.5%, el monto total se cancela de manera online.</p>
+        </div>
+        <img class="card-img-bottom" src="../../../../assets/imagenes/metodo de pago/visanet_pago_link.png" alt="Card image cap">
+    </div>
+    <!--Fin visanet Pago Link-->
     
     <div class="form-group text-right">
-        <button routerLink="/Checkout/Checkout3" class="btn btn-lg mb-2 ec-active" role="button" aria-pressed="true">Siguiente</button>
+        <button routerLink="/Checkout/Checkout3" class="btn btn-lg mb-2 ec-active" role="button" aria-pressed="true">Finalizar</button>
     </div>
 </div>

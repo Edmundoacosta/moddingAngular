@@ -15,11 +15,16 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { ItemDetailComponent } from "./components/item-detail/item-detail.component";
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
+import { ProductsComponent} from './components/admin/dashboard/products/products.component';
+import { CategoryComponent} from './components/admin/dashboard/category/category.component';
+import { NewsComponent} from './components/admin/dashboard/news/news.component';
+import { GamerzoneComponent} from './components/admin/dashboard/gamerzone/gamerzone.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Checkout1Component} from './components/checkout/checkout1/checkout1.component';
 import { Checkout2Component} from './components/checkout/checkout2/checkout2.component';
 import { Checkout3Component} from './components/checkout/checkout3/checkout3.component';
-import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -32,6 +37,7 @@ const routes: Routes = [
 	{path: 'user_dashboard', component: UserDashboardComponent},
 	{path: 'shopping_cart', component: ShoppingCartComponent},
 	{path: 'item_detail', component: ItemDetailComponent},
+	{path: 'contact_us', component: ContactUsComponent},
   
 	{ path: 'categoria', component: CategoriesComponent, children: [
 		{ path: ':type', component: CategoryViewComponent, pathMatch: 'full'},
@@ -39,7 +45,11 @@ const routes: Routes = [
 	{path: 'notfound', component: NotfoundComponent},
 	{ path: 'admin', component: AdminComponent, children: [
 		{ path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},
-		{ path: 'dashboard/users', component: UsersListComponent,pathMatch: 'full'}
+		{ path: 'dashboard/users', component: UsersListComponent,pathMatch: 'full'},
+		{ path: 'dashboard/products', component: ProductsComponent,pathMatch: 'full'},
+		{ path: 'dashboard/categories', component: CategoryComponent,pathMatch: 'full'},
+		{ path: 'dashboard/news', component: NewsComponent,pathMatch: 'full'},
+		{ path: 'dashboard/gamerzone', component: GamerzoneComponent,pathMatch: 'full'}
 	]},
 	{ path: 'Checkout', component: CheckoutComponent, children: [
 		{ path: 'Checkout1', component: Checkout1Component, pathMatch: 'full'},
