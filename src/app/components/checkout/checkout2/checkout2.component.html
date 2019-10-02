@@ -1,29 +1,71 @@
 <div class="container">
     <div class="form-group text-center">
         <button routerLink="/Checkout/Checkout1"  class="btn mx-2 mt-4 mb-2 ec-desactive" >Datos de Envio</button>
-        <button  class="btn mx-2 mt-4 mb-2 ec-active" >Metodo de Pago</button>
-        <button  class="btn mx-2 mt-4 mb-2 ec-desactive">Realizar Pedido</button>
+        <button  class="btn mx-2 mt-4 mb-2 ec-active" >Realizar Pedido</button>
+        <button  class="btn mx-2 mt-4 mb-2 ec-desactive">Metodos de Pago</button>
     </div>
     <div class="text-center">
-        <h3 class="dots">Datos de las Cuentas</h3>
+        <h3 class="dots">Confirmación de Pedido</h3>
     </div>
-    <form>
-      <div class="form-row">
-          <div class="col form-group text-center">
-            <img class="logo" src="../../../../assets/imagenes/metodo de pago/logo bcp.png" alt="">
-            <h5>Nro : 0011-0816-0200676680</h5>
-            <img class="qr" src="../../../../assets/imagenes/metodo de pago/codigo qr prueba.jpg" alt="">
-          </div>
-
-          <div class="col form-group text-center">
-            <img class="logo" src="../../../../assets/imagenes/metodo de pago/logo interbank.png" alt="">
-            <h5>Nro : 0011-0816-0200676680</h5>
-            <img class="qr" src="../../../../assets/imagenes/metodo de pago/codigo qr prueba2.jpg" alt="">
-          </div>
-      </div>
-    </form>
     
-    <div class="form-group text-right">
-        <button routerLink="/Checkout/Checkout3" class="btn btn-lg mb-2 ec-active" role="button" aria-pressed="true">Siguiente</button>
+    <div class="my-3">
+    <h4>Producto</h4>
+  
+      <div class="shopping-cart">
+      
+        <div class="column-labels">
+          <label class="product-image">Imagen</label>
+          <label class="product-details">Producto</label>
+          <label class="product-price">Precio</label>
+          <label class="product-quantity">Cantidad</label>
+          <label class="product-removal">Remover</label>
+          <label class="product-line-price">Total</label>
+        </div>
+      
+        <div class="product">
+          <div class="product-image">
+            <img src="https://picsum.photos/300">
+          </div>
+          <div class="product-details">
+            <div class="product-title">Nombre del Producto</div>
+            <p class="product-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, quas?</p>
+          </div>
+          <div class="product-price">0</div>
+          <div class="product-quantity">
+            <input type="number" value="" min="1">
+          </div>
+          <div class="product-removal">
+            <button class="remove-product">
+              <i class="fa fa-times-circle"></i>
+            </button>
+          </div>
+          <div class="product-line-price">0</div>
+        </div>
+      
+        <div class="totals">
+          <div class="totals-item">
+            <label>Subtotal</label>
+            <div class="totals-value" id="cart-subtotal">0</div>
+          </div>
+          <div class="totals-item">
+            <label>IGV (18%)</label>
+            <div class="totals-value" id="cart-tax">0</div>
+          </div>
+          <div class="totals-item totals-item-total">
+            <label>Envio</label>
+            <div class="totals-value" id="cart-total">0</div>
+          </div>
+          <div class="totals-item">
+            <label>Total</label>
+            <div class="totals-value" id="cart-shipping">0</div>
+          </div>
+        </div>
+        
+        <div class="form-group text-right">
+            <button routerLink="/Checkout/Checkout3" class="btn btn-lg mb-2 ec-active" role="button" aria-pressed="true">Siguiente</button>
+        </div>
+      
+      </div>
     </div>
+
 </div>

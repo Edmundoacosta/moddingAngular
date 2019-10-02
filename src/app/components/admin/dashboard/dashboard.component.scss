@@ -1,14 +1,16 @@
+@import '../../../../variables.scss';
 .tab {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	border: 2px solid #130146;
-	color: #130146;
+	border: 2px solid $thirdC;
+	color: $thirdC;
+	background-color: $secondC ;
 }
-
+ 
 .tab:hover {
 	i,h3 {
-		color: #FFFFFF;
+		color: $secondC;
 	}
-	background-color: #130146;
+	background-color: $thirdC;
 }

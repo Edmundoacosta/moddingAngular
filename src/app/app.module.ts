@@ -30,6 +30,11 @@ import { Checkout1Component } from './components/checkout/checkout1/checkout1.co
 import { Checkout2Component } from './components/checkout/checkout2/checkout2.component';
 import { Checkout3Component } from './components/checkout/checkout3/checkout3.component';
 import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ProductsComponent } from './components/admin/dashboard/products/products.component';
+import { NewsComponent } from './components/admin/dashboard/news/news.component';
+import { GamerzoneComponent } from './components/admin/dashboard/gamerzone/gamerzone.component';
+import { CategoryComponent } from './components/admin/dashboard/category/category.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +59,12 @@ import { UsersListComponent } from './components/admin/dashboard/users-list/user
     Checkout1Component,
     Checkout2Component,
     Checkout3Component,
-    UsersListComponent
+    UsersListComponent,
+    ContactUsComponent,
+    ProductsComponent,
+    NewsComponent,
+    GamerzoneComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
