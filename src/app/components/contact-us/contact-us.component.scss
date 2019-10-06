@@ -119,11 +119,11 @@
 }
 
 .enviar {
-    color: $thirdC;
-    background-color: $secondC;
+    color: $secondC;
+    background-color: $thirdC;
 
     &:hover {
-        color: $secondC;
+        color: #fff;
         background-color: $thirdC;
     }
 }

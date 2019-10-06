@@ -110,18 +110,18 @@
       margin-left: 20px; }
   
   .add-to-cart {
-    background: $secondC;
+    background-color: $thirdC;
     padding: 1.2em 1.5em;
     border: none;
     text-transform: UPPERCASE;
     font-weight: bold;
-    color: #fff;
+    color: $secondC;
     -webkit-transition: background .3s ease;
             transition: background .3s ease; }
     .add-to-cart:hover  {
       background: $thirdC;
       color: #fff; }
-  
+      
   .not-available {
     text-align: center;
     line-height: 2em; }

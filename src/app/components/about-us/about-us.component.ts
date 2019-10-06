@@ -6,39 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent implements OnInit {
-	public team:Array<any> = [
-		{
-			name: 'Joseph Joel Infante Ysla',
-			career: 'Desarrollador Frontend'
-		},
-		{
-			name: 'Ricardo Enrique Ysla Sevillano',
-			career: 'Arquitecto'
-		},
-
-		{
-			name: 'Edmundo Enrique Acosta Chalam',
-			career: 'Desarrollador FullStack'
-		}
-	]
 	public valores:Array<any> = [
 		{
-			name: 'Creatividad'
+			name: 'Creatividad',
+			description: 'Buscar en forma permanente, nuevas formas de hacer las cosas, de modo que ellos sea beneficioso para el trabajador, la empresa y la sociedad.'
 		},
 		{
-			name: 'Respeto'
+			name: 'Puntualidad',
+			description: 'Cumplir con los compromisos y obligaciones en el tiempo acordado, valorando y respetando el tiempo de los demás.'
 		},
 		{
-			name: 'Honestidad'
+			name: 'Respeto',
+			description: 'Desarrollar una conducta que considere en su justo valor los derechos fundamentales de nuestros semejantes y de nosotros mismos. Asimismo aceptar y cumplir las normas sociales y las de la naturaleza.'
 		},
 		{
-			name: 'Puntualidad'
+			name: 'Calidad de Servicio',
+			description: 'Emplear el trabajo como una poderosa fuerza transformadora, para así alcanzar los objetivos de la empresa y hacer que ella logre los más altos niveles de productividad y desarrollo. '
 		},
 		{
-			name: 'Calidad de Servicio'
+			name: 'Honestidad',
+			description: 'Obrar con transparencia y clara orientación moral, cumpliendo con las responsabilidades asignadas en el uso de la información, de los recursos materiales y financieros. Mostrar una conducta ejemplar dentro y fuera de la empresa.'
 		},
 		{
-			name: 'Responsabilidad'
+			name: 'Responsabilidad',
+			description: 'Asumir las consecuencias de las acciones u omisiones realizadas durante las labores asignadas dentro la empresa y su entorno. Tomar acción cuando sea menester, obrando de manera que se contribuya al logro de los objetivos de la empresa.'
 		}
 	]
   constructor() { }

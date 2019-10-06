@@ -10,7 +10,7 @@
             <div class="container" data-spy="scroll" data-target="#navspy" data-offset="0">
                 <h3 class="h3" id="navspy-fat">{{category}}</h3>
                 <div *ngFor="let item of realdata; let i ='index'">
-                    <div *ngIf="i%4 == 0" class="row">
+                    <div *ngIf="i%4 == 0" class="row mb-5"> 
                         <div *ngIf="i < realdata.length" class="col-md-3 col-sm-6"  id="fat">
                             <div class="product-grid6">
                                 <div class="product-image6">
@@ -19,8 +19,10 @@
                                     </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3 class="title"><a href="#">{{realdata[i].name}}</a></h3>
+                                    <h3 class="title">{{realdata[i].name}}</h3>
                                     <div class="price">${{realdata[i].price}}
+                                       <!--Usar span para cuando el producto esta en descuento o indicar precio en dolares
+                                        <span></span>--> 
                                     </div>
                                 </div>
                                 <ul class="social">
@@ -37,7 +39,7 @@
                                     </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3 class="title"><a href="#">{{realdata[i+1].name}}</a></h3>
+                                    <h3 class="title">{{realdata[i+1].name}}</h3>
                                     <div class="price">${{realdata[i+1].price}}
                                     </div>
                                 </div>
@@ -55,7 +57,7 @@
                                     </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3 class="title"><a href="#">{{realdata[i+2].name}}</a></h3>
+                                    <h3 class="title">{{realdata[i+2].name}}</h3>
                                     <div class="price">${{realdata[i+2].price}}
                                     </div>
                                 </div>
@@ -73,7 +75,7 @@
                                     </a>
                                 </div>
                                 <div class="product-content">
-                                    <h3 class="title"><a href="#">{{realdata[i+3].name}}</a></h3>
+                                    <h3 class="title">{{realdata[i+3].name}}</h3>
                                     <div class="price">${{realdata[i+3].price}}
                                     </div>
                                 </div>
@@ -86,7 +88,6 @@
                     </div>
                 </div>
             </div>
-        <hr>
         </section>        
     </div>
 </div>
