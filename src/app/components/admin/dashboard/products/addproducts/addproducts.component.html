@@ -1,0 +1,73 @@
+<div class="container my-3">
+  <button (click)="goBack()" class="btn ec" type="button">
+      <i class="fa fa-arrow-left"></i>
+      REGRESAR
+  </button>
+
+    <div class="form-group my-2">
+      <label>Nombre del Producto</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <div class="row my-2">
+      <div class="col">
+        <div class="form-group">
+          <label>Stock</label>
+          <input step="0.0001" type="number" class="form-control">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Color</label>
+          <select class="form-control">
+              <option>Default select</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-2">
+      <div class="col">
+        <div class="form-group">
+          <label>Precio</label>
+          <input class="form-control" type="number">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Categoria</label>
+          <select class="form-control">
+              <option>Default select</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Subcategoria</label>
+          <select class="form-control">
+              <option>Default select</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-2">
+      <div class="col">
+        <div class="form-group">
+          <label>Descripción</label>
+          <textarea class="form-control" rows="4"></textarea>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Foto del Producto</label>
+          <input type="file" class="form-control-file">
+        </div>
+      </div>
+    </div>
+
+    <button class="btn ec" type="button">
+        <i class="fa fa-plus"></i>
+        AGREGAR PRODUCTO
+    </button>
+</div>

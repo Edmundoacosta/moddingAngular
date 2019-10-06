@@ -8,7 +8,8 @@
         <h3 class="dots">Datos De Envio</h3>
     </div>
     <div class="my-3">
-            <p class="card-text"><small class="text-muted">Recuerde que en caso usted no pueda estar presente para recibir el pedido, deberá dejar una copia de su DNI firmada.</small></p>
+            <p class="card-text"><small class="text-muted">Recuerde que en caso usted no pueda estar presente para recibir el pedido, deberá dejarle una copia de su DNI firmada a la persona que recibira el pedido.</small></p>
+            <p class="card-text"><small class="text-muted">En caso desee factura electrónica debera seleccionar el tipo de Identificación como RUC, para poder generarle su factura electrónica que posteriormente le llegará a su correo electrónico.</small></p>
         <div class="form-row">
             <div class="col form-group">
                 <label>Nombres</label>
@@ -83,18 +84,6 @@
                 <label>Número de Celular</label>
                 <input [(ngModel)]="user.phone" digitOnly maxlength="9" name="phone" type="text" class="form-control">
             </div>
-        </div>
-<!--Solo si el cliente escoge RUC para factura-->
-        <div class="form-row">
-                <p class="card-text mx-2 "><small class="text-muted">La Dirección de la empresa se utilizará para la facturación mas no para el envio, si desea que el envio sea en la dirección especificada a continuación , deberá ingresar esta misma dirección en el campo dirección de arriba.</small></p>
-            <div class="col form-group">
-                <label>Razón Social</label>
-                <input type="text" class="form-control">
-            </div>
-            <div class="col form-group">
-                <label>Dirección de la Empresa</label>
-                <input type="text" class="form-control">
-            </div>  
         </div>
     </div>
     <div class="form-group text-right">

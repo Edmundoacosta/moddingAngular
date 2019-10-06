@@ -1,11 +1,9 @@
+@import "../../../variables";
 .shadow {
     position: relative;
-    margin:60px auto ;
     color:black;
     align-items:center;
     text-align: center;
-    width:300px;
-    height:300px;
     background:linear-gradient(0deg,#000,#262626);
 }
 .shadow:before,
@@ -38,22 +36,14 @@
         background-position:0 0;
     }
 }
-#zoom {
-    transition: transform .2s; /* Animation */
-    width:100%;
-    height: 100%;
-  }
-#zoom2 {
-    transition: transform .2s; /* Animation */
-}
-#zoom:hover {
-    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-#zoom2:hover {
-    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
-.contenedor {
-    display: flex;
-    flex-wrap: wrap;
+
+.ec {
+    color: $secondC;
+    background-color: $thirdC;
+
+    &:hover {
+        color: #fff;
+        background-color: $thirdC;
+    }
 }
 

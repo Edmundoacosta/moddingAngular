@@ -17,6 +17,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 import { ProductsComponent} from './components/admin/dashboard/products/products.component';
+import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
 import { CategoryComponent} from './components/admin/dashboard/category/category.component';
 import { NewsComponent} from './components/admin/dashboard/news/news.component';
 import { GamerzoneComponent} from './components/admin/dashboard/gamerzone/gamerzone.component';
@@ -25,6 +26,7 @@ import { Checkout1Component} from './components/checkout/checkout1/checkout1.com
 import { Checkout2Component} from './components/checkout/checkout2/checkout2.component';
 import { Checkout3Component} from './components/checkout/checkout3/checkout3.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ZonaGamerdetailComponent} from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -33,6 +35,7 @@ const routes: Routes = [
 	{path: 'sobre_nosotros', component: AboutUsComponent},
 	{path: 'registro', component: RegistroComponent},
 	{path: 'zona_gamer', component: ZonaGamerComponent},
+	{path: 'zona_gamerdetail', component: ZonaGamerdetailComponent},
 	{path: 'personalizacion', component: PersonalizacionComponent},
 	{path: 'user_dashboard', component: UserDashboardComponent},
 	{path: 'shopping_cart', component: ShoppingCartComponent},
@@ -47,6 +50,7 @@ const routes: Routes = [
 		{ path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},
 		{ path: 'dashboard/users', component: UsersListComponent,pathMatch: 'full'},
 		{ path: 'dashboard/products', component: ProductsComponent,pathMatch: 'full'},
+		{ path: 'dashboard/products/addproducts', component: AddproductsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/categories', component: CategoryComponent,pathMatch: 'full'},
 		{ path: 'dashboard/news', component: NewsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/gamerzone', component: GamerzoneComponent,pathMatch: 'full'}

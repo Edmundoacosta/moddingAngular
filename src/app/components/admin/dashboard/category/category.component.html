@@ -1,6 +1,70 @@
 <div class="container my-3">
-<button (click)="goBack()" class="btn ec" type="button">
-    <i class="fa fa-arrow-left"></i>
-    REGRESAR
-</button>
+    <button (click)="goBack()" class="btn ec" type="button">
+        <i class="fa fa-arrow-left"></i>
+        REGRESAR
+    </button>
+
+    <div class="row my-2">
+        <div class="col">
+            <div class="form-group">
+                <label>Nombre de la Categoria</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <button class="btn ec float-right" type="button">
+                    <i class="fa fa-plus"></i>
+                    AGREGAR CATEGORIA
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-2">
+      <div class="col">
+        <div class="form-group">
+          <label>Nombre de la Subcategoria</label>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Categoria</label>
+          <select class="form-control">
+              <option>Default select</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn ec float-right" type="button">
+            <i class="fa fa-plus"></i>
+            AGREGAR SUBCATEGORIA
+        </button>
+    </div>
+</div>
+<br>
+<div class="container  my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre De la Subcategoria</th>
+                        <th scope="col">Categoria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">Procesadores</td>
+                        <td>Componentes de Pc
+                    </tr>
+                    <tr>
+                        <td scope="row">Motherboards</td>
+                        <td>Componentes de PC</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
