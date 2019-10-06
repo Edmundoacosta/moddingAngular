@@ -1,259 +1,249 @@
 <div class="container">
-  <div class="row profile">
-    <div class="col-md-3">
-      <div class="profile-sidebar">
-        <div class="profile-usertitle">
-          <img src="https://picsum.photos/300" class="img-circle" width="100px">
-          <div class="profile-usertitle-name">
-            {{user.firstname + ' ' + user.lastname}}
-          </div>
-        </div>
-        <div class="profile-usermenu">
-        <div class="row">
-          <div class="col-3">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Mi Cuenta</a>
-              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Mis Ordenes</a>
-              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Mi Dirección de Envio</a>
-              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Ajustes</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-9">
-    <div class="tab-content" id="v-pills-tabContent">
-      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label>Nombres</label>
-            <input [(ngModel)]="user.firstname" disabled class="form-control" type="text" name="firstname">
-          </div>
-          <div class="form-group col-md-6">
-            <label>Apellidos</label>
-            <input  [(ngModel)]="user.lastname" disabled class="form-control" type="text" name="lastname">
-          </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>Dirección 1</label>
-              <input  [(ngModel)]="user.address1" disabled class="form-control" type="text" name="address">
-            </div>
-            <div class="form-group col-md-6">
-              <label>Dirección 2</label>
-              <input  [(ngModel)]="user.address2" disabled class="form-control" type="text" name="address">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>Número de Celular</label>
-              <input [(ngModel)]="user.phone" disabled class="form-control" type="text" name="phone">
-            </div>
-            <div class="form-group col-md-6">
-              <label>Correo Electrónico</label>
-              <input [(ngModel)]="user.email" disabled class="form-control" type="text" name="email">
-            </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-        <div class="p-4">
-          <h3>Ordenes</h3>
-            <table class="table table-bordered track_tbl">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>ID</th>
-                  <th>Estado</th>
-                  <th>Distribuidor</th>
-                  <th>Fecha/Hora</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="active">
-                  <td class="track_dot">
-                    <span class="track_line"></span>
-                  </td>
-                      <td>01</td>
-                      <td>Dispatched from distibutor address</td>
-                      <td>Flipkart</td>
-                      <td>31/07/2018 22:24:PM</td>
-                </tr>
-                <tr>
-                  <td class="track_dot">
-                    <span class="track_line"></span>
-                  </td>
-                      <td>01</td>
-                      <td>Dispatched from distibutor address</td>
-                      <td>Flipkart</td>
-                      <td>31/07/2018 22:24:PM</td>
-                </tr>
-              </tbody>
-            </table>
-        </div>
-        <div class="row shop-tracking-status">
-    
-            <div class="col-md-12">
-                <div class="well">
-            
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label for="inputOrderTrackingID" class="col-sm-2 control-label">Order ID</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputOrderTrackingID" value="" placeholder="# Introduce el número de ID">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="button" id="shopGetOrderStatusID" class="btn btn-success">Ver El Estado</button>
-                            </div>
-                        </div>
+    <div class="row profile">
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <div class="profile-usertitle">
+                    <img src="https://picsum.photos/300" class="img-circle" width="100px">
+                    <div class="profile-usertitle-name">
+                        {{user.firstname + ' ' + user.lastname}}
                     </div>
-            
-                    <h4>El Estado De Tu Orden:</h4>
-        
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <span class="prefix">Fecha De Orden: </span>
-                            <span class="badge badge-success">12.12.2013</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="prefix">Última Actualización: </span>
-                            <span class="badge badge-success">12.15.2013</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="prefix">Comentarios: </span>
-                            <span class="badge badge-success">customer's comment goes here</span>
-                        </li>
-                        <li class="list-group-item">Puedes ver el último estado de tu orden en el siguiente link:
-                            <span class="badge badge-success">
-                              <a href="//tracking/link/goes/here">//tracking/link/goes/here</a>
-                            </span>
-                        </li>
-                    </ul>
-        
-                    <div class="order-status">
-        
-                        <div class="order-status-timeline">
-                            <!-- class names: c0 c1 c2 c3 and c4 -->
-                            <div class="order-status-timeline-completion c3"></div>
-                        </div>
-        
-                        <div class="image-order-status image-order-status-new active img-circle">
-                            <span class="status">Aceptado</span>
-                            <div class="icon"></div>
-                        </div>
-                        <div class="image-order-status image-order-status-active active img-circle">
-                            <span class="status">En Proceso</span>
-                            <div class="icon"></div>
-                        </div>
-                        <div class="image-order-status image-order-status-intransit active img-circle">
-                            <span class="status">Enviado</span>
-                            <div class="icon"></div>
-                        </div>
-                        <div class="image-order-status image-order-status-delivered active img-circle">
-                            <span class="status">Entregado</span>
-                            <div class="icon"></div>
-                        </div>
-                        <div class="image-order-status image-order-status-completed active img-circle">
-                            <span class="status">Completado</span>
-                            <div class="icon"></div>
+                </div>
+                <div class="profile-usermenu">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Mi Cuenta</a>
+                                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Mis Ordenes</a>
+                                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Mi Dirección de Envio</a>
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Ajustes</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div> 
-        </div>
-      </div>
-    <!--ACTUALIZACION ADDRESS 1 -->
-    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-      <h1>Actualizar Dirección 1</h1>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label>Dirección</label>
-            <input [(ngModel)]="user.address1" class="form-control" type="text" name="address">
-          </div>
-          <div class="form-group col-md-6">
-            <label>Código Postal
-              <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
-                <i class="fa fa-question-circle"></i>
-              </a>
-            </label>
-            <input [(ngModel)]="user.postalcode" name="postalcode" digitOnly maxlength="5" type="number" class="form-control">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label>Departamento</label>
-              <select [(ngModel)]="user.department" class="form-control">
-                <option value="">Seleccione...</option>
-                <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
-              </select>
-          </div>
-          <div class="form-group col-md-6">
-            <label>País</label>
-              <select disabled class="form-control">
-                <option selected="">Perú</option>
-              </select>
-          </div>
-        </div>
-        <div class="form-group">
-            <button (click)="updateAddress()" class="btn btn-block">Actualizar</button>
-        </div>
-     
-      <!--ACTUALIZACION ADDRESS 2 -->
-    
-        <h1>Actualizar Dirección 2</h1>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>Dirección</label>
-              <input [(ngModel)]="user.address2" class="form-control" type="text" name="address">
             </div>
-            <div class="form-group col-md-6">
-              <label>Código Postal
-                <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
-                  <i class="fa fa-question-circle"></i>
-                </a>
-              </label>
-              <input [(ngModel)]="user.postalcode" name="postalcode" digitOnly maxlength="5" type="number" class="form-control">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>Departamento</label>
-                <select [(ngModel)]="user.department" class="form-control">
-                  <option value="">Seleccione...</option>
-                  <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
-                </select>
-            </div>
-            <div class="form-group col-md-6">
-              <label>País</label>
-                <select disabled class="form-control">
-                  <option selected="">Perú</option>
-                </select>
-            </div>
-          </div>
-          <div class="form-group">
-              <button (click)="updateAddress()" class="btn btn-block">Actualizar</button>
-          </div>
-      </div>
-      <!-- ACTUALIZACION CONTRASEÑA  -->
-      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-        <h1>Actualizar Contraseña</h1>
-        <div class="form-row">
-          <div class="form-group col-md-5">
-              <input [(ngModel)]="user.password" placeholder="Nueva Contraseña" name="password" class="form-control" type="password">
-          </div> 
-          <div class="form-group col-md-5">
-              <input [(ngModel)]="user.password2" placeholder="Confirmar Contraseña" name="password2" class="form-control" type="password">
-          </div>
-          <div class="form-group col-md-2">
-              <button (click)="updateAddress()" class="btn btn-block"> Actualizar </button>
-          </div>
         </div>
-      </div>
-
-
+        <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Nombres</label>
+                            <input [(ngModel)]="user.firstname" disabled class="form-control" type="text" name="firstname">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Apellidos</label>
+                            <input  [(ngModel)]="user.lastname" disabled class="form-control" type="text" name="lastname">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Número de Celular</label>
+                            <input [(ngModel)]="user.phone" disabled class="form-control" type="text" name="phone">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Correo Electrónico</label>
+                            <input [(ngModel)]="user.email" disabled class="form-control" type="text" name="email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label>Dirección de envio</label>
+                            <input [(ngModel)]="user.addressOne" disabled class="form-control" type="text" name="address">
+                        </div>
+                        <!-- <div class="form-group col-md-6">
+                            <label>Dirección 2</label>
+                            <input  [(ngModel)]="user.address2" disabled class="form-control" type="text" name="address">
+                        </div> -->
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="p-4">
+                        <h3>Ordenes</h3>
+                        <table class="table table-bordered track_tbl">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>ID</th>
+                                    <th>Estado</th>
+                                    <th>Distribuidor</th>
+                                    <th>Fecha/Hora</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="active">
+                                    <td class="track_dot">
+                                        <span class="track_line"></span>
+                                    </td>
+                                    <td>01</td>
+                                    <td>Dispatched from distibutor address</td>
+                                    <td>Flipkart</td>
+                                    <td>31/07/2018 22:24:PM</td>
+                                </tr>
+                                <tr>
+                                    <td class="track_dot">
+                                        <span class="track_line"></span>
+                                    </td>
+                                    <td>01</td>
+                                    <td>Dispatched from distibutor address</td>
+                                    <td>Flipkart</td>
+                                    <td>31/07/2018 22:24:PM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row shop-tracking-status">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="inputOrderTrackingID" class="col-sm-2 control-label">Order ID</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputOrderTrackingID" value="" placeholder="# Introduce el número de ID">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="button" id="shopGetOrderStatusID" class="btn btn-success">Ver El Estado</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>El Estado De Tu Orden:</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <span class="prefix">Fecha De Orden: </span>
+                                        <span class="badge badge-success">12.12.2013</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="prefix">Última Actualización: </span>
+                                        <span class="badge badge-success">12.15.2013</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="prefix">Comentarios: </span>
+                                        <span class="badge badge-success">customer's comment goes here</span>
+                                    </li>
+                                    <li class="list-group-item">Puedes ver el último estado de tu orden en el siguiente link:
+                                        <span class="badge badge-success">
+                                          <a href="//tracking/link/goes/here">//tracking/link/goes/here</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <div class="order-status">
+                                    <div class="order-status-timeline">
+                                        <div class="order-status-timeline-completion c3"></div>
+                                    </div>
+                                    <div class="image-order-status image-order-status-new active img-circle">
+                                        <span class="status">Aceptado</span>
+                                        <div class="icon"></div>
+                                    </div>
+                                    <div class="image-order-status image-order-status-active active img-circle">
+                                        <span class="status">En Proceso</span>
+                                        <div class="icon"></div>
+                                    </div>
+                                    <div class="image-order-status image-order-status-intransit active img-circle">
+                                        <span class="status">Enviado</span>
+                                        <div class="icon"></div>
+                                    </div>
+                                    <div class="image-order-status image-order-status-delivered active img-circle">
+                                        <span class="status">Entregado</span>
+                                        <div class="icon"></div>
+                                    </div>
+                                    <div class="image-order-status image-order-status-completed active img-circle">
+                                        <span class="status">Completado</span>
+                                        <div class="icon"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <!--ACTUALIZACION ADDRESS 1 -->
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <h1>Actualizar Dirección de Envio</h1>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Dirección</label>
+                            <input [(ngModel)]="deliveryAddress.name" class="form-control" type="text" name="address">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Código Postal
+                                <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
+                                    <i class="fa fa-question-circle"></i>
+                                </a>
+                            </label>
+                            <input [(ngModel)]="deliveryAddress.postalcode" name="postalcode" digitOnly maxlength="5" type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Departamento</label>
+                            <select [(ngModel)]="deliveryAddress.department" class="form-control">
+                                <option value="">Seleccione...</option>
+                                <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Distrito</label>
+                            <select [(ngModel)]="deliveryAddress.district" class="form-control">
+                            <option value="">Seleccione...</option>
+                            <option *ngFor="let dep of allDistricts" [value]="dep">{{dep}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button (click)="updateAddress()" class="btn btn-block">Actualizar</button>
+                    </div>
+                    <!--ACTUALIZACION ADDRESS 2 -->
+                    <!-- <h1>Actualizar Dirección 2</h1>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Dirección</label>
+                            <input [(ngModel)]="user.address2" class="form-control" type="text" name="address">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Código Postal
+                                <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
+                                    <i class="fa fa-question-circle"></i>
+                                </a>
+                            </label>
+                            <input [(ngModel)]="user.postalcode" name="postalcode" digitOnly maxlength="5" type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Departamento</label>
+                            <select [(ngModel)]="user.department" class="form-control">
+                            <option value="">Seleccione...</option>
+                            <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Distrito</label>
+                            <select [(ngModel)]="user.district" class="form-control">
+                            <option value="">Seleccione...</option>
+                            <option *ngFor="let dep of allDistricts" [value]="dep">{{dep}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button (click)="updateAddress()" class="btn btn-block">Actualizar</button>
+                    </div> -->
+                </div>
+                <!-- ACTUALIZACION CONTRASEÑA  -->
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <h1>Actualizar Contraseña</h1>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <input [(ngModel)]="user.password" placeholder="Nueva Contraseña" name="password" class="form-control" type="password">
+                        </div> 
+                        <div class="form-group col-md-5">
+                            <input [(ngModel)]="user.password2" placeholder="Confirmar Contraseña" name="password2" class="form-control" type="password">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <button (click)="updateAddress()" class="btn btn-block"> Actualizar </button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </div>

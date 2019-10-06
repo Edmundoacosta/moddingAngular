@@ -20,20 +20,18 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Tipo de Identificación</label>
-                                <select class="form-control">
-                                    <option selected="">DNI</option>
-                                    <option selected="">Pasaporte</option>
+                                <select formControlName="id_type" class="form-control">
+                                    <option value="">Seleccione...</option>
+                                    <option value="dni">DNI</option>
+                                    <option value="passport">Pasaporte</option>
+                                    <option value="ruc">RUC</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Número de Identificación</label>
-                                <input digitOnly maxlength="8" formControlName="dni" type="text" class="form-control">
+                                <input digitOnly formControlName="id_number" type="text" class="form-control">
                             </div>
                         </div>
-                        <!-- <div class="form-group">
-                            <label>Dirección</label>
-                            <input formControlName="address" type="text" class="form-control">
-                        </div> -->
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Número de Celular</label>
