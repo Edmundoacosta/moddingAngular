@@ -9,7 +9,7 @@ import { ModdingService } from '../../providers/moddinpc.service';
 export class UserDashboardComponent implements OnInit {
   public user = {
     firstname: '',
-    lastname: '',
+    lastname: '', 
     email: '',
     addressOne: ''
   };
@@ -38,6 +38,19 @@ export class UserDashboardComponent implements OnInit {
   updateAddress(){
     this._modService.addAddress(this.deliveryAddress)
       .then((res) => {
+        setTimeout(() => {
+          location.reload();
+        }, 200);
+        console.log(res);
+      })
+  }
+
+  updatePassword(){
+    this._modService.updateUser({user: this.user})
+      .then((res) => {
+        setTimeout(() => {
+          location.reload();
+        }, 200);
         console.log(res);
       })
   }

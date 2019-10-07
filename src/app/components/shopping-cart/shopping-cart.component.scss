@@ -112,11 +112,12 @@
   .product .remove-product {
     border: 0;
     padding: 4px 8px;
-    background-color: $secondC;
-    color: #fff;
-    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+    color: $secondC;
+    border: 1.5px solid;
+    background-color: $firstC;
     font-size: 12px;
     border-radius: 3px;
+    font-weight: bold;
   }
   .product .remove-product:hover {
     background-color: $thirdC;
@@ -147,7 +148,8 @@
     margin-top: 20px;
     padding: 6px 25px;
     color: $secondC;
-    background-color: $thirdC;
+    border: 1.5px solid;
+    background-color: $firstC;
     font-size: 25px;
     border-radius: 3px;
   }

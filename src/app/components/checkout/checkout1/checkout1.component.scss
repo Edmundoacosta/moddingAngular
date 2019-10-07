@@ -2,7 +2,8 @@
 
 .ec-active {
     color: $secondC;
-    background-color: $thirdC;
+    background-color: $firstC;
+    border: 1.5px solid;
 
     &:hover {
         color: #fff;
