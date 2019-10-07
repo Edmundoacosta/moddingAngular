@@ -1,37 +1,22 @@
-<section class="services my-3 pb-50" id="services">
-    <div class="container">
-       <div class="row">
-          <div class="col-xl-6 mx-auto text-center">
-             <div class="section-title mb-20">
-                <h4>Nuestros Servicios</h4>
-             </div>
-          </div>
-       </div>
-       <div class="row">
-          <div class="col-lg-4 col-md-6">
-             <!-- Single Service -->
-             <div class="single-service">
-                <i class="fa fa-laptop"></i>
-                <h4>Ensamblaje y Mantenimiento de PC's</h4>
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-              <!-- Single Service -->
-              <div class="single-service">
-                 <i class="fa fa-desktop"></i>
-                 <h4>Diseño del Sistema de Refrigeración Liquida para PC's </h4>
-              </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-             <!-- Single Service -->
-             <div class="single-service">
-                <i class="fa fa-object-group"></i>
-                <h4>Diseño de Sistemas de Iluminación</h4>
-             </div>
-          </div>
-       </div>
-    </div>
- </section>
+<div class="container my-3">
+   <div class="section-heading center-holder">
+      <h3>Doing the right thing at the right time</h3>
+      <div class="row mt-60">
+         <div class="col-md-4 col-sm-12 col-12 my-3" *ngFor="let member of service">
+            <div class="serv-section-2">
+               <div class="serv-section-2-icon"> 
+                  <i class="fa fa-laptop"></i> 
+               </div>
+               <div class="serv-section-desc">
+                  <h4>{{member.name}}</h4>
+                  <h4>{{member.name2}}</h4> 
+               </div>
+               <div class="section-heading-line-left"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
 
 <div class="container">
   <div class="card bg-light mb-3">

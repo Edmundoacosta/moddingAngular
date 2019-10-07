@@ -2,7 +2,8 @@
 
 .ec-active {
     color: $secondC;
-    background-color: $thirdC;
+    background-color: $firstC;
+    border: 1.5px solid;
 
     &:hover {
         color: #fff;
@@ -39,20 +40,6 @@
         color: $thirdC;
 	}
 }
-
-.logo {
-    width: 200px;
-    height: 50px;
-}
-.applogo {
-    width: 100px;
-    height: 100px;
-}
-.qr {
-    width: 300px;
-    height: 300px;
-}
-
 .container {
     margin: 20px auto;
 }
@@ -165,11 +152,12 @@
   .product .remove-product {
     border: 0;
     padding: 4px 8px;
-    background-color: $secondC;
-    color: #fff;
-    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+    color: $secondC;
+    border: 1.5px solid;
+    background-color: $firstC;
     font-size: 12px;
     border-radius: 3px;
+    font-weight: bold;
   }
   .product .remove-product:hover {
     background-color: $thirdC;
@@ -199,8 +187,9 @@
     border: 0;
     margin-top: 20px;
     padding: 6px 25px;
-    background-color: $secondC;
-    color: #fff;
+    color: $secondC;
+    border: 1.5px solid;
+    background-color: $firstC;
     font-size: 25px;
     border-radius: 3px;
   }

@@ -13,40 +13,40 @@
         <div class="form-row">
             <div class="col form-group">
                 <label>Nombres</label>
-                <input [(ngModel)]="user.firstname"  class="form-control" type="text" name="firstname">
+                <input [(ngModel)]="user.firstname" class="form-control" type="text" name="firstname">
             </div>
             <div class="col form-group">
                 <label>Apellidos</label>
-                <input  [(ngModel)]="user.lastname" class="form-control" type="text" name="lastname">
+                <input [(ngModel)]="user.lastname" class="form-control" type="text" name="lastname">
             </div>
         </div>
         <div class="form-row">
             <div class="col form-group">
                 <label>Tipo de Identificación</label>
-                <select class="form-control">
-                    <option selected="">Seleccione...</option>
-                    <option>DNI</option>
-                    <option>RUC</option>
-                    <option>Pasaporte</option>
+                <select formControlName = "id_type" class="form-control">
+                    <option value="">Seleccione...</option> 
+                    <option value="dni">DNI</option>
+                    <option value="pasport">Pasaporte</option>
+                    <option value="ruc">RUC</option>
                 </select>
             </div>
             <div class="col form-group">
                 <label>Número de Identificación</label>
-                <input [(ngModel)]="user.dni" digitOnly maxlength="8" name="dni" type="text" class="form-control">
+                <input formControlName ="id_number" [(ngModel)]="user.dni" digitOnly name="dni" type="text" class="form-control">
             </div>
         </div>
         
         <div class="form-group">
             <label>Dirección</label>
-            <input [(ngModel)]="user.address1" name="address1" type="text" class="form-control">
+            <input [(ngModel)]="user.addressOne" name="address" type="text" class="form-control">
         </div>
 
         <div class="form-row">
             <div class="col form-group">
                 <label>Distrito</label>
-                <select [(ngModel)]="user.distric" class="form-control">
+                <select [(ngModel)]="deliveryAddress.district" class="form-control">
                     <option value="">Seleccione...</option>
-                    <option *ngFor="let dis of allDistrics" [value]="dis">{{dis}}</option>
+                    <option *ngFor="let dep of allDistricts" [value]="dep">{{dep}}</option>
                 </select>
             </div>
             <div class="col form-group">
@@ -55,14 +55,14 @@
                         <i class="fa fa-question-circle"></i>
                     </a>
                 </label>
-                <input [(ngModel)]="user.postalcode" digitOnly maxlength="5" name="postalcode" type="number" class="form-control">
+                <input [(ngModel)]="deliveryAddress.postalcode" digitOnly maxlength="5" name="postalcode" type="number" class="form-control">
             </div>
         </div>
 
         <div class="form-row">
             <div class="col form-group">
                 <label>Departamento</label>
-                <select [(ngModel)]="user.department" class="form-control">
+                <select [(ngModel)]="deliveryAddress.department" class="form-control">
                     <option value="">Seleccione...</option> 
                     <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
                 </select>
