@@ -16,20 +16,8 @@ export class ContactUsComponent implements OnInit {
       name2: 'Sistemas de Iluminación'
 		},
 		{
-			name: 'Respeto',
-			name2: ''
-		},
-		{
-			name: 'Calidad de Servicio',
-      name2: ''
-		},
-		{
-      name: 'Honestidad',
-      name2: ''
-		},
-		{
-      name: 'Responsabilidad',
-      name2: ''
+			name: 'Desarrollo de',
+			name2: 'Paginas Web'
 		}
 	]
   constructor() { }

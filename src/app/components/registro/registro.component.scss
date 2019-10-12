@@ -1,8 +1,21 @@
 @import "../../../variables";
 
 a {
-    text-decoration: none;
-    color: $fifthC;
+    color: $secondC;
+    &:hover {
+          text-decoration: none;
+          color: $thirdC;
+    }
+}
+.ec {
+    color: $secondC;
+    background-color: $firstC;
+    border: 1.5px solid;
+    border-radius: 10px;
+    &:hover {
+        color: #fff;
+        background-color: $thirdC;
+    }
 }
 /* Hide HTML5 Up and Down arrows. */
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
