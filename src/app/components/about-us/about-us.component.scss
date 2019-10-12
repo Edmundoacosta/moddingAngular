@@ -1,3 +1,4 @@
+@import '../../../variables.scss';
 .dots {
 	&:after {
 		display         : inline-block;
@@ -5,7 +6,7 @@
 		height          : 3px;
 		content         : " ";
 		text-shadow     : none;
-		background-color: #00bd56;
+		background-color: $secondC;
 		width           : 60px;
 	}
 
@@ -15,29 +16,12 @@
 		height          : 3px;
 		content         : " ";
 		text-shadow     : none;
-		background-color: #00bd56;
+		background-color: $secondC;
 		width           : 60px;
 	}
 }
-.imgAbt {
-	width : 500px;
-	height: auto;
-}
-#img {
-	width: 100%;
-}
-p {
-	text-align: justify;
-	font-size: 20px;
-	display: none;
-}
 .right {
 	text-align: right;
-}
-.member_img {
-	border-radius   : 50%;
-	border          : 2.5px solid transparent;
-	background-image: linear-gradient(135deg,#00DB93 0%,#130146 100%);
 }
 .container {
 	margin: 50px auto;
@@ -52,10 +36,10 @@ a {
 .wrap {
     display: flex;
     background: white;
-	padding: 1rem 1rem 1rem 1rem; 
     border-radius: 0.5rem;
     box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
+	margin-bottom: 2rem;
+	padding: 10px;
 }
 
 .wrap:hover {
@@ -64,11 +48,11 @@ a {
 }
 
 .ico-wrap {
-    margin: auto;
+	margin: auto;
 }
 
 .mbr-iconfont {
-    font-size: 4.5rem !important;
+    font-size: 4rem !important;
     color: #313131;
     margin: 1rem;
     padding-right: 1rem;
@@ -82,12 +66,14 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
- p {
+p {
+	font-size: 20px;
+	text-align: justify;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     line-height: 25px;
 }
-.ho:hover {
-	display: block;
-
+.logoEc {
+	width: 200px;
+	height: 250px;
 }

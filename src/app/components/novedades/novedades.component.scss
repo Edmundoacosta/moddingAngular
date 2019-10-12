@@ -71,8 +71,9 @@ section{
 }
 .ec {
     color: $secondC;
-    background-color: $thirdC;
-
+    background-color: $firstC;
+    border: 1.5px solid ;
+    border-radius: 8px;
     &:hover {
         color: #fff;
         background-color: $thirdC;

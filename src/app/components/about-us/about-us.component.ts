@@ -31,6 +31,26 @@ export class AboutUsComponent implements OnInit {
 			name: 'Responsabilidad',
 			description: 'Asumir las consecuencias de las acciones u omisiones realizadas durante las labores asignadas dentro la empresa y su entorno. Tomar acción cuando sea menester, obrando de manera que se contribuya al logro de los objetivos de la empresa.'
 		}
+	];
+	public principios:Array<any> = [
+		{
+			name : 'Cultural',
+			description : 'Proteger y valorar la diversidad, resguardando la identidad de las comunidades cultivadas a través de sus tradiciones de generación en generación. Reducción de las desigualdades.'
+		},
+		{
+			name : 'Ambiental',
+			description : 'Mantener en forma permanente la práctica de preservación y mejora del medio ambiente, recuperar la tierra y promover vida de ecosistemas terrestres.'
+		}
+	]
+	public principios2:Array<any> = [
+		{
+			name : 'Social',
+			description : 'Contempla el bienestar de la población, integrando de modo permanente las actividades de la empresa con su entorno social; participar en las actividades y eventos comunitarios e impulsar el desarrollo sustentable de la sociedad y calidad de vida. Promover su crecimiento y desarrollo profesional y social, estimular su autorrealización.'
+		},
+		{
+			name : 'Económico',
+			description : 'Ayudar a las personas y empresas a satisfacer sus necesidades y crecimiento económico. En el caso de las personas: garantizar alimentos, agua limpia y saneamiento, ciudades y comunidades sostenibles, y para las empresas: producción y consumo responsable, alianzas para lograr los objetivos.'
+		}
 	]
   constructor() { }
 

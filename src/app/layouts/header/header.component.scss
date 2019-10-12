@@ -34,11 +34,10 @@ ul.dropdown-lr {
     right: 0;
 }
 .logo_login {
-    width: 100%;
-    height: auto;
+    width: 300px;
+    height: 300px;
 }
 #logoE {
-    width: 100%;
     width: 30px;
     height: 30px;
 }
@@ -52,7 +51,22 @@ ul.dropdown-lr {
         background-color: $thirdC;
     }
 }
-
+.ec {
+    color: $secondC;
+    background-color: $firstC;
+    border: 1.5px solid;
+    border-radius: 8px;
+    &:hover {
+        color: #fff;
+        background-color: $thirdC;
+    }
+}
+.newUser {
+    color: black;
+    &:hover{
+        color: $secondC;
+    }
+}
 /* mobile fix */
 @media (max-width: 768px) {
 	.dropdown-lr h3 {

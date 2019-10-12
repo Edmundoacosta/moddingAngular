@@ -68,53 +68,51 @@
 </nav>
 
 <ng-template #loginModal>
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Iniciar Sesión</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="modalRef.hide()" >×</button>
-            </div>
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Iniciar Sesión</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="modalRef.hide()" >×</button>
+          </div>
 
-            <div class="login-container modal-body">
-              <div class="box_login">
-                <div class="modal_login">
-                    <div class="image_form_login">
-                      <img class="logo_login" src="./assets/imagenes/logos/logo-color.png" alt="">
+          <div class="login-container modal-body">
+            <div class="box_login">
+              <div class="modal_login">
+                  <div class="image_form_login  text-center">
+                    <img class="logo_login" src="./assets/imagenes/logos/logo-envi-c2.png" alt="">
+                  </div>
+
+                  <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value, userForm.valid)">
+                    <div class="formulario_login">
+                      <div class="form-group">
+                        <div class="input">
+                          <div class="login-form">
+                            <label  class="control-login">Correo Electronico</label>
+                            <input formControlName="email" type="text" class="form-control" >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="input">
+                          <div class="login-form">
+                            <label  class="control-login">Contraseña</label>
+                            <input formControlName="password" type="password" class="form-control">
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value, userForm.valid)">
-                      <div class="formulario_login">
-                        <div class="form-group">
-                          <div class="input">
-                            <div class="login-form">
-                              <label  class="control-login">Correo Electronico</label>
-                              <input formControlName="email" type="text" class="form-control" >
-                            </div>
-                          </div>
-                        </div>
+                    <div class="form-group text-center my-5">
+                      <button (click)="onSubmit()" class="btn ec btn-lg" id="btnLogin">Iniciar Sesión</button>
+                    </div>
 
-                        <div class="form-group">
-                          <div class="input">
-                            <div class="login-form">
-                              <label  class="control-login">Contraseña</label>
-                              <input formControlName="password" type="password" class="form-control">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="form-group text-center my-5">
-                        <button (click)="onSubmit()" class="btn btn-success btn-lg" id="btnLogin">Iniciar Sesión</button>
-                      </div>
-
-                      <div>
-                        <a data-dismiss="modal" routerLink="/recuperarcontra" class="float-lef">Olvidaste tu contraseña?</a>
-                        <a data-dismiss="modal" routerLink="/registro" class="float-right">Usuario Nuevo?</a>
-                      </div>
-                    </form>
-                </div>
+                    <div>
+                      <button data-dismiss="modal" routerLink="/recuperarcontra" class="float-lef btn newUser">Olvidaste tu contraseña?</button>
+                      <button (click)="newUser()" data-dismiss="modal" class="float-right btn newUser">Usuario Nuevo?</button>
+                    </div>
+                  </form>
               </div>
             </div>
-        </div>
-    </div>
+          </div>
+      </div>
 </ng-template>

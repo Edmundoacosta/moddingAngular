@@ -2,12 +2,10 @@
 .mt-60{
     margin-top:60px;
 }
-
 .section-block-grey {
     padding: 90px 0px 90px 0px;
     background-color: #f9f9f9;
 }
-
 .serv-section-2 {
     position: relative;
     border: 1px solid #eee;
@@ -17,7 +15,6 @@
     overflow: hidden;
     padding: 30px;
 }
-
 .serv-section-2:before {
     position: absolute;
     top: 0;
@@ -31,7 +28,6 @@
     transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
 }
-
 .serv-section-2-icon {
     position: absolute;
     top: 18px;
@@ -40,7 +36,6 @@
     z-index: 1;
     text-align: center;
 }
-
 .serv-section-2-icon i {
     color: $secondC;
     font-size: 48px;
@@ -48,18 +43,15 @@
     transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
 }
-
 .serv-section-desc {
     position: relative;
 }
-
 .serv-section-2 h4 {
     color: #333;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.5;
 }
-
 .serv-section-2 h5 {
     color: #333;
     font-size: 17px;
@@ -67,43 +59,25 @@
     line-height: 1;
     margin-top: 5px;
 }
-
-.section-heading-line-left {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 3px;
-    background: $secondC;
-    border-radius: 25%;
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
-
 .serv-section-2 p {
     margin-top: 25px;
     padding-right: 50px;
 }
-
 .serv-section-2:hover .serv-section-2-icon i {
     color: #fff;
 }
-
 .serv-section-2:hover:before {
     background: $thirdC;
 }
-
 .enviar {
     color: $secondC;
-    background-color: $thirdC;
-
+    background-color: $firstC;
+    border: 1.5px solid;
+    border-radius: 8px;
     &:hover {
         color: #fff;
         background-color: $thirdC;
     }
-}
-
-#logo-contact {
-    margin-top: 120px;
 }
 
 

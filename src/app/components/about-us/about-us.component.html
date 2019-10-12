@@ -2,40 +2,69 @@
 	
 	<h2 class="text-center my-4 dots">EcoGozo</h2>
 	<div class="container">
-	    <div class="row">
-	        <div class="col-md-8">
-	        	<p>Somos una empresa peruana que se inicia con la necesidad y esperanza de contribuir en el bienestar Social, Económico, Ambiental y Cultural, mediante la Innovación Tecnológica promovida por nuestra marca <strong>EC</strong>.  Ser una contribución para mejorar el planeta ofreciendo tecnología amigable con el medio ambiente, innovando tecnologías más limpias, que permita un mundo mejor para todos.</p>
-	        </div>
-	        <div class="col-md-4">
-	            <div class="imgAbt">
-	                <img id="img" src="./assets/imagenes/logos/logo-color.png" />
-	            </div>
-	        </div>
-	    </div>
+		<div class="card mb-3">
+			<div class="row no-gutters">
+				<div class="col-md-8">
+					<div class="card-body">
+						<p class="card-text">Somos una empresa peruana que se inicia con la necesidad y esperanza de contribuir en el bienestar Social, Económico, Ambiental y Cultural, mediante la Innovación Tecnológica promovida por nuestra marca <strong>EC</strong>.  Ser una contribución para mejorar el planeta ofreciendo tecnología amigable con el medio ambiente, innovando tecnologías más limpias, que permita un mundo mejor para todos.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<img src="./assets/imagenes/logos/logo-color.png" class="card-img">
+				</div>
+			</div>
+		</div>
 	</div>
 	<h2 class="text-center my-4 dots">EC</h2>
 	<div class="container">
-	    <div class="row">
-	        <div class="col-md-4">
-	            <div class="imgAbt">
-	                <img id="img" src="./assets/imagenes/logos/logo-envi-color-1.png" />
-	            </div>
-	        </div>
-	        <div class="col-md-8">
-	            <p><strong>Enviroment Components</strong>.- se creo a partir de una idea que surgio sobre una marca que tenga un enfoque mas tecnologico y a la ves ecologico </p>
-	        </div>
+		<div class="card mb-3">
+			<div class="row no-gutters">
+				<div class="col-md-4 text-center">
+					<img src="./assets/imagenes/logos/logo-envi-color-1.png" class="card-img logoEc" >
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<p class="card-text"><strong>Enviroment Components</strong>.- se creo a partir de una idea que surgio sobre una marca que tenga un enfoque mas tecnologico y a la ves ecologico.</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<h2 class="text-center my-4 dots">Misión  Visión</h2>
 	<div class="container">
-	    <div class="row">
-	        <div class="col">
-	        	<p><strong>Mision</strong>: Adoptar un modelo de sistema de trabajo eficiente, ofreciendo productos y servicios con innovación tecnológica personalizada, inspirados y orientados hacia una cultura de sustentabilidad, con precios accesibles y de calidad. Así como también ser una herramienta de aprendizaje para inspirar a soluciones que contribuyan en el bienestar Social, Económico, Ambiental y Cultural.</p>
+		<div class="card-group">
+			<div class="card mr-2">
+				<div class="card-body">
+					<h5 class="card-title">Mision</h5>
+					<p class="card-text">Adoptar un modelo de sistema de trabajo eficiente, ofreciendo productos y servicios con innovación tecnológica personalizada, inspirados y orientados hacia una cultura de sustentabilidad, con precios accesibles y de calidad. Así como también ser una herramienta de aprendizaje para inspirar a soluciones que contribuyan en el bienestar Social, Económico, Ambiental y Cultural.</p>
+				</div>
 			</div>
-			<div class="col">
-				<p><strong>Vision</strong>: Contribuir con la humanidad con tecnología ecológica, alcanzable dentro de los próximos 15 años, logrando tener impacto en las próximas 7 generaciones en el aspecto Social, Económico, Ambiental y Cultural, brindado así una mejor calidad de vida para todos, en mira del desarrollo hacia una cultura de sostenibilidad.</p>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title text-right">Vision</h5>
+					<p class="card-text">Contribuir con la humanidad con tecnología ecológica, alcanzable dentro de los próximos 15 años, logrando tener impacto en las próximas 7 generaciones en el aspecto Social, Económico, Ambiental y Cultural, brindado así una mejor calidad de vida para todos, en mira del desarrollo hacia una cultura de sostenibilidad.</p>
+				</div>
 			</div>
-	    </div>
+		</div>
+	</div>
+	<h2 class="text-center my-4 dots">Nuestros Principios</h2>
+	<div class="container">
+		<div class="card-group">
+			<div class="card mr-2 my-2" *ngFor="let member of principios">
+				<div class="card-body">
+					<h5 class="card-title text-center">{{member.name}}</h5>
+					<p class="card-text">{{member.description}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="card-group">
+			<div class="card mr-2" *ngFor="let member of principios2">
+				<div class="card-body">
+					<h5 class="card-title text-center">{{member.name}}</h5>
+					<p class="card-text">{{member.description}}</p>
+				</div>
+			</div>
+		</div>
 	</div>
 	<h2 class="text-center my-4 dots">Nuestros Valores</h2>
 	<div class="container row mbr-justify-content-center">
@@ -46,7 +75,7 @@
 				</div>
 				<div class="text-wrap vcenter">
 					<h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"><span>{{member.name}}</span></h2>
-                        <p class="mbr-fonts-style text1 mbr-text ho">{{member.description}}</p>
+                        <p class="mbr-fonts-style text1 mbr-text">{{member.description}}</p>
 				</div>
 			</div>
 		</div>
