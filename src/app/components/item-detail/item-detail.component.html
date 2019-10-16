@@ -14,12 +14,18 @@
 					<div class="preview col-md-6">
 						
 						<div class="preview-pic tab-content">
-						  <div class="tab-pane active pic" id="pic-1"><img src="./assets/imagenes/pet sleeve/black.png" /></div>
-						  <div class="tab-pane pic" id="pic-2"><img src="#" /></div>
+						<!--big pictures-->
+						  	<div class="tab-pane active pic" id="pic-1">
+								<img src="./assets/imagenes/pet sleeve/black.png" class="img-fluid"/>
+							</div>
 						</div>
+						<!--mini picture that u select to preview it up -->
 						<ul class="preview-thumbnail nav nav-tabs">
-						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="./assets/imagenes/pet sleeve/black.png" /></a></li>
-						  <li><a data-target="#pic-2" data-toggle="tab"><img src="#" /></a></li>
+						  	<li class="active">
+								<a data-target="#pic-1" data-toggle="tab">
+									<img src="./assets/imagenes/pet sleeve/black.png" />
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div class="details col-md-6">
@@ -27,7 +33,94 @@
 						<p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
 						<h4 class="price">Precio: <span>$0</span></h4>
 						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">Añadir al carrito</button>
+							<button class="add-to-cart btn float-right" type="button">Añadir al carrito</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--nav for the specs and other navmenu-->
+			<div class="row mt-5">
+				<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="v-pills-et-tab" data-toggle="pill" href="#v-pills-et" role="tab" aria-controls="v-pills-et" aria-selected="true">
+							Especificaciones técnicas
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="v-pills-mp-tab" data-toggle="pill" href="#v-pills-mp" role="tab" aria-controls="v-pills-mp" aria-selected="false">
+							Métodos de pago
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="v-pills-g-tab" data-toggle="pill" href="#v-pills-g" role="tab" aria-controls="v-pills-g" aria-selected="false">
+							Garantia
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="v-pills-e-tab" data-toggle="pill" href="#v-pills-e" role="tab" aria-controls="v-pills-e" aria-selected="false">
+							Envio
+						</a>
+					</li>
+				</ul>
+				<!--content for the nav menu-->
+				<div class="col-12">
+					<div class="tab-content" id="v-pills-tabContent">
+						<div class="tab-pane fade show active" id="v-pills-et" role="tabpanel" aria-labelledby="v-pills-et-tab">
+							<table class="table table-hover">
+								<tbody>
+									<tr>
+										<td>Nombre de la especificacion :</td>
+										<td>descripcion de la especificacion</td>
+									</tr>
+									<tr>
+										<td>Nombre de la especificacion :</td>
+										<td>descripcion de la especificacion</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-pane fade" id="v-pills-mp" role="tabpanel" aria-labelledby="v-pills-mp-tab">
+							<div class="container">
+								<div class="card-group">
+									<div class="card">
+										<div class="cbody">
+											<p class="card-text"><strong>Tranferencia o deposito</strong></p>
+										</div>
+										<img src="./assets/imagenes/metodo de pago/logo bcp.png" class="card-img-top">
+										<img src="./assets/imagenes/metodo de pago/logo interbank.png" class="card-img-top">
+									</div>
+									<div class="card">
+										<div class="cbody">
+											<p class="card-text"><strong>Tarjeta de crédito o débito</strong></p>
+											<p class="card-text">Este método de pago tiene un recargo adicional del 4.071%, el monto total se cancela con su tarjeta de crédito o débito al momento de la entrega del producto en su dirección de envio.</p>
+											<p class="card-text">Aceptamos estos tipos de tarjetas :</p>
+										</div>
+										<img src="./assets/imagenes/metodo de pago/logo_todas_las_tarjetas.png" class="card-img-top" >
+									</div>
+									<div class="card">
+										<div class="cbody">
+											<p class="card-text"><strong>Visanet pago link</strong></p>
+											<p class="card-text">Este método de pago tiene un recargo adicional del 4.5%, el monto total se cancela de manera online.</p>
+										</div>
+										<img src="./assets/imagenes/metodo de pago/visanet_pago_link.png" class="card-img-top" >
+									</div>
+								</div>
+							</div>							
+						</div>
+						<div class="tab-pane fade" id="v-pills-g" role="tabpanel" aria-labelledby="v-pills-g-tab">
+							CONTENIDO
+						</div>
+						<div class="tab-pane fade" id="v-pills-e" role="tabpanel" aria-labelledby="v-pills-e-tab">
+							<table class="table table-bordered">
+								<tbody>
+									<tr *ngFor="let member of Districts">
+										<td >{{member.name}}</td>
+										<td >{{member.name2}}</td>
+										<td >{{member.name3}}</td>
+										<td >{{member.name4}}</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>

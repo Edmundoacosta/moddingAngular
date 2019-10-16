@@ -18,6 +18,7 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
 import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 import { ProductsComponent} from './components/admin/dashboard/products/products.component';
 import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
+import { UpdateproductsComponent } from './components/admin/dashboard/products/updateproducts/updateproducts.component';
 import { CategoryComponent} from './components/admin/dashboard/category/category.component';
 import { NewsComponent} from './components/admin/dashboard/news/news.component';
 import { GamerzoneComponent} from './components/admin/dashboard/gamerzone/gamerzone.component';
@@ -27,6 +28,7 @@ import { Checkout2Component} from './components/checkout/checkout2/checkout2.com
 import { Checkout3Component} from './components/checkout/checkout3/checkout3.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ZonaGamerdetailComponent} from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -51,6 +53,7 @@ const routes: Routes = [
 		{ path: 'dashboard/users', component: UsersListComponent,pathMatch: 'full'},
 		{ path: 'dashboard/products', component: ProductsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/products/addproducts', component: AddproductsComponent,pathMatch: 'full'},
+		{ path: 'dashboard/products/updateproducts', component: UpdateproductsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/categories', component: CategoryComponent,pathMatch: 'full'},
 		{ path: 'dashboard/news', component: NewsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/gamerzone', component: GamerzoneComponent,pathMatch: 'full'}

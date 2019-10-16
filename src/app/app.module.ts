@@ -37,6 +37,7 @@ import { GamerzoneComponent } from './components/admin/dashboard/gamerzone/gamer
 import { CategoryComponent } from './components/admin/dashboard/category/category.component';
 import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
 import { ZonaGamerdetailComponent } from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
+import { UpdateproductsComponent } from './components/admin/dashboard/products/updateproducts/updateproducts.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { ZonaGamerdetailComponent } from './components/zona-gamer/zona-gamerdeta
     GamerzoneComponent,
     CategoryComponent,
     AddproductsComponent,
-    ZonaGamerdetailComponent
+    ZonaGamerdetailComponent,
+    UpdateproductsComponent
   ],
   imports: [
     BrowserModule,

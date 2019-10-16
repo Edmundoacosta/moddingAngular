@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000" pause="hover">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -6,24 +6,21 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-          <img class="w-100" src="/assets/imagenes/moddpc.jpg" alt="">
+          <img class="w-100" src="../../../assets/imagenes/home-view-img/baner_water_cooling.png" alt="">
           <div class="carousel-caption d-none d-md-block">
-            <h5>...</h5>
-            <p>...</p>
+            <p>Imagenes referenciales</p>
           </div>
       </div>
       <div class="carousel-item">
-          <img class="w-100" src="/assets/imagenes/bulb.jpg" alt="">
+          <img class="w-100" src="../../../assets/imagenes/home-view-img/baner_light.png" alt="">
           <div class="carousel-caption d-none d-md-block">
-            <h5>...</h5>
-            <p>...</p>
+            <p>Imagenes referenciales</p>
           </div>
       </div>
       <div class="carousel-item">
-          <img class="w-100" src="/assets/imagenes/moddpc2.jpg" alt="">
+          <img class="w-100" src="../../../assets/imagenes/home-view-img/baner_pc_components.png" alt="">
           <div class="carousel-caption d-none d-md-block">
-            <h5>...</h5>
-            <p>...</p>
+            <p>Imagenes referenciales</p>
           </div>
       </div>
     </div>
@@ -36,125 +33,181 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
-<div id="t-pro">
-   <h1>NUESTROS PRODUCTOS</h1>
-</div>
-<div class="accordian">
-    <ul>
-		<li>
-      <div class="image_title">
-        <a routerLink="/categoria/compu">
-        Componentes de Computadora
-        </a>
+
+<div class="container mt-4 text-center">
+  <div id="t-pro">
+    <h1><strong>EXPLORAR</strong> LOS PRODUCTOS</h1>
+  </div>
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="false">
+    <!--Controls-->
+    <button class="btn float-left" type="button">
+      <a href="#multi-item-example" data-slide="prev">
+        <i class="fa fa-chevron-left"></i>
+      </a>
+    </button>
+    <button class="btn float-right" type="button">
+      <a href="#multi-item-example" data-slide="next">
+        <i class="fa fa-chevron-right"></i>
+      </a>
+    </button>
+    <!--/.Controls-->
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+      <li data-target="#multi-item-example" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <!--First slide-->
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center">
+          <div class="category">
+            <a class="category-link" routerLink='/categoria/refrigeracion'>
+              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_watercooling.png" alt="">
+              <div class="category-link2">
+                <p>REFRIGERACIÓN <br> PERSONALIZADA</p>
+                
+              </div>
+            </a>
+          </div>
+          <div class="category">
+            <a class="category-link" routerLink='/categoria/compu'>
+              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_pcparts.png" alt="">
+              <div class="category-link2">
+                <P>COMPONENTES DE <br> COMPUTADORA</P>
+              </div>
+            </a>
+          </div>
+          <div class="category">
+            <a class="category-link" routerLink='/categoria/sistema'>
+              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_lightsystem.png" alt="">
+              <div class="category-link2">
+                <P>SISTEMA DE <br>ILUMINACIÓN</P>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
-        <a routerLink="/categoria/compu">
-          <img src="/assets/imagenes/componentes-computadora.jpg"/>
-        </a>
-    </li>
-		<li>
-		<li>
-			<div class="image_title">
-        <a routerLink="/categoria/sistema">
-        Sistema de Iluminación
-        </a>
-			</div>
-			<a routerLink="/categoria/sistema">
-				<img src="/assets/imagenes/sistema-iluminacion.jpg"/>
-			</a>
-		</li>
-		<li>
-			<div class="image_title">
-        <a routerLink="/categoria/refrigeracion">
-        Refrigeración Personalizada
-        </a>
-			</div> 
-			<a routerLink="/categoria/refrigeracion">
-				<img src="/assets/imagenes/refrigeracion-personalizada.jpg"/>
-			</a>
-		</li>
-	</ul>
+      <!--/.First slide-->
+      <!--Second slide-->
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center">
+          <div class="category">
+            <a class="category-link" routerLink='/categoria/refrigeracion'>
+              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_watercooling.png" alt="">
+              <div class="category-link2">
+                <p>REFRIGERACIÓN <br> PERSONALIZADA</p>
+                
+              </div>
+            </a>
+          </div>
+          <div class="category">
+            <a class="category-link" routerLink='/categoria/compu'>
+              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_pcparts.png" alt="">
+              <div class="category-link2">
+                <P>COMPONENTES DE <br> COMPUTADORA</P>
+              </div>
+            </a>
+          </div>
+          <div class="category">
+            <a class="category-link" routerLink='/categoria/sistema'>
+              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_lightsystem.png" alt="">
+              <div class="category-link2">
+                <P>SISTEMA DE <br>ILUMINACIÓN</P>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--/.Second slide-->
+    </div>
+    <!--/.Slides-->
+  </div>
+  <!--/.Carousel Wrapper-->
 </div>
 
-<div>
-      <section class="divided clearfix">
-          <div class="container">
-              <div class="row py-5">
-                  <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
-                      <div class="p-5">
-                          <h5 class="h5 text-muted">Refrigeración </h5>
-                          <h1 class="h1 mb-5">Líquida </h1>
-                          <p>
-                              Este sistema utiliza 
-                              un sistema de conductos conectados a los componentes del PC que se deben 
-                              refrigerar.
+<div class="container">
+  <section class="divided clearfix">
+    <div class="row py-2">
+        <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
+            <div class="p-5">
+                <h5 class="h5 text-muted">Refrigeración </h5>
+                <h1 class="h1 mb-5">Líquida </h1>
+                <p>
+                    Este sistema utiliza 
+                    un sistema de conductos conectados a los componentes del PC que se deben 
+                    refrigerar.
 
-                              Por el interior de esos conductos fluye un líquido con propiedades 
-                              refrigerantes impulsado por una bomba que crea una cierta presión para
-                              impulsar el líquido por todo el circuito. Cuando el líquido pasa a través 
-                              de los componentes, extrae el calor generado por los componentes y lo 
-                              lleva hasta un radiador con láminas de aluminio donde unos ventiladores 
-                              se encargarán de hacer circular aire entre esas láminas para volver a 
-                              enfriar el líquido antes de volver a empezar de nuevo el ciclo de refrigerado.
-                          </p>
-                          <div id="zoom2">
-                            <img id="zoom" class="w-100" src="/assets/imagenes/refrigeracion-liquida.png" alt="">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
-                      <div class="p-5">
-                          <h5 id="right" class="h5 text-muted">Refrigeración </h5>
-                          <h1 id="right" class="h1 mb-5">Por Aire </h1>
-                          <p>
-                              Los sistemas de refrigeración por aire son aquellos que utilizan las 
-                              cualidades de conductividad del calor de algunos metales como el cobre 
-                              o el aluminio para disipar el calor que se genera en el interior del 
-                              procesador, de la tarjeta gráfica o en los módulos de memoria RAM.
+                    Por el interior de esos conductos fluye un líquido con propiedades 
+                    refrigerantes impulsado por una bomba que crea una cierta presión para
+                    impulsar el líquido por todo el circuito. Cuando el líquido pasa a través 
+                    de los componentes, extrae el calor generado por los componentes y lo 
+                    lleva hasta un radiador con láminas de aluminio donde unos ventiladores 
+                    se encargarán de hacer circular aire entre esas láminas para volver a 
+                    enfriar el líquido antes de volver a empezar de nuevo el ciclo de refrigerado.
+                </p>
+                <div id="zoom2">
+                  <img id="zoom" class="w-100" src="../../../assets/imagenes/home-view-img/refrigeracion-liquida.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
+            <div class="p-5">
+                <h5 id="right" class="h5 text-muted">Refrigeración </h5>
+                <h1 id="right" class="h1 mb-5">Por Aire </h1>
+                <p>
+                    Los sistemas de refrigeración por aire son aquellos que utilizan las 
+                    cualidades de conductividad del calor de algunos metales como el cobre 
+                    o el aluminio para disipar el calor que se genera en el interior del 
+                    procesador, de la tarjeta gráfica o en los módulos de memoria RAM.
 
-                              Para mejorar las condiciones de refrigeración de estos metales se 
-                              fuerza la entrada de aire mediante un ventilador para acelerar ese
-                              intercambio de temperatura.
-                              Una de las claves para obtener buenos resultados con este sistema
-                              es mantener un flujo de aire fresco constante en el interior de la 
-                              caja.
-                          </p>
-                          <div id="zoom2">
-                            <img id="zoom" class="w-100" src="/assets/imagenes/refrigeracion-aire.png" alt="">
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <section class="divided clearfix">
-          <div class="container">
-              <div class="row py-5">
-                  <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
-                      <div class="p-5">
-                          <h5 class="h5 text-muted">Foco </h5>
-                          <h1 class="h1 mb-5">LED </h1>
-                          <p>
-                            
-                          </p>
-                          <div id="zoom2">
-                            <img id="zoom" class="w-100" src="/assets/gif/smartbulb.gif" alt="">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="versus">VS</div>
-                  <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
-                      <div class="p-5">
-                          <h5 id="right" class="h5 text-muted">Foco </h5>
-                          <h1 id="right" class="h1 mb-5">Convencional </h1>
-                          <p>
-                            
-                          </p>
-                          <div id="zoom2">
-                            <img id="zoom" class="w-100" src="/assets/gif/bulb.gif" alt="">
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+                    Para mejorar las condiciones de refrigeración de estos metales se 
+                    fuerza la entrada de aire mediante un ventilador para acelerar ese
+                    intercambio de temperatura.
+                    Una de las claves para obtener buenos resultados con este sistema
+                    es mantener un flujo de aire fresco constante en el interior de la 
+                    caja.
+                </p>
+                <div id="zoom2">
+                  <img id="zoom" class="w-100" src="../../../assets/imagenes/home-view-img/refrigeracion-aire.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section class="divided clearfix">
+    <div class="row py-5">
+        <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
+            <div class="p-5">
+                <h5 class="h5 text-muted">Foco </h5>
+                <h1 class="h1 mb-5">LED </h1>
+                <p>
+                  
+                </p>
+                <div id="zoom2">
+                  <img id="zoom" class="w-100" src="/assets/gif/smartbulb.gif" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="versus">VS</div>
+        <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
+            <div class="p-5">
+                <h5 id="right" class="h5 text-muted">Foco </h5>
+                <h1 id="right" class="h1 mb-5">Convencional </h1>
+                <p>
+                  
+                </p>
+                <div id="zoom2">
+                  <img id="zoom" class="w-100" src="/assets/gif/bulb.gif" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
 </div>
