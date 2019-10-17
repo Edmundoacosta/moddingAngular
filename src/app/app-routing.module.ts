@@ -16,20 +16,20 @@ import { ItemDetailComponent } from "./components/item-detail/item-detail.compon
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
-import { ProductsComponent} from './components/admin/dashboard/products/products.component';
+import { ProductsComponent } from './components/admin/dashboard/products/products.component';
 import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
 import { UpdateproductsComponent } from './components/admin/dashboard/products/updateproducts/updateproducts.component';
-import { CategoryComponent} from './components/admin/dashboard/category/category.component';
-import { NewsComponent} from './components/admin/dashboard/news/news.component';
-import { GamerzoneComponent} from './components/admin/dashboard/gamerzone/gamerzone.component';
+import { CategoryComponent } from './components/admin/dashboard/category/category.component';
+import { NewsComponent } from './components/admin/dashboard/news/news.component';
+import { GamerzoneComponent } from './components/admin/dashboard/gamerzone/gamerzone.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { Checkout1Component} from './components/checkout/checkout1/checkout1.component';
-import { Checkout2Component} from './components/checkout/checkout2/checkout2.component';
-import { Checkout3Component} from './components/checkout/checkout3/checkout3.component';
+import { Checkout1Component } from './components/checkout/checkout1/checkout1.component';
+import { Checkout2Component } from './components/checkout/checkout2/checkout2.component';
+import { Checkout3Component } from './components/checkout/checkout3/checkout3.component';
+import { Checkout4Component } from './components/checkout/checkout4/checkout4.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ZonaGamerdetailComponent} from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
-import { from } from 'rxjs';
-
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
 	{path: 'home', component: HomeComponent},
@@ -61,8 +61,10 @@ const routes: Routes = [
 	{ path: 'Checkout', component: CheckoutComponent, children: [
 		{ path: 'Checkout1', component: Checkout1Component, pathMatch: 'full'},
 		{ path: 'Checkout2', component: Checkout2Component, pathMatch: 'full'},
-		{ path: 'Checkout3', component: Checkout3Component, pathMatch: 'full'}
+		{ path: 'Checkout3', component: Checkout3Component, pathMatch: 'full'},
+		{ path: 'Checkout4', component: Checkout4Component, pathMatch: 'full'}
 	]},
+	{ path: 'forgot-password', component: ForgotPasswordComponent },
 	{path: '**', redirectTo: '/notfound'}
 	
 ];
