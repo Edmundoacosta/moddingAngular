@@ -41,6 +41,15 @@ export class HeaderComponent implements OnInit {
       this.modalRef = this.modalService.show(template);
     }
   }
+  forgotModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+  sModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+    setTimeout(() => {
+      location.reload();
+    }, 2500);
+  }
 
   onSubmit(user, valid){
   	if (valid) {

@@ -38,6 +38,8 @@ import { CategoryComponent } from './components/admin/dashboard/category/categor
 import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
 import { ZonaGamerdetailComponent } from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
 import { UpdateproductsComponent } from './components/admin/dashboard/products/updateproducts/updateproducts.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { Checkout4Component } from './components/checkout/checkout4/checkout4.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { UpdateproductsComponent } from './components/admin/dashboard/products/u
     CategoryComponent,
     AddproductsComponent,
     ZonaGamerdetailComponent,
-    UpdateproductsComponent
+    UpdateproductsComponent,
+    ForgotPasswordComponent,
+    Checkout4Component
   ],
   imports: [
     BrowserModule,
