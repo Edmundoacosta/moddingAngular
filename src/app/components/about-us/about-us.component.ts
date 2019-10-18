@@ -14,7 +14,9 @@ export class AboutUsComponent implements OnInit {
 		{
 			name: 'Puntualidad',
 			description: 'Cumplir con los compromisos y obligaciones en el tiempo acordado, valorando y respetando el tiempo de los demás.'
-		},
+		}
+	];
+	public valores2:Array<any> = [
 		{
 			name: 'Respeto',
 			description: 'Desarrollar una conducta que considere en su justo valor los derechos fundamentales de nuestros semejantes y de nosotros mismos. Asimismo aceptar y cumplir las normas sociales y las de la naturaleza.'
@@ -22,7 +24,9 @@ export class AboutUsComponent implements OnInit {
 		{
 			name: 'Calidad de Servicio',
 			description: 'Emplear el trabajo como una poderosa fuerza transformadora, para así alcanzar los objetivos de la empresa y hacer que ella logre los más altos niveles de productividad y desarrollo. '
-		},
+		}
+	];
+	public valores3:Array<any> = [
 		{
 			name: 'Honestidad',
 			description: 'Obrar con transparencia y clara orientación moral, cumpliendo con las responsabilidades asignadas en el uso de la información, de los recursos materiales y financieros. Mostrar una conducta ejemplar dentro y fuera de la empresa.'

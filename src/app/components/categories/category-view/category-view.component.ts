@@ -112,7 +112,12 @@ export class CategoryViewComponent implements OnInit {
   			this.category = name.charAt(0).toUpperCase() + name.slice(1);
         this.realdata = copy.filter(prod => prod.category == params.type);
   			});
-  		};
+      };
+
+  scrollTo(section) {
+    document.querySelector('#' + section)
+    .scrollIntoView();
   }
+}
 
 

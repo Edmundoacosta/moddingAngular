@@ -1,94 +1,111 @@
-<nav id="navspy">
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active" id="nav-cpu-tab" data-toggle="tab" href="#nav-cpu" role="tab" aria-controls="nav-cpu" aria-selected="true">Bloque CPU</a>
-    </div>
-</nav>
-
-<div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-cpu" role="tabpanel" aria-labelledby="nav-mod-tab">
-        <section>
-            <div class="container" data-spy="scroll" data-target="#navspy" data-offset="0">
-                <h3 class="h3" id="navspy-fat">{{category}}</h3>
-                <div *ngFor="let item of realdata; let i ='index'">
-                    <div *ngIf="i%4 == 0" class="row mb-5"> 
-                        <div *ngIf="i < realdata.length" class="col-md-3 col-sm-6"  id="fat">
-                            <div class="product-grid6">
-                                <div class="product-image6">
-                                    <a href="#">
-                                        <img class="pic-1" src="{{realdata[i].image}}">
-                                    </a>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title">{{realdata[i].name}}</h3>
-                                    <div class="price">${{realdata[i].price}}
-                                       <!--Usar span para cuando el producto esta en descuento o indicar precio en dolares
-                                        <span></span>--> 
-                                    </div>
-                                </div>
-                                <ul class="social">
-                                    <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
-                                    <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+<div class="container">
+    
+</div>
+<div class="container mt-3">
+        <nav id="navspy" class="navbar navbar-expand-lg navbar-light bg-light">
+                <button id="bnav" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                    <a class="nav-item nav-link" (click)="scrollTo('section1')">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" (click)="scrollTo('section2')">Features</a>
+                    <a class="nav-item nav-link" (click)="scrollTo('section3')">Pricing</a>
+                    </div>
+                </div>
+            </nav>
+    <div class="h3"></div>
+    <div (sectionChange)="onSectionChange($event)">
+        <div id="section1">
+            <h1>section1</h1> 
+            <div  *ngFor="let item of realdata; let i ='index'">
+                <div  *ngIf="i%4 == 0" class="row mb-5 show active">
+                    <div *ngIf="i < realdata.length" class="col-md-3 col-sm-6 mt-3"  id="fat">
+                        <div class="product-grid6">
+                            <div class="product-image6">
+                                <a href="#">
+                                    <img class="pic-1" src="{{realdata[i].image}}">
+                                </a>
                             </div>
+                            <div class="product-content">
+                                <h3 class="title">{{realdata[i].name}}</h3>
+                                <div class="price">${{realdata[i].price}}
+                                    <!--Usar span para cuando el producto esta en descuento o indicar precio en dolares
+                                    <span></span>--> 
+                                </div>
+                            </div>
+                            <ul class="social">
+                                <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
                         </div>
-                        <div *ngIf="i + 1 < realdata.length" class="col-md-3 col-sm-6">
-                            <div class="product-grid6">
-                                <div class="product-image6">
-                                    <a href="#">
-                                        <img class="pic-1" src="{{realdata[i+1].image}}">
-                                    </a>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title">{{realdata[i+1].name}}</h3>
-                                    <div class="price">${{realdata[i+1].price}}
-                                    </div>
-                                </div>
-                                <ul class="social">
-                                    <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
-                                    <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+                    </div>
+                    <div *ngIf="i + 1 < realdata.length" class="col-md-3 col-sm-6 mt-3">
+                        <div class="product-grid6">
+                            <div class="product-image6">
+                                <a href="#">
+                                    <img class="pic-1" src="{{realdata[i+1].image}}">
+                                </a>
                             </div>
+                            <div class="product-content">
+                                <h3 class="title">{{realdata[i+1].name}}</h3>
+                                <div class="price">${{realdata[i+1].price}}
+                                </div>
+                            </div>
+                            <ul class="social">
+                                <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
                         </div>
-                        <div *ngIf="i + 2 < realdata.length" class="col-md-3 col-sm-6">
-                            <div class="product-grid6">
-                                <div class="product-image6">
-                                    <a href="#">
-                                        <img class="pic-1" src="{{realdata[i+2].image}}">
-                                    </a>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title">{{realdata[i+2].name}}</h3>
-                                    <div class="price">${{realdata[i+2].price}}
-                                    </div>
-                                </div>
-                                <ul class="social">
-                                    <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
-                                    <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+                    </div>
+                    <div *ngIf="i + 2 < realdata.length" class="col-md-3 col-sm-6 mt-3">
+                        <div class="product-grid6">
+                            <div class="product-image6">
+                                <a href="#">
+                                    <img class="pic-1" src="{{realdata[i+2].image}}">
+                                </a>
                             </div>
+                            <div class="product-content">
+                                <h3 class="title">{{realdata[i+2].name}}</h3>
+                                <div class="price">${{realdata[i+2].price}}
+                                </div>
+                            </div>
+                            <ul class="social">
+                                <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
                         </div>
-                        <div *ngIf="i + 3 < realdata.length" class="col-md-3 col-sm-6">
-                            <div class="product-grid6">
-                                <div class="product-image6">
-                                    <a href="#">
-                                        <img class="pic-1" src="{{realdata[i+3].image}}">
-                                    </a>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title">{{realdata[i+3].name}}</h3>
-                                    <div class="price">${{realdata[i+3].price}}
-                                    </div>
-                                </div>
-                                <ul class="social">
-                                    <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
-                                    <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+                    </div>
+                    <div *ngIf="i + 3 < realdata.length" class="col-md-3 col-sm-6 mt-3">
+                        <div class="product-grid6">
+                            <div class="product-image6">
+                                <a href="#">
+                                    <img class="pic-1" src="{{realdata[i+3].image}}">
+                                </a>
                             </div>
+                            <div class="product-content">
+                                <h3 class="title">{{realdata[i+3].name}}</h3>
+                                <div class="price">${{realdata[i+3].price}}
+                                </div>
+                            </div>
+                            <ul class="social">
+                                <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>        
+        </div>
+        <div id="section2">
+            <h1 class="mx-5">section2</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis molestias deleniti voluptas doloribus, exercitationem ratione dolore! Repudiandae obcaecati suscipit excepturi saepe voluptatibus, impedit molestias mollitia eveniet nulla provident, consequatur iste velit culpa explicabo cumque, ea quae adipisci quis exercitationem rerum beatae? Laudantium, repudiandae. Illum neque necessitatibus ex ab quasi quia facere in excepturi a, doloribus laudantium placeat ipsum dignissimos rerum explicabo aspernatur expedita dolore! Ipsam suscipit voluptate omnis facilis officiis tempore at libero id alias deleniti earum, ducimus debitis consequatur aliquam recusandae totam quas rem error! Natus autem eos ratione blanditiis accusantium doloribus voluptate aperiam harum, tempore rerum sit fugit!</p>
+        </div>
+        <div id="section3">
+            <h1 class="mx-5">secton3</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia laboriosam, eum explicabo, blanditiis nam porro expedita magnam est laborum quibusdam non perspiciatis fugiat. Ex aspernatur exercitationem deserunt impedit deleniti quasi totam voluptate ut ratione architecto quos facere repellendus voluptas, magnam quibusdam ducimus itaque provident quis soluta a distinctio perspiciatis debitis nemo neque. Praesentium debitis accusantium minima, saepe ad, dolorum quasi asperiores nihil provident ipsum itaque corrupti vel repudiandae temporibus minus exercitationem porro maiores optio, hic reprehenderit perspiciatis ab. Deleniti nobis eos tempore. Repudiandae, dolor! Vitae, voluptate consequatur commodi temporibus veniam at sint voluptatibus dolor quod ullam quo eum reprehenderit numquam aliquid? Et sit illo deserunt recusandae non iste reprehenderit nesciunt aut quas delectus facere eum itaque earum, ad rem explicabo sapiente cupiditate enim dolor eaque, qui harum. Sunt fuga repudiandae architecto in quo sequi eum molestiae provident deserunt! Quidem doloribus itaque tempore nemo aspernatur delectus exercitationem natus minus voluptates quod? Repudiandae, ea veritatis veniam optio voluptatum vitae nobis recusandae iure ex adipisci consequuntur iusto numquam inventore illo reprehenderit laboriosam qui molestias possimus officiis nulla quis nesciunt tempora? Voluptatum delectus amet saepe quidem facilis temporibus possimus voluptates quis. Obcaecati soluta quia enim maxime sed, provident, eius, delectus ipsum minima magni incidunt?</p>
+        </div>
     </div>
 </div>
 
+        

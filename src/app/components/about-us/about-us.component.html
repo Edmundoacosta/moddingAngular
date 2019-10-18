@@ -1,5 +1,5 @@
-<div class="about_us">
-	
+<div class="container">
+	 
 	<h2 class="text-center my-4 dots">EcoGozo</h2>
 	<div class="container">
 		<div class="card mb-3">
@@ -15,8 +15,8 @@
 			</div>
 		</div>
 	</div>
-	<h2 class="text-center my-4 dots">EC</h2>
 	<div class="container">
+		<h2 class="text-center my-4 dots">EC</h2>
 		<div class="card mb-3">
 			<div class="row no-gutters">
 				<div class="col-md-4 text-center">
@@ -30,8 +30,8 @@
 			</div>
 		</div>
 	</div>
-	<h2 class="text-center my-4 dots">Misión  Visión</h2>
 	<div class="container">
+		<h2 class="text-center my-4 dots">Misión  Visión</h2>
 		<div class="card-group">
 			<div class="card mr-2">
 				<div class="card-body">
@@ -47,8 +47,8 @@
 			</div>
 		</div>
 	</div>
-	<h2 class="text-center my-4 dots">Nuestros Principios</h2>
 	<div class="container">
+		<h2 class="text-center my-4 dots">Nuestros Principios</h2>
 		<div class="card-group">
 			<div class="card mr-2 my-2" *ngFor="let member of principios">
 				<div class="card-body">
@@ -66,16 +66,44 @@
 			</div>
 		</div>
 	</div>
-	<h2 class="text-center my-4 dots">Nuestros Valores</h2>
-	<div class="container row mbr-justify-content-center">
-		<div class="col-lg-6 mbr-col-md-10" *ngFor="let member of valores">
-			<div class="wrap">
-				<div class="ico-wrap">
+	<div class="container">
+		<h2 class="text-center my-4 dots">Nuestros Valores</h2>
+		<div class="card-group">
+			<div class="card mr-2 my-2 wrap" *ngFor="let member of valores">
+				<div class="card-body d-flex">
+					<div class="ico-wrap">
 						<i class="fa fa-users mbr-iconfont"></i>
+					</div>
+					<div class="text-wrap vcenter">
+						<h5 class="card-title ">{{member.name}}</h5>
+						<p class="card-text">{{member.description}}</p>
+					</div>
 				</div>
-				<div class="text-wrap vcenter">
-					<h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"><span>{{member.name}}</span></h2>
-                        <p class="mbr-fonts-style text1 mbr-text">{{member.description}}</p>
+			</div>
+		</div>
+		<div class="card-group">
+			<div class="card mr-2 my-2 wrap" *ngFor="let member of valores2">
+				<div class="card-body d-flex">
+					<div class="ico-wrap">
+						<i class="fa fa-users mbr-iconfont"></i>
+					</div>
+					<div class="text-wrap vcenter">
+						<h5 class="card-title ">{{member.name}}</h5>
+						<p class="card-text">{{member.description}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-group">
+			<div class="card mr-2 my-2 wrap" *ngFor="let member of valores3">
+				<div class="card-body d-flex">
+					<div class="ico-wrap">
+						<i class="fa fa-users mbr-iconfont"></i>
+					</div>
+					<div class="text-wrap vcenter">
+						<h5 class="card-title ">{{member.name}}</h5>
+						<p class="card-text">{{member.description}}</p>
+					</div>
 				</div>
 			</div>
 		</div>

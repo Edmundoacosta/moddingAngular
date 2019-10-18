@@ -34,16 +34,13 @@ a {
 	margin: 20px auto;
 }
 .wrap {
-    display: flex;
     background: white;
-    border-radius: 0.5rem;
-    box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
-	margin-bottom: 2rem;
-	padding: 10px;
 }
-
+.card + .card-group {
+	border-radius: 8px;
+}
 .wrap:hover {
-    background: linear-gradient(135deg,#00DB93 0%,#130146 100%);
+    background: linear-gradient(130deg,$secondC 25%,$thirdC 75%);
     color: white;
 }
 
@@ -76,4 +73,7 @@ p {
 .logoEc {
 	width: 200px;
 	height: 250px;
+}
+.container {
+	overflow: hidden;
 }

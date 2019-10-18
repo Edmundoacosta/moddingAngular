@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkout4.component.scss']
 })
 export class Checkout4Component implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
