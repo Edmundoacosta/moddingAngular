@@ -18,26 +18,52 @@
 .product-grid6 .social li a:after,.product-grid6 .social li a:before{content:attr(data-tip);color:$thirdC;background-color:$secondC;font-size:12px;letter-spacing:1px;line-height:20px;padding:1px 5px;border-radius:5px;white-space:nowrap;opacity:0;transform:translateX(-50%);position:absolute;left:50%;top:-30px}
 .product-grid6 .social li a:after{content:'';height:15px;width:15px;border-radius:0;transform:translateX(-50%) rotate(45deg);top:-20px;z-index:-1}
 .product-grid6 .social li a:hover:after,.product-grid6 .social li a:hover:before{opacity:1}
-.ec{ color: $secondC;
-    background-color: $thirdC;
-
+.nav-link {
+    color: $secondC;
+    text-decoration: none;
     &:hover {
-        color: #fff;
-        background-color: $thirdC;
+      color: $thirdC;
     }
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    text-decoration: none;
+    background-color: $thirdC;
+    border: 1.5px solid;
+    border-radius: 8px;
 }
 #navspy {
     position: fixed;
-    width: 100%;
-    background: $firstC ;
     z-index: 1;
+    padding: 0px;
+    background-color: $firstC;
+    width: 100%;
 }
 .h3 {
-    width: 100%;
-    max-width: 980px;
-    padding: 3.5rem 0px 2rem;
-    margin: 0px auto;
-    top: 100px;
+    padding: 2rem;
+}
+#bnav {
+    background-color: #fff;
+}
+.navbar-nav{
+    width: 15%;
+    padding: 0px;
+    a {
+        text-align: center;
+        color: $secondC;
+        border: 1.5px solid;
+        border-radius: 8px;
+        margin: 0px 5px;
+        background-color: $firstC;
+        &:hover {
+            color: #fff;
+            background-color: $thirdC;
+            border: 1.5px solid $thirdC;
+        }
+    }
+}
+.bg-light {
+    background-color: transparent!important;
 }
 /* mobile fix */
 @media (max-width: 768px) {
