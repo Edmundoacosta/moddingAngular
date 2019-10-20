@@ -8,6 +8,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
   providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}]
 })
 export class ProductsComponent implements OnInit {
+  
 
   constructor(private location: Location) { }
 
