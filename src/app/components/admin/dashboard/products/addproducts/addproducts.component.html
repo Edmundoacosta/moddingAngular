@@ -6,14 +6,14 @@
 
     <div class="form-group my-2">
       <label>Nombre del Producto</label>
-      <input type="text" class="form-control">
+      <input [(ngModel)]="product.name" type="text" class="form-control">
     </div>
 
     <div class="row my-2">
       <div class="col">
         <div class="form-group">
           <label>Stock</label>
-          <input step="0.0001" type="number" class="form-control">
+          <input [(ngModel)]="product.instock" step="0.0001" type="number" class="form-control">
         </div>
       </div>
       <div class="col">
@@ -21,7 +21,7 @@
           <label>Color</label>
           <select class="form-control">
               <option>Default select</option>
-              <option *ngFor="let item of colors" [value]="item._id">{{item.name}}</option>
+              <option [(ngModel)]="product.color" *ngFor="let item of colors" [value]="item._id">{{item.name}}</option>
           </select>
         </div>
       </div>
@@ -31,13 +31,13 @@
       <div class="col">
         <div class="form-group">
           <label>Precio dolares</label>
-          <input class="form-control" type="number">
+          <input [(ngModel)]="product.price" class="form-control" type="number">
         </div>
       </div>
       <div class="col">
         <div class="form-group">
           <label>Subcategoria</label>
-          <select class="form-control">
+          <select [(ngModel)]="product.subcategory" class="form-control">
               <option>Default select</option>
           </select>
         </div>
@@ -48,13 +48,13 @@
       <div class="col">
         <div class="form-group">
           <label>Descripción</label>
-          <textarea class="form-control" rows="4"></textarea>
+          <textarea [(ngModel)]="product.description" class="form-control" rows="4"></textarea>
         </div>
       </div>
       <div class="col">
         <div class="form-group">
           <label>Foto principal del producto</label>
-          <input #file type="file" accept='image/*' (change)="preview(file.files)" class="form-control-file">
+          <input [(ngModel)]="product.principalImg" #file type="file" accept='image/*' (change)="preview(file.files)" class="form-control-file">
           <div class="mt-2">
               <img [src]="imgURL" width="180" *ngIf="imgURL">
           </div>
@@ -63,7 +63,7 @@
       <div class="col">
         <div class="form-group">
           <label>Fotos adicionales del Producto</label>
-          <input type="file" multiple (change)="detectFiles($event)" class="form-control-file" multiple>
+          <input [(ngModel)]="product.images" type="file" multiple (change)="detectFiles($event)" class="form-control-file" multiple>
           <div class="mt-2">
               <img *ngFor="let url of urls" [src]="url" class="rounded mb-3" width="180">
           </div>
