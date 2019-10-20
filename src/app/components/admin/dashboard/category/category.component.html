@@ -8,10 +8,10 @@
         <div class="col">
             <div class="form-group">
                 <label>Nombre de la Categoria</label>
-                <input type="text" class="form-control">
+                <input [(ngModel)]="category.name" type="text" class="form-control">
             </div>
             <div class="form-group">
-                <button class="btn ec float-right" type="button">
+                <button (click)="newCategory()" class="btn ec float-right" type="button">
                     <i class="fa fa-plus"></i>
                     AGREGAR CATEGORIA
                 </button>
@@ -23,21 +23,22 @@
       <div class="col">
         <div class="form-group">
           <label>Nombre de la Subcategoria</label>
-          <input type="text" class="form-control">
+          <input [(ngModel)]="subCategory.name" type="text" class="form-control">
         </div>
       </div>
       <div class="col">
         <div class="form-group">
           <label>Categoria</label>
-          <select class="form-control">
-              <option>Default select</option>
+          <select [(ngModel)]="subCategory.parent" class="form-control">
+                <option value="">Seleccione..</option>
+                <option *ngFor="let item of allCategories" [value]="item._id">{{item.name}}</option>
           </select>
         </div>
       </div>
     </div>
 
     <div class="form-group">
-        <button class="btn ec float-right" type="button">
+        <button (click)="newSubCategory()" class="btn ec float-right" type="button">
             <i class="fa fa-plus"></i>
             AGREGAR SUBCATEGORIA
         </button>
@@ -55,14 +56,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td scope="row">Procesadores</td>
-                        <td>Componentes de Pc
-                    </tr>
-                    <tr>
-                        <td scope="row">Motherboards</td>
-                        <td>Componentes de PC</td>
-                    </tr>
+                    <ng-container *ngFor="let child of allCategories">
+                        <tr *ngFor="let item of child.subcategories">
+                            <td scope="row">{{item.name}}</td>
+                            <td>{{child.name}}
+                        </tr>
+                    </ng-container>
                 </tbody>
             </table>
         </div>

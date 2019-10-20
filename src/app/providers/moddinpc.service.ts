@@ -87,5 +87,40 @@ export class ModdingService {
 				});
 		})
 	}
-	
+
+	getAllCategory(){
+		this.setHeaders();
+		return new Promise((resolve, reject) => {
+			this.http.get(`${url}/category/all`, {headers: this.headers})
+				.subscribe(res => {
+					resolve(res);
+				}, (err) => {
+					reject(err);
+				});
+		});
+	}
+
+	createCategory(cat){
+		this.setHeaders();
+		return new Promise((resolve, reject) => {
+			this.http.post(`${url}/category/create`, cat, {headers: this.headers})
+				.subscribe(res => {
+					resolve(res);
+				}, (err) => {
+					reject(err);
+				});
+		});
+	}
+
+	createSubcategory(sub){
+		this.setHeaders();
+		return new Promise((resolve, reject) => {
+			this.http.post(`${url}/category/subcreate`, sub, {headers: this.headers})
+				.subscribe(res => {
+					resolve(res);
+				}, (err) => {
+					reject(err);
+				});
+		});
+	}
 }

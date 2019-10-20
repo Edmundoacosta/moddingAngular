@@ -14,7 +14,6 @@ export class AddproductsComponent implements OnInit {
   public product = {
     name: '',
     color: '',
-    price: '',
     description: '',
     principalImg: '',
     images: [],
