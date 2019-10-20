@@ -17,10 +17,11 @@
         </div>
       </div>
       <div class="col">
-        <div class="form-group">
+        <div class="form-group" >
           <label>Color</label>
           <select class="form-control">
               <option>Default select</option>
+              <option *ngFor="let item of colors" [value]="item._id">{{item.name}}</option>
           </select>
         </div>
       </div>
