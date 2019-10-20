@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common'; 
+import { ModdingService } from '../../../../../providers/moddinpc.service';
 
 @Component({
   selector: 'app-addproducts',
@@ -53,7 +54,8 @@ export class AddproductsComponent implements OnInit {
     inStock: 0,
     subcategory: ''
   };
-  constructor(private location: Location) { }
+  constructor(private location: Location,
+    public moddingServ: ModdingService) { }
 
   ngOnInit() {
   }
@@ -85,6 +87,13 @@ export class AddproductsComponent implements OnInit {
 
   goBack(){
     this.location.back();
+  }
+
+  create(){
+    this.moddingServ.createProduct(this.product)
+      .then((res) => {
+        console.log(res);
+      });
   }
 
 }
