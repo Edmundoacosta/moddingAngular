@@ -11,10 +11,22 @@ export class AddproductsComponent implements OnInit {
   urls = new Array<string>();
   public imagePath;
   imgURL: any;
+  public product = {
+    name: '',
+    color: '',
+    price: '',
+    description: '',
+    principalImg: '',
+    images: [],
+    price: 0,
+    inStock: 0,
+    subcategory: ''
+  };
   constructor(private location: Location) { }
 
   ngOnInit() {
   }
+
   preview(file) {
     if (file.length === 0)
       return;
@@ -25,6 +37,7 @@ export class AddproductsComponent implements OnInit {
       this.imgURL = reader.result; 
     }
   }
+
   detectFiles(event) {
     this.urls = [];
     let files = event.target.files;
@@ -38,6 +51,7 @@ export class AddproductsComponent implements OnInit {
       }
     }
   }
+
   goBack(){
     this.location.back();
   }

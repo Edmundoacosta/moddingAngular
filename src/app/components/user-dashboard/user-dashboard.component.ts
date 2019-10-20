@@ -31,7 +31,7 @@ export class UserDashboardComponent implements OnInit {
   	this._modService.getUser()
   		.then((res) =>{
         this.user = res['user'];
-        this.user.addressOne = `${this.user['addresses'][0].name} - ${this.user['addresses'][0].district}`;
+        this.user.addressOne = `${this.user['addresses'][this.user['addresses'].length-1].name} - ${this.user['addresses'][this.user['addresses'].length-1].district}`;
   		});
   }
 
