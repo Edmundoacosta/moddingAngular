@@ -30,7 +30,7 @@ export class CategoryComponent implements OnInit {
   refresh(){
     this.moddingServ.getAllCategory()
       .then(res => {
-        this.allCategories = res.result;
+        this.allCategories = res['result'];
       });
   }
 
@@ -38,7 +38,7 @@ export class CategoryComponent implements OnInit {
     this.moddingServ.createCategory(this.category)
       .then((res) => {
         this.category.name = '';
-        this.allCategories.push(res.result);
+        this.allCategories.push(res['result']);
       });
   }
 
