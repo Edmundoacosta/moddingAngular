@@ -58,30 +58,37 @@ export class AddproductsComponent implements OnInit {
     public moddingServ: ModdingService) { }
 
   ngOnInit() {
+    this.moddingServ.getAllProducts()
+      .then((res)=> {
+        console.log(res);
+      });
   }
 
-  preview(file) {
-    if (file.length === 0)
-      return;
-    var reader = new FileReader();
-    this.imagePath = file;
-    reader.readAsDataURL(file[0]); 
-    reader.onload = (_event) => { 
-      this.imgURL = reader.result; 
+  changeFile(event){
+    let fileList: FileList = event.target.files;
+    if(fileList.length > 0) {
+      let file: File = fileList[0];
+      this.readThis(file);
     }
   }
 
-  detectFiles(event) {
-    this.urls = [];
-    let files = event.target.files;
-    if (files) {
-      for (let file of files) {
-        let reader = new FileReader();
-        reader.onload = (e: any) => {
-          this.urls.push(e.target.result);
-        }
-        reader.readAsDataURL(file);
-      }
+  readThis(file: any): void {
+    var myReader:FileReader = new FileReader();
+    myReader.onloadend = (e) => {
+      this.imgURL = myReader.result; 
+      this.product['principalImg'] = myReader.result.split('base64,')[1];
+    }
+    myReader.readAsDataURL(file);
+  }
+
+
+  preview(evt) {
+    if (evt.target.files.length === 0)return;
+    var reader = new FileReader();
+    this.imagePath = evt.target.files[0].name;
+    reader.readAsDataURL(evt.target.files[0]); 
+    reader.onload = (_event) => {
+      this.imgURL = reader.result; 
     }
   }
 
@@ -95,5 +102,4 @@ export class AddproductsComponent implements OnInit {
         console.log(res);
       });
   }
-
 }

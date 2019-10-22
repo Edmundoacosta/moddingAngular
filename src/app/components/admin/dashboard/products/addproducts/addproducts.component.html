@@ -19,9 +19,9 @@
       <div class="col">
         <div class="form-group" >
           <label>Color</label>
-          <select class="form-control">
-              <option>Default select</option>
-              <option [(ngModel)]="product.color" *ngFor="let item of colors" [value]="item._id">{{item.name}}</option>
+          <select [(ngModel)]="product.color" class="form-control">
+              <option value="">Default select</option>
+              <option *ngFor="let item of colors" [value]="item._id">{{item.name}}</option>
           </select>
         </div>
       </div>
@@ -54,7 +54,7 @@
       <div class="col">
         <div class="form-group">
           <label>Foto principal del producto</label>
-          <input [(ngModel)]="product.principalImg" #file type="file" accept='image/*' (change)="preview(file.files)" class="form-control-file">
+          <input name="principalImg" type="file" accept='image/*' (change)="changeFile($event)" class="form-control-file">
           <div class="mt-2">
               <img [src]="imgURL" width="180" *ngIf="imgURL">
           </div>
@@ -63,9 +63,9 @@
       <div class="col">
         <div class="form-group">
           <label>Fotos adicionales del Producto</label>
-          <input [(ngModel)]="product.images" type="file" multiple (change)="detectFiles($event)" class="form-control-file" multiple>
+          <input type="file" multiple (change)="detectFiles($event)" class="form-control-file" multiple>
           <div class="mt-2">
-              <img *ngFor="let url of urls" [src]="url" class="rounded mb-3" width="180">
+            <img *ngFor="let url of urls" [src]="url" class="rounded mb-3" width="180">
           </div>
         </div>
       </div>

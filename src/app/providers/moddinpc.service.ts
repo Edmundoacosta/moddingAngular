@@ -124,6 +124,18 @@ export class ModdingService {
 		});
 	}
 
+	getAllProducts(){
+		this.setHeaders();
+		return new Promise((resolve, reject) => {
+			this.http.get(`${url}/products/all`, {headers: this.headers})
+				.subscribe(res => {
+					resolve(res);
+				}, (err) => {
+					reject(err);
+				});
+		});
+	}
+
 	createProduct(product) {
 		this.setHeaders();
 		return new Promise((resolve, reject) => {
