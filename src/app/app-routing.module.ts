@@ -9,7 +9,6 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
 import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
-import { PersonalizacionComponent } from './components/personalizacion/personalizacion.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ItemDetailComponent } from "./components/item-detail/item-detail.component";
@@ -18,7 +17,6 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
 import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 import { ProductsComponent } from './components/admin/dashboard/products/products.component';
 import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
-import { UpdateproductsComponent } from './components/admin/dashboard/products/updateproducts/updateproducts.component';
 import { CategoryComponent } from './components/admin/dashboard/category/category.component';
 import { NewsComponent } from './components/admin/dashboard/news/news.component';
 import { GamerzoneComponent } from './components/admin/dashboard/gamerzone/gamerzone.component';
@@ -38,7 +36,6 @@ const routes: Routes = [
 	{path: 'registro', component: RegistroComponent},
 	{path: 'zona_gamer', component: ZonaGamerComponent},
 	{path: 'zona_gamerdetail', component: ZonaGamerdetailComponent},
-	{path: 'personalizacion', component: PersonalizacionComponent},
 	{path: 'user_dashboard', component: UserDashboardComponent},
 	{path: 'shopping_cart', component: ShoppingCartComponent},
 	{path: 'item_detail', component: ItemDetailComponent},
@@ -53,7 +50,6 @@ const routes: Routes = [
 		{ path: 'dashboard/users', component: UsersListComponent,pathMatch: 'full'},
 		{ path: 'dashboard/products', component: ProductsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/products/addproducts', component: AddproductsComponent,pathMatch: 'full'},
-		{ path: 'dashboard/products/updateproducts', component: UpdateproductsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/categories', component: CategoryComponent,pathMatch: 'full'},
 		{ path: 'dashboard/news', component: NewsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/gamerzone', component: GamerzoneComponent,pathMatch: 'full'}
