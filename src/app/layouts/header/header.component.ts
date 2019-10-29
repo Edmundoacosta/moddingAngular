@@ -62,7 +62,6 @@ export class HeaderComponent implements OnInit {
   }
   newUser(){
     this.router.navigate(['/registro']);
-    location.reload();
   }
 
   logout() {

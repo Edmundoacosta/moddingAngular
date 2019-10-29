@@ -21,7 +21,7 @@
           <label>Color</label>
           <select [(ngModel)]="product.color" class="form-control">
               <option value="">Default select</option>
-              <option *ngFor="let item of colors" [value]="item._id">{{item.name}}</option>
+              <option *ngFor="let item of colors" [value]="item.name">{{item.name}}</option>
           </select>
         </div>
       </div>

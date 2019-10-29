@@ -76,7 +76,7 @@ export class AddproductsComponent implements OnInit {
     var myReader:FileReader = new FileReader();
     myReader.onloadend = (e) => {
       this.imgURL = myReader.result; 
-      this.product['principalImg'] = myReader.result.split('base64,')[1];
+      this.product['principalImg'] = this.imgURL.split('base64,')[1];
     }
     myReader.readAsDataURL(file);
   }
@@ -99,7 +99,16 @@ export class AddproductsComponent implements OnInit {
   create(){
     this.moddingServ.createProduct(this.product)
       .then((res) => {
-        console.log(res);
+        this.product = {
+          name: '',
+          color: '',
+          description: '',
+          principalImg: '',
+          images: [],
+          price: 0,
+          inStock: 0,
+          subcategory: ''
+        };
       });
   }
 }
