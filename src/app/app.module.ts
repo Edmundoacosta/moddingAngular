@@ -38,6 +38,7 @@ import { AddproductsComponent } from './components/admin/dashboard/products/addp
 import { ZonaGamerdetailComponent } from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { Checkout4Component } from './components/checkout/checkout4/checkout4.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,7 @@ import { Checkout4Component } from './components/checkout/checkout4/checkout4.co
     AddproductsComponent,
     ZonaGamerdetailComponent,
     ForgotPasswordComponent,
-    Checkout4Component
+    Checkout4Component,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +81,8 @@ import { Checkout4Component } from './components/checkout/checkout4/checkout4.co
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [
     ModdingService,
