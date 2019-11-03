@@ -8,6 +8,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
   providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}]
 })
 export class ItemDetailComponent implements OnInit {
+  quantity = 1 ;
 
   public Districts:Array<any> = [
     {
@@ -83,6 +84,21 @@ export class ItemDetailComponent implements OnInit {
   ngOnInit() {
   }
   
+  incrementItem() : void {
+    if(this.quantity < 20) {
+      this.quantity += 1;
+    } else {
+      return;
+    }
+  }
+  decrementItem() : void {
+    if(this.quantity > 1) {
+      this.quantity -= 1;
+    } else {
+      return;
+    }
+  }
+
   goBack(){
     this.location.back();
   }

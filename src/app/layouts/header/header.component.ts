@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
   		password: ['', Validators.required]
     })
   }
-
+ 
   openModal(template: TemplateRef<any>) {
     if (this.logged) {
       this.router.navigate(['/user_dashboard']);

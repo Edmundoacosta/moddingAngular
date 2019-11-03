@@ -16,10 +16,10 @@
 						<div class="preview-pic tab-content text-center">
 						<!--big pictures-->
 						  	<div class="tab-pane active pic" id="pic-1">
-								<img src="../../../assets/imagenes/motherboards/6th-7th/gigabyte-b250m-ds3h-2.png"/>
+								<img src="https://picsum.photos/300"/>
 							</div>
 							<div class="tab-pane pic" id="pic-2">
-								<img src="../../../assets/imagenes/motherboards/6th-7th/gigabyte-b250m-ds3h-1.png"/>
+								<img src="https://picsum.photos/300"/>
 							</div>
 							<div class="tab-pane pic" id="pic-3">
 								<img src=""/>
@@ -35,12 +35,12 @@
 						<ul class="preview-thumbnail nav nav-tabs">
 						  	<li class="active">
 								<a data-target="#pic-1" data-toggle="tab">
-									<img src="../../../assets/imagenes/motherboards/6th-7th/gigabyte-b250m-ds3h-2.png" />
+									<img src="https://picsum.photos/300" />
 								</a>
 							</li>
 							<li>
 								<a data-target="#pic-2" data-toggle="tab">
-									<img src="../../../assets/imagenes/motherboards/6th-7th/gigabyte-b250m-ds3h-1.png" />
+									<img src="https://picsum.photos/300" />
 								</a>
 							</li>
 							<li>
@@ -64,14 +64,29 @@
 						<h3 class="product-title">Nombre del Producto</h3>
 						<p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
 						<div class="row mx-1 my-2">
-							<h5 class="mr-2">Precio</h5>
+							<h5 class="mr-2">Precio :</h5>
+							<h5 class="mt-3">$0.00</h5>
+						</div>
+						<ul class="mx-4">
+							<li>Precio incluye el IGV</li>
+							<li>Precio Sujeto a cambios sin previo aviso</li>
+							<li>Precio no incluye el precio del envio</li>
+						</ul>
+						<div class="row mx-1 my-2">
+							<h5 class="mr-2">Stock :</h5>
+							<h5>0</h5>
 						</div>
 						<div class="row mx-1 my-2">
-							<h5 class="mr-2">Stock</h5>
-						</div>
-						<div class="row mx-1 my-2">
-							<h5 class="mr-2">Cantidad</h5>
-							<input class="cantidad" type="number" value="1" min="1" max="20">
+							<h5 class="mr-2">Cantidad :</h5>
+							<button mat-mini-fab class="btn plus-minus" data-type="minus" (click)="decrementItem() ">
+								<i class="fa fa-minus "></i>
+							</button>
+							<mat-form-field>
+								<input matInput id="cantidad" type="number" class="text-center" value="1" min="1" max="20" value="{{quantity}}">
+							</mat-form-field>
+							<button mat-mini-fab class="btn plus-minus" data-type="plus" (click)="incrementItem()">
+								<i class="fa fa-plus "></i>
+							</button>
 						</div>
 						<div class="action">
 							<button class="add-to-cart btn float-right" type="button">Añadir al carrito</button>
@@ -81,7 +96,7 @@
 			</div>
 			<!--nav for the specs and other navmenu-->
 			<div class="row mt-5">
-				<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+				<ul class="nav nav-pills mb-3 mx-3" id="pills-tab" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" id="v-pills-et-tab" data-toggle="pill" href="#v-pills-et" role="tab" aria-controls="v-pills-et" aria-selected="true">
 							Especificaciones técnicas
@@ -127,7 +142,7 @@
 										<div class="cbody">
 											<p class="card-text"><strong>Tranferencia o deposito</strong></p>
 										</div>
-										<img src="./assets/imagenes/metodo de pago/logo bcp.png" class="card-img-top">
+										<img src="./assets/imagenes/metodo de pago/logo bbva.png" class="card-img-top">
 										<img src="./assets/imagenes/metodo de pago/logo interbank.png" class="card-img-top">
 									</div>
 									<div class="card">
