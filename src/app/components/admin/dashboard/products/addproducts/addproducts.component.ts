@@ -54,13 +54,14 @@ export class AddproductsComponent implements OnInit {
     inStock: 0,
     subcategory: ''
   };
+  public subcategories = [];
   constructor(private location: Location,
     public moddingServ: ModdingService) { }
 
   ngOnInit() {
-    this.moddingServ.getAllProducts()
-      .then((res)=> {
-        console.log(res);
+    this.moddingServ.getAllSubCategories()
+      .then((res) => {
+        this.subcategories = res['result'];
       });
   }
 

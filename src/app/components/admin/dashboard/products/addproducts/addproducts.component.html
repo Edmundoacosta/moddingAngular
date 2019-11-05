@@ -38,7 +38,8 @@
         <div class="form-group">
           <label>Subcategoria</label>
           <select [(ngModel)]="product.subcategory" class="form-control">
-              <option>Default select</option>
+            <option value="">Subcategoria</option>
+            <option *ngFor="let opt of subcategories" [value]="opt.name">{{opt.name}}</option>
           </select>
         </div>
       </div>
