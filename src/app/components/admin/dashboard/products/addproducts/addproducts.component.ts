@@ -68,28 +68,29 @@ export class AddproductsComponent implements OnInit {
     let fileList: FileList = event.target.files;
     if(fileList.length > 0) {
       let file: File = fileList[0];
-      this.readThis(file);
+      this.readThis(file, false);
     }
   }
 
-  readThis(file: any): void {
+  changeFiles(event){
+    let fileList: FileList = event.target.files;
+    for (var i = 0; i < fileList.length; i++) {
+      this.readThis(fileList[i], true);
+    }
+  }
+
+  readThis(file: any, files: boolean): void {
     var myReader:FileReader = new FileReader();
     myReader.onloadend = (e) => {
-      this.imgURL = myReader.result; 
-      this.product['principalImg'] = myReader.result.split('base64,')[1];
+      if (files) {
+        this.urls.push(myReader.result);
+        this.product['images'].push(myReader.result.split('base64,')[1]);
+      } else {
+        this.imgURL = myReader.result;
+        this.product['principalImg'] = this.imgURL.split('base64,')[1];
+      }
     }
     myReader.readAsDataURL(file);
-  }
-
-
-  preview(evt) {
-    if (evt.target.files.length === 0)return;
-    var reader = new FileReader();
-    this.imagePath = evt.target.files[0].name;
-    reader.readAsDataURL(evt.target.files[0]); 
-    reader.onload = (_event) => {
-      this.imgURL = reader.result; 
-    }
   }
 
   goBack(){

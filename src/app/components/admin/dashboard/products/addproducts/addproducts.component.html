@@ -63,7 +63,7 @@
       <div class="col">
         <div class="form-group">
           <label>Fotos adicionales del Producto</label>
-          <input type="file" multiple (change)="detectFiles($event)" class="form-control-file" multiple>
+          <input type="file" multiple (change)="changeFiles($event)" class="form-control-file" multiple>
           <div class="mt-2">
             <img *ngFor="let url of urls" [src]="url" class="rounded mb-3" width="180">
           </div>
