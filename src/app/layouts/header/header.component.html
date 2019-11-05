@@ -22,7 +22,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" routerLink="/categoria/sistema">Sistema de Iluminación</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/personalizacion">Personalización De Pc</a>
+                <a class="dropdown-item" routerLink="/categoria/Personalización">Personalización De Pc</a>
             </div>
         </li>
           <li class="nav-item">
@@ -108,7 +108,7 @@
 
                     <div>
                       <button (click)="modalRef.hide()" (click)="forgotModal(forgotPasswordModal)" data-dismiss="modal" class="float-lef btn newUser">Olvidaste tu contraseña?</button>
-                      <button (click)="newUser()" data-dismiss="modal" class="float-right btn newUser">Usuario Nuevo?</button>
+                      <button (click)="modalRef.hide()" (click)="newUser()" data-dismiss="modal" class="float-right btn newUser">Usuario Nuevo?</button>
                     </div>
                   </form>
               </div>

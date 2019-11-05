@@ -18,7 +18,6 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
 import { DigitOnlyModule } from '@uiowa/digit-only';
 import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
-import { PersonalizacionComponent } from './components/personalizacion/personalizacion.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
@@ -37,9 +36,9 @@ import { GamerzoneComponent } from './components/admin/dashboard/gamerzone/gamer
 import { CategoryComponent } from './components/admin/dashboard/category/category.component';
 import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
 import { ZonaGamerdetailComponent } from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
-import { UpdateproductsComponent } from './components/admin/dashboard/products/updateproducts/updateproducts.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { Checkout4Component } from './components/checkout/checkout4/checkout4.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -54,7 +53,6 @@ import { Checkout4Component } from './components/checkout/checkout4/checkout4.co
     CategoriesComponent,
     CategoryViewComponent,
     ZonaGamerComponent,
-    PersonalizacionComponent,
     UserDashboardComponent,
     ShoppingCartComponent,
     ItemDetailComponent,
@@ -72,9 +70,8 @@ import { Checkout4Component } from './components/checkout/checkout4/checkout4.co
     CategoryComponent,
     AddproductsComponent,
     ZonaGamerdetailComponent,
-    UpdateproductsComponent,
     ForgotPasswordComponent,
-    Checkout4Component
+    Checkout4Component,
   ],
   imports: [
     BrowserModule,
@@ -84,7 +81,8 @@ import { Checkout4Component } from './components/checkout/checkout4/checkout4.co
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [
     ModdingService,

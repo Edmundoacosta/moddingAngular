@@ -97,6 +97,18 @@ export class CategoryViewComponent implements OnInit {
       price: '10.00',
       image: 'https://picsum.photos/300',
       category: 'compu',
+    },
+    {
+      name: 'Lorem Ipsum Dolor Sit.',
+      price: '10.00',
+      image: 'https://picsum.photos/300',
+      category: 'Personalización',
+    },
+    {
+      name: 'Lorem Ipsum Dolor Sit.',
+      price: '10.00',
+      image: 'https://picsum.photos/300',
+      category: 'Personalización',
     }
   ];
   public realdata:Array<any> = [];

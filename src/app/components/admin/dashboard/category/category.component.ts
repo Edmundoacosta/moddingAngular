@@ -22,7 +22,7 @@ export class CategoryComponent implements OnInit {
 
   constructor(private location: Location,
     public moddingServ: ModdingService) { }
-
+ 
   ngOnInit() {
     this.refresh();
   }

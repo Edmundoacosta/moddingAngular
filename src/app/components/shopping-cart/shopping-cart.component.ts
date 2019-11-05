@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent implements OnInit {
+  quantity = 1;
+  result = this.getResult();
+  productPrice = 12.5;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getResult() {
+    return this.productPrice * this.quantity;
   }
 
 }

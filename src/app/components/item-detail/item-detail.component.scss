@@ -135,6 +135,25 @@
 .cbody {
   padding: 0px;
 }
+h5 {
+  margin-top: 15px;
+}
+.plus-minus {
+  color: $secondC ;
+  background-color: #eee;
+  margin: 0px 10px;
+  &:hover {
+    background-color: $thirdC;
+    color: #fff;
+  }
+}
+.fa {
+  margin: 5px;
+  text-align: center;
+}
+mat-form-field{
+  width: 35px;
+}
 .nav-link {
   color: $secondC;
   text-decoration: none;
@@ -168,4 +187,13 @@
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1); }}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
