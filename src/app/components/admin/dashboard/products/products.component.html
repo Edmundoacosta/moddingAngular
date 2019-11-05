@@ -24,24 +24,17 @@
 				        <th scope="col">Categoria Del Producto</th>
 						<th scope="col">Stock</th>
 						<th scope="col">Color</th>
-				        <th scope="col">Precio</th> 
+				        <th scope="col">Precio Dolares</th> 
 				    </tr>
 				</thead>
 				<tbody>
-				    <tr>
-				        <th scope="row">Radiador</th>
-				        <td>GAAA</td>
-						<td>20</td>
-						<td>negro</td>
-				       <td>50</td>
-				    </tr>
-				    <tr>
-				        <th scope="row">Ventilador</th>
-				        <td>GAAAA</td>
-						<td>15</td>
-						<td>blanco</td>
-				        <td>15</td>
-				    </tr>
+					<tr *ngFor="let Product of allProducts">
+						<td>{{Product.name}}</td>
+						<td>{{Product.subcategory}}</td>
+						<td>{{Product.inStock}}</td>
+						<td>{{Product.color}}</td>
+						<td>{{Product.price}}</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>

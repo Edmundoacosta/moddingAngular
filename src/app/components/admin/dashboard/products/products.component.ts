@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { ModdingService } from '../../../../providers/moddinpc.service';
 
 @Component({
   selector: 'app-products',
@@ -9,10 +10,18 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 })
 export class ProductsComponent implements OnInit {
   
-
-  constructor(private location: Location) { }
+  public allProducts = [];
+  constructor(private location: Location,
+      public moddingServ: ModdingService) { }
 
   ngOnInit() {
+    this.list();
+  }
+  list(){
+    this.moddingServ.getAllProducts()
+      .then(res => {
+        this.allProducts = res['result']; 
+      });
   }
   goBack(){
     this.location.back();
