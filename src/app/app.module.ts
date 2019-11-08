@@ -39,6 +39,10 @@ import { ZonaGamerdetailComponent } from './components/zona-gamer/zona-gamerdeta
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { Checkout4Component } from './components/checkout/checkout4/checkout4.component';
 import { MaterialModule } from './material/material.module';
+import { ModalsComponent } from './components/modals/modals.component';
+import { LoginModalComponent } from './components/modals/login-modal/login-modal.component';
+import { RecoveryPassComponent } from './components/modals/recovery-pass/recovery-pass.component';
+import { SuccessMComponent } from './components/modals/success-m/success-m.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +76,15 @@ import { MaterialModule } from './material/material.module';
     ZonaGamerdetailComponent,
     ForgotPasswordComponent,
     Checkout4Component,
+    ModalsComponent,
+    LoginModalComponent,
+    RecoveryPassComponent,
+    SuccessMComponent,
+  ],
+  entryComponents: [
+    LoginModalComponent,
+    RecoveryPassComponent,
+    SuccessMComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,42 @@
+
+<button mat-dialog-close class="btn close"><i class="fa fa-close"></i></button>
+<div class="titulo">
+  <h1 mat-dialog-title class="text-center">Iniciar Sesión</h1>
+</div>
+<div class="text-center mb-2">
+  <img class="logo_login" src="./assets/imagenes/logos/logo-envi-c2.png" alt="">
+</div>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value, userForm.valid)">
+  <div class="container">
+    <div class="disp form-sm">
+      <i class="fa fa-envelope prefix mx-2"></i>
+      <mat-form-field class=" mx-3">
+        <input matInput placeholder="Correo Electrónico" formControlName="email" [formControl]="u.email">
+        <mat-error *ngIf="u.email.hasError('email') && !u.email.hasError('required')">
+            Ingrese un correo electrónico válido
+        </mat-error>
+        <mat-error *ngIf="u.email.hasError('required')">
+            Ingrese su correo electrónico 
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="disp form-sm">
+      <i class="fa fa-lock prefix mx-2"></i>
+      <mat-form-field class=" mx-3">
+          <input matInput placeholder="Contraseña" type="password" formControlName="password">
+      </mat-form-field>
+    </div>
+
+    <div class="links">
+      <button mat-dialog-close data-dismiss="modal" class="btn newUser" (click)="openDialog()">Olvidaste tu contraseña?</button>
+      <button mat-dialog-close routerLink="/registro" data-dismiss="modal" class="btn newUser">Usuario Nuevo?</button>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <button (click)="onSubmit()" class="btn ec btn-lg btn-block">Iniciar Sesión<i class="fa fa-sign-in ml-1"></i></button>
+  </div>
+</form>
+
