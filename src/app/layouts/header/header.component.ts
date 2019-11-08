@@ -1,9 +1,11 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionService } from '../../providers/session.service';
 import { ModdingService } from '../../providers/moddinpc.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { MatDialog } from '@angular/material';
+import { LoginModalComponent } from 'src/app/components/modals/login-modal/login-modal.component';
+
 
 @Component({
   selector: 'app-header',
@@ -16,14 +18,14 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class HeaderComponent implements OnInit {
   public logged:boolean = false;
   public userForm: FormGroup;
-  modalRef: BsModalRef;
 
   constructor(
     public session: SessionService,
     public router: Router,
-    private modalService: BsModalService,
     public _modService: ModdingService,
-    private _fb: FormBuilder) { }
+    private _fb: FormBuilder,
+    public dialog : MatDialog
+    ) { }
 
   ngOnInit() {
     console.log(1);
@@ -33,37 +35,15 @@ export class HeaderComponent implements OnInit {
   		password: ['', Validators.required]
     })
   }
- 
-  openModal(template: TemplateRef<any>) {
+
+  openLogin() {
     if (this.logged) {
       this.router.navigate(['/user_dashboard']);
     } else {
-      this.modalRef = this.modalService.show(template);
+      this.dialog.open(LoginModalComponent);
     }
   }
-  forgotModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
-  sModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-    setTimeout(() => {
-      location.reload();
-    }, 2500);
-  }
-
-  onSubmit(user, valid){
-  	if (valid) {
-  		this._modService.login({user: user}).then((res) => {
-        this.session.setObject('user', res['user']);
-        this.session.setItem('token', res['user'].token);
-        location.reload();
-	  	});
-  	}
-  }
-  newUser(){
-    this.router.navigate(['/registro']);
-  }
-
+  
   logout() {
       localStorage.removeItem('token');
       this.router.navigate(['/home']);

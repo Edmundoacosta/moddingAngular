@@ -1,0 +1,60 @@
+@import "../../../../variables.scss";
+mat-form-field  {
+    width: 85%;
+}
+.disp {
+    display: flex;
+    .fa {
+        margin-top: 20px;
+        color: $thirdC;
+    }
+}
+
+.titulo {
+    color: $thirdC;
+    background-color: $secondC;
+    border-color: $secondC;
+    border-radius: 10px;
+    padding: 20px 20px 5px 20px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    h1 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+.logo_login {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+.ec {
+    color: $secondC;
+    background-color: $firstC;
+    border: 1.5px solid;
+    border-radius: 8px;
+    float: right;
+    margin-bottom: 5px;
+    &:hover {
+        color: #fff;
+        background-color: $thirdC;
+    }
+}
+.newUser {
+    color: black;
+    &:hover{
+        color: $secondC;
+    }
+}
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.close {
+    margin: -24px;
+    color: $thirdC;
+    &:hover {
+        color: $secondC;
+    }
+}
