@@ -30,10 +30,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     console.log(1);
     this.logged = this.session.getItem('token')?true:false;
-  	this.userForm = this._fb.group({
-  		email: ['', Validators.required],
-  		password: ['', Validators.required]
-    })
   }
 
   openLogin() {
@@ -43,7 +39,7 @@ export class HeaderComponent implements OnInit {
       this.dialog.open(LoginModalComponent);
     }
   }
-  
+
   logout() {
       localStorage.removeItem('token');
       this.router.navigate(['/home']);

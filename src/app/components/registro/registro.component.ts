@@ -5,6 +5,10 @@ import { Router } from '@angular/router';
 import { matchOtherValidator } from '../../validation/match_passwords';
 import { SessionService } from '../../providers/session.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { MatDialog } from '@angular/material';
+import { LoginModalComponent } from '../modals/login-modal/login-modal.component';
+import { TermsComponent } from '../modals/terms/terms.component';
+import { PoliticaComponent } from '../modals/politica/politica.component';
 
 @Component({
   selector: 'app-registro',
@@ -53,7 +57,9 @@ export class RegistroComponent implements OnInit {
   	private _fb: FormBuilder,
     private router: Router,
     private modalService: BsModalService,
-    public session: SessionService) { }
+    public session: SessionService,
+    public dialog : MatDialog
+    ) { }
 
   ngOnInit() {
   	this.user = this._fb.group({
@@ -69,6 +75,15 @@ export class RegistroComponent implements OnInit {
       password2: ['', Validators.compose([Validators.required, matchOtherValidator('password')])],
   	});
   }
+  openLogin() {
+    this.dialog.open(LoginModalComponent);
+  }
+  openTerminos() {
+    this.dialog.open(TermsComponent);
+  }
+  openPolitica() {
+    this.dialog.open(PoliticaComponent);
+  }
  
   get u() {return this.user.controls;}
 
@@ -77,7 +92,7 @@ export class RegistroComponent implements OnInit {
       this.modService.register(user).then((res) => {
         this.session.setObject('user', res['user']);
         this.session.setItem('token', res['user'].token);
-        this.modalRef = this.modalService.show(template);
+        this.router.navigate(['/home']);
       }, (err) => {
         console.log(err);
       });

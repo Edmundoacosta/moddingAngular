@@ -178,41 +178,22 @@
                             </mat-form-field>
                         </div>
                         <div class="form-group">
-                            <button type="submit" (click)="onSubmit(u.value,u.valid,successModal)" class="btn btn-block ec"> Registrarse  </button>
+                            <button type="submit" (click)="onSubmit(u.value,u.valid)" class="btn btn-block ec"> Registrarse  </button>
                         </div>   
                         <small class="text-muted">Haciendo click en el boton 'Registrarse', confirmas que aceptas nuestros <br>
                         </small>
-                        <small>
-                            <a href="#">Términos de uso y Política de Privacidad.</a>
-                        </small>
+                        <div class="small">
+                            <small>
+                                <button (click)="openTerminos()" class="btn a float-left">Términos de Condiciones de Uso</button>
+                            </small>y
+                            <small>
+                                <button (click)="openPolitica()" class="btn a">Política de Privacidad.</button>
+                            </small>
+                        </div>
                     </form>
                 </article>
-                <div class="border-top card-body text-center">Ya tienes una cuenta? <a href="">Inicia Sesión</a></div>
+                <div class="border-top card-body text-center">Ya tienes una cuenta? <button class="btn a" (click)="openLogin()">Inicia Sesión</button></div>
             </div>
         </div>
     </div>
 </div>
-<ng-template #successModal>
-  <div class="modal-content">
-      <div class="login-container modal-body">
-        <div class="box_login">
-          <div class="modal_login">
-              <div class="image_form_login  text-center">
-                <img class="logo_login" src="./assets/imagenes/logos/logo-envi-c2.png" alt="">
-              </div>
-              <div>
-                <div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: flex;">
-                  <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
-                    <span class="swal2-success-line-tip"></span>
-                    <span class="swal2-success-line-long"></span>
-                    <div class="swal2-success-ring"></div> 
-                    <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
-                    <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
-                  </div>
-              </div>
-              <h4 class="text-center">Registro exitoso</h4>
-          </div>
-        </div>
-      </div>
-  </div>
-</ng-template>

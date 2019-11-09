@@ -43,6 +43,10 @@ import { ModalsComponent } from './components/modals/modals.component';
 import { LoginModalComponent } from './components/modals/login-modal/login-modal.component';
 import { RecoveryPassComponent } from './components/modals/recovery-pass/recovery-pass.component';
 import { SuccessMComponent } from './components/modals/success-m/success-m.component';
+import { TermsComponent } from './components/modals/terms/terms.component';
+import { PoliticaComponent } from './components/modals/politica/politica.component';
+import { GarantiaComponent } from './components/modals/garantia/garantia.component';
+import { MensajeSoporteComponent } from './components/modals/mensaje-soporte/mensaje-soporte.component';
 
 @NgModule({
   declarations: [
@@ -80,11 +84,19 @@ import { SuccessMComponent } from './components/modals/success-m/success-m.compo
     LoginModalComponent,
     RecoveryPassComponent,
     SuccessMComponent,
+    TermsComponent,
+    PoliticaComponent,
+    GarantiaComponent,
+    MensajeSoporteComponent,
   ],
   entryComponents: [
     LoginModalComponent,
     RecoveryPassComponent,
-    SuccessMComponent
+    SuccessMComponent,
+    TermsComponent,
+    PoliticaComponent,
+    GarantiaComponent,
+    MensajeSoporteComponent
   ],
   imports: [
     BrowserModule,
