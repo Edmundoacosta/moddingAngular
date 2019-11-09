@@ -35,10 +35,7 @@ export class LoginModalComponent implements OnInit {
   get u() {return this.userForm.controls;}
 
   openDialog() {
-    let dialogRef = this.dialog.open(RecoveryPassComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`dialog result: ${result}`);
-    } );
+    this.dialog.open(RecoveryPassComponent);
   }
 
   onSubmit(user, valid){
@@ -46,8 +43,11 @@ export class LoginModalComponent implements OnInit {
   		this._modService.login({user: user}).then((res) => {
         this.session.setObject('user', res['user']);
         this.session.setItem('token', res['user'].token);
-        location.reload();
-	  	});
+        this.router.navigate(['/home']);
+        setTimeout(() => {
+          location.reload();
+        }, 100);
+        });
   	}
   }
 
