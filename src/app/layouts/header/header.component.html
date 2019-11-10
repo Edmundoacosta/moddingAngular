@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-toggleable-md bg-faded sticky-top navbar-expand-lg navbar-light ">
   <a class="navbar-brand" routerLink="/home">
     <img id="logoE" src="./assets/imagenes/logos/logo-envi-c.png" alt="">
@@ -66,3 +67,21 @@
       </div>
   </div>
 </nav>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="push" #drawer [(opened)]="opened" class="sidenav"
+  fixedInViewport="true">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/sobre_nosotros">Link1</a>
+      <a mat-list-item href="">Link2</a>
+      <a mat-list-item href="">Link3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>Main
+    <button (click)="opened=!opened">toggle opened</button>
+  </mat-sidenav-content>
+  <a href="">link1</a>
+  <a href="">link1</a>
+  <a href="">link1</a>
+</mat-sidenav-container>
