@@ -16,6 +16,7 @@ import { LoginModalComponent } from 'src/app/components/modals/login-modal/login
   ]
 })
 export class HeaderComponent implements OnInit {
+  opened = false;
   public logged:boolean = false;
   public userForm: FormGroup;
 

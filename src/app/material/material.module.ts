@@ -19,7 +19,7 @@ import {
   MatStepperModule,
   MatOptionModule,
   MatSelectModule,
-  MatDialogModule,
+  MatDialogModule
 } from '@angular/material';
 const MaterialComponents = [
   MatFormFieldModule, 
@@ -40,7 +40,7 @@ const MaterialComponents = [
   MatStepperModule,
   MatOptionModule,
   MatSelectModule,
-  MatDialogModule,
+  MatDialogModule
 ]
 @NgModule({
   imports: [

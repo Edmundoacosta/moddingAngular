@@ -47,6 +47,9 @@ import { TermsComponent } from './components/modals/terms/terms.component';
 import { PoliticaComponent } from './components/modals/politica/politica.component';
 import { GarantiaComponent } from './components/modals/garantia/garantia.component';
 import { MensajeSoporteComponent } from './components/modals/mensaje-soporte/mensaje-soporte.component';
+import { MainNavComponent } from './layouts/main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -88,6 +91,7 @@ import { MensajeSoporteComponent } from './components/modals/mensaje-soporte/men
     PoliticaComponent,
     GarantiaComponent,
     MensajeSoporteComponent,
+    MainNavComponent,
   ],
   entryComponents: [
     LoginModalComponent,
@@ -107,7 +111,13 @@ import { MensajeSoporteComponent } from './components/modals/mensaje-soporte/men
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     ModdingService,

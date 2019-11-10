@@ -1,0 +1,80 @@
+@import "../../../variables.scss";
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 300px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+.sidelink {
+    margin: 0px 10px;
+    mat-form-field {
+        width: 100%;
+    }
+    a:hover {
+        color: $secondC;
+    }
+}
+.sidebutton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sidebutton button {
+    color: $thirdC;
+    &:hover {
+        color: $secondC;
+    }
+}
+.mat-toolbar {
+    background-color: $secondC;
+  }
+  mat-toolbar {
+      font-size: 15px;
+      a   {
+          display: inline-block;
+          margin: 0 5px;
+          color: $thirdC;
+          text-decoration: none;
+      }
+}
+#logoE {
+    width: 30px;
+    height: 30px;
+}
+.btn-ec {
+    color: $thirdC;
+
+    &:hover {
+        color: #fff;
+    }
+}
+.btn-ca {
+    color: $thirdC;
+    &:hover {
+        color: $secondC;
+    }
+}
+.link {
+    a:hover {
+        color: #fff;
+    }
+}
+.spacer {
+    flex: 1 1 auto;
+}
+@media (min-width : 768px) {
+  .sidenav {
+    display: none;
+  }
+}
+@media (max-width : 768px) {
+  .link {
+    display: none;
+  }
+}

@@ -1,0 +1,96 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [ngClass]="{hidden: !(isHandset | async)}"
+    fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <div class="sidelink">
+        <a class="nav-link dropdown-toggle" [matMenuTriggerFor]="afterMenu">Categorias</a>
+        <mat-menu class="mt-4" #afterMenu="matMenu" xPosition="after">
+          <button routerLink="/categoria/refrigeracion" class="btn btn-ca">Refrigeración Líquida Personalizada</button>
+          <button routerLink="/categoria/compu" class="btn btn-ca">Componentes de Computadora</button>
+          <button routerLink="/categoria/sistema" class="btn btn-ca">Sistema de Iluminación</button>
+          <button routerLink="/categoria/Personalización" class="btn btn-ca">Personalización De Pc</button>
+        </mat-menu>
+        <a (click)="sidenav.close()" class="nav-link" routerLink="/sobre_nosotros" routerLinkActive="active-link">Nosotros</a>
+        <a (click)="sidenav.close()" class="nav-link" routerLink="/novedades" routerLinkActive="active-link">Novedades</a>
+        <a (click)="sidenav.close()" class="nav-link" routerLink="/zona_gamer" routerLinkActive="active-link">Zona Gamer
+              <i class="fa fa-gamepad"></i>
+        </a>
+        <a class="nav-link" routerLink="/contact_us" routerLinkActive="active-link">Contactanos</a>
+
+        <mat-form-field class="text-center">
+          <input matInput type="text" placeholder="Buscar">
+        </mat-form-field>
+
+        <div class="sidebutton">
+
+          <button (click)="openLogin()" class="btn btn-ec" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil"><i class="fa fa-user"></i></button>
+
+          <button routerLink="/shopping_cart" class="btn btn-ec">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="badge badge-outline">0</span>
+          </button>
+
+          <button (click)="logout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión"><i class="fa fa-sign-out"></i></button>
+
+        </div>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a class="navbar-brand" routerLink="/home">
+        <img id="logoE" src="./assets/imagenes/logos/logo-envi-c.png" alt="">
+      </a>
+      <div class="link">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active-link">Inicio</a>
+        <a class="nav-link dropdown-toggle" [matMenuTriggerFor]="afterMenu">Categorias</a>
+        <mat-menu class="mt-5" #afterMenu="matMenu" yPosition="below">
+          <button routerLink="/categoria/refrigeracion" class="btn btn-ca">Refrigeración Líquida Personalizada</button>
+          <button routerLink="/categoria/compu" class="btn btn-ca">Componentes de Computadora</button>
+          <button routerLink="/categoria/sistema" class="btn btn-ca">Sistema de Iluminación</button>
+          <button routerLink="/categoria/Personalización" class="btn btn-ca">Personalización De Pc</button>
+        </mat-menu>
+        <a class="nav-link" routerLink="/sobre_nosotros" routerLinkActive="active-link">Nosotros</a>
+        <a class="nav-link" routerLink="/novedades" routerLinkActive="active-link">Novedades</a>
+        <a class="nav-link" routerLink="/zona_gamer" routerLinkActive="active-link">Zona Gamer
+              <i class="fa fa-gamepad"></i>
+        </a>
+        <a class="nav-link" routerLink="/contact_us" routerLinkActive="active-link">Contactanos</a>
+      </div>
+      <span class="spacer"></span>
+      <div class="link">
+
+        <mat-form-field class="text-center">
+          <input matInput type="text" placeholder="Buscar">
+        </mat-form-field>
+
+        <button (click)="openLogin()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil"><i class="fa fa-user"></i></button>
+
+        <button routerLink="/shopping_cart" class="btn btn-ec">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="badge badge-outline">0</span>
+        </button>
+
+        <button (click)="logout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión"><i class="fa fa-sign-out"></i></button>
+        
+      </div>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
