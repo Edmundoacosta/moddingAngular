@@ -74,10 +74,13 @@
       </div>
       <span class="spacer"></span>
       <div class="link">
-
-        <mat-form-field class="text-center">
-          <input matInput type="text" placeholder="Buscar">
-        </mat-form-field>
+        
+        <div class="search-box">
+          <input type="text" class="search-txt" placeholder="Buscar">
+          <a class="search-btn mt-1">
+            <i class="fa fa-search"></i>
+          </a>
+        </div>
 
         <button (click)="openLogin()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil"><i class="fa fa-user"></i></button>
 
