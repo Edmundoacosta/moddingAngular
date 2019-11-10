@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { SessionService } from '../../providers/session.service';
 import { ModdingService } from '../../providers/moddinpc.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { LoginModalComponent } from 'src/app/components/modals/login-modal/login-modal.component';
 
@@ -31,7 +31,7 @@ export class MainNavComponent {
     public router: Router,
     public _modService: ModdingService,
     private _fb: FormBuilder,
-    public dialog : MatDialog
+    public dialog : MatDialog,
     ) {}
 
     ngOnInit() {
