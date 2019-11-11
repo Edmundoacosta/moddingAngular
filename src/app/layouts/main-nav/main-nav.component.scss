@@ -56,8 +56,10 @@
 }
 .btn-ca {
     color: $thirdC;
+    width: 100%;
+    text-align: left;
     &:hover {
-        color: $secondC;
+      color: $secondC;
     }
 }
 .link {

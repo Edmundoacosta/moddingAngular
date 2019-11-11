@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModdingService } from '../../../providers/moddinpc.service';
+
 
 @Component({
   selector: 'app-category-view',
@@ -9,120 +11,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CategoryViewComponent implements OnInit {
   public category:string = '';
   public subcategory:string ='';
-  public products:Array<any> = [
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '11.00',
-      image: 'https://picsum.photos/300',
-      category: 'refrigeracion',
-      subcategory: 'Bloque CPU',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '8.00',
-      image: 'https://picsum.photos/300',
-      category: 'refrigeracion',
-      subcategory: 'Bloque GPU',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '11.00',
-      image: 'https://picsum.photos/300',
-      category: 'refrigeracion',
-      subcategory: 'Tubos',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '11.00',
-      image: 'https://picsum.photos/300',
-      category: 'refrigeracion',
-      subcategory: 'Radiador',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'sistema',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'sistema',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'sistema',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'sistema',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'compu',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'compu',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'compu',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'compu',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'compu',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'compu',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'Personalización',
-    },
-    {
-      name: 'Lorem Ipsum Dolor Sit.',
-      price: '10.00',
-      image: 'https://picsum.photos/300',
-      category: 'Personalización',
-    }
-  ];
-  public realdata:Array<any> = [];
+  public childrens:Array<any> = [];
+  public DBURL:string = 'http://localhost:4444/';
   constructor(
-  	public activatedRoute: ActivatedRoute
+  	public activatedRoute: ActivatedRoute,
+    public moodingService: ModdingService
   	) { }
 
   ngOnInit() {
   	this.activatedRoute.params
   		.subscribe(params => {
-        let copy = JSON.parse(JSON.stringify(this.products))
   			let name = params.type;
-  			this.category = name.charAt(0).toUpperCase() + name.slice(1);
-        this.realdata = copy.filter(prod => prod.category == params.type);
+        this.moodingService.getChildrens(name)
+          .then((res) => {
+            this.childrens = res['result']['subcategories'];
+            for (let i = 0; i < this.childrens.length; i++) {
+              this.moodingService.getProductsByType(this.childrens[i].name)
+                .then((res) => {
+                  this.childrens[i].products = res['result'];
+                });
+            }
+            console.log(this.childrens);
+          });
   			});
       };
 
