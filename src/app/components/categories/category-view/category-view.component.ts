@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModdingService } from '../../../providers/moddinpc.service';
-
 
 @Component({
   selector: 'app-category-view',
@@ -17,7 +17,7 @@ export class CategoryViewComponent implements OnInit {
   	public activatedRoute: ActivatedRoute,
     public moodingService: ModdingService
   	) { }
-
+ 
   ngOnInit() {
   	this.activatedRoute.params
   		.subscribe(params => {
