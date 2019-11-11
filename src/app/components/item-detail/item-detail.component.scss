@@ -171,6 +171,16 @@ mat-form-field{
   border: 1.5px solid;
   border-radius: 8px;
 }
+.space {
+  margin-top: 64px;
+}
+.contenedor button {
+  margin-top: 10px;
+}
+.card {
+  background: $firstC;
+  border: none;
+}
 @-webkit-keyframes opacity {
   0% {
     opacity: 0;

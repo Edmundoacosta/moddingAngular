@@ -1,14 +1,12 @@
-
+<div class="spacio"></div>
 <div class="container mt-3">
     <nav id="navspy" class="navbar navbar-expand-lg navbar-light bg-light">
         <button id="bnav" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" (click)="scrollTo('section1')">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" (click)="scrollTo('section2')">Features</a>
-                <a class="nav-item nav-link" (click)="scrollTo('section3')">Pricing</a>
+            <div *ngFor="let child of childrens" class="navbar-nav">
+                <a class="nav-item nav-link" (click)="scrollTo('section1')">{{child.name}}</a>
             </div>
         </div>
     </nav>
@@ -18,10 +16,10 @@
             <h1>{{child.name}}</h1> 
             <div  *ngFor="let item of child.products; let i ='index'">
                 <div  *ngIf="i%4 == 0" class="row mb-5 show active">
-                    <div *ngIf="i < child.products.length" class="col-md-3 col-sm-6 mt-3"  id="fat">
+                    <div *ngIf="i < child.products.length" class="col-md-3 col-sm-6 mt-3">
                         <div class="product-grid6">
                             <div class="product-image6">
-                                <a href="#">
+                                <a [routerLink]="'/item_detail/' + child.products[i]._id">
                                     <img class="pic-1" src="https://picsum.photos/300">
                                 </a>
                             </div>

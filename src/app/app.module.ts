@@ -49,7 +49,6 @@ import { MensajeSoporteComponent } from './components/modals/mensaje-soporte/men
 import { MainNavComponent } from './layouts/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { CategoryNavComponent } from './layouts/category-nav/category-nav.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +90,6 @@ import { CategoryNavComponent } from './layouts/category-nav/category-nav.compon
     GarantiaComponent,
     MensajeSoporteComponent,
     MainNavComponent,
-    CategoryNavComponent,
   ],
   entryComponents: [
     LoginModalComponent,
