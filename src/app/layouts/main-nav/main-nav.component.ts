@@ -19,6 +19,7 @@ import { LoginModalComponent } from 'src/app/components/modals/login-modal/login
 })
 export class MainNavComponent {
   public logged:boolean = false;
+  public categories:Array<any> = [];
   public userForm: FormGroup;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -35,8 +36,11 @@ export class MainNavComponent {
     ) {}
 
     ngOnInit() {
-      console.log(1);
       this.logged = this.session.getItem('token')?true:false;
+      this._modService.getCategoryHeader()
+        .then((res) => {
+          this.categories = res['result'];
+        });
     }
   
     openLogin() {

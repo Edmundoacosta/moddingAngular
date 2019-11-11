@@ -38,7 +38,7 @@ const routes: Routes = [
 	{path: 'zona_gamerdetail', component: ZonaGamerdetailComponent},
 	{path: 'user_dashboard', component: UserDashboardComponent},
 	{path: 'shopping_cart', component: ShoppingCartComponent},
-	{path: 'item_detail', component: ItemDetailComponent},
+	{path: 'item_detail/:id', component: ItemDetailComponent},
 	{path: 'contact_us', component: ContactUsComponent},
   
 	{ path: 'categoria', component: CategoriesComponent, children: [
