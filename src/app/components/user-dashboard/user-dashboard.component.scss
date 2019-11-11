@@ -98,6 +98,9 @@ input[type="number"] {
     color: $thirdC;
   }
 }
+.space {
+  margin-top: 75px;
+}
 /* mobile fix */
 @media (max-width: 768px) {
 	.dropdown-lr h3 {
