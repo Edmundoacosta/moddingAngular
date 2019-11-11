@@ -15,6 +15,7 @@ export class AboutUsComponent implements OnInit {
 			name: 'Puntualidad',
 			description: 'Cumplir con los compromisos y obligaciones en el tiempo acordado, valorando y respetando el tiempo de los demás.'
 		}
+		
 	];
 	public valores2:Array<any> = [
 		{

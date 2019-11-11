@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-category-view',
@@ -115,7 +115,7 @@ export class CategoryViewComponent implements OnInit {
   constructor(
   	public activatedRoute: ActivatedRoute
   	) { }
-
+ 
   ngOnInit() {
   	this.activatedRoute.params
   		.subscribe(params => {

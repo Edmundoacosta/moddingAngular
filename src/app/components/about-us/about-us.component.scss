@@ -39,10 +39,6 @@ a {
 .card + .card-group {
 	border-radius: 8px;
 }
-.wrap:hover {
-    background: linear-gradient(130deg,$secondC 25%,$thirdC 75%);
-    color: white;
-}
 
 .ico-wrap {
 	margin: auto;
@@ -76,4 +72,8 @@ p {
 }
 .container {
 	overflow: hidden;
+}
+.card {
+	background: $firstC;
+	border: none;
 }

@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
@@ -50,11 +49,11 @@ import { MensajeSoporteComponent } from './components/modals/mensaje-soporte/men
 import { MainNavComponent } from './layouts/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { CategoryNavComponent } from './layouts/category-nav/category-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     AboutUsComponent,
     HomeComponent,
     FooterComponent,
@@ -92,6 +91,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     GarantiaComponent,
     MensajeSoporteComponent,
     MainNavComponent,
+    CategoryNavComponent,
   ],
   entryComponents: [
     LoginModalComponent,
