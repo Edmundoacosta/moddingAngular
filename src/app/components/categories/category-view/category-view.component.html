@@ -5,15 +5,17 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div *ngFor="let child of childrens" class="navbar-nav">
-                <a class="nav-item nav-link" (click)="scrollTo('section1')">{{child.name}}</a>
+            <div class="navbar-nav">
+                <div *ngFor="let child of childrens">
+                    <a class="nav-item nav-link" (click)="scrollTo('section1')">{{child.name}}</a>
+                </div>
             </div>
-        </div>
+        </div> 
     </nav>
     <div class="h3"></div>
     <div (sectionChange)="onSectionChange($event)">
         <div *ngFor="let child of childrens" id="section1">
-            <h1>{{child.name}}</h1> 
+            <h2>{{child.name}}</h2> 
             <div  *ngFor="let item of child.products; let i ='index'">
                 <div  *ngIf="i%4 == 0" class="row mb-5 show active">
                     <div *ngIf="i < child.products.length" class="col-md-3 col-sm-6 mt-3">
@@ -26,6 +28,8 @@
                             <div class="product-content">
                                 <h3 class="title">{{child.products[i].name}}</h3>
                                 <div class="price">${{child.products[i].price}}
+                                    <!--Muestra Precio en Soles-->
+                                    <span>S/.20.00</span>
                                 </div>
                             </div>
                             <ul class="social">
@@ -44,6 +48,8 @@
                             <div class="product-content">
                                 <h3 class="title">{{child.products[i+1].name}}</h3>
                                 <div class="price">${{child.products[i+1].price}}
+                                    <!--Muestra Precio en Soles-->
+                                    <span>S/.20.00</span>
                                 </div>
                             </div>
                             <ul class="social">
@@ -62,6 +68,8 @@
                             <div class="product-content">
                                 <h3 class="title">{{child.products[i+2].name}}</h3>
                                 <div class="price">${{child.products[i+2].price}}
+                                    <!--Muestra Precio en Soles-->
+                                    <span>S/.20.00</span>
                                 </div>
                             </div>
                             <ul class="social">
@@ -80,6 +88,8 @@
                             <div class="product-content">
                                 <h3 class="title">{{child.products[i+3].name}}</h3>
                                 <div class="price">${{child.products[i+3].price}}
+                                    <!--Muestra Precio en Soles-->
+                                    <span>S/.20.00</span>
                                 </div>
                             </div>
                             <ul class="social">
