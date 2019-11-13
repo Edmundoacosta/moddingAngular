@@ -1,0 +1,12 @@
+@import "../../../../variables.scss";
+p {
+    text-align: justify;
+}
+.ec {
+    color: $secondC;
+    &:hover {
+        color: #fff;
+        background-color: $thirdC;
+        border: $thirdC;
+    }
+}

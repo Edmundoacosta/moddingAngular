@@ -1,0 +1,18 @@
+@import "../../../../variables.scss";
+.div1 {
+    margin-left: 30px;
+}
+p {
+    text-align: justify;
+}
+li {
+    text-align: justify;
+}
+.ec {
+    color: $secondC;
+    &:hover {
+        color: #fff;
+        background-color: $thirdC;
+        border: $thirdC;
+    }
+}

@@ -8,6 +8,7 @@ import { ModdingService } from '../../../providers/moddinpc.service';
   styleUrls: ['./category-view.component.scss']
 })
 export class CategoryViewComponent implements OnInit {
+
   public category:string = '';
   public subcategory:string ='';
   public childrens:Array<any> = [];

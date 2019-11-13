@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { ActivatedRoute} from '@angular/router';
+import { ModdingService } from '../../providers/moddinpc.service';
+import { GarantiaComponent } from 'src/app/components/modals/garantia/garantia.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-item-detail',
@@ -9,80 +13,62 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 })
 export class ItemDetailComponent implements OnInit {
   quantity = 1 ;
-
+  public product: any = '';
+  public DBURL:string = 'http://localhost:4444/';
   public Districts:Array<any> = [
     {
-      name : 'Ancon',
-      name2 : 'Ate',
-      name3 : 'Barranco',
-      name4 : 'Breña',
+      name : 'Ancon', name2 : 'Ate', name3 : 'Barranco', name4 : 'Breña',
     },
     {
-      name :'Carabayllo',
-      name2 : 'Chaclacayo',
-      name3 : 'Chorillos',
-      name4 : 'Cieneguilla',
+      name :'Carabayllo', name2 : 'Chaclacayo', name3 : 'Chorillos', name4 : 'Cieneguilla',
     },
     {
-      name : 'Comas',
-      name2 : 'El agustino',
-      name3 : 'Indenpendencia',
-      name4 : 'Jesus maria',
+      name : 'Comas', name2 : 'El agustino', name3 : 'Indenpendencia', name4 : 'Jesus maria',
     },
     {
-      name : 'La molina',
-      name2 :'La victoria',
-      name3 : 'Lima',
-      name4: 'Lince',
+      name : 'La molina', name2 :'La victoria', name3 : 'Lima', name4: 'Lince',
     },
     {
-      name : 'Los olivos',
-      name2 : 'Lurigancho',
-      name3 : 'Lurin',
-      name4 : 'Magdalena del mar',
+      name : 'Los olivos', name2 : 'Lurigancho', name3 : 'Lurin', name4 : 'Magdalena del mar',
     },
     {
-      
-      name : 'Magdalena vieja', 
-      name2 : 'Miraflores',
-      name3 : 'Pachacamac',
-      name4 : 'Pucusana',
+      name : 'Magdalena vieja',  name2 : 'Miraflores', name3 : 'Pachacamac', name4 : 'Pucusana',
     },
     {
-      name : 'Pueblo libre',
-      name2 : 'Puente piedra',
-      name3 : 'Punta negra',
-      name4 : 'Punta hermosa',
+      name : 'Pueblo libre', name2 : 'Puente piedra', name3 : 'Punta negra', name4 : 'Punta hermosa',
     },
     {
-      name : 'Rimac',
-      name2 : 'S. juan de lurigancho',
-      name3 : 'S. juan de miraflores',
-      name4 : 'San bartolo',
+      name : 'Rimac', name2 : 'S. juan de lurigancho', name3 : 'S. juan de miraflores', name4 : 'San bartolo',
     },
     {
-      name : 'San borja', 
-      name2 : 'San isidro',
-      name3 : 'San luis',
-      name4 : 'San martin de porres',
+      name : 'San borja',  name2 : 'San isidro', name3 : 'San luis', name4 : 'San martin de porres',
     },
     {
-      name : 'San miguel',
-      name2 : 'Santa anita',
-      name3 : 'Santa maria del mar',
-      name4 : 'Santa rosa',
+      name : 'San miguel', name2 : 'Santa anita', name3 : 'Santa maria del mar', name4 : 'Santa rosa',
     },
     {
-      name : 'Santiago de surco',
-      name2 : 'Surquillo',
-      name3 : 'Villa el salvador',
-      name4 : 'Villa maria del triunfo',
+      name : 'Santiago de surco', name2 : 'Surquillo', name3 : 'Villa el salvador', name4 : 'Villa maria del triunfo',
     }
   ];
-  constructor(private location: Location) { }
+  constructor(
+    private location: Location,
+    public activatedRoute: ActivatedRoute,
+    public moodingService: ModdingService,
+    public dialog : MatDialog,
+    ) { }
 
   ngOnInit() {
-  }
+    this.activatedRoute.params
+      .subscribe(params => {
+        let name = params.id;
+        this.moodingService.getProductById(name)
+        .then((res) => {
+          this.product = res['result'];
+          console.log(res);
+        });
+        
+      })
+    };
   
   incrementItem() : void {
     if(this.quantity < 20) {
@@ -97,6 +83,10 @@ export class ItemDetailComponent implements OnInit {
     } else {
       return;
     }
+  }
+  
+  openGarantia() {
+    this.dialog.open(GarantiaComponent);
   }
 
   goBack(){

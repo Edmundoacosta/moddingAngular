@@ -34,11 +34,14 @@
 .h3 {
     padding: 2rem;
 }
+h2 {
+    text-transform: uppercase;
+}
 #bnav {
     background-color: #fff;
 }
 .navbar-nav{
-    width: 15%;
+    width: 50%;
     padding: 0px;
     a {
         text-align: center;
