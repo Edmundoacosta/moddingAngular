@@ -24,7 +24,7 @@
                     </button>
                     <button routerLink="/shopping_cart" class="btn btn-ec">
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="badge badge-outline">0</span>
+                        <span class="badge badge-outline">{{inCart}}</span>
                     </button>
                     <button (click)="logout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
                         <i class="fa fa-sign-out"></i>
@@ -68,7 +68,7 @@
                 </button>
                 <button routerLink="/shopping_cart" class="btn btn-ec">
                     <i class="fa fa-shopping-cart"></i>
-                    <span class="badge badge-outline">0</span>
+                    <span class="badge badge-outline">{{inCart}}</span>
                 </button>
                 <button (click)="logout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
                     <i class="fa fa-sign-out"></i>

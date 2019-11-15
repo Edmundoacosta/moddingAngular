@@ -56,6 +56,7 @@ export class ItemDetailComponent implements OnInit {
     private location: Location,
     public activatedRoute: ActivatedRoute,
     public moodingService: ModdingService,
+    public listen: ListenService,
     public dialog : MatDialog,
     public session : SessionService,
     ) { }
@@ -73,18 +74,11 @@ export class ItemDetailComponent implements OnInit {
       })
     };
   
-  incrementItem() : void {
-    if(this.quantity < 20) {
-      this.quantity += 1;
-    } else {
-      return;
-    }
-  }
-  decrementItem() : void {
-    if(this.quantity > 1) {
-      this.quantity -= 1;
-    } else {
-      return;
+  add(plus) : void {
+    if (plus) {
+      this.quantity<this.product.inStock?this.quantity++:null;
+    } else if(!plus && this.quantity != 0) {
+      this.quantity--;
     }
   }
   
@@ -94,6 +88,25 @@ export class ItemDetailComponent implements OnInit {
 
   goBack(){
     this.location.back();
+  }
+
+  addToCart(){
+    let inCart = [];
+    if (this.session.getItem('inCart')) {
+      inCart = JSON.parse(this.session.getItem('inCart'));
+    }
+    this.product.quantity = this.quantity;
+    if(inCart.find(item => item._id == this.product._id)) {
+      inCart.find(item => item._id == this.product._id).quantity += this.quantity;
+    } else {
+      this.addNumbertoHeader();
+      inCart.push(this.product);
+    };
+    this.session.setObject('inCart', inCart);
+  }
+
+  addNumbertoHeader(){
+    this.listen.filter(true);
   }
 
 }

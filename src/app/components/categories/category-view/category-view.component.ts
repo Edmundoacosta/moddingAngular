@@ -18,6 +18,7 @@ export class CategoryViewComponent implements OnInit {
   constructor(
   	public activatedRoute: ActivatedRoute,
     public moodingService: ModdingService,
+    public listen: ListenService,
     public session: SessionService
   	) { }
  
@@ -34,7 +35,6 @@ export class CategoryViewComponent implements OnInit {
                   this.childrens[i].products = res['result'];
                 });
             }
-            console.log(this.childrens);
           });
   			});
       };
@@ -43,6 +43,24 @@ export class CategoryViewComponent implements OnInit {
     document.querySelector('#' + section)
     .scrollIntoView();
   }
+
+  addProduct(item) {
+    this.addNumbertoHeader();
+    let inCart = [];
+    if (this.session.getItem('inCart')) {
+      inCart = JSON.parse(this.session.getItem('inCart'));
+    }
+    item.quantity = 1;
+    if(inCart.find(el => el._id == item._id)) {
+      inCart.find(el => el._id == item._id).quantity++;
+    } else {
+      this.addNumbertoHeader();
+      inCart.push(item);
+    };
+    this.session.setObject('inCart', inCart);
+  }
+
+  addNumbertoHeader(){
+    this.listen.filter(true);
+  }
 }
-
-

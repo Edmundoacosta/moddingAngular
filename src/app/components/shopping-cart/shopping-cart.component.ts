@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListenService } from '../../providers/listen.service';
+import { SessionService } from 'src/app/providers/session.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -7,17 +7,20 @@ import { ListenService } from '../../providers/listen.service';
   styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent implements OnInit {
-  quantity = 1;
-  result = this.getResult();
-  productPrice = 12.5;
+  public products:Array<any> = [];
 
-  constructor() { }
+  constructor(public session: SessionService) { }
 
   ngOnInit() {
+    this.products = JSON.parse(this.session.getItem('inCart'));
+    this.totalPrice();
   }
 
-  getResult() {
-    return this.productPrice * this.quantity;
+  totalPrice(){
+    let total = 0;
+    for (let i = 0; i < this.products.length; i++) {
+      total += this.products[i].price * this.products[i].quantity;
+    }
+    return total;
   }
-
 }

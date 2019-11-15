@@ -34,7 +34,7 @@
                             </div>
                             <ul class="social">
                                 <li><a [routerLink]="'/item_detail/' + child.products[i]._id" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
-                                <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><p (click)="addProduct(child.products[i])" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></p></li>
                             </ul>
                         </div>
                     </div>
@@ -53,8 +53,8 @@
                                 </div>
                             </div>
                             <ul class="social">
-                                <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
-                                <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a [routerLink]="'/item_detail/' + child.products[i+1]._id" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
+                                <li><p (click)="addProduct(child.products[i+1])" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></p></li>
                             </ul>
                         </div>
                     </div>
@@ -73,8 +73,8 @@
                                 </div>
                             </div>
                             <ul class="social">
-                                <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
-                                <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a [routerLink]="'/item_detail/' + child.products[i+2]._id" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
+                                <li><p (click)="addProduct(child.products[i+2])" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></p></li>
                             </ul>
                         </div>
                     </div>
@@ -93,8 +93,8 @@
                                 </div>
                             </div>
                             <ul class="social">
-                                <li><a routerLink="/item_detail" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
-                                <li><a href="#" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a [routerLink]="'/item_detail/' + child.products[i+3]._id" data-tip="Vista detallada"><i class="fa fa-search"></i></a></li>
+                                <li><p (click)="addProduct(child.products[i+3])" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></p></li>
                             </ul>
                         </div>
                     </div>

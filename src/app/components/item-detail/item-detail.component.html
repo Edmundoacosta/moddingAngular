@@ -78,18 +78,18 @@
 					</div>
 					<div class="row mx-1 my-2">
 						<h5 class="mr-2">Cantidad :</h5>
-						<button mat-mini-fab class="btn plus-minus" data-type="minus" (click)="decrementItem() ">
+						<button mat-mini-fab class="btn plus-minus" data-type="minus" (click)="add(false) ">
 							<i class="fa fa-minus "></i>
 						</button>
 						<mat-form-field>
 							<input matInput id="cantidad" type="number" class="text-center" value="1" min="1" max="20" value="{{quantity}}">
 						</mat-form-field>
-						<button mat-mini-fab class="btn plus-minus" data-type="plus" (click)="incrementItem()">
+						<button mat-mini-fab class="btn plus-minus" data-type="plus" (click)="add(true)">
 							<i class="fa fa-plus "></i>
 						</button>
 					</div>
 					<div class="action">
-						<button class="add-to-cart btn float-right" type="button">Añadir al carrito</button>
+						<button (click)="addToCart()" class="add-to-cart btn float-right" type="button">Añadir al carrito</button>
 					</div>
 				</div>
 			</div>

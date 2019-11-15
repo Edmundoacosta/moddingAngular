@@ -20,6 +20,7 @@ import { ListenService } from '../../providers/listen.service';
 })
 export class MainNavComponent {
   public logged:boolean = false;
+  public inCart:number = 0;
   public categories:Array<any> = [];
   public userForm: FormGroup;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -30,14 +31,21 @@ export class MainNavComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     public session: SessionService,
+    public listen: ListenService,
     public router: Router,
     public _modService: ModdingService,
     private _fb: FormBuilder,
     public dialog : MatDialog,
-    ) {}
+    ) {
+      this.listen.listen().subscribe((val) => {
+        val?this.inCart++:'';
+      });
+    }
 
     ngOnInit() {
       this.logged = this.session.getItem('token')?true:false;
+      this.inCart = JSON.parse(this.session.getItem('inCart')).length;
+      console.log(this.inCart);
       this._modService.getCategoryHeader()
         .then((res) => {
           this.categories = res['result'];
