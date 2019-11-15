@@ -41,7 +41,7 @@
                     <div *ngIf="i + 1 < child.products.length" class="col-md-3 col-sm-6 mt-3">
                         <div class="product-grid6">
                             <div class="product-image6">
-                                <a href="#">
+                                <a [routerLink]="'/item_detail/' + child.products[i+1]._id">
                                     <img class="pic-1" src="https://picsum.photos/300">
                                 </a>
                             </div>
@@ -61,7 +61,7 @@
                     <div *ngIf="i + 2 < child.products.length" class="col-md-3 col-sm-6 mt-3">
                         <div class="product-grid6">
                             <div class="product-image6">
-                                <a href="#">
+                                <a [routerLink]="'/item_detail/' + child.products[i+2]._id">
                                     <img class="pic-1" src="https://picsum.photos/300">
                                 </a>
                             </div>
@@ -81,7 +81,7 @@
                     <div *ngIf="i + 3 < child.products.length" class="col-md-3 col-sm-6 mt-3">
                         <div class="product-grid6">
                             <div class="product-image6">
-                                <a href="#">
+                                <a [routerLink]="'/item_detail/' + child.products[i+3]._id">
                                     <img class="pic-1" src="https://picsum.photos/300">
                                 </a>
                             </div>
