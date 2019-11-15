@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListenService } from '../../../providers/listen.service';
+import { SessionService } from 'src/app/providers/session.service';
 
 @Component({
   selector: 'app-checkout2',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Checkout2Component implements OnInit {
 
-  constructor() { }
+  constructor(
+    public session: SessionService
+  ) { }
 
   ngOnInit() {
   }

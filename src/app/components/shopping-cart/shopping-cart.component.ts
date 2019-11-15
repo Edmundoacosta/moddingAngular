@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListenService } from '../../providers/listen.service';
 
 @Component({
   selector: 'app-shopping-cart',
