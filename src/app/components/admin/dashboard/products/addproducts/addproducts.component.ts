@@ -84,8 +84,8 @@ export class AddproductsComponent implements OnInit {
     var myReader:FileReader = new FileReader();
     myReader.onloadend = (e) => {
       if (files) {
-        this.urls.push(myReader.result);
-        this.product['images'].push(myReader.result.split('base64,')[1]);
+        this.urls.push['myReader.result'];
+        this.product['images'].push(myReader.result['split']('base64,')[1]);
       } else {
         this.imgURL = myReader.result;
         this.product['principalImg'] = this.imgURL.split('base64,')[1];

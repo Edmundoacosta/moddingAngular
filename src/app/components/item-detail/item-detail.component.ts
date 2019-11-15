@@ -4,6 +4,8 @@ import { ActivatedRoute} from '@angular/router';
 import { ModdingService } from '../../providers/moddinpc.service';
 import { GarantiaComponent } from 'src/app/components/modals/garantia/garantia.component';
 import { MatDialog } from '@angular/material';
+import { ListenService } from '../../providers/listen.service';
+import { SessionService } from 'src/app/providers/session.service';
 
 @Component({
   selector: 'app-item-detail',
@@ -55,6 +57,7 @@ export class ItemDetailComponent implements OnInit {
     public activatedRoute: ActivatedRoute,
     public moodingService: ModdingService,
     public dialog : MatDialog,
+    public session : SessionService,
     ) { }
 
   ngOnInit() {

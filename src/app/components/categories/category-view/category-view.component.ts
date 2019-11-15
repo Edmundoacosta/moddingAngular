@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { ModdingService } from '../../../providers/moddinpc.service';
+import { ListenService } from '../../../providers/listen.service';
+import { SessionService } from 'src/app/providers/session.service';
 
 @Component({
   selector: 'app-category-view',
@@ -15,7 +17,8 @@ export class CategoryViewComponent implements OnInit {
   public DBURL:string = 'http://localhost:4444/';
   constructor(
   	public activatedRoute: ActivatedRoute,
-    public moodingService: ModdingService
+    public moodingService: ModdingService,
+    public session: SessionService
   	) { }
  
   ngOnInit() {
