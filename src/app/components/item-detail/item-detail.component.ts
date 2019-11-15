@@ -15,7 +15,13 @@ import { SessionService } from 'src/app/providers/session.service';
 })
 export class ItemDetailComponent implements OnInit {
   quantity = 1 ;
-  public product: any = '';
+  public product = {
+    name: '',
+    inStock: 0,
+    quantity: 0,
+    principalImg: '',
+    price: 0
+  };
   public DBURL:string = 'http://localhost:4444/';
   public Districts:Array<any> = [
     {
