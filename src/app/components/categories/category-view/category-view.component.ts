@@ -45,7 +45,6 @@ export class CategoryViewComponent implements OnInit {
   }
 
   addProduct(item) {
-    this.addNumbertoHeader();
     let inCart = [];
     if (this.session.getItem('inCart')) {
       inCart = JSON.parse(this.session.getItem('inCart'));
