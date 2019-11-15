@@ -106,7 +106,7 @@ export class ItemDetailComponent implements OnInit {
   }
 
   addNumbertoHeader(){
-    this.listen.filter(true);
+    this.listen.filter('add');
   }
 
 }

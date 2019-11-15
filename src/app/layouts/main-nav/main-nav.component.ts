@@ -38,7 +38,7 @@ export class MainNavComponent {
     public dialog : MatDialog,
     ) {
       this.listen.listen().subscribe((val) => {
-        val?this.inCart++:'';
+        val=='add'?this.inCart++:'';
       });
     }
 
