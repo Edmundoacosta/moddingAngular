@@ -23,4 +23,10 @@ export class ShoppingCartComponent implements OnInit {
     }
     return total;
   }
+
+  remove(i) {i
+    this.products.splice(i,1);
+    this.session.setObject('inCart', this.products);
+    console.log(this.products);
+  }
 }
