@@ -49,6 +49,7 @@ import { MensajeSoporteComponent } from './components/modals/mensaje-soporte/men
 import { MainNavComponent } from './layouts/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { PdfComponent } from './components/modals/pdf/pdf.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     GarantiaComponent,
     MensajeSoporteComponent,
     MainNavComponent,
+    PdfComponent,
   ],
   entryComponents: [
     LoginModalComponent,
@@ -98,7 +100,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     TermsComponent,
     PoliticaComponent,
     GarantiaComponent,
-    MensajeSoporteComponent
+    MensajeSoporteComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule,

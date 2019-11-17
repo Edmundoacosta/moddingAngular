@@ -6,6 +6,7 @@ import { GarantiaComponent } from 'src/app/components/modals/garantia/garantia.c
 import { MatDialog } from '@angular/material';
 import { ListenService } from '../../providers/listen.service';
 import { SessionService } from 'src/app/providers/session.service';
+import { PdfComponent } from '../modals/pdf/pdf.component';
 
 @Component({
   selector: 'app-item-detail',
@@ -16,6 +17,7 @@ import { SessionService } from 'src/app/providers/session.service';
 export class ItemDetailComponent implements OnInit {
   quantity = 1 ;
   public product = {
+    _id: '',
     name: '',
     inStock: 0,
     quantity: 0,
@@ -90,6 +92,9 @@ export class ItemDetailComponent implements OnInit {
   
   openGarantia() {
     this.dialog.open(GarantiaComponent);
+  }
+  openPdf() {
+    this.dialog.open(PdfComponent);
   }
 
   goBack(){
