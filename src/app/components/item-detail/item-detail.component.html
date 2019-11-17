@@ -62,7 +62,7 @@
 				</div>
 				<div class="details col-md-6">
 					<h3 class="product-title">{{product.name}}</h3>
-					<p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+					<p class="product-description">{{product.description}}</p>
 					<div class="row mx-1 my-2">
 						<h5 class="mr-2">Precio :</h5>
 						<h5 class="mt-3">${{product.price}}</h5>
@@ -122,43 +122,34 @@
 			<div class="col-12">
 				<div class="tab-content" id="v-pills-tabContent">
 					<div class="tab-pane fade show active" id="v-pills-et" role="tabpanel" aria-labelledby="v-pills-et-tab">
-						<table class="table table-hover">
-							<tbody>
-								<tr>
-									<td>Nombre de la especificacion :</td>
-									<td>descripcion de la especificacion</td>
-								</tr>
-								<tr>
-									<td>Nombre de la especificacion :</td>
-									<td>descripcion de la especificacion</td>
-								</tr>
-							</tbody>
-						</table>
+						<button class="btn" (click)="openPdf()">pdf</button>
 					</div>
 					<div class="tab-pane fade" id="v-pills-mp" role="tabpanel" aria-labelledby="v-pills-mp-tab">
 						<div class="container">
-							<div class="card-group">
-								<div class="card">
-									<div class="cbody">
-										<p class="card-text"><strong>Tranferencia o deposito</strong></p>
+							<div class="form-row my-5">
+								<div class="card-deck">
+									<div class="card">
+										<div class="card-body">
+											<p class="card-text"><strong>Tranferencia o deposito</strong></p>
+											<img src="./assets/imagenes/metodo de pago/logo bbva.png" class="card-img-top">
+											<img src="./assets/imagenes/metodo de pago/logo interbank.png" class="card-img-top">
+										</div>
 									</div>
-									<img src="./assets/imagenes/metodo de pago/logo bbva.png" class="card-img-top">
-									<img src="./assets/imagenes/metodo de pago/logo interbank.png" class="card-img-top">
-								</div>
-								<div class="card">
-									<div class="cbody">
-										<p class="card-text"><strong>Tarjeta de crédito o débito</strong></p>
-										<p class="card-text">Este método de pago tiene un recargo adicional del 4.071%, el monto total se cancela con su tarjeta de crédito o débito al momento de la entrega del producto en su dirección de envio.</p>
-										<p class="card-text">Aceptamos estos tipos de tarjetas :</p>
+									<div class="card">
+										<div class="card-body">
+											<p class="card-text"><strong>Tarjeta de crédito o débito</strong></p>
+											<p class="card-text">Este método de pago tiene un recargo adicional del 4.071%, el monto total se cancela con su tarjeta de crédito o débito al momento de la entrega del producto en su dirección de envio.</p>
+											<p class="card-text">Aceptamos estos tipos de tarjetas :</p>
+											<img src="./assets/imagenes/metodo de pago/logo_todas_las_tarjetas.png" class="card-img-top" >
+										</div>
 									</div>
-									<img src="./assets/imagenes/metodo de pago/logo_todas_las_tarjetas.png" class="card-img-top" >
-								</div>
-								<div class="card">
-									<div class="cbody">
-										<p class="card-text"><strong>Visanet pago link</strong></p>
-										<p class="card-text">Este método de pago tiene un recargo adicional del 4.5%, el monto total se cancela de manera online.</p>
+									<div class="card">
+										<div class="card-body">
+											<p class="card-text"><strong>Visanet pago link</strong></p>
+											<p class="card-text">Este método de pago tiene un recargo adicional del 4.5%, el monto total se cancela de manera online.</p>
+											<img src="./assets/imagenes/metodo de pago/visanet_pago_link.png" class="card-img-top" >
+										</div>
 									</div>
-									<img src="./assets/imagenes/metodo de pago/visanet_pago_link.png" class="card-img-top" >
 								</div>
 							</div>
 						</div>							
