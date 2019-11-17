@@ -36,7 +36,9 @@
     <mat-sidenav-content>
         <mat-toolbar>
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
-                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                <mat-icon aria-label="Side nav toggle icon">
+                    <i class="fa fa-bars"></i>
+                </mat-icon>
             </button>
             <a class="navbar-brand" routerLink="/home">
                 <img id="logoE" src="./assets/imagenes/logos/logo-envi-c.png" alt="">
