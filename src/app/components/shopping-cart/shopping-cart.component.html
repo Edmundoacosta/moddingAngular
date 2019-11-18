@@ -1,12 +1,12 @@
 <div class="container">
-    <h1>Shopping Cart</h1>
+    <h1>Carrito de Compras</h1>
     <div class="shopping-cart">
         <div class="column-labels">
-            <label class="product-image">Image</label>
-            <label class="product-details">Product</label>
-            <label class="product-price">Price</label>
-            <label class="product-quantity">Quantity</label>
-            <label class="product-removal">Remove</label>
+            <label class="product-image">Imagen</label>
+            <label class="product-details">Producto</label>
+            <label class="product-price">Precio</label>
+            <label class="product-quantity">Cantidad</label>
+            <label class="product-removal">Quitar</label>
             <label class="product-line-price">Total</label>
         </div> 
         <div *ngFor="let item of products; let i = 'index'" class="product">
@@ -14,7 +14,7 @@
                 <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
             </div>
             <div class="product-details">
-                <div class="product-title">{{item.name}}</div>
+                <h5 class="product-title">{{item.name}}</h5>
                 <p class="product-description">{{item.description}}</p>
             </div>
             <div class="product-price">{{item.price}}</div>
@@ -22,7 +22,7 @@
                 <input type="number" class="text-center" value="1" min="1" max="20" value="{{item.quantity}}">
             </div>
             <div class="product-removal">
-                <button (click)="remove(item,i)" class="remove-product">Remove</button>
+                <button (click)="remove(item,i)" class="remove-product">Remover</button>
             </div>
             <div class="product-line-price">{{item.price*item.quantity}}</div>
         </div>

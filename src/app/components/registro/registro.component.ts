@@ -9,6 +9,9 @@ import { MatDialog } from '@angular/material';
 import { LoginModalComponent } from '../modals/login-modal/login-modal.component';
 import { TermsComponent } from '../modals/terms/terms.component';
 import { PoliticaComponent } from '../modals/politica/politica.component';
+import { SuccessMComponent } from '../modals/success-m/success-m.component';
+import { SuccRegisterComponent } from '../modals/succ-register/succ-register.component';
+import { SuccessRegisterComponent } from '../modals/success-register/success-register.component';
 
 @Component({
   selector: 'app-registro',
@@ -84,15 +87,21 @@ export class RegistroComponent implements OnInit {
   openPolitica() {
     this.dialog.open(PoliticaComponent);
   }
+  test() {
+    this.dialog.open(SuccessRegisterComponent);
+  }
  
   get u() {return this.user.controls;}
 
-  onSubmit(user, valid, template: TemplateRef<any>){
+  onSubmit(user, valid){
     if(valid) {
       this.modService.register(user).then((res) => {
         this.session.setObject('user', res['user']);
         this.session.setItem('token', res['user'].token);
-        this.router.navigate(['/home']);
+        this.dialog.open(SuccessRegisterComponent);
+        setTimeout(() => {
+          this.router.navigate(['/home']);
+        }, 2010);
       }, (err) => {
         console.log(err);
       });

@@ -8,11 +8,6 @@
         <i class="fa fa-plus"></i>
         AÑADIR UN PRODUCTO
 	</button>
-	
-	<button routerLink ='/admin/dashboard/products/addproducts' class="btn ec float-right" type="button">
-        <i class="fa fa-plus"></i>
-        ACTUALIZAR UN PRODUCTO
-    </button>
 
     <div class="row my-3">
 		<div class="col-md-12">
@@ -34,6 +29,10 @@
 						<td>{{Product.inStock}}</td>
 						<td>{{Product.color}}</td>
 						<td>{{Product.price}}</td>
+						<div id="fa">
+							<i class="fa fa-wrench"></i>
+							<i class="fa fa-times-circle"></i>
+						</div>
 					</tr>
 				</tbody>
 			</table>

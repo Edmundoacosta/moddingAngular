@@ -61,6 +61,9 @@
   .product-quantity {
     float: left;
     width: 10%;
+    input{
+    border: none;
+    background: $firstC;}
   }
    
   .product-removal {
@@ -96,7 +99,7 @@
   /* Apply clearfix in a few places */
   /* Apply dollar signs */
   .product .product-price:before, .product .product-line-price:before, .totals-value:before {
-    content: 'S/.';
+    content: 'S/. ';
   }
    
   /* Body/Header stuff */
@@ -238,7 +241,7 @@
     }
    
     .product-quantity:before {
-      content: 'x';
+      content: ' x';
     }
    
     .product-removal {
@@ -262,10 +265,10 @@
       width: auto;
       margin-top: 10px;
     }
-   
+   /*
     .product .product-line-price:before {
-      content: 'Item Total: S/.';
-    }
+      content: 'Item Total: S/. ';
+    }*/
    
     .totals .totals-item label {
       width: 60%;

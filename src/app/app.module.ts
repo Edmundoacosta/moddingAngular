@@ -50,6 +50,8 @@ import { MainNavComponent } from './layouts/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { PdfComponent } from './components/modals/pdf/pdf.component';
+import { SuccRegisterComponent } from './components/modals/succ-register/succ-register.component';
+import { SuccessRegisterComponent } from './components/modals/success-register/success-register.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +94,8 @@ import { PdfComponent } from './components/modals/pdf/pdf.component';
     MensajeSoporteComponent,
     MainNavComponent,
     PdfComponent,
+    SuccRegisterComponent,
+    SuccessRegisterComponent,
   ],
   entryComponents: [
     LoginModalComponent,
@@ -101,7 +105,8 @@ import { PdfComponent } from './components/modals/pdf/pdf.component';
     PoliticaComponent,
     GarantiaComponent,
     MensajeSoporteComponent,
-    PdfComponent
+    PdfComponent,
+    SuccessRegisterComponent
   ],
   imports: [
     BrowserModule,

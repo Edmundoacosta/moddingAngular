@@ -178,10 +178,10 @@
                             </mat-form-field>
                         </div>
                         <div class="form-group">
-                            <button type="submit" (click)="onSubmit(u.value,u.valid)" class="btn btn-block ec"> Registrarse  </button>
+                            <button type="submit" (click)="onSubmit(user, valid)" class="btn btn-block ec"> Registrarse  </button>
                         </div>   
                         <small class="text-muted">Haciendo click en el boton 'Registrarse', confirmas que aceptas nuestros <br>
-                        </small>
+                        </small> 
                         <div class="small">
                             <small>
                                 <button (click)="openTerminos()" class="btn a float-left">Términos de Condiciones de Uso</button>
@@ -193,6 +193,7 @@
                     </form>
                 </article>
                 <div class="border-top card-body text-center">Ya tienes una cuenta? <button class="btn a" (click)="openLogin()">Inicia Sesión</button></div>
+                <button class="btn" (click)="test()">test</button>
             </div>
         </div>
     </div>
