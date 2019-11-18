@@ -30,7 +30,7 @@
     <div class="row my-2">
       <div class="col">
         <div class="form-group">
-          <label>Precio dolares</label>
+          <label>Precio soles</label>
           <input [(ngModel)]="product.price" class="form-control" type="number">
         </div>
       </div>
@@ -41,6 +41,24 @@
             <option value="">Subcategoria</option>
             <option *ngFor="let opt of subcategories" [value]="opt.name">{{opt.name}}</option>
           </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-2">
+      <div class="col">
+        <div class="form-group">
+          <label>Descuento</label>
+          <input class="form-control" type="number">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Especificaciones Tecnicas</label>
+          <input name="pdf" type="file" class="form-control-file">
+          <div class="mt-2">
+              <img [src]="imgURL" width="180" *ngIf="imgURL">
+          </div>
         </div>
       </div>
     </div>

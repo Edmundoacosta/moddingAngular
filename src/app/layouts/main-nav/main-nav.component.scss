@@ -80,6 +80,17 @@
     display: none;
   }
 }
+@media (max-width: 599px) {
+.mat-toolbar-row, .mat-toolbar-single-row {
+     height: 64px; 
+    }
+.sideres {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    }
+}
 .search-box{
     position: absolute;
     right: 11%;
