@@ -70,31 +70,10 @@
 .spacer {
     flex: 1 1 auto;
 }
-@media (min-width : 768px) {
-  .sidenav {
-    display: none;
-  }
-}
-@media (max-width : 768px) {
-  .link {
-    display: none;
-  }
-}
-@media (max-width: 599px) {
-.mat-toolbar-row, .mat-toolbar-single-row {
-     height: 64px; 
-    }
-.sideres {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    width: 100%;
-    }
-}
 .search-box{
     position: absolute;
     right: 11%;
-    margin-top: 18px;
+    margin-top: 20px;
 	transform: translate(-0%,-50%);
 	border-radius: 50px;
     padding: 7px;
@@ -151,4 +130,100 @@ mat-toolbar {
 }
 mat-sidenav-content {
     background: $firstC!important;
+}
+.panibutton {
+    display: none;
+}
+/*fix sidenav*/
+@media (min-width : 959px) {
+  .sidenav {
+    display: none;
+  }
+}
+@media (max-width : 750px) {
+    .sidenav {
+      display: none;
+    }
+}
+@media (max-width : 599px) {
+    .sidenav {
+      display: block;
+    }
+}
+/*fin fix sidenav*/
+@media (max-width : 350px) {
+    .link {
+      display: none;
+    }
+    .mat-toolbar-row, .mat-toolbar-single-row {
+        height: 64px; 
+    }
+   .sideres {
+       display: flex;
+       text-align: center;
+       justify-content: space-between;
+       width: 100%;
+    }
+}
+@media (max-width: 599px) {
+.mat-toolbar-row, .mat-toolbar-single-row {
+     height: 64px; 
+    }
+.sideres {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    }
+}
+@media (max-width : 650px) {
+      .link {
+        display: none;
+      }
+      .mat-toolbar-row, .mat-toolbar-single-row {
+          height: 64px; 
+      }
+     .sideres {
+         display: flex;
+         text-align: center;
+         justify-content: space-between;
+         width: 100%;
+      }
+}
+@media (max-width : 768px) {
+    .link {
+      display: none;
+    }
+}
+@media (max-width : 959px) {
+    .link {
+      display: none;
+    }
+    .mat-toolbar-row, .mat-toolbar-single-row {
+        height: 64px; 
+    }
+   .sideres {
+       display: flex;
+       text-align: center;
+       justify-content: space-between;
+       width: 100%;
+    }
+  }
+@media (max-width : 1100px) {
+    .search-box{
+        right: 15%;
+    }
+    
+    .search-box:hover .search-txt{
+        width: 200px !important;
+    }
+}
+@media (max-width : 1280px) {
+    .search-box{
+        right: 13%;
+    }
+    
+    .search-box:hover .search-txt{
+        width: 200px;
+    }
 }

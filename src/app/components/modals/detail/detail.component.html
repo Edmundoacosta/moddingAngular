@@ -1,0 +1,67 @@
+<div class="container">
+    <mat-dialog-content>
+      <div class="cabecera">
+          <h3>Pedido</h3>
+          <span class="space"></span>
+          <h3><strong>N° 123455</strong></h3>
+      </div>
+      <div class="medio my-5">
+        <h5><strong>Direccion de envio :</strong> av. Larco 235</h5>
+        <h5><strong>Estado del pedido :</strong> Completo</h5>
+        <h5><strong>Método de pago :</strong> Tranferencia bancaria</h5>
+      </div>
+      <div class="detalleTittle mb-5">
+        <h3>Detalle de Compra</h3>
+      </div>
+      <div class="detalle">
+        <div class="shopping-cart">
+      
+          <div class="column-labels">
+            <label class="product-image">Imagen</label>
+            <label class="product-details">Producto</label>
+            <label class="product-price">Precio</label>
+            <label class="product-quantity">Cantidad</label>
+            <label class="product-removal">Space</label>
+            <label class="product-line-price">Total</label>
+          </div>
+      
+          <div class="product">
+            <div class="product-image">
+              <img src="../../../../assets/imagenes/marcas/intel.png">
+            </div>
+            <div class="product-details">
+              <h5 class="product-title"><strong>Dingo Dog Bones</strong></h5>
+              <p class="product-description">The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.</p>
+            </div>
+            <div class="product-price">12.99</div>
+            <div class="product-quantity">
+              <p>x 2</p>
+            </div>
+            <div class="product-line-price">25.98</div>
+          </div>
+      
+          <div class="totals">
+            <div class="totals-item">
+              <label>Subtotal</label>
+              <div class="totals-value" id="cart-subtotal">71.97</div>
+            </div>
+            <div class="totals-item">
+              <label>IGV (18%)</label>
+              <div class="totals-value" id="cart-tax">3.60</div>
+            </div>
+            <div class="totals-item">
+              <label>Envio</label>
+              <div class="totals-value" id="cart-shipping">15.00</div>
+            </div>
+            <div class="totals-item totals-item-total">
+              <label>Total</label>
+              <div class="totals-value" id="cart-total">90.57</div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    </mat-dialog-content>
+  </div>
+  
+  <button mat-dialog-close class="btn float-right ec">Cerrar</button>

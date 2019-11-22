@@ -50,8 +50,11 @@ import { MainNavComponent } from './layouts/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { PdfComponent } from './components/modals/pdf/pdf.component';
-import { SuccRegisterComponent } from './components/modals/succ-register/succ-register.component';
 import { SuccessRegisterComponent } from './components/modals/success-register/success-register.component';
+import { ListadoComponent } from './components/admin/dashboard/listado/listado.component';
+import { DetalleComponent } from './components/admin/dashboard/detalle/detalle.component';
+import { DetailComponent } from './components/modals/detail/detail.component';
+import { TicketComponent } from './components/modals/ticket/ticket.component';
 
 @NgModule({
   declarations: [
@@ -94,8 +97,11 @@ import { SuccessRegisterComponent } from './components/modals/success-register/s
     MensajeSoporteComponent,
     MainNavComponent,
     PdfComponent,
-    SuccRegisterComponent,
     SuccessRegisterComponent,
+    ListadoComponent,
+    DetalleComponent,
+    DetailComponent,
+    TicketComponent,
   ],
   entryComponents: [
     LoginModalComponent,
@@ -106,7 +112,9 @@ import { SuccessRegisterComponent } from './components/modals/success-register/s
     GarantiaComponent,
     MensajeSoporteComponent,
     PdfComponent,
-    SuccessRegisterComponent
+    SuccessRegisterComponent,
+    DetailComponent,
+    TicketComponent,
   ],
   imports: [
     BrowserModule,
