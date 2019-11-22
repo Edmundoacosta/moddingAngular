@@ -17,7 +17,7 @@
     height: 50%;
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
-    border-radius: 50% !important;
+    border-radius: 50% !important; 
   }
   
   .profile-usertitle {
@@ -91,7 +91,7 @@ input[type="number"] {
       color: #fff;
   }
 }
-.fa {
+.faAyuda {
   color: $secondC;
   &:hover {
     text-decoration: none;
@@ -101,6 +101,42 @@ input[type="number"] {
 .space {
   margin-top: 75px;
 }
+
+#cabTable {
+  background-color: #eee !important;
+  color: $thirdC;
+}
+.progress {
+  background-color: white ;
+  border:solid 1px #ced4da;
+  .progress-bar {
+    background-color: $secondC;
+  }
+
+}
+.botonesAcciones {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  .btnAcc {
+    color: $thirdC;
+    &:hover {
+      color: $secondC;
+    }
+  }
+}
+.progressButton {
+  .progressIcons {
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+    }
+  .ProgressLabels {
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+  }
+}
 /* mobile fix */
 @media (max-width: 768px) {
 	.dropdown-lr h3 {
@@ -108,5 +144,13 @@ input[type="number"] {
 	}
 	.dropdown-lr label {
 		color: #eee;
-	}
+  }
+  .ec {
+    width: 100%;
+  }
+  .overfl {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
 }

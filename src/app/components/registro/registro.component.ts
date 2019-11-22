@@ -10,7 +10,6 @@ import { LoginModalComponent } from '../modals/login-modal/login-modal.component
 import { TermsComponent } from '../modals/terms/terms.component';
 import { PoliticaComponent } from '../modals/politica/politica.component';
 import { SuccessMComponent } from '../modals/success-m/success-m.component';
-import { SuccRegisterComponent } from '../modals/succ-register/succ-register.component';
 import { SuccessRegisterComponent } from '../modals/success-register/success-register.component';
 
 @Component({

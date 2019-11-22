@@ -13,6 +13,19 @@
   p {
     text-align: justify;
   }
+.smallpic {
+  li {
+    border: solid 1.5px #ececec;
+  }
+}
+.medio {
+  border-bottom: solid 5px $firstC;
+}
+@media screen and (max-width: 768px){
+  .bot {
+    border-bottom: solid 5px $firstC;
+  }
+}
 .preview {
   display: -webkit-box;
   display: -webkit-flex;
@@ -22,7 +35,8 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column; 
+  }
   @media screen and (max-width: 996px) {
     .preview {
       margin-bottom: 20px; } }
@@ -59,7 +73,7 @@
 
 .card {
   margin: 20px auto;
-  background: #eee;
+  background: white !important;
   padding: 3em;
   line-height: 1.5em; }
 
@@ -113,6 +127,7 @@
     margin-left: 20px; }
 
 .add-to-cart {
+  margin-right: 5px;
   padding: 1.2em 1.5em;
   border: 1.5px solid;
   border-radius: 8px;

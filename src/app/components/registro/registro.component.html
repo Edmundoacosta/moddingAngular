@@ -179,17 +179,20 @@
                         </div>
                         <div class="form-group">
                             <button type="submit" (click)="onSubmit(user, valid)" class="btn btn-block ec"> Registrarse  </button>
-                        </div>   
-                        <small class="text-muted">Haciendo click en el boton 'Registrarse', confirmas que aceptas nuestros <br>
-                        </small> 
-                        <div class="small">
+                        </div>
+                        <div class="text-center">  
+                            <small class="text-muted">Haciendo click en el boton 'Registrarse', confirmas que aceptas nuestros <br>
+                            </small> 
                             <small>
-                                <button (click)="openTerminos()" class="btn a float-left">Términos de Condiciones de Uso</button>
-                            </small>y
+                                <button (click)="openTerminos()" class="btn a">Términos de Condiciones de Uso</button>
+                            </small>
+                            <small>
+                                y
+                            </small>
                             <small>
                                 <button (click)="openPolitica()" class="btn a">Política de Privacidad.</button>
                             </small>
-                        </div>
+                        </div> 
                     </form>
                 </article>
                 <div class="border-top card-body text-center">Ya tienes una cuenta? <button class="btn a" (click)="openLogin()">Inicia Sesión</button></div>

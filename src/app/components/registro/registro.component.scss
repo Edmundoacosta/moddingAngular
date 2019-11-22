@@ -17,6 +17,13 @@
         background-color: $thirdC;
     }
 }
+.fa {
+    color: $secondC;
+    &:hover {
+      text-decoration: none;
+      color: $thirdC;
+    }
+  }
 .size {
     width: 100%;
 }
@@ -26,12 +33,6 @@
 .logo_login {
     width: 300px;
     height: 300px;
-}
-small {
-    text-align: center;
-}
-.small {
-    margin-left: -12px;
 }
 /* Hide HTML5 Up and Down arrows. */
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {

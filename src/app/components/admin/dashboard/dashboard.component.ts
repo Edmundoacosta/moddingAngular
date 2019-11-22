@@ -33,7 +33,13 @@ export class DashboardComponent implements OnInit {
 			icon: 'fa-users',
 			name: 'Zona Gamer',
 			link: 'gamerzone'
+		},
+		{
+			icon: 'fa-users',
+			name: 'Transacciones',
+			link: 'listado'
 		}
+		
 	]; 
 
   constructor(public router: Router) { }

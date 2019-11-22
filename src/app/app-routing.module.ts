@@ -28,6 +28,8 @@ import { Checkout4Component } from './components/checkout/checkout4/checkout4.co
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ZonaGamerdetailComponent} from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ListadoComponent } from './components/admin/dashboard/listado/listado.component';
+import { DetalleComponent } from './components/admin/dashboard/detalle/detalle.component';
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
 	{path: 'home', component: HomeComponent},
@@ -52,7 +54,9 @@ const routes: Routes = [
 		{ path: 'dashboard/products/addproducts', component: AddproductsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/categories', component: CategoryComponent,pathMatch: 'full'},
 		{ path: 'dashboard/news', component: NewsComponent,pathMatch: 'full'},
-		{ path: 'dashboard/gamerzone', component: GamerzoneComponent,pathMatch: 'full'}
+		{ path: 'dashboard/gamerzone', component: GamerzoneComponent,pathMatch: 'full'},
+		{ path: 'dashboard/listado', component: ListadoComponent,pathMatch: 'full'},
+		{ path: 'dashboard/detalle', component: DetalleComponent,pathMatch: 'full'}
 	]},
 	{ path: 'Checkout', component: CheckoutComponent, children: [
 		{ path: 'Checkout1', component: Checkout1Component, pathMatch: 'full'},
