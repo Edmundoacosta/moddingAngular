@@ -1,0 +1,9 @@
+@import "../../../../variables.scss";
+.ec {
+    color: $secondC;
+    &:hover {
+        border: solid 1.5px $thirdC;
+        background: $thirdC ;
+        color: #fff;
+    }
+}

@@ -101,7 +101,7 @@
 		</div>
 		<!--nav for the specs and other navmenu-->
 		<div class="row my-3 ml-1 mr-1">
-			<ul class="nav nav-pills mb-3 mx-3" id="pills-tab" role="tablist">
+			<ul class="nav nav-pills mx-3" id="pills-tab" role="tablist">
 				<li class="nav-item">
 					<a class="nav-link active" id="v-pills-et-tab" data-toggle="pill" href="#v-pills-et" role="tab" aria-controls="v-pills-et" aria-selected="true">
 						Especificaciones técnicas
@@ -126,12 +126,12 @@
 			<!--content for the nav menu-->
 			<div class="col-12">
 				<div class="tab-content" id="v-pills-tabContent">
-					<div class="tab-pane fade show active" id="v-pills-et" role="tabpanel" aria-labelledby="v-pills-et-tab">
-						<button class="btn" (click)="openPdf()">pdf</button>
+					<div class="tab-pane fade show active  mt-3 ml-3" id="v-pills-et" role="tabpanel" aria-labelledby="v-pills-et-tab">
+						<button class="btn pdf" (click)="openPdf()">Abrir</button>
 					</div>
 					<div class="tab-pane fade" id="v-pills-mp" role="tabpanel" aria-labelledby="v-pills-mp-tab">
 						<div class="container">
-							<div class="form-row my-5">
+							<div class="form-row">
 								<div class="card-deck">
 									<div class="card">
 										<div class="card-body">
@@ -159,7 +159,7 @@
 							</div>
 						</div>							
 					</div>
-					<div class="tab-pane fade" id="v-pills-e" role="tabpanel" aria-labelledby="v-pills-e-tab">
+					<div class="tab-pane fade mt-3" id="v-pills-e" role="tabpanel" aria-labelledby="v-pills-e-tab">
 						<table class="table table-bordered">
 							<tbody>
 								<tr *ngFor="let member of Districts">

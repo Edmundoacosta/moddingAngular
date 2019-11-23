@@ -21,6 +21,14 @@
 .medio {
   border-bottom: solid 5px $firstC;
 }
+.pdf {
+  color: $secondC;
+  &:hover {
+    color: #fff;
+    background-color: $thirdC;
+    border-radius: 8px ;
+  }
+}
 @media screen and (max-width: 768px){
   .bot {
     border-bottom: solid 5px $firstC;

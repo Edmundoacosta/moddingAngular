@@ -1,3 +1,4 @@
+@import "../../../../variables.scss";
 embed {
     width: 900px;
     height: 600px;
@@ -10,7 +11,14 @@ mat-dialog-content {
 a {
     display: none;
 }
-
+.ec {
+    color: $secondC;
+    &:hover {
+        border: solid 1.5px $thirdC;
+        background: $thirdC ;
+        color: #fff;
+    }
+}
 @media (max-width : 600px) {
     embed {
         display: none;
