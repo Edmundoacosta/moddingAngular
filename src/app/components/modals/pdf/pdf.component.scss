@@ -25,7 +25,11 @@ a {
     }
     a {
         display: block;
+        color: $thirdC;
+    &:hover {
+        color: $secondC;
     }
+}
 }
 
 @media (max-width : 768px) {
@@ -34,5 +38,9 @@ a {
     }
     a {
         display: block;
+        color: $thirdC;
+    &:hover {
+        color: $secondC;
     }
+}
 }

@@ -30,6 +30,9 @@
   }
 }
 @media screen and (max-width: 768px){
+  .pdf {
+    margin-left: 40%;
+  }
   .bot {
     border-bottom: solid 5px $firstC;
   }
@@ -45,7 +48,10 @@
       -ms-flex-direction: column;
           flex-direction: column; 
   }
-  @media screen and (max-width: 996px) {
+  @media screen and (max-width: 996px) { 
+  .pdf {
+    margin-left: 35%;
+  }
     .preview {
       margin-bottom: 20px; } }
 
@@ -302,5 +308,8 @@ table th {
   
   table td:last-child {
     border-bottom: 0;
+  }
+  .pdf {
+    margin-left: 35%;
   }
 }

@@ -13,7 +13,7 @@
 			<div class="wrapper row">
 				<div class="preview col-md-6">
 					
-					<div class="preview-pic tab-content text-center ml-2 mt-2">
+					<div class="preview-pic tab-content text-center mx-2 mt-2">
 					<!--big pictures-->
 						<div class="tab-pane active pic" id="pic-1">
 							<img [src]="'http://localhost:4444/public/products/'+product.principalImg"/>
@@ -32,7 +32,7 @@
 						</div>
 					</div>
 					<!--mini picture that u select to preview it up -->
-					<ul class="preview-thumbnail nav nav-tabs smallpic ml-2">
+					<ul class="preview-thumbnail nav nav-tabs smallpic mx-2">
 						<li class="active">
 							<a data-target="#pic-1" data-toggle="tab">
 								<img [src]="'http://localhost:4444/public/products/'+product.principalImg"/>
@@ -61,12 +61,12 @@
 					</ul>
 				</div>
 				<div class="details col-md-6">
-					<div class="medio">
+					<div class="medio mx-2 mt-1">
 						<h3 class="product-title">{{product.name}}</h3>
 						<p class="product-description">{{product.description}}</p>
 					</div>
 					<div class="medio">
-						<div class="row mx-1 my-1">
+						<div class="row mx-2 my-1">
 							<h1 class="mt-3">S/. {{product.price}}</h1>
 						</div>
 						<ul class="mx-4">
@@ -76,11 +76,11 @@
 						</ul>
 					</div>
 					<div class="bot">
-						<div class="row mx-1 my-2">
+						<div class="row mx-2 my-2">
 							<h5 class="mr-2">Stock :</h5>
 							<h5>{{product.inStock}}</h5>
 						</div>
-						<div class="row mx-1 my-2">
+						<div class="row mx-2 my-2">
 							<h5 class="mr-2">Cantidad :</h5>
 							<button mat-mini-fab class="btn plus-minus" data-type="minus" (click)="add(false) ">
 								<i class="fa fa-minus "></i>
@@ -127,7 +127,9 @@
 			<div class="col-12">
 				<div class="tab-content" id="v-pills-tabContent">
 					<div class="tab-pane fade show active  mt-3 ml-3" id="v-pills-et" role="tabpanel" aria-labelledby="v-pills-et-tab">
-						<button class="btn pdf" (click)="openPdf()">Abrir</button>
+						<button class="btn pdf" (click)="openPdf()">
+							<i class="fa fa-file"></i>Abrir
+						</button>
 					</div>
 					<div class="tab-pane fade" id="v-pills-mp" role="tabpanel" aria-labelledby="v-pills-mp-tab">
 						<div class="container">
