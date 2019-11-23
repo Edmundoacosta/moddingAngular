@@ -25,10 +25,13 @@ mat-dialog-content {
     }
     .link {
         display: block;
-        color: $secondC;
-    &:hover {
         color: $thirdC;
+        &:hover {
+            color: $secondC;
         }
+    }
+    #hideA {
+        display: none;
     }
 }
 
@@ -38,9 +41,12 @@ mat-dialog-content {
     }
     .link {
         display: block;
-        color: $secondC;
-    &:hover {
         color: $thirdC;
+        &:hover {
+            color: $secondC;
         }
+    }
+    #hideA {
+        display: none;
     }
 }

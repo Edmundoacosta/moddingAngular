@@ -19,14 +19,14 @@
                     <input matInput type="text" placeholder="Buscar">
                 </mat-form-field>
                 <div class="sidebutton">
-                    <button (click)="sidenav.close()" (click)="openLogin()" class="btn btn-ec" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil">
+                    <button (click)="openLogin()" class="btn btn-ec" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil">
                         <i class="fa fa-user"></i>
                     </button>
-                    <button (click)="sidenav.close()" routerLink="/shopping_cart" class="btn btn-ec">
+                    <button routerLink="/shopping_cart" class="btn btn-ec">
                         <i class="fa fa-shopping-cart"></i>
                         <span class="badge badge-outline">{{inCart}}</span>
                     </button>
-                    <button (click)="sidenav.close()" (click)="logout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
+                    <button (click)="logout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
                         <i class="fa fa-sign-out"></i>
                     </button>
                 </div>
