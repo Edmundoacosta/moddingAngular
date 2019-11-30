@@ -11,7 +11,9 @@ export class Checkout1Component implements OnInit {
     firstname: '',
     lastname: '',
     email: '',
-    addressOne: ''
+    addressOne: '',
+    dni:'',
+    phone:''
   };
 
   public deliveryAddress = {
