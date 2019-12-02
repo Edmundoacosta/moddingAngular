@@ -14,7 +14,10 @@ export class UserDashboardComponent implements OnInit {
     firstname: '',
     lastname: '', 
     email: '',
-    addressOne: ''
+    addressOne: '',
+    phone:'',
+    password:'',
+    password2:''
   };
 
   public deliveryAddress = {

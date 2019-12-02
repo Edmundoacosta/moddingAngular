@@ -22,7 +22,8 @@ export class ItemDetailComponent implements OnInit {
     inStock: 0,
     quantity: 0,
     principalImg: '',
-    price: 0
+    price: 0,
+    description:''
   };
   public DBURL:string = 'http://localhost:4444/';
   public Districts:Array<any> = [

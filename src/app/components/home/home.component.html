@@ -48,100 +48,6 @@
     </a>
 </div>
 
-<div class="container mt-4 text-center">
-  <div id="t-pro">
-    <h1><strong>EXPLORAR</strong> LOS PRODUCTOS</h1>
-  </div>
-  <!--Carousel Wrapper-->
-  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="false">
-    <!--Controls-->
-    <button class="btn float-left" type="button">
-      <a href="#multi-item-example" data-slide="prev">
-        <i class="fa fa-chevron-left"></i>
-      </a>
-    </button>
-    <button class="btn float-right" type="button">
-      <a href="#multi-item-example" data-slide="next">
-        <i class="fa fa-chevron-right"></i>
-      </a>
-    </button>
-    <!--/.Controls-->
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-      <li data-target="#multi-item-example" data-slide-to="1"></li>
-      <li data-target="#multi-item-example" data-slide-to="2"></li>
-    </ol>
-    <!--/.Indicators-->
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-      <!--First slide-->
-      <div class="carousel-item active">
-        <div class="d-flex justify-content-center">
-          <div class="category">
-            <a class="category-link" routerLink='/categoria/refrigeracion'>
-              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_watercooling.png" alt="">
-              <div class="category-link2">
-                <p>REFRIGERACIÓN <br> PERSONALIZADA</p>
-                
-              </div>
-            </a>
-          </div>
-          <div class="category">
-            <a class="category-link" routerLink='/categoria/compu'>
-              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_pcparts.png" alt="">
-              <div class="category-link2">
-                <P>COMPONENTES DE <br> COMPUTADORA</P>
-              </div>
-            </a>
-          </div>
-          <div class="category">
-            <a class="category-link" routerLink='/categoria/sistema'>
-              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_lightsystem.png" alt="">
-              <div class="category-link2">
-                <P>SISTEMA DE <br>ILUMINACIÓN</P>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!--/.First slide-->
-      <!--Second slide-->
-      <div class="carousel-item">
-        <div class="d-flex justify-content-center">
-          <div class="category">
-            <a class="category-link" routerLink='/categoria/refrigeracion'>
-              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_watercooling.png" alt="">
-              <div class="category-link2">
-                <p>REFRIGERACIÓN <br> PERSONALIZADA</p>
-                
-              </div>
-            </a>
-          </div>
-          <div class="category">
-            <a class="category-link" routerLink='/categoria/compu'>
-              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_pcparts.png" alt="">
-              <div class="category-link2">
-                <P>COMPONENTES DE <br> COMPUTADORA</P>
-              </div>
-            </a>
-          </div>
-          <div class="category">
-            <a class="category-link" routerLink='/categoria/sistema'>
-              <img id="zoom2" src="../../../assets/imagenes/home-view-img/category_lightsystem.png" alt="">
-              <div class="category-link2">
-                <P>SISTEMA DE <br>ILUMINACIÓN</P>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!--/.Second slide-->
-    </div>
-    <!--/.Slides-->
-  </div>
-  <!--/.Carousel Wrapper-->
-</div>
 
 <div class="container">
   <section class="divided clearfix">
@@ -231,3 +137,22 @@
     Los Focos led son más eficientes como consecuencia de su propio proceso para la generación de luz. Este proceso se conoce como electroluminiscencia. Los diodos led transforman el 80-90% de la energía consumida en luz, mientras que un foco convencional o de bajo consumo solamente convierte en luz el 10-15% y el 85-90% restante se desperdicia en forma de calor. De esta manera el ahorro que supone el empleo de la tecnología led es del 80-90% aproximadamente en nuestras facturas de la luz.
   </p>
 </div>
+<!--
+<p>
+  You can set specific index to start from it
+</p>
+<div class="container">
+  <carousel [itemsPerSlide]="5"
+            [singleSlideOffset]="true"
+            [startFromIndex]="6"
+            [interval]="false">
+    <slide *ngFor="let slide of slides; let index=index">
+      <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+      <div class="carousel-caption">
+        <h4>Slide {{index}}</h4>
+      </div>
+    </slide>
+  </carousel>
+</div>
+-->
+
