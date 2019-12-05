@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { LoginModalComponent } from 'src/app/components/modals/login-modal/login-modal.component';
 import { ListenService } from '../../providers/listen.service';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-layouts/main-nav',
@@ -19,6 +20,7 @@ import { ListenService } from '../../providers/listen.service';
   ]
 })
 export class MainNavComponent {
+  private sidenav : MatSidenav;
   public logged:boolean = false;
   public inCart:number = 0;
   public categories:Array<any> = [];
@@ -67,6 +69,7 @@ export class MainNavComponent {
           location.reload();
         }, 200);
     }
+
   
   }
 

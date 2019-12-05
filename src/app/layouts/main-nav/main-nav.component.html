@@ -1,32 +1,35 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: !(isHandset$ | async)}" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
-        <mat-toolbar color="primary">Menu</mat-toolbar>
+        <mat-toolbar color="primary">
+            <h5>Menu</h5> 
+            <i (click)="drawer.toggle()" class="fa fa-close"></i>
+        </mat-toolbar>
         <mat-nav-list>
             <div class="sidelink">
-                <a class="nav-link dropdown-toggle" [matMenuTriggerFor]="afterMenu">Categorias</a>
+                <a (click)="drawer.toggle()" class="nav-link dropdown-toggle" [matMenuTriggerFor]="afterMenu">Categorias</a>
                 <mat-menu class="mt-4" #afterMenu="matMenu" xPosition="after">
                     <button *ngFor="let item of categories" class="btn btn-ca" [routerLink]="'/categoria/' + item.name">{{item.name}}</button>
                 </mat-menu>
-                <a class="nav-link" routerLink="/sobre_nosotros" routerLinkActive="active-link">Nosotros</a>
-                <a class="nav-link" routerLink="/novedades" routerLinkActive="active-link">Novedades</a>
+                <a (click)="drawer.toggle()" class="nav-link" routerLink="/sobre_nosotros" routerLinkActive="active-link">Nosotros</a>
+                <a (click)="drawer.toggle()" class="nav-link" routerLink="/novedades" routerLinkActive="active-link">Novedades</a>
                 <!--
                 <a (click)="sidenav.close()" class="nav-link" routerLink="/zona_gamer" routerLinkActive="active-link">Zona Gamer
                     <i class="fa fa-gamepad"></i>
                 </a>-->
-                <a class="nav-link" routerLink="/contact_us" routerLinkActive="active-link">Contactanos</a>
+                <a (click)="drawer.toggle()" class="nav-link" routerLink="/contact_us" routerLinkActive="active-link">Contactanos</a>
                 <mat-form-field class="text-center">
                     <input matInput type="text" placeholder="Buscar">
                 </mat-form-field>
                 <div class="sidebutton">
-                    <button (click)="openLogin()" class="btn btn-ec" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil">
+                    <button (click)="openLogin()" (click)="drawer.toggle()" class="btn btn-ec" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil">
                         <i class="fa fa-user"></i>
                     </button>
-                    <button routerLink="/shopping_cart" class="btn btn-ec">
+                    <button (click)="drawer.toggle()" routerLink="/shopping_cart" class="btn btn-ec">
                         <i class="fa fa-shopping-cart"></i>
                         <span class="badge badge-outline">{{inCart}}</span>
                     </button>
-                    <button (click)="logout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
+                    <button (click)="logout()" (click)="drawer.toggle()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
                         <i class="fa fa-sign-out"></i>
                     </button>
                 </div>
