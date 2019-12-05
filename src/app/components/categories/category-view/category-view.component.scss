@@ -18,45 +18,79 @@
 .product-grid6 .social li a:after,.product-grid6 .social li a:before, .product-grid6 .social li p:after, .product-grid6 .social li p:before{content:attr(data-tip);color:$thirdC;background-color:$secondC;font-size:12px;letter-spacing:1px;line-height:20px;padding:1px 5px;border-radius:5px;white-space:nowrap;opacity:0;transform:translateX(-50%);position:absolute;left:50%;top:-30px}
 .product-grid6 .social li a:after, .product-grid6 .social li p:after{content:'';height:15px;width:15px;border-radius:0;transform:translateX(-50%) rotate(45deg);top:-20px;z-index:-1}
 .product-grid6 .social li a:hover:after,.product-grid6 .social li a:hover:before, .product-grid6 .social li p:hover:after, .product-grid6 .social li p:hover:before{opacity:1}
-.nav-link {
-    color: $secondC;
-    text-decoration: none;
-    &:hover {
-      color: $thirdC;
-    }
-}
-#navspy {
-    position: fixed;
-    z-index: 1;
-    padding: 0px;
-    width: 80%;
-}
-.h3 {
-    padding: 2rem;
-}
 h2 {
     text-transform: uppercase;
 }
-#bnav {
-    background-color: #fff;
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: none;
+    background-color: $firstC;
+    border-color: $firstC;
+    .fa {
+        color: white !important;
+        background-color: $thirdC;
+        border: 1.5px solid $thirdC !important;
+    }
 }
-.navbar-nav{
-    width: 50%;
-    padding: 0px;
-    a {
-        text-align: center;
-        color: $secondC;
-        background-color: $firstC;
-        border: 1px solid $secondC;
+.nav-tabs .nav-link {
+    border: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+#tabs {
+    margin-left: 20%;
+    padding: 20px;
+    
+    li {
+        margin: 10px 20px;
+        a {
+            text-decoration: none;
+        }
+        a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $secondC;
+            transition: width .5s;
+        }
+        a:hover::after {
+            width: 100%;
+        }
+        i {
+            text-align: center;
+            justify-content: space-between;
+            padding: 7px;
+            border: 1.5px solid $secondC;
+            border-radius: 50%;
+            color: $thirdC;
+            background-size: 250% 250%;
+            background-image: 
+            linear-gradient(to top, $thirdC 50%, transparent 50%);
+            transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
+        }
+        span {
+            color:black;
+            display:block;
+            text-transform:uppercase;
+        }
         &:hover {
-            color: #fff;
-            background-color: $thirdC;
-            border: 1.5px solid $thirdC;
+            i {
+                color: #fff;
+                border: 1.5px solid $thirdC;
+                background-image: 
+                linear-gradient(to top, $thirdC 51%, transparent 50%);
+                background-position: 0 100%;
+                transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
+            }
+            span {
+                color: $thirdC;
+            }
         }
     }
 }
-.bg-light {
-    background-color: transparent!important;
+
+.nav-tabs {
+    border-bottom: none;
 }
 .spacio {
     margin-top: 70px;
@@ -68,5 +102,56 @@ h2 {
 	}
 	.dropdown-lr label {
 		color: #eee;
-	}
+    }
+    #tabs {
+        margin-left: 8%;
+        li {
+            margin: 5px 10px;
+        }
+        i {
+            margin-top: 10px;
+            
+        }
+    }
+}
+@media (max-width : 463px) {
+    #tabs {
+        margin-left: 8%;
+        padding: 0px;
+        li {
+            margin: 5px 10px;
+        }
+        i {
+            margin-top: 10px;
+            
+        }
+    }
+}
+@media (max-width : 421px) {
+    #tabs {
+        margin-left: 8%;
+        padding: 0px;
+        margin-top: 5px;
+        li {
+            margin: 0px;
+        }
+        i {
+            margin-top: 10px;
+            
+        }
+    }
+}
+@media (max-width : 375px) {
+    #tabs {
+        margin-left: 5%;
+        padding: 0px;
+        margin-top: 5px;
+        li {
+            margin: 0px;
+        }
+        i {
+            margin-top: 10px;
+            
+        }
+    }
 }

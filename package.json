@@ -23,6 +23,7 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@types/jquery": "^3.3.31",
     "@uiowa/digit-only": "^1.0.1",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.3.1",
