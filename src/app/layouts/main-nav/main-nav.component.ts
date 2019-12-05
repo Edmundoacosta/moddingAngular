@@ -19,6 +19,7 @@ import { ListenService } from '../../providers/listen.service';
   ]
 })
 export class MainNavComponent {
+
   public logged:boolean = false;
   public inCart:number = 0;
   public categories:Array<any> = [];
@@ -67,6 +68,7 @@ export class MainNavComponent {
           location.reload();
         }, 200);
     }
+
   
   }
 
