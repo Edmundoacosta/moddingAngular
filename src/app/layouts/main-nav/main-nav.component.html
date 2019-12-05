@@ -25,7 +25,7 @@
                     <button (click)="openLogin()" (click)="drawer.toggle()" class="btn btn-ec" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil">
                         <i class="fa fa-user"></i>
                     </button>
-                    <button (click)="drawer.toggle()" routerLink="/shopping_cart" class="btn btn-ec">
+                    <button (click)="cart()" (click)="drawer.toggle()" class="btn btn-ec">
                         <i class="fa fa-shopping-cart"></i>
                         <span class="badge badge-outline">{{inCart}}</span>
                     </button>
