@@ -70,6 +70,12 @@ export class MainNavComponent {
         }, 200);
     }
 
+    cart() {
+      this.router.navigate(['/shopping_cart']);
+      setTimeout(()=> {
+        location.reload();
+      }, 200);
+    }
   
   }
 
