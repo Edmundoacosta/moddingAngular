@@ -158,6 +158,10 @@
     background-color: $thirdC;
     color : #fff;
   }
+  .seguir {
+    display: none;
+  }
+   
    
   /* Make adjustments for tablet */
   @media screen and (max-width: 650px) {
@@ -209,6 +213,22 @@
       float: right;
       width: 70px;
     }
+    .seguir {
+      display: block;
+      border: 0;
+      margin-top: 90px;
+      padding: 6px 25px;
+      color: $secondC;
+      border: 1.5px solid;
+      background-color: $firstC;
+      font-size: 25px;
+      border-radius: 8px;
+    }
+     
+    .seguir:hover {
+      background-color: $thirdC;
+      color : #fff;
+    }
   }
   /* Make more adjustments for phone */
   @media screen and (max-width: 350px) {
@@ -232,6 +252,22 @@
     }
     .totals .totals-item .totals-value {
       width: 40%;
+    }
+    .seguir {
+      display: block;
+      border: 0;
+      margin-top: 90px;
+      padding: 6px 25px;
+      color: $secondC;
+      border: 1.5px solid;
+      background-color: $firstC;
+      font-size: 25px;
+      border-radius: 8px;
+    }
+     
+    .seguir:hover {
+      background-color: $thirdC;
+      color : #fff;
     }
   }
   input::-webkit-outer-spin-button,
