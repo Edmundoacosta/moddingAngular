@@ -35,6 +35,9 @@
     background-color: $secondC;
   }
   mat-toolbar {
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
       font-size: 15px;
       a   {
           display: inline-block;

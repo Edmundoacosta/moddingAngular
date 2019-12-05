@@ -1,5 +1,5 @@
 
-<button mat-dialog-close class="btn close"><i class="fa fa-close"></i></button>
+<button [mat-dialog-close]="true" class="btn close"><i class="fa fa-close"></i></button>
 <div class="titulo">
   <h1 mat-dialog-title class="text-center">Iniciar Sesión</h1>
 </div>
@@ -30,8 +30,8 @@
     </div>
 
     <div class="links">
-      <button mat-dialog-close data-dismiss="modal" class="btn newUser" (click)="openDialog()">Olvidaste tu contraseña?</button>
-      <button mat-dialog-close routerLink="/registro" data-dismiss="modal" class="btn newUser">Usuario Nuevo?</button>
+      <button [mat-dialog-close]="true" data-dismiss="modal" class="btn newUser" (click)="openDialog()">Olvidaste tu contraseña?</button>
+      <button [mat-dialog-close]="true" routerLink="/registro" data-dismiss="modal" class="btn newUser">Usuario Nuevo?</button>
     </div>
   </div>
 
