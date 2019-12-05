@@ -54,6 +54,7 @@ import { ListadoComponent } from './components/admin/dashboard/listado/listado.c
 import { DetalleComponent } from './components/admin/dashboard/detalle/detalle.component';
 import { DetailComponent } from './components/modals/detail/detail.component';
 import { TicketComponent } from './components/modals/ticket/ticket.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -132,8 +133,11 @@ import { TicketComponent } from './components/modals/ticket/ticket.component';
     MatListModule
   ],
   providers: [
+    {
+      provide: LocationStrategy, useClass: HashLocationStrategy
+    },
     ModdingService,
-    SessionService
+    SessionService,
   ],
   bootstrap: [AppComponent]
 })
