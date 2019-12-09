@@ -40,6 +40,7 @@ export class LoginModalComponent implements OnInit {
 
   onSubmit(user, valid){
   	if (valid) {
+      console.log(user);
   		this._modService.login({user: user}).then((res) => {
         this.session.setObject('user', res['user']);
         this.session.setItem('token', res['user'].token);
@@ -47,7 +48,7 @@ export class LoginModalComponent implements OnInit {
         setTimeout(() => {
           location.reload();
         }, 100);
-        });
+      });
   	}
   }
 
