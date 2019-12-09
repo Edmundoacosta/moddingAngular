@@ -173,12 +173,12 @@
                             <mat-form-field class="size">
                                 <input matInput placeholder="Confirmar Contraseña" formControlName="password2" type="password" [formControl]="u.password2">
                                 <mat-error *ngIf="u.password2.hasError('required')">
-                                        La contraseña no coincide con la ingresada anteriormente
+                                    La contraseña no coincide con la ingresada anteriormente
                                 </mat-error>
                             </mat-form-field>
                         </div>
                         <div class="form-group">
-                            <button type="submit" (click)="onSubmit('user', 'valid')" class="btn btn-block ec"> Registrarse  </button>
+                            <button type="submit" class="btn btn-block ec"> Registrarse  </button>
                         </div>
                         <div class="text-center">  
                             <small class="text-muted">Haciendo click en el boton 'Registrarse', confirmas que aceptas nuestros <br>
@@ -196,7 +196,6 @@
                     </form>
                 </article>
                 <div class="border-top card-body text-center">Ya tienes una cuenta? <button class="btn a" (click)="openLogin()">Inicia Sesión</button></div>
-                <button class="btn" (click)="test()">test</button>
             </div>
         </div>
     </div>
