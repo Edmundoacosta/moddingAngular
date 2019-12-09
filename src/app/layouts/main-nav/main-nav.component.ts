@@ -46,7 +46,6 @@ export class MainNavComponent {
     ngOnInit() {
       this.logged = this.session.getItem('token')?true:false;
       this.inCart = this.session.getItem('inCart')?JSON.parse(this.session.getItem('inCart')).length:0;
-      console.log(this.inCart);
       this._modService.getCategoryHeader()
         .then((res) => {
           this.categories = res['result'];
