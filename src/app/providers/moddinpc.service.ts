@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
-let url = 'https://warm-gorge-76460.herokuapp.com';
+let other = 'http://localhost:4444';
 
 @Injectable({
   providedIn: 'root'
