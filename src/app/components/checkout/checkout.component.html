@@ -126,7 +126,7 @@
                         <label class="product-line-price">Total</label>
                         </div>
                     
-                        <div class="product">
+                        <div *ngFor="let item of products; let i = 'index'" class="product">
                         <div class="product-image">
                             <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
                         </div>
