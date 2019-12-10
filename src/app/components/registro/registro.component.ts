@@ -25,7 +25,7 @@ export class RegistroComponent implements OnInit {
       firstname = new FormControl('', Validators.compose([Validators.required, Validators.minLength(3)]));
   		lastname = new FormControl ('', Validators.compose([Validators.required, Validators.minLength(3)]));
       id_type = new FormControl ('', Validators.required);
-      id_number = new FormControl ('', Validators.compose([Validators.required, Validators.minLength(8),Validators.maxLength(11)]));
+      id_number = new FormControl ('', Validators.compose([Validators.required, Validators.minLength(8),Validators.maxLength(12)]));
   		email = new FormControl('', [Validators.required, Validators.email]);
   		phone = new FormControl ('', Validators.compose([Validators.required, Validators.minLength(9) , Validators.maxLength(9)]));
   		department = new FormControl ('', Validators.required);

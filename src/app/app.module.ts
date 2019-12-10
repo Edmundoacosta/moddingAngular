@@ -24,9 +24,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { Checkout1Component } from './components/checkout/checkout1/checkout1.component';
-import { Checkout2Component } from './components/checkout/checkout2/checkout2.component';
-import { Checkout3Component } from './components/checkout/checkout3/checkout3.component';
 import { UsersListComponent } from './components/admin/dashboard/users-list/users-list.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ProductsComponent } from './components/admin/dashboard/products/products.component';
@@ -36,7 +33,6 @@ import { CategoryComponent } from './components/admin/dashboard/category/categor
 import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
 import { ZonaGamerdetailComponent } from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { Checkout4Component } from './components/checkout/checkout4/checkout4.component';
 import { MaterialModule } from './material/material.module';
 import { LoginModalComponent } from './components/modals/login-modal/login-modal.component';
 import { RecoveryPassComponent } from './components/modals/recovery-pass/recovery-pass.component';
@@ -55,6 +51,7 @@ import { DetalleComponent } from './components/admin/dashboard/detalle/detalle.c
 import { DetailComponent } from './components/modals/detail/detail.component';
 import { TicketComponent } from './components/modals/ticket/ticket.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confirmlogout.component';
 
 @NgModule({
   declarations: [
@@ -74,9 +71,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     AdminComponent,
     DashboardComponent,
     CheckoutComponent,
-    Checkout1Component,
-    Checkout2Component,
-    Checkout3Component,
     UsersListComponent,
     ContactUsComponent,
     ProductsComponent,
@@ -86,7 +80,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     AddproductsComponent,
     ZonaGamerdetailComponent,
     ForgotPasswordComponent,
-    Checkout4Component,
     LoginModalComponent,
     RecoveryPassComponent,
     SuccessMComponent,
@@ -101,6 +94,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     DetalleComponent,
     DetailComponent,
     TicketComponent,
+    ConfirmlogoutComponent,
   ],
   entryComponents: [
     LoginModalComponent,
@@ -114,6 +108,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     SuccessRegisterComponent,
     DetailComponent,
     TicketComponent,
+    ConfirmlogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -130,7 +125,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
   ],
   providers: [
     {

@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material';
 import { LoginModalComponent } from 'src/app/components/modals/login-modal/login-modal.component';
 import { ListenService } from '../../providers/listen.service';
 import { MatSidenav } from '@angular/material';
+import { ConfirmlogoutComponent } from 'src/app/components/modals/confirmlogout/confirmlogout.component';
 
 @Component({
   selector: 'app-layouts/main-nav',
@@ -60,13 +61,13 @@ export class MainNavComponent {
         this.dialog.open(LoginModalComponent);
       }
     }
-  
-    logout() {
-        localStorage.removeItem('token');
-        this.router.navigate(['/home']);
-        setTimeout(() => {
-          location.reload();
-        }, 200);
+
+    confirmLogout() {
+      if (this.logged) {
+        this.dialog.open(ConfirmlogoutComponent);
+      } else {
+        return;
+      }
     }
 
     cart() {

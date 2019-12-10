@@ -1,0 +1,500 @@
+@import '../../../variables.scss';
+.container {
+    margin-top: 90px;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: none;
+    background-color: $firstC;
+    border-color: $firstC;
+    #icono {
+        color: white !important;
+        background-color: $thirdC;
+        border: 1.5px solid $thirdC !important;
+    }
+}
+.nav-tabs .nav-link {
+    border: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+#tabs {
+    margin-left: 23%;
+    padding: 0px 20px;
+    li {
+        margin: 5px 20px;
+        a {
+            text-decoration: none;
+        }
+        a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $secondC;
+            transition: width .5s;
+        }
+        a:hover::after {
+            width: 100%;
+        }
+        #icono {
+            text-align: center;
+            justify-content: space-between;
+            padding: 7px 8px;
+            border: 1.5px solid $secondC;
+            border-radius: 50%;
+            color: $thirdC;
+            background-size: 250% 250%;
+            background-image: 
+            linear-gradient(to top, $thirdC 50%, transparent 50%);
+            transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
+        }
+        .fa-address-book{
+            margin-left: 35px;
+        }
+        .fa-shopping-cart{
+            margin-left: 45px;
+        }
+        .fa-credit-card{
+            margin-left: 40px;
+        }
+        span {
+            color:black;
+            display:block;
+            text-transform:uppercase;
+        }
+        &:hover {
+            #icono {
+                color: #fff;
+                border: 1.5px solid $thirdC;
+                background-image: 
+                linear-gradient(to top, $thirdC 51%, transparent 50%);
+                background-position: 0 100%;
+                transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
+            }
+            span {
+                color: $thirdC;
+            }
+        }
+    }
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+#help {
+    text-decoration: none;
+    color: $secondC;
+    &:hover {
+        color: $thirdC;
+    }
+}
+
+.ec {
+    color: $secondC;
+    background-color: $firstC;
+    border: 1.5px solid;
+    border-radius: 8px;
+    &:hover {
+        color: #fff;
+        background-color: $thirdC;
+    }
+}
+.dots {
+	&:after {
+		display         : inline-block;
+		margin          : 0 0 9px 15px;
+		height          : 3px;
+		content         : "";
+		text-shadow     : none;
+		background-color: $secondC;
+        width           : 60px;
+        color: $thirdC;
+	}
+
+	&:before {
+		display         : inline-block;
+		margin          : 0 15px 9px 0;
+		height          : 3px;
+		content         : "";
+		text-shadow     : none;
+		background-color: $secondC;
+        width           : 60px;
+        color: $thirdC;
+	}
+}
+/*estilos para el detalle del peido*/
+.contenedor {
+    margin: 20px auto;
+}
+.product-image {
+    float: left;
+    width: 20%;
+  }
+   
+  .product-details {
+    float: left;
+    width: 37%;
+  }
+   
+  .product-price {
+    float: left;
+    width: 12%;
+  }
+   
+  .product-quantity {
+    float: left;
+    width: 10%;
+    input{
+    border: none;
+    background: $firstC;}
+  }
+   
+  .product-removal {
+    float: left;
+    width: 9%;
+  }
+   
+  .product-line-price {
+    float: left;
+    width: 12%;
+    text-align: right;
+  }
+   
+  /* This is used as the traditional .clearfix class */
+  .group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
+  .group:after,
+  .shopping-cart:after,
+  .column-labels:after,
+  .product:after,
+  .totals-item:after {
+    content: '';
+    display: table;
+  }
+   
+  .group:after, .shopping-cart:after, .column-labels:after, .product:after, .totals-item:after {
+    clear: both;
+  }
+   
+  .group, .shopping-cart, .column-labels, .product, .totals-item {
+    zoom: 1;
+  }
+   
+  /* Apply clearfix in a few places */
+  /* Apply dollar signs */
+  .product .product-price:before, .product .product-line-price:before, .totals-value:before {
+    content: 'S/. ';
+  }
+   
+  /* Body/Header stuff */
+  body {
+    padding: 0px 30px 30px 20px;
+    font-weight: 100;
+  }
+   
+  h1 {
+    font-weight: 100;
+  }
+   
+  label {
+    color: #aaa;
+  }
+   
+  .shopping-cart {
+    margin-top: -45px;
+  }
+   
+  /* Column headers */
+  .column-labels label {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  .column-labels .product-image, .column-labels .product-details, .column-labels .product-removal {
+    text-indent: -9999px;
+  }
+   
+  /* Product entries */
+  .product {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  .product .product-image {
+    text-align: center;
+  }
+  .product .product-image img {
+    width: 100px;
+  }
+  .product .product-details .product-title {
+    margin-right: 20px;
+  }
+  .product .product-details .product-description {
+    margin: 5px 20px 5px 0;
+    line-height: 1.4em;
+  }
+  .product .product-quantity input {
+    width: 40px;
+  }
+  .product .remove-product {
+    border: 0;
+    padding: 4px 8px;
+    color: $secondC;
+    border: 1.5px solid;
+    background-color: $firstC;
+    font-size: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  .product .remove-product:hover {
+    background-color: $thirdC;
+    color: #fff;
+  }
+   
+  /* Totals section */
+  .totals .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .totals .totals-item label {
+    float: left;
+    clear: both;
+    width: 79%;
+    text-align: right;
+  }
+  .totals .totals-item .totals-value {
+    float: right;
+    width: 21%;
+    text-align: right;
+  }
+  .checkout {
+    float: right;
+    border: 0;
+    margin-top: 20px;
+    padding: 6px 25px;
+    color: $secondC;
+    border: 1.5px solid;
+    background-color: $firstC;
+    font-size: 25px;
+    border-radius: 8px;
+  }
+   
+  .checkout:hover {
+    background-color: $thirdC;
+    color : #fff;
+  }
+   
+  /* Make adjustments for tablet */
+  @media screen and (max-width: 650px) {
+    .shopping-cart {
+      margin: 0;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+   
+    .column-labels {
+      display: none;
+    }
+   
+    .product-image {
+      float: right;
+      width: auto;
+    }
+    .product-image img {
+      margin: 0 0 10px 10px;
+    }
+   
+    .product-details {
+      float: none;
+      margin-bottom: 10px;
+      width: auto;
+    }
+   
+    .product-price {
+      clear: both;
+      width: 70px;
+    }
+   
+    .product-quantity {
+      width: 100px;
+    }
+    .product-quantity input {
+      margin-left: 20px;
+    }
+   
+    .product-quantity:before {
+      content: ' x';
+    }
+   
+    .product-removal {
+      width: auto;
+    }
+   
+    .product-line-price {
+      float: right;
+      width: 70px;
+    }
+  }
+  /* Make more adjustments for phone */
+  @media screen and (max-width: 350px) {
+    .product-removal {
+      float: right;
+    }
+   
+    .product-line-price {
+      float: right;
+      clear: left;
+      width: auto;
+      margin-top: 10px;
+    }
+   /*
+    .product .product-line-price:before {
+      content: 'Item Total: S/. ';
+    }*/
+   
+    .totals .totals-item label {
+      width: 60%;
+    }
+    .totals .totals-item .totals-value {
+      width: 40%;
+    }
+  }
+/*fin de estilos del detalle del pedido*/
+
+/*estilos para los metodos de pago*/
+.applogo {
+    width: 100px;
+	height: 100px;
+	
+}
+input[type="radio"] {
+	display: none;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: middle;
+	background: #FFF;
+	border: 1px solid #d2d2d2;
+	border-radius: 100%;
+	&:hover {
+		border-color: #c2c2c2;
+	}
+	&:checked {
+		background:gray;
+	}
+ }
+/*fin de estilos para los metodos de pago*/
+
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/*responsive tabs*/
+@media (max-width: 1199px) {
+    #tabs {
+        margin-left: 20%;
+    }
+}
+@media (max-width: 991px) {
+    #tabs {
+        margin-left: 7%;
+    }
+}
+@media (max-width: 768px) {
+    #tabs {
+        margin-left: 7%;
+    }
+    .dots {
+        &:after {
+            width           : 40px;
+        }
+    
+        &:before {
+            width           : 40px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    #tabs {
+        margin-left: 3%;
+        li {
+            margin: 0px;
+        }
+    }
+    .dots {
+        &:after {
+            width           : 40px;
+        }
+    
+        &:before {
+            width           : 40px;
+        }
+    }
+}
+@media (max-width : 463px) {
+    #tabs {
+        margin-left: 0%;
+        li {
+            margin: -10px;
+        }
+    }
+    .dots {
+        &:after {
+            width           : 40px;
+        }
+    
+        &:before {
+            width           : 40px;
+        }
+    }
+    
+}
+@media (max-width : 421px) {
+    #tabs {
+        margin-left: 13%;
+        li {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        #check3-tab{
+            margin-left: 60px;
+        }
+    }
+    .dots {
+        &:after {
+            width           : 40px;
+        }
+    
+        &:before {
+            width           : 40px;
+        }
+    }
+}
+@media (max-width : 375px) {
+    #tabs {
+        margin-left: 7%;
+        li {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        #check3-tab{
+            margin-left: 60px;
+        }
+    }
+    .dots {
+        &:after {
+            width           : 40px;
+        }
+    
+        &:before {
+            width           : 40px;
+        }
+    }
+}

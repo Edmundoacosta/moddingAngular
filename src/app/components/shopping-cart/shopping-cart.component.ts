@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from 'src/app/providers/session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -9,7 +10,9 @@ import { SessionService } from 'src/app/providers/session.service';
 export class ShoppingCartComponent implements OnInit {
   public products:Array<any> = [];
 
-  constructor(public session: SessionService) { }
+  constructor(public session: SessionService,
+              public router: Router,
+    ) { }
 
   ngOnInit() {
     this.products = JSON.parse(this.session.getItem('inCart'));
@@ -28,5 +31,9 @@ export class ShoppingCartComponent implements OnInit {
     this.products.splice(i,1);
     this.session.setObject('inCart', this.products);
     console.log(this.products);
+  }
+
+  checkout() {
+    this.router.navigate(['/Checkout']);
   }
 }
