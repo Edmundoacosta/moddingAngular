@@ -21,10 +21,6 @@ import { CategoryComponent } from './components/admin/dashboard/category/categor
 import { NewsComponent } from './components/admin/dashboard/news/news.component';
 import { GamerzoneComponent } from './components/admin/dashboard/gamerzone/gamerzone.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { Checkout1Component } from './components/checkout/checkout1/checkout1.component';
-import { Checkout2Component } from './components/checkout/checkout2/checkout2.component';
-import { Checkout3Component } from './components/checkout/checkout3/checkout3.component';
-import { Checkout4Component } from './components/checkout/checkout4/checkout4.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ZonaGamerdetailComponent} from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
@@ -42,7 +38,7 @@ const routes: Routes = [
 	{path: 'shopping_cart', component: ShoppingCartComponent},
 	{path: 'item_detail/:id', component: ItemDetailComponent},
 	{path: 'contact_us', component: ContactUsComponent},
-  
+	{ path: 'Checkout', component: CheckoutComponent},
 	{ path: 'categoria', component: CategoriesComponent, children: [
 		{ path: ':type', component: CategoryViewComponent, pathMatch: 'full'},
 	]},
@@ -57,12 +53,6 @@ const routes: Routes = [
 		{ path: 'dashboard/gamerzone', component: GamerzoneComponent,pathMatch: 'full'},
 		{ path: 'dashboard/listado', component: ListadoComponent,pathMatch: 'full'},
 		{ path: 'dashboard/detalle', component: DetalleComponent,pathMatch: 'full'}
-	]},
-	{ path: 'Checkout', component: CheckoutComponent, children: [
-		{ path: 'Checkout1', component: Checkout1Component, pathMatch: 'full'},
-		{ path: 'Checkout2', component: Checkout2Component, pathMatch: 'full'},
-		{ path: 'Checkout3', component: Checkout3Component, pathMatch: 'full'},
-		{ path: 'Checkout4', component: Checkout4Component, pathMatch: 'full'}
 	]},
 	{ path: 'forgot-password', component: ForgotPasswordComponent },
 	{path: '**', redirectTo: '/notfound'}

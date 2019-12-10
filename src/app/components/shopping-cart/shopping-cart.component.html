@@ -1,5 +1,5 @@
 <div class="container">
-    <button type="button" [routerLink]="'/categoria/'" class="seguir btn-block">Seguir comprando</button>
+    <button type="button" [routerLink]="'/categoria/'+ ga" class="seguir btn-block">Seguir comprando</button>
 </div>
 <div class="container">
     <h1>Carrito de Compras</h1>
@@ -35,6 +35,7 @@
                 <div class="totals-value" id="cart-total">{{totalPrice()}}</div>
             </div>
         </div>
-        <button routerLink="/Checkout/Checkout1" class="checkout">Proceder</button>
+        <button (click)="checkout()" class="checkout">Proceder</button>
     </div>
 </div>
+
