@@ -148,6 +148,11 @@ mat-sidenav-content {
       display: none;
     }
 }
+@media (max-width : 720px) {
+    .sidenav {
+      display: block;
+    }
+}
 @media (max-width : 600px) {
     .sidenav {
       display: block;
