@@ -14,7 +14,7 @@
         </div> 
         <div *ngFor="let item of products; let i = 'index'" class="product">
             <div class="product-image">
-                <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
+                <img [src]="'https://warm-gorge-76460.herokuapp.com/public/products/'+products[i].principalImg">
             </div>
             <div class="product-details">
                 <h5 class="product-title">{{item.name}}</h5>

@@ -22,6 +22,7 @@ export class ItemDetailComponent implements OnInit {
     inStock: 0,
     quantity: 0,
     principalImg: '',
+    images: [],
     price: 0,
     description:''
   };
