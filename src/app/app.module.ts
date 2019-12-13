@@ -95,6 +95,7 @@ import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confir
     DetailComponent,
     TicketComponent,
     ConfirmlogoutComponent,
+    BienvenidaComponent,
   ],
   entryComponents: [
     LoginModalComponent,

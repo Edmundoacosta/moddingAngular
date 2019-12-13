@@ -131,24 +131,25 @@
                                 <input class="ml-4" disabled value="{{item.quantity}}" >
                             </div>
                             <label class="product-removal"></label>
-                            <div class="product-line-price">{{item.price*item.quantity}}</div>
+                            <div class="product-line-price">{{item.price*item.quantity | number:'1.2-2'}}</div>
                         </div>
                         <div class="totals">
-                        <div class="totals-item">
-                            <label>Subtotal</label>
-                            <div class="totals-value" id="cart-subtotal">{{subtotal() | number:'1.2-2'}}</div>
-                        </div>
-                        <div class="totals-item">
-                            <label>IGV (18%)</label>
-                            <div class="totals-value" id="cart-tax">{{igv() | number:'1.2-2'}}</div>
-                        </div>
-                        <div class="totals-item">
-                            <label>Envio</label>
-                            <div class="totals-value" id="cart-shipping">{{deliveryAddress.district.price}}</div>
-                        </div>
-                        <div class="totals-item totals-item-total">
-                            <label>Total</label>
-                            <div class="totals-value" id="cart-total">{{totalPrice() | number:'1.2-2'}}</div>
+                            <div class="totals-item">
+                                <label>Subtotal</label>
+                                <div class="totals-value" id="cart-subtotal">{{subtotal() | number:'1.2-2'}}</div>
+                            </div>
+                            <div class="totals-item">
+                                <label>IGV (18%)</label>
+                                <div class="totals-value" id="cart-tax">{{igv() | number:'1.2-2'}}</div>
+                            </div>
+                            <div class="totals-item">
+                                <label>Envio</label>
+                                <div class="totals-value" id="cart-shipping">{{deliveryAddress.district.price | number:'1.2-2'}}</div>
+                            </div>
+                            <div class="totals-item totals-item-total">
+                                <label>Total</label>
+                                <div class="totals-value" id="cart-total">{{totalPrice() + deliveryAddress.district.price | number:'1.2-2'}}</div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -23,7 +23,8 @@ export class RegistroComponent implements OnInit {
 	public allDepartments:Array<string> = ['Amazonas', 'Áncash', 'Apurímac', 'Arequipa', 'Ayacucho', 'Cajamarca', 'Callao', 'Cuzco', 'Huancavelica', 'Huánuco', 'Ica', 'Junín', 'La Libertad', 'Lambayeque', 'Lima', 'Loreto', 'Madre de Dios', 'Moquegua', 'Pasco', 'Piura', 'Puno', 'San Martín', 'Tacna', 'Tumbes', 'Ucayali'];
 
       firstname = new FormControl('', Validators.compose([Validators.required, Validators.minLength(3)]));
-  		lastname = new FormControl ('', Validators.compose([Validators.required, Validators.minLength(3)]));
+      lastname = new FormControl ('', Validators.compose([Validators.required, Validators.minLength(3)]));
+      rucname = new FormControl ('', Validators.compose([Validators.required, Validators.minLength(3)]));
       id_type = new FormControl ('', Validators.required);
       id_number = new FormControl ('', Validators.compose([Validators.required, Validators.minLength(8),Validators.maxLength(12)]));
   		email = new FormControl('', [Validators.required, Validators.email]);
@@ -33,22 +34,25 @@ export class RegistroComponent implements OnInit {
   		password = new FormControl ('', Validators.compose([Validators.required, Validators.minLength(8)]));
       password2 = new FormControl ('', Validators.compose([Validators.required, matchOtherValidator('password')]));
       ErrorMessageFirstname() {
-        return this.firstname.hasError('required') ? 'Ingrese un nombre válido' : '';
+        return this.firstname.hasError('required') ? 'Ingrese un nombre' : '';
       }
       ErrorMessageLastname() {
-        return this.lastname.hasError('required') ? 'Ingrese un apellido válido' : '';
+        return this.lastname.hasError('required') ? 'Ingrese un apellido' : '';
+      }
+      ErrorMessagerucname() {
+        return this.rucname.hasError('required') ? 'Ingrese una razón social' : '';
       }
       ErrorMessageId_type() {
         return this.id_type.hasError('required') ? 'Elija un tipo de Identificación' : '';
       }
       ErrorMessageId_number() {
-        return this.id_number.hasError('required') ? 'Ingrese un número de identificación válido' : this.id_number.hasError('minLenght') ? 'Ingrese un número de identificación válido' : this.id_number.hasError('maxLenght') ? 'Ingrese un número de identificación válido' : '';
+        return this.id_number.hasError('required') ? 'Ingrese un número de identificación' : this.id_number.hasError('minLenght') ? 'Ingrese un número de identificación válido' : this.id_number.hasError('maxLenght') ? 'Ingrese un número de identificación válido' : '';
       }
       ErrorMessagePhone() {
-        return this.phone.hasError('required') ? 'Ingrese un número de celular válido' : '';
+        return this.phone.hasError('required') ? 'Ingrese un número de celular' : '';
       }
       ErrorMessagePostalcode() {
-        return this.postalcode.hasError('required') ? 'Ingrese un código postal válido, si no sabe su código postal puede hacer click en ?' : '';
+        return this.postalcode.hasError('required') ? 'Ingrese un código postal, si no sabe su código postal puede hacer click en ?' : '';
       }
       ErrorMessageDepartment() {
         return this.department.hasError('required') ? 'Elija un departamento' : '';
@@ -66,7 +70,8 @@ export class RegistroComponent implements OnInit {
   ngOnInit() {
   	this.user = this._fb.group({
   		firstname: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-  		lastname: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      lastname: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      rucname: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       id_type: ['', Validators.required],
       id_number: ['', Validators.compose([Validators.required, Validators.minLength(8) ,Validators.maxLength(11)])],
   		email: new FormControl('', [Validators.required, Validators.email]),
