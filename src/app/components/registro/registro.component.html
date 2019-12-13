@@ -255,6 +255,14 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col form-group">
+                                        <mat-form-field class="size">
+                                            <input matInput placeholder="Razón Social" formControlName="rucname" type="text" [formControl]="u.rucname" >
+                                            <mat-error *ngIf="rucname.invalid">{{ErrorMessagerucname()}}</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col form-group">
                                         <!--
                                         <label>Tipo de Identificación</label>
                                         <select formControlName="id_type" class="form-control" [ngClass]="{'is-invalid':u.id_type.touched && u.id_type.invalid}">
