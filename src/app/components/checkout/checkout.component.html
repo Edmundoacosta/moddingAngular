@@ -65,7 +65,7 @@
                         <label>Distrito</label>
                         <select [(ngModel)]="deliveryAddress.district" class="form-control">
                             <option value="">Seleccione...</option>
-                            <option *ngFor="let dep of allDistricts" [value]="dep">{{dep}}</option>
+                            <option *ngFor="let dep of allDistricts" [value]="dep">{{dep.name}}</option>
                         </select>
                     </div>
                     <div class="col form-group">
@@ -145,19 +145,19 @@
                         <div class="totals">
                         <div class="totals-item">
                             <label>Subtotal</label>
-                            <div class="totals-value" id="cart-subtotal">{{subtotal()}}</div>
+                            <div class="totals-value" id="cart-subtotal">{{subtotal() | number:'1.2-2'}}</div>
                         </div>
                         <div class="totals-item">
                             <label>IGV (18%)</label>
-                            <div class="totals-value" id="cart-tax">{{igv()}}</div>
+                            <div class="totals-value" id="cart-tax">{{igv() | number:'1.2-2'}}</div>
                         </div>
                         <div class="totals-item">
                             <label>Envio</label>
-                            <div class="totals-value" id="cart-shipping">15.00</div>
+                            <div class="totals-value" id="cart-shipping">{{deliveryAddress.district.price}}</div>
                         </div>
                         <div class="totals-item totals-item-total">
                             <label>Total</label>
-                            <div class="totals-value" id="cart-total">{{totalPrice()}}</div>
+                            <div class="totals-value" id="cart-total">{{totalPrice() | number:'1.2-2'}}</div>
                         </div>
                         </div>                    
                     </div>
@@ -235,3 +235,4 @@
         </div>
       </div>
 </div>
+<button class="btn-primary" (click)="test()">test</button>
