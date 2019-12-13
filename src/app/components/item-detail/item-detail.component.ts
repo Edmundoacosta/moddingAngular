@@ -87,7 +87,7 @@ export class ItemDetailComponent implements OnInit {
   add(plus) : void {
     if (plus) {
       this.quantity<this.product.inStock?this.quantity++:null;
-    } else if(!plus && this.quantity != 0) {
+    } else if(!plus && this.quantity != 1) {
       this.quantity--;
     }
   }

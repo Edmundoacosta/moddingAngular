@@ -42,7 +42,7 @@
                 <div class="form-row">
                     <div class="col form-group">
                         <label>Tipo de Identificación</label>
-                        <select formControlName = "id_type" [(ngModel)]="user.id_type" class="form-control">
+                        <select [(ngModel)]="user.id_type" class="form-control">
                             <option value="">Seleccione...</option> 
                             <option value="dni">DNI</option>
                             <option value="dni">CARNET DE EXTRANJERIA</option>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="col form-group"> 
                         <label>Número de Identificación</label>
-                        <input formControlName ="id_number" [(ngModel)]="user.id_number" digitOnly name="dni" type="text" class="form-control">
+                        <input [(ngModel)]="user.id_number" digitOnly name="dni" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
@@ -63,7 +63,7 @@
                         <label>Distrito</label>
                         <select [(ngModel)]="deliveryAddress.district" class="form-control">
                             <option value="">Seleccione...</option>
-                            <option *ngFor="let dep of allDistricts" [value]="dep">{{dep}}</option>
+                            <option *ngFor="let dep of allDistricts" [ngValue]="dep">{{dep.name}}</option>
                         </select>
                     </div>
                     <div class="col form-group">
@@ -134,22 +134,21 @@
                             <div class="product-line-price">{{item.price*item.quantity}}</div>
                         </div>
                         <div class="totals">
-                            <div class="totals-item">
-                                <label>Subtotal</label>
-                                <div class="totals-value" id="cart-subtotal">{{subtotal()}}</div>
-                            </div>
-                            <div class="totals-item">
-                                <label>IGV (18%)</label>
-                                <div class="totals-value" id="cart-tax">{{igv()}}</div>
-                            </div>
-                            <div class="totals-item">
-                                <label>Envio</label>
-                                <div class="totals-value" id="cart-shipping">15.00</div>
-                            </div>
-                            <div class="totals-item totals-item-total">
-                                <label>Total</label>
-                                <div class="totals-value" id="cart-total">{{totalPrice()}}</div>
-                            </div>
+                        <div class="totals-item">
+                            <label>Subtotal</label>
+                            <div class="totals-value" id="cart-subtotal">{{subtotal() | number:'1.2-2'}}</div>
+                        </div>
+                        <div class="totals-item">
+                            <label>IGV (18%)</label>
+                            <div class="totals-value" id="cart-tax">{{igv() | number:'1.2-2'}}</div>
+                        </div>
+                        <div class="totals-item">
+                            <label>Envio</label>
+                            <div class="totals-value" id="cart-shipping">{{deliveryAddress.district.price}}</div>
+                        </div>
+                        <div class="totals-item totals-item-total">
+                            <label>Total</label>
+                            <div class="totals-value" id="cart-total">{{totalPrice() | number:'1.2-2'}}</div>
                         </div>
                     </div>
                 </div>

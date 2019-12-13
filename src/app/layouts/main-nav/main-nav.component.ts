@@ -42,6 +42,7 @@ export class MainNavComponent {
     ) {
       this.listen.listen().subscribe((val) => {
         val=='add'?this.inCart++:'';
+        val=='remove'?this.inCart--:'';
       });
     }
 
