@@ -58,5 +58,4 @@ export class CheckoutComponent implements OnInit {
   subtotal(){
     return this.totalPrice()-this.igv();
   }
-
 }

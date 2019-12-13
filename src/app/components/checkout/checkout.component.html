@@ -1,27 +1,27 @@
 <div class="container">
-        <button routerLink="/shopping_cart" class="btn mb-4 ec">REGRESAR AL CARRITO</button>
-        <button routerLink="/categoria/Iluminación" class="btn float-right mb-4 ec">SEGUIR COMPRANDO</button>
+    <button routerLink="/shopping_cart" class="btn mb-4 ec">REGRESAR AL CARRITO</button>
+    <button routerLink="/categoria/Iluminación" class="btn float-right mb-4 ec">SEGUIR COMPRANDO</button>
     <ul class="nav nav-tabs" id="tabs" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" id="check1-tab" data-toggle="tab" href="#check1" role="tab" aria-controls="check1" aria-selected="true">
-            <i id="icono" class="fa fa-address-book"></i>
-            <span>Datos de Envio</span>
-          </a>
+            <a class="nav-link active" id="check1-tab" data-toggle="tab" href="#check1" role="tab" aria-controls="check1" aria-selected="true">
+                <i id="icono" class="fa fa-address-book"></i>
+                <span>Datos de Envio</span>
+            </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="check2-tab" data-toggle="tab" href="#check2" role="tab" aria-controls="check2" aria-selected="false">
-            <i id="icono" class="fa fa-shopping-cart"></i>
-            <span>Detalle del pedido</span>
-          </a>
+            <a class="nav-link" id="check2-tab" data-toggle="tab" href="#check2" role="tab" aria-controls="check2" aria-selected="false">
+                <i id="icono" class="fa fa-shopping-cart"></i>
+                <span>Detalle del pedido</span>
+            </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="check3-tab" data-toggle="tab" href="#check3" role="tab" aria-controls="check3" aria-selected="false">
-            <i id="icono" class="fa fa-credit-card"></i>
-            <span>Metodos de pago</span>
+            <a class="nav-link" id="check3-tab" data-toggle="tab" href="#check3" role="tab" aria-controls="check3" aria-selected="false">
+                <i id="icono" class="fa fa-credit-card"></i>
+                <span>Metodos de pago</span>
           </a>
         </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
+    </ul>
+    <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="check1" role="tabpanel" aria-labelledby="check1-tab">
             <div class="text-center">
                 <h3 class="dots">DATOS DE ENVIO</h3>
@@ -54,12 +54,10 @@
                         <input formControlName ="id_number" [(ngModel)]="user.id_number" digitOnly name="dni" type="text" class="form-control">
                     </div>
                 </div>
-                
                 <div class="form-group">
                     <label>Dirección</label>
                     <input [(ngModel)]="user.addressOne" name="address" type="text" class="form-control">
                 </div>
-        
                 <div class="form-row">
                     <div class="col form-group">
                         <label>Distrito</label>
@@ -77,7 +75,6 @@
                         <input [(ngModel)]="deliveryAddress.postalcode" digitOnly maxlength="5" name="postalcode" type="number" class="form-control">
                     </div>
                 </div>
-        
                 <div class="form-row">
                     <div class="col form-group">
                         <label>Departamento</label>
@@ -92,8 +89,7 @@
                             <option selected="">Perú</option>
                         </select>
                     </div>
-                </div> 
-        
+                </div>
                 <div class="form-row">
                     <div class="col form-group">
                         <label>Correo Electrónico</label>
@@ -111,55 +107,50 @@
                 <div class="text-center"> 
                     <h3 class="dots">DETALLE DEL PEDIDO</h3>
                 </div>
-                
                 <div class="my-3">
                     <h1>Carrito de Compras</h1>
-                    
                     <div class="shopping-cart">
-                    
                         <div class="column-labels">
-                        <label class="product-image">Imagen</label>
-                        <label class="product-details">Producto</label>
-                        <label class="product-price">Precio</label>
-                        <label class="product-quantity">Cantidad</label>
-                        <label class="product-removal">Space</label>
-                        <label class="product-line-price">Total</label>
+                            <label class="product-image">Imagen</label>
+                            <label class="product-details">Producto</label>
+                            <label class="product-price">Precio</label>
+                            <label class="product-quantity">Cantidad</label>
+                            <label class="product-removal">Space</label>
+                            <label class="product-line-price">Total</label>
                         </div>
-                    
                         <div *ngFor="let item of products; let i = 'index'" class="product">
-                        <div class="product-image">
-                            <img [src]="'https://warm-gorge-76460.herokuapp.com/public/products/'+products[i].principalImg">
+                            <div class="product-image">
+                                <img [src]="'https://warm-gorge-76460.herokuapp.com/public/products/'+products[i].principalImg">
+                            </div>
+                            <div class="product-details">
+                                <h5 class="product-title">{{item.name}}</h5>
+                                <p class="product-description">{{item.description}}</p>
+                            </div>
+                            <div class="product-price">{{item.price}}</div>
+                            <div class="product-quantity">
+                                <input class="ml-4" disabled value="{{item.quantity}}" >
+                            </div>
+                            <label class="product-removal"></label>
+                            <div class="product-line-price">{{item.price*item.quantity}}</div>
                         </div>
-                        <div class="product-details">
-                            <h5 class="product-title">{{item.name}}</h5>
-                            <p class="product-description">{{item.description}}</p>
-                        </div>
-                        <div class="product-price">{{item.price}}</div>
-                        <div class="product-quantity">
-                            <input class="ml-4" disabled value="{{item.quantity}}" >
-                        </div>
-                        <label class="product-removal"></label>
-                        <div class="product-line-price">{{item.price*item.quantity}}</div>
-                        </div>
-                    
                         <div class="totals">
-                        <div class="totals-item">
-                            <label>Subtotal</label>
-                            <div class="totals-value" id="cart-subtotal">{{subtotal()}}</div>
+                            <div class="totals-item">
+                                <label>Subtotal</label>
+                                <div class="totals-value" id="cart-subtotal">{{subtotal()}}</div>
+                            </div>
+                            <div class="totals-item">
+                                <label>IGV (18%)</label>
+                                <div class="totals-value" id="cart-tax">{{igv()}}</div>
+                            </div>
+                            <div class="totals-item">
+                                <label>Envio</label>
+                                <div class="totals-value" id="cart-shipping">15.00</div>
+                            </div>
+                            <div class="totals-item totals-item-total">
+                                <label>Total</label>
+                                <div class="totals-value" id="cart-total">{{totalPrice()}}</div>
+                            </div>
                         </div>
-                        <div class="totals-item">
-                            <label>IGV (18%)</label>
-                            <div class="totals-value" id="cart-tax">{{igv()}}</div>
-                        </div>
-                        <div class="totals-item">
-                            <label>Envio</label>
-                            <div class="totals-value" id="cart-shipping">15.00</div>
-                        </div>
-                        <div class="totals-item totals-item-total">
-                            <label>Total</label>
-                            <div class="totals-value" id="cart-total">{{totalPrice()}}</div>
-                        </div>
-                        </div>                    
                     </div>
                 </div>
             </div>
@@ -168,45 +159,43 @@
             <div class="text-center">
                 <h3 class="dots">METODOS DE PAGO</h3>
             </div>
-            <!--Transferencia Deposito-->
             <div>
                 <div class="my-3 ml-3">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                <h5 class="text-left ml-3">Transferencia o Deposito Bancario</h5>
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <h5 class="text-left ml-3">Transferencia o Deposito Bancario</h5>
                 </div>
                 <h4 class="text-center">Datos de Nuestras Cuentas</h4>
                 <div class="form-row mb-5 mt-3">
                     <div class="card-deck">
                         <div class="card">
                             <div class="card-body">
-                            <img class="card-img-top " src="../../../../assets/imagenes/metodo de pago/logo bbva.png" alt="">
-                            <h5 class="card-title">Cta. corriente soles : 0011-0486-0100179443</h5>
-                            <h5 class="card-title">Cta. corriente dolares : 0011-0486-0100179451</h5>
-                            <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
-                            <p class="card-text">Recuerda que una vez realizado el pago, tienes que confirmar la transferencia o deposito enviandonos tu comprobante de pago o screenshot a nuestro WhatsApp.</p>
+                                <img class="card-img-top " src="../../../../assets/imagenes/metodo de pago/logo bbva.png" alt="">
+                                <h5 class="card-title">Cta. corriente soles : 0011-0486-0100179443</h5>
+                                <h5 class="card-title">Cta. corriente dolares : 0011-0486-0100179451</h5>
+                                <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
+                                <p class="card-text">Recuerda que una vez realizado el pago, tienes que confirmar la transferencia o deposito enviandonos tu comprobante de pago o screenshot a nuestro WhatsApp.</p>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body">
-                            <img class="card-img-top" src="../../../../assets/imagenes/metodo de pago/logo interbank.png" alt="">
-                            <h5 class="card-title">Cta. corriente soles : 2003002019726</h5>
-                            <h5 class="card-title">Cta. corriente dolares : 2003002019768</h5>
-                            <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
-                            <p class="card-text">Recuerda que una vez realizado el pago, tienes que confirmar la transferencia o deposito enviandonos tu comprobante de pago o screenshot a nuestro WhatsApp.</p>
+                                <img class="card-img-top" src="../../../../assets/imagenes/metodo de pago/logo interbank.png" alt="">
+                                <h5 class="card-title">Cta. corriente soles : 2003002019726</h5>
+                                <h5 class="card-title">Cta. corriente dolares : 2003002019768</h5>
+                                <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
+                                <p class="card-text">Recuerda que una vez realizado el pago, tienes que confirmar la transferencia o deposito enviandonos tu comprobante de pago o screenshot a nuestro WhatsApp.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--Fin Transferencia deposito-->
-            <!--Pago con tarjeta de credito o debito-->
+        <!--Fin Transferencia deposito-->
+        <!--Pago con tarjeta de credito o debito-->
             <div>
                 <div class="my-3 ml-3">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
-                <h5 class="text-left ml-3">Pago con Tarjeta de Crédito o Débito</h5>
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
+                    <h5 class="text-left ml-3">Pago con Tarjeta de Crédito o Débito</h5>
                 </div>
             </div>
-        
             <div class="card my-5">
                 <div class="card-body">
                     <p class="card-text">Este método de pago tiene un recargo adicional del 4.071%, el monto total se cancela con su tarjeta de crédito o débito al momento de la entrega del o los productos en su dirección de envio.</p>
@@ -214,24 +203,22 @@
                 </div>
                 <img class="card-img-bottom" src="../../../../assets/imagenes/metodo de pago/logo_todas_las_tarjetas.png" alt="Card image cap">
             </div>
-            <!--Fin Pago con tarjeta de credito o debito-->
-            <!--Visanet Pago Link-->
+        <!--Fin Pago con tarjeta de credito o debito-->
+        <!--Visanet Pago Link-->
             <div class="my-3 ml-3">
                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option3" checked>
                 <h5 class="text-left ml-3">VisaNet Pago Link</h5>
             </div>
-        
             <div class="card my-4">
                 <div class="card-body">
                     <p class="card-text">Este método de pago tiene un recargo adicional del 4.5%, el monto total se cancela de manera online.</p>
                 </div>
                 <img class="card-img-bottom" src="../../../../assets/imagenes/metodo de pago/visanet_pago_link.png" alt="Card image cap">
             </div>
-            <!--Fin visanet Pago Link-->
-            
+        <!--Fin visanet Pago Link-->
             <div class="form-group text-right">
                 <button class="btn btn-lg mb-2 ec" role="button" aria-pressed="true">Finalizar</button>
             </div>
         </div>
-      </div>
+    </div>
 </div>

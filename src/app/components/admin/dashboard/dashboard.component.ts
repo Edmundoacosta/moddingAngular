@@ -51,5 +51,4 @@ export class DashboardComponent implements OnInit {
   	this.router.navigate(['/admin/dashboard/' + link]);
   	console.log('/admin/dashboard/' + link)
   }
-
 }

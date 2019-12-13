@@ -76,6 +76,4 @@ export class MainNavComponent {
         location.reload();
       }, 200);
     }
-  
-  }
-
+ }
