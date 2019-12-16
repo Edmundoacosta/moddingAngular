@@ -55,6 +55,8 @@ import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confir
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -128,6 +130,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
   ],
   providers: [

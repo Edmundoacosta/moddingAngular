@@ -33,7 +33,7 @@
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0-rc.2",
     "ngx-bootstrap": "^5.0.0",
-    "ngx-toastr": "^11.2.1",
+    "ngx-toastr": "^10.1.0",
     "path": "^0.12.7",
     "rxjs": "6.0.0",
     "typescript": "~2.7.2",

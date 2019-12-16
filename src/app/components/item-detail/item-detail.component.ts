@@ -69,8 +69,8 @@ export class ItemDetailComponent implements OnInit {
     public moodingService: ModdingService,
     public listen: ListenService,
     public dialog : MatDialog,
+    public toastr: ToastrService,
     public session : SessionService,
-    private toastr : ToastrService,
     ) { }
 
   ngOnInit() {
