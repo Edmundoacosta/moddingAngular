@@ -52,6 +52,8 @@ import { DetailComponent } from './components/modals/detail/detail.component';
 import { TicketComponent } from './components/modals/ticket/ticket.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confirmlogout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -95,7 +97,6 @@ import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confir
     DetailComponent,
     TicketComponent,
     ConfirmlogoutComponent,
-    BienvenidaComponent,
   ],
   entryComponents: [
     LoginModalComponent,
@@ -127,6 +128,7 @@ import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confir
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {
