@@ -1,0 +1,16 @@
+@import "../../../../variables.scss";
+.ec {
+    color: $secondC;
+    &:hover {
+        border: solid 1.5px $thirdC;
+        background: $thirdC ;
+        color: #fff;
+    }
+}
+.card-img-bottom {
+    width: 95%;
+}
+p{
+    font-weight: bold;
+    font-size: 20px;
+}

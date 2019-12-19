@@ -5,6 +5,7 @@ import { TermsComponent } from 'src/app/components/modals/terms/terms.component'
 import { PoliticaComponent } from 'src/app/components/modals/politica/politica.component';
 import { GarantiaComponent } from 'src/app/components/modals/garantia/garantia.component';
 import { MensajeSoporteComponent } from 'src/app/components/modals/mensaje-soporte/mensaje-soporte.component';
+import { CuentasComponent } from 'src/app/components/modals/cuentas/cuentas.component';
 
 @Component({
   selector: 'app-footer',
@@ -21,6 +22,9 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  cuentas(){
+    this.dialog.open(CuentasComponent);
+  }
   openTerminos() {
     this.dialog.open(TermsComponent);
   }

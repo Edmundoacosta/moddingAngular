@@ -52,6 +52,11 @@ import { DetailComponent } from './components/modals/detail/detail.component';
 import { TicketComponent } from './components/modals/ticket/ticket.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confirmlogout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { ToastrModule } from 'ngx-toastr';
+import { CuentasComponent } from './components/modals/cuentas/cuentas.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +100,7 @@ import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confir
     DetailComponent,
     TicketComponent,
     ConfirmlogoutComponent,
-    BienvenidaComponent,
+    CuentasComponent,
   ],
   entryComponents: [
     LoginModalComponent,
@@ -110,6 +115,7 @@ import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confir
     DetailComponent,
     TicketComponent,
     ConfirmlogoutComponent,
+    CuentasComponent,
   ],
   imports: [
     BrowserModule,
@@ -127,6 +133,8 @@ import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confir
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [
     {

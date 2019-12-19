@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material';
 import { ListenService } from '../../providers/listen.service';
 import { SessionService } from 'src/app/providers/session.service';
 import { PdfComponent } from '../modals/pdf/pdf.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-item-detail',
@@ -68,6 +69,7 @@ export class ItemDetailComponent implements OnInit {
     public moodingService: ModdingService,
     public listen: ListenService,
     public dialog : MatDialog,
+    public toastr: ToastrService,
     public session : SessionService,
     ) { }
 
@@ -120,6 +122,10 @@ export class ItemDetailComponent implements OnInit {
 
   addNumbertoHeader(){
     this.listen.filter('add');
+  }
+
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
 }
