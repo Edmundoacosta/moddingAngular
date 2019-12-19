@@ -56,6 +56,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { ToastrModule } from 'ngx-toastr';
+import { CuentasComponent } from './components/modals/cuentas/cuentas.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { ToastrModule } from 'ngx-toastr';
     DetailComponent,
     TicketComponent,
     ConfirmlogoutComponent,
+    CuentasComponent,
   ],
   entryComponents: [
     LoginModalComponent,
@@ -113,6 +115,7 @@ import { ToastrModule } from 'ngx-toastr';
     DetailComponent,
     TicketComponent,
     ConfirmlogoutComponent,
+    CuentasComponent,
   ],
   imports: [
     BrowserModule,

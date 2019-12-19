@@ -1,5 +1,5 @@
 <div class="container my-3">
-    <button (click)="goBack()" class="btn ec" type="button">
+    <button routerLink="/admin/dashboard" class="btn ec" type="button">
         <i class="fa fa-arrow-left"></i>
         REGRESAR
     </button>
@@ -9,23 +9,21 @@
           <thead class="thead-dark">
             <tr>
               <th scope="col">Fecha</th>
-              <th scope="col">Usuario</th>
-              <th scope="col">Estado</th>
-              <th scope="col">Cantidad de Productos</th>
+              <th scope="col">Id del Pedido</th>
+              <th scope="col">Estado del Pedido</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Metodo de Pago</th>
+              <th scope="col">Detalle</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Mark</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>Jacob</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
+              <td>10/10/2019</td>
+              <td>#29304</td>
+              <td>Pedido</td>
+              <td>Manuel Perez</td>
+              <td>Mercado Pago</td>
+              <td><a routerLink="/admin/dashboard/detalle"><i class="fa fa-eye"></i></a></td>
             </tr>
           </tbody>
         </table>
