@@ -3,6 +3,7 @@ import { ActivatedRoute} from '@angular/router';
 import { ModdingService } from '../../../providers/moddinpc.service';
 import { ListenService } from '../../../providers/listen.service';
 import { SessionService } from 'src/app/providers/session.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-category-view',
@@ -19,7 +20,8 @@ export class CategoryViewComponent implements OnInit {
   	public activatedRoute: ActivatedRoute,
     public moodingService: ModdingService,
     public listen: ListenService,
-    public session: SessionService
+    public session: SessionService,
+    public toastr: ToastrService,
   	) { }
  
   ngOnInit() {
@@ -57,6 +59,10 @@ export class CategoryViewComponent implements OnInit {
       inCart.push(item);
     };
     this.session.setObject('inCart', inCart);
+    this.toastr.success('Su producto se agregó a su carrito','', {
+      timeOut: 1000
+      
+    });
   }
 
   addNumbertoHeader(){

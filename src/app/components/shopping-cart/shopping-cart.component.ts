@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SessionService } from 'src/app/providers/session.service';
 import { Router } from '@angular/router';
 import { ListenService } from '../../providers/listen.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -14,6 +15,7 @@ export class ShoppingCartComponent implements OnInit {
   constructor(public session: SessionService,
               public router: Router,
               public listen: ListenService,
+              public toastr: ToastrService,
     ) { }
 
   ngOnInit() {
@@ -34,6 +36,10 @@ export class ShoppingCartComponent implements OnInit {
     this.session.setObject('inCart', this.products);
     this.listen.filter('remove');
     console.log(this.products);
+    this.toastr.error('Se eliminó un producto de su carrito','', {
+      timeOut: 1000
+      
+    });
   }
 
   checkout() {

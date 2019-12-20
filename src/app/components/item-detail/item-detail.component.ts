@@ -118,14 +118,14 @@ export class ItemDetailComponent implements OnInit {
       inCart.push(this.product);
     };
     this.session.setObject('inCart', inCart);
+    this.toastr.success('Su producto se agregó a su carrito','', {
+      timeOut: 1000
+      
+    });
   }
 
   addNumbertoHeader(){
     this.listen.filter('add');
-  }
-
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
 }
