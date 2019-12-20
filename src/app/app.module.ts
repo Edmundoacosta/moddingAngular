@@ -16,7 +16,6 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
 import { DigitOnlyModule } from '@uiowa/digit-only';
-import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
@@ -28,10 +27,8 @@ import { UsersListComponent } from './components/admin/dashboard/users-list/user
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ProductsComponent } from './components/admin/dashboard/products/products.component';
 import { NewsComponent } from './components/admin/dashboard/news/news.component';
-import { GamerzoneComponent } from './components/admin/dashboard/gamerzone/gamerzone.component';
 import { CategoryComponent } from './components/admin/dashboard/category/category.component';
 import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
-import { ZonaGamerdetailComponent } from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { MaterialModule } from './material/material.module';
 import { LoginModalComponent } from './components/modals/login-modal/login-modal.component';
@@ -64,7 +61,6 @@ import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confir
     RegistroComponent,
     CategoriesComponent,
     CategoryViewComponent,
-    ZonaGamerComponent,
     UserDashboardComponent,
     ShoppingCartComponent,
     ItemDetailComponent,
@@ -75,10 +71,8 @@ import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confir
     ContactUsComponent,
     ProductsComponent,
     NewsComponent,
-    GamerzoneComponent,
     CategoryComponent,
     AddproductsComponent,
-    ZonaGamerdetailComponent,
     ForgotPasswordComponent,
     LoginModalComponent,
     RecoveryPassComponent,

@@ -8,7 +8,6 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryViewComponent } from './components/categories/category-view/category-view.component';
-import { ZonaGamerComponent } from './components/zona-gamer/zona-gamer.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ItemDetailComponent } from "./components/item-detail/item-detail.component";
@@ -19,20 +18,19 @@ import { ProductsComponent } from './components/admin/dashboard/products/product
 import { AddproductsComponent } from './components/admin/dashboard/products/addproducts/addproducts.component';
 import { CategoryComponent } from './components/admin/dashboard/category/category.component';
 import { NewsComponent } from './components/admin/dashboard/news/news.component';
-import { GamerzoneComponent } from './components/admin/dashboard/gamerzone/gamerzone.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ZonaGamerdetailComponent} from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ListadoComponent } from './components/admin/dashboard/listado/listado.component';
 import { DetalleComponent } from './components/admin/dashboard/detalle/detalle.component';
+
 const routes: Routes = [
 	{path: '', redirectTo: 'home', pathMatch: 'full'},
 	{path: 'home', component: HomeComponent},
 	{path: 'novedades', component: NovedadesComponent},
 	{path: 'sobre_nosotros', component: AboutUsComponent},
 	{path: 'registro', component: RegistroComponent},
-	{path: 'zona_gamer', component: ZonaGamerComponent},
 	{path: 'zona_gamerdetail', component: ZonaGamerdetailComponent},
 	{path: 'user_dashboard', component: UserDashboardComponent},
 	{path: 'shopping_cart', component: ShoppingCartComponent},
@@ -50,7 +48,6 @@ const routes: Routes = [
 		{ path: 'dashboard/products/addproducts', component: AddproductsComponent,pathMatch: 'full'},
 		{ path: 'dashboard/categories', component: CategoryComponent,pathMatch: 'full'},
 		{ path: 'dashboard/news', component: NewsComponent,pathMatch: 'full'},
-		{ path: 'dashboard/gamerzone', component: GamerzoneComponent,pathMatch: 'full'},
 		{ path: 'dashboard/listado', component: ListadoComponent,pathMatch: 'full'},
 		{ path: 'dashboard/detalle', component: DetalleComponent,pathMatch: 'full'}
 	]},

@@ -50,10 +50,6 @@
                             <label>Dirección de envio</label>
                             <input [(ngModel)]="user.addressOne" disabled class="form-control" type="text" name="address" placeholder="Dirección de envio">
                         </div>
-                        <!-- <div class="form-group col-md-6">
-                            <label>Dirección 2</label>
-                            <input  [(ngModel)]="user.address2" disabled class="form-control" type="text" name="address">
-                        </div> -->
                     </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -158,41 +154,6 @@
                     <div class="form-group">
                         <button (click)="updateAddress()" class="btn ec btn-block">Actualizar</button>
                     </div>
-                    <!--ACTUALIZACION ADDRESS 2 -->
-                    <!-- <h1>Actualizar Dirección 2</h1>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Dirección</label>
-                            <input [(ngModel)]="user.address2" class="form-control" type="text" name="address">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Código Postal
-                                <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
-                                    <i class="fa fa-question-circle"></i>
-                                </a>
-                            </label>
-                            <input [(ngModel)]="user.postalcode" name="postalcode" digitOnly maxlength="5" type="number" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Departamento</label>
-                            <select [(ngModel)]="user.department" class="form-control">
-                            <option value="">Seleccione...</option>
-                            <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Distrito</label>
-                            <select [(ngModel)]="user.district" class="form-control">
-                            <option value="">Seleccione...</option>
-                            <option *ngFor="let dep of allDistricts" [value]="dep">{{dep}}</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button (click)="updateAddress()" class="btn btn-block">Actualizar</button>
-                    </div> -->
                 </div>
                 <!-- ACTUALIZACION CONTRASEÑA  -->
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">

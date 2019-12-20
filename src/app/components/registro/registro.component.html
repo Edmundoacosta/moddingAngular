@@ -18,7 +18,6 @@
         </li>
     </ul>
     <div class="tab-content" id="nav-tabContent">
-        <!--R E G I S T R O    P E R S O N A     N A T U R A L-->
         <div class="tab-pane fade show active" id="nav-reg1" role="tabpanel" aria-labelledby="nav-reg1-tab">
             <div class="row justify-content-center mb-4">
                 <div class="col-md-6">
@@ -27,12 +26,6 @@
                             <form [formGroup]="user" (ngSubmit)="onSubmit(user.value, user.valid)">
                                 <div class="form-row">
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Nombres </label>   
-                                        <input matInput formControlName="firstname" type="text" class="form-control" [ngClass]="{'is-invalid':u.firstname.touched && u.firstname.invalid}">
-                                        <div *ngIf="u.firstname.touched && u.firstname.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.firstname.invalid">Ingrese un nombre válido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <input matInput placeholder="Nombres" formControlName="firstname" type="text" [formControl]="u.firstname" >
                                             <mat-error *ngIf="firstname.invalid">{{ErrorMessageFirstname()}}</mat-error>
@@ -347,11 +340,6 @@
                                         </mat-form-field>
                                     </div>
                                     <div class="col form-group">
-                                        <!--
-                                        <label>País</label>
-                                        <select disabled class="form-control">
-                                            <option selected="">Perú</option>
-                                        </select>-->
                                         <mat-form-field class="size">
                                             <mat-select disabled placeholder ="Perú">
                                                 <mat-option value="">Perú</mat-option>
@@ -360,12 +348,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <!--
-                                    <label>Correo Electrónico</label>
-                                    <input formControlName="email" type="email" class="form-control" [ngClass]="{'is-invalid':u.email.touched && u.email.invalid}">
-                                    <div *ngIf="u.email.touched && u.email.invalid" class="invalid-feedback">
-                                        <div *ngIf="u.email.invalid">Ingrese un correo electrónico válido</div>
-                                    </div>-->
                                     <mat-form-field class="size">
                                         <input matInput placeholder="Correo Electrónico" formControlName="email" type="email" [formControl]="u.email">
                                         <mat-error *ngIf="u.email.hasError('email') && !u.email.hasError('required')">
@@ -377,12 +359,6 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="form-group">
-                                    <!--
-                                    <label>Crear Contraseña</label>
-                                    <input formControlName="password" class="form-control" type="password" [ngClass]="{'is-invalid':u.password.touched && u.password.invalid}">
-                                    <div *ngIf="u.password.touched && u.password.invalid" class="invalid-feedback">
-                                        <div *ngIf="u.password.invalid">Ingrese una contraseña con un minimo de 8 caracteres</div>
-                                    </div>-->
                                     <mat-form-field class="size">
                                         <input matInput placeholder="Contraseña" formControlName="password" type="password" [formControl]="u.password">
                                         <mat-error *ngIf="u.password.hasError('required')">
@@ -391,12 +367,6 @@
                                     </mat-form-field>
                                 </div> 
                                 <div class="form-group">
-                                    <!--
-                                    <label>Confirmar Contraseña</label>
-                                    <input formControlName="password2" class="form-control" type="password" [ngClass]="{'is-invalid':u.password2.touched && u.password2.invalid}">
-                                    <div *ngIf="u.password2.touched && u.password2.invalid" class="invalid-feedback">
-                                        <div *ngIf="u.password2.invalid">La contraseña no coincide con la ingresada anteriormente</div>
-                                    </div>-->
                                     <mat-form-field class="size">
                                         <input matInput placeholder="Confirmar Contraseña" formControlName="password2" type="password" [formControl]="u.password2">
                                         <mat-error *ngIf="u.password2.hasError('required')">
