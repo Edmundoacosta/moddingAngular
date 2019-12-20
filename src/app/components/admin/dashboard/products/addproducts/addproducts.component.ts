@@ -49,6 +49,8 @@ export class AddproductsComponent implements OnInit {
     color: '',
     description: '',
     principalImg: '',
+    mainPdf: '',
+    discount: 0,
     images: [],
     price: 0,
     inStock: 0,
@@ -80,6 +82,12 @@ export class AddproductsComponent implements OnInit {
     }
   }
 
+  addPdf(event) {
+    let pdf: FileList = event.target.files;
+    let finalpdf: File = pdf[0];
+    this.readPdf(finalpdf);
+  }
+
   readThis(file: any, files: boolean): void {
     var myReader:FileReader = new FileReader();
     myReader.onloadend = (e) => {
@@ -94,6 +102,16 @@ export class AddproductsComponent implements OnInit {
     myReader.readAsDataURL(file);
   }
 
+  readPdf(file:any) {
+    let reader:FileReader = new FileReader();
+    reader.onloadend = (e) => {
+      console.log(e);
+      console.log(reader);
+      this.product['mainPdf'] = reader.result['split']('base64,')[1];
+    }
+    reader.readAsDataURL(file);
+  }
+
   goBack(){
     this.location.back();
   }
@@ -101,7 +119,6 @@ export class AddproductsComponent implements OnInit {
   create(){
     this.moddingServ.createProduct(this.product)
       .then((res) => {
-        console.log(res);
       });
   }
 }

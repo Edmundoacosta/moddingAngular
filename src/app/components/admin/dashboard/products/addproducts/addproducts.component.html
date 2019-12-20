@@ -1,94 +1,88 @@
 <div class="container my-3">
-  <button (click)="goBack()" class="btn ec" type="button">
-      <i class="fa fa-arrow-left"></i>
-      REGRESAR
-  </button>
-
+    <button (click)="goBack()" class="btn ec" type="button">
+        <i class="fa fa-arrow-left"></i>
+        REGRESAR
+    </button>
     <div class="form-group my-2">
-      <label>Nombre del Producto</label>
-      <input [(ngModel)]="product.name" type="text" class="form-control">
+        <label>Nombre del Producto</label>
+        <input [(ngModel)]="product.name" type="text" class="form-control">
     </div>
-
     <div class="row my-2">
-      <div class="col">
-        <div class="form-group">
-          <label>Stock</label>
-          <input [(ngModel)]="product.inStock" step="0.0001" type="number" class="form-control">
+        <div class="col">
+            <div class="form-group">
+                <label>Stock</label>
+                <input [(ngModel)]="product.inStock" step="0.0001" type="number" class="form-control">
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="form-group" >
-          <label>Color</label>
-          <select [(ngModel)]="product.color" class="form-control">
-              <option value="">Default select</option>
-              <option *ngFor="let item of colors" [value]="item.name">{{item.name}}</option>
-          </select>
+        <div class="col">
+            <div class="form-group" >
+                <label>Color</label>
+                <select [(ngModel)]="product.color" class="form-control">
+                    <option value="">Default select</option>
+                    <option *ngFor="let item of colors" [value]="item.name">{{item.name}}</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
-
     <div class="row my-2">
-      <div class="col">
-        <div class="form-group">
-          <label>Precio soles</label>
-          <input [(ngModel)]="product.price" class="form-control" type="number">
+        <div class="col">
+            <div class="form-group">
+                <label>Precio soles</label>
+                <input [(ngModel)]="product.price" class="form-control" type="number">
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="form-group">
-          <label>Subcategoria</label>
-          <select [(ngModel)]="product.subcategory" class="form-control">
-            <option value="">Subcategoria</option>
-            <option *ngFor="let opt of subcategories" [value]="opt.name">{{opt.name}}</option>
-          </select>
+        <div class="col">
+            <div class="form-group">
+                <label>Subcategoria</label>
+                <select [(ngModel)]="product.subcategory" class="form-control">
+                    <option value="">Subcategoria</option>
+                    <option *ngFor="let opt of subcategories" [value]="opt.name">{{opt.name}}</option>
+                </select>
+            </div>
         </div>
-      </div>
     </div>
-
     <div class="row my-2">
-      <div class="col">
-        <div class="form-group">
-          <label>Descuento</label>
-          <input class="form-control" type="number">
+        <div class="col">
+            <div class="form-group">
+                <label>Descuento</label>
+                <input [(ngModel)]="product.discount" class="form-control" type="number">
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="form-group">
-          <label>Especificaciones Tecnicas</label>
-          <input name="pdf" type="file" class="form-control-file">
+        <div class="col">
+            <div class="form-group">
+                <label>Especificaciones Tecnicas</label>
+                <input name="pdf" type="file" (change)="addPdf($event)" class="form-control-file">
+            </div>
         </div>
-      </div>
     </div>
- 
     <div class="row my-2">
-      <div class="col">
-        <div class="form-group">
-          <label>Descripción</label>
-          <textarea [(ngModel)]="product.description" class="form-control" rows="4"></textarea>
+        <div class="col">
+            <div class="form-group">
+                <label>Descripción</label>
+                <textarea [(ngModel)]="product.description" class="form-control" rows="4"></textarea>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="form-group">
-          <label>Foto principal del producto</label>
-          <input name="principalImg" type="file" accept='image/*' (change)="changeFile($event)" class="form-control-file">
-          <div class="mt-2">
-              <img [src]="imgURL" width="180" *ngIf="imgURL">
-          </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Foto principal del producto</label>
+                <input name="principalImg" type="file" accept='image/*' (change)="changeFile($event)" class="form-control-file">
+                <div class="mt-2">
+                    <img [src]="imgURL" width="180" *ngIf="imgURL">
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="form-group">
-          <label>Fotos adicionales del Producto</label>
-          <input type="file" multiple (change)="changeFiles($event)" class="form-control-file" multiple>
-          <div class="mt-2">
-            <img *ngFor="let url of urls" [src]="url" class="rounded mb-3" width="180">
-          </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Fotos adicionales del Producto</label>
+                <input type="file" multiple (change)="changeFiles($event)" class="form-control-file" multiple>
+                <div class="mt-2">
+                    <img *ngFor="let url of urls" [src]="url" class="rounded mb-3" width="180">
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
     <button (click)="create()" class="btn ec" type="button">
-      <i class="fa fa-plus"></i>
-      AGREGAR PRODUCTO
+        <i class="fa fa-plus"></i>
+        AGREGAR PRODUCTO
     </button>
 </div>

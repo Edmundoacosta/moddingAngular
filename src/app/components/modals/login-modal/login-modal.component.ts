@@ -28,12 +28,12 @@ export class LoginModalComponent implements OnInit {
   password = new FormControl('', [Validators.required]);
 
   ngOnInit() {
-    console.log(1);
   	this.userForm = this._fb.group({
   		email: new FormControl('', [Validators.required, Validators.email]),
   		password: ['', Validators.required]
     })
   }
+  get u() {return this.userForm.controls;}
 
   openDialog() {
     this.dialog.open(RecoveryPassComponent);
