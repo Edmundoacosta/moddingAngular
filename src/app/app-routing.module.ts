@@ -20,7 +20,6 @@ import { CategoryComponent } from './components/admin/dashboard/category/categor
 import { NewsComponent } from './components/admin/dashboard/news/news.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { ZonaGamerdetailComponent} from './components/zona-gamer/zona-gamerdetail/zona-gamerdetail.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ListadoComponent } from './components/admin/dashboard/listado/listado.component';
 import { DetalleComponent } from './components/admin/dashboard/detalle/detalle.component';
@@ -31,7 +30,6 @@ const routes: Routes = [
 	{path: 'novedades', component: NovedadesComponent},
 	{path: 'sobre_nosotros', component: AboutUsComponent},
 	{path: 'registro', component: RegistroComponent},
-	{path: 'zona_gamerdetail', component: ZonaGamerdetailComponent},
 	{path: 'user_dashboard', component: UserDashboardComponent},
 	{path: 'shopping_cart', component: ShoppingCartComponent},
 	{path: 'item_detail/:id', component: ItemDetailComponent},

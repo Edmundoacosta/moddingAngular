@@ -34,7 +34,6 @@ export class LoginModalComponent implements OnInit {
   		password: ['', Validators.required]
     })
   }
-  get u() {return this.userForm.controls;}
 
   openDialog() {
     this.dialog.open(RecoveryPassComponent);
@@ -42,7 +41,6 @@ export class LoginModalComponent implements OnInit {
 
   onSubmit(user, valid){
   	if (valid) {
-      console.log(user);
   		this._modService.login({user: user}).then((res) => {
         this.session.setObject('user', res['user']);
         this.session.setItem('token', res['user'].token);
@@ -53,12 +51,15 @@ export class LoginModalComponent implements OnInit {
         this.toastr.success('Bienvenido','', {
           timeOut: 1000
         });
+      }, (err) => {
+        this.toastr.error('Correo o contraseña incorrecta', '', {
+          timeOut: 2000
+        });
       });
   	}else if(valid){
       this.toastr.error('Ingrese un correo o contraseña valida','', {
         timeOut: 1000
-        
-      });}
+      });
+    }
   }
-
 }
