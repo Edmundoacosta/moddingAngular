@@ -77,7 +77,11 @@
     }
   }
 }
-
+.mercado{
+  width: 30%;
+  text-align: center;
+  margin: 0px 20px;
+}
 .nav-tabs {
   border-bottom: none;
 }
@@ -335,6 +339,10 @@ label {
     float: right;
     width: 70px;
   }
+  .mercado{
+    width: 100%;
+    text-align: center;
+  }
 }
 /* Make more adjustments for phone */
 @media screen and (max-width: 350px) {
@@ -358,6 +366,10 @@ label {
   }
   .totals .totals-item .totals-value {
     width: 40%;
+  }
+  .mercado{
+    width: 100%;
+    text-align: center;
   }
 }
 /*fin de estilos del detalle del pedido*/
@@ -420,6 +432,10 @@ input[type="number"] {
           width           : 40px;
       }
   }
+  .mercado{
+    width: 100%;
+    text-align: center;
+  }
 }
 @media (max-width: 767px) {
   #tabs {
@@ -437,6 +453,10 @@ input[type="number"] {
           width           : 40px;
       }
   }
+  .mercado{
+    width: 100%;
+    text-align: center;
+  }
 }
 @media (max-width : 463px) {
   #tabs {
@@ -453,6 +473,10 @@ input[type="number"] {
       &:before {
           width           : 40px;
       }
+  }
+  .mercado{
+    width: 100%;
+    text-align: center;
   }
   
 }
@@ -476,6 +500,10 @@ input[type="number"] {
         width           : 40px;
     }
   }
+  .mercado{
+    width: 100%;
+    text-align: center;
+  }
 }
 @media (max-width : 375px) {
   #tabs {
@@ -496,5 +524,9 @@ input[type="number"] {
     &:before {
         width           : 40px;
     }
+  }
+  .mercado{
+    width: 100%;
+    text-align: center;
   }
 }

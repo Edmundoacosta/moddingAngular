@@ -39,7 +39,6 @@ export class DashboardComponent implements OnInit {
 			name: 'Transacciones',
 			link: 'listado'
 		}
-		
 	]; 
 
   constructor(public router: Router) { }
