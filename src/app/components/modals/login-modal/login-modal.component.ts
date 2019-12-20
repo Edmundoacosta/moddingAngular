@@ -5,6 +5,7 @@ import { ModdingService } from '../../../providers/moddinpc.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { RecoveryPassComponent } from '../recovery-pass/recovery-pass.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-modal',
@@ -19,8 +20,9 @@ export class LoginModalComponent implements OnInit {
     public session: SessionService,
     public router: Router,
     public _modService: ModdingService,
-    private _fb: FormBuilder
-  ) { }
+    private _fb: FormBuilder,
+    public toastr: ToastrService,
+   ) { }
 
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
@@ -48,8 +50,15 @@ export class LoginModalComponent implements OnInit {
         setTimeout(() => {
           location.reload();
         }, 100);
+        this.toastr.success('Bienvenido','', {
+          timeOut: 1000
+        });
       });
-  	}
+  	}else if(valid){
+      this.toastr.error('Ingrese un correo o contraseña valida','', {
+        timeOut: 1000
+        
+      });}
   }
 
 }
