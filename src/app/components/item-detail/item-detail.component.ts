@@ -6,7 +6,6 @@ import { GarantiaComponent } from 'src/app/components/modals/garantia/garantia.c
 import { MatDialog } from '@angular/material';
 import { ListenService } from '../../providers/listen.service';
 import { SessionService } from 'src/app/providers/session.service';
-import { PdfComponent } from '../modals/pdf/pdf.component';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -97,10 +96,6 @@ export class ItemDetailComponent implements OnInit {
   openGarantia() {
     this.dialog.open(GarantiaComponent);
   }
-  openPdf() {
-    this.dialog.open(PdfComponent);
-  }
-
   goBack(){
     this.location.back();
   }

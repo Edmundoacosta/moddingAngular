@@ -21,18 +21,7 @@
 .medio {
   border-bottom: solid 5px $firstC;
 }
-.pdf {
-  color: $secondC;
-  &:hover {
-    color: #fff;
-    background-color: $thirdC;
-    border-radius: 8px ;
-  }
-}
 @media screen and (max-width: 768px){
-  .pdf {
-    margin-left: 40%;
-  }
   .bot {
     border-bottom: solid 5px $firstC;
   }
@@ -49,9 +38,6 @@
           flex-direction: column; 
   }
   @media screen and (max-width: 996px) { 
-  .pdf {
-    margin-left: 35%;
-  }
     .preview {
       margin-bottom: 20px; } }
 
@@ -309,8 +295,5 @@ table th {
   
   table td:last-child {
     border-bottom: 0;
-  }
-  .pdf {
-    margin-left: 35%;
   }
 }
