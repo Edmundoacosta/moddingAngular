@@ -127,10 +127,7 @@
 			<div class="col-12">
 				<div class="tab-content" id="v-pills-tabContent">
 					<div class="tab-pane fade show active  mt-3 ml-3" id="v-pills-et" role="tabpanel" aria-labelledby="v-pills-et-tab">
-						<button class="btn pdf" (click)="openPdf()">
-							<i class="fa fa-file"></i>Abrir
-						</button>
-						<embed [src]="'https://warm-gorge-76460.herokuapp.com/public/pdfs/'+product.mainPdf" frameborder="0">
+						<pdf-viewer [src]="'https://warm-gorge-76460.herokuapp.com/public/pdfs/'+product.mainPdf" [render-text]="true" [fit-to-page]="true" [original-size]="false" [autoresize]="true" [show-all]="true"></pdf-viewer>
 					</div>
 					<div class="tab-pane fade" id="v-pills-mp" role="tabpanel" aria-labelledby="v-pills-mp-tab">
 						<div class="container">

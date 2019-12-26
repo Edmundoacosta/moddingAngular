@@ -41,7 +41,6 @@ import { MensajeSoporteComponent } from './components/modals/mensaje-soporte/men
 import { MainNavComponent } from './layouts/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { PdfComponent } from './components/modals/pdf/pdf.component';
 import { SuccessRegisterComponent } from './components/modals/success-register/success-register.component';
 import { ListadoComponent } from './components/admin/dashboard/listado/listado.component';
 import { DetalleComponent } from './components/admin/dashboard/detalle/detalle.component';
@@ -50,8 +49,7 @@ import { TicketComponent } from './components/modals/ticket/ticket.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confirmlogout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ToastrModule } from 'ngx-toastr';
 import { CuentasComponent } from './components/modals/cuentas/cuentas.component';
 
@@ -87,7 +85,6 @@ import { CuentasComponent } from './components/modals/cuentas/cuentas.component'
     GarantiaComponent,
     MensajeSoporteComponent,
     MainNavComponent,
-    PdfComponent,
     SuccessRegisterComponent,
     ListadoComponent,
     DetalleComponent,
@@ -104,7 +101,6 @@ import { CuentasComponent } from './components/modals/cuentas/cuentas.component'
     PoliticaComponent,
     GarantiaComponent,
     MensajeSoporteComponent,
-    PdfComponent,
     SuccessRegisterComponent,
     DetailComponent,
     TicketComponent,
@@ -129,6 +125,7 @@ import { CuentasComponent } from './components/modals/cuentas/cuentas.component'
     MatListModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    PdfViewerModule,
   ],
   providers: [
     {
