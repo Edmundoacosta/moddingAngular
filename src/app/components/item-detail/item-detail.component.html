@@ -19,7 +19,7 @@
 							<img [src]="'https://warm-gorge-76460.herokuapp.com/public/products/'+product.principalImg"/>
 						</div>
 						<div class="tab-pane pic" id="pic-2">
-							<img src="https://picsum.photos/300"/>
+							<img [src]="'https://warm-gorge-76460.herokuapp.com/public/products/'+product.images"/>
 						</div>
 						<div class="tab-pane pic" id="pic-3">
 							<img src=""/>
@@ -40,7 +40,7 @@
 						</li>
 						<li>
 							<a data-target="#pic-2" data-toggle="tab">
-								<img src="https://picsum.photos/300" />
+								<img [src]="'https://warm-gorge-76460.herokuapp.com/public/products/'+product.images"/>
 							</a>
 						</li>
 						<li>
@@ -130,6 +130,7 @@
 						<button class="btn pdf" (click)="openPdf()">
 							<i class="fa fa-file"></i>Abrir
 						</button>
+						<embed [src]="'https://warm-gorge-76460.herokuapp.com/public/pdfs/'+product.mainPdf" frameborder="0">
 					</div>
 					<div class="tab-pane fade" id="v-pills-mp" role="tabpanel" aria-labelledby="v-pills-mp-tab">
 						<div class="container">
