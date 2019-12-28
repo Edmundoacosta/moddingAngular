@@ -22,7 +22,9 @@ export class CheckoutComponent implements OnInit {
     name: '',
     postalcode: null,
     department: 'Lima',
-    district: {}
+    district: {
+      price: 0
+    }
   };
   public products:Array<any> = [];
 	public allDepartments:Array<string> = ['Lima'];

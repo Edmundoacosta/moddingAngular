@@ -92,6 +92,10 @@ export class ItemDetailComponent implements OnInit {
       this.quantity--;
     }
   }
+
+  openPdf(){
+    window.open('https://warm-gorge-76460.herokuapp.com/public/pdfs/' + this.product['mainPdf'], "_blank");
+  }
   
   openGarantia() {
     this.dialog.open(GarantiaComponent);
