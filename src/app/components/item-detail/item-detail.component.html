@@ -22,7 +22,7 @@
 							<img [src]="'https://warm-gorge-76460.herokuapp.com/public/products/'+product.images"/>
 						</div>
 						<div class="tab-pane pic" id="pic-3">
-							<img src=""/>
+							<img src="https://picsum.photos/300" />
 						</div>
 						<div class="tab-pane pic" id="pic-4">
 							<img src=""/>
@@ -30,6 +30,7 @@
 						<div class="tab-pane pic" id="pic-5">
 							<img src=""/>
 						</div>
+						<span id="spanimg">Imagen Referencial</span>
 					</div>
 					<!--mini picture that u select to preview it up -->
 					<ul class="preview-thumbnail nav nav-tabs smallpic mx-2">
@@ -45,17 +46,17 @@
 						</li>
 						<li>
 							<a data-target="#pic-3" data-toggle="tab">
-									<img src="https://picsum.photos/300" />
+								<img src="https://picsum.photos/300" />
 							</a>
 						</li>
 						<li>
 							<a data-target="#pic-4" data-toggle="tab">
-									<img src="https://picsum.photos/300" />
+								<img src="https://picsum.photos/300" />
 							</a>
 						</li>
 						<li>
 							<a data-target="#pic-5" data-toggle="tab">
-									<img src="https://picsum.photos/300" />
+								<img src="https://picsum.photos/300" />
 							</a>
 						</li>
 					</ul>
@@ -127,7 +128,6 @@
 			<div class="col-12">
 				<div class="tab-content" id="v-pills-tabContent">
 					<div class="tab-pane fade show active  mt-3 ml-3" id="v-pills-et" role="tabpanel" aria-labelledby="v-pills-et-tab">
-						<pdf-viewer [src]="'https://warm-gorge-76460.herokuapp.com/public/pdfs/'+product.mainPdf" [render-text]="true" [fit-to-page]="true" [original-size]="false" [autoresize]="true" [show-all]="true"></pdf-viewer>
 					</div>
 					<div class="tab-pane fade" id="v-pills-mp" role="tabpanel" aria-labelledby="v-pills-mp-tab">
 						<div class="container">
@@ -150,7 +150,7 @@
 									</div>
 									<div class="card">
 										<div class="card-body">
-											<p class="card-text"><strong>Tarjeta de crédito o débito</strong></p>
+											<p class="card-text"><strong>Pago Contra Entrega</strong></p>
 											<p class="card-text">Este método de pago se cancela con su tarjeta de crédito o débito al momento de la entrega del producto en su dirección de envio mediante nuestro POS.</p>
 											<p class="card-text">Aceptamos estos tipos de tarjetas :</p>
 											<img src="./assets/imagenes/metodo de pago/logo_todas_las_tarjetas.png" class="card-img-top" >

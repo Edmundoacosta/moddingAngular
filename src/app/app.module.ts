@@ -49,9 +49,9 @@ import { TicketComponent } from './components/modals/ticket/ticket.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ConfirmlogoutComponent } from './components/modals/confirmlogout/confirmlogout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ToastrModule } from 'ngx-toastr';
 import { CuentasComponent } from './components/modals/cuentas/cuentas.component';
+import { NgxImgZoomModule } from 'ngx-img-zoom';
 
 @NgModule({
   declarations: [
@@ -125,7 +125,7 @@ import { CuentasComponent } from './components/modals/cuentas/cuentas.component'
     MatListModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    PdfViewerModule,
+    NgxImgZoomModule,
   ],
   providers: [
     {
