@@ -1,4 +1,13 @@
 @import "../../../variables";
+#spanimg {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 20px;
+  color: $secondC;
+}
   img {
   width: 100%; 
   
