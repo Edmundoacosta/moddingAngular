@@ -22,7 +22,7 @@
                             <div *ngIf="i < child.products.length" class="col-md-3 col-sm-6 mt-3">
                                 <div class="product-grid6">
                                     <div class="product-image6">
-                                        <a [routerLink]="'/item_detail/' + child.products[i]._id">
+                                        <a [routerLink]="'/item_detail/' +  child.products[i]._id">
                                             <img class="pic-1" [src]="'http://174.138.37.189:4444/public/products/'+child.products[i].principalImg">
                                         </a>
                                     </div>
