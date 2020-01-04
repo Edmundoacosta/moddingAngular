@@ -35,6 +35,7 @@ export class CategoryViewComponent implements OnInit {
               this.moodingService.getProductsByType(this.childrens[i].name)
                 .then((res) => {
                   this.childrens[i].products = res['result'];
+                  console.log(this.childrens);
                 });
             }
           });
