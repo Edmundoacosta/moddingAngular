@@ -77,11 +77,11 @@
                     <i class="fa fa-shopping-cart"></i>
                     <span class="badge badge-outline">{{inCart}}</span>
                 </button>
-                <button (click)="confirmLogout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
+                <button *ngIf="logged==true; else elseBlock" (click)="confirmLogout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
                     <i class="fa fa-sign-out"></i>
                 </button>
             </div>
         </mat-toolbar>
         <ng-content></ng-content>
     </mat-sidenav-content>
-</mat-sidenav-container> 
+</mat-sidenav-container>  
