@@ -94,7 +94,7 @@ export class ItemDetailComponent implements OnInit {
   }
 
   openPdf(){
-    window.open('http://174.138.37.189:4444/public/pdfs/' + this.product['mainPdf'], "_blank");
+    window.open('https://ecogozotest.com:40/public/pdfs/' + this.product['mainPdf'], "_blank");
   }
   
   openGarantia() {
