@@ -291,6 +291,9 @@ label {
  
 /* Make adjustments for tablet */
 @media screen and (max-width: 650px) {
+  .mercado {
+    margin: 0px;
+  }
   .shopping-cart {
     margin: 0;
     padding-top: 20px;
