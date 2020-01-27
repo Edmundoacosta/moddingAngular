@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from 'src/app/providers/session.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
 import { ListenService } from '../../providers/listen.service';
 import { ToastrService } from 'ngx-toastr';
+import { LoginModalComponent } from '../modals/login-modal/login-modal.component';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -11,14 +13,16 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ShoppingCartComponent implements OnInit {
   public products:Array<any> = [];
-
+  public logged:boolean = false;
   constructor(public session: SessionService,
               public router: Router,
               public listen: ListenService,
               public toastr: ToastrService,
+              public dialog : MatDialog,
     ) { }
 
   ngOnInit() {
+    this.logged = this.session.getItem('token')?true:false;
     this.products = JSON.parse(this.session.getItem('inCart'));
     this.totalPrice();
   }
@@ -40,10 +44,15 @@ export class ShoppingCartComponent implements OnInit {
       timeOut: 1000
       
     });
-  }
+  } 
 
   checkout() {
-    this.router.navigate(['/Checkout']);
+    if (this.logged) {
+      this.router.navigate(['/Checkout']);
+    } else {
+      this.dialog.open(LoginModalComponent);
+    }
   }
+  
 
 }
