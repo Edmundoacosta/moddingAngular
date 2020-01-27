@@ -24,8 +24,11 @@ export class CheckoutComponent implements OnInit {
     department: 'Lima',
     district: {
       price: 0
-    }
+    },
+    country: 'Perú'
   };
+
+  public transaction; 
   public products:Array<any> = [];
 	public allDepartments:Array<string> = ['Lima'];
   public allDistricts:Array<any> = [
@@ -44,6 +47,8 @@ export class CheckoutComponent implements OnInit {
     { name:'San miguel',price: 19},{ name:'Santa anita',price: 29},{ name:'Santa maria del mar',price: 50},
     { name:'Santa rosa',price: 50},{ name:'Santiago de surco',price: 15},{ name:'Surquillo',price: 15},
     { name:'Villa el salvador',price: 40},{ name:'Villa maria del triunfo',price: 40}];
+  
+    
 
   constructor(
     public _modService: ModdingService,
@@ -60,7 +65,15 @@ export class CheckoutComponent implements OnInit {
       });
       this.products = JSON.parse(this.session.getItem('inCart'));
       this.totalPrice();
-
+  }
+  onSubmit() {
+    this.transaction = {
+      products: this.products,
+      addresses: this.deliveryAddress,
+      status: '',
+      paymentMethod: '',
+      ticket: '',
+    }
   }
   totalPrice(){
     let total = 0;
