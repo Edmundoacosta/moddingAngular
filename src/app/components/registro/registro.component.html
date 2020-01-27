@@ -375,7 +375,7 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-block ec"> Registrarse  </button>
+                                    <button type="submit" class="btn btn-block ec" (click)="onSubmit(user.value, user.valid)"> Registrarse  </button>
                                 </div>
                                 <div class="text-center">  
                                     <small class="text-muted">Haciendo click en el boton 'Registrarse', confirmas que aceptas nuestros <br>
