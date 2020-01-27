@@ -44,7 +44,6 @@ export class LoginModalComponent implements OnInit {
   		this._modService.login({user: user}).then((res) => {
         this.session.setObject('user', res['user']);
         this.session.setItem('token', res['user'].token);
-        this.router.navigate(['/home']);
         setTimeout(() => {
           location.reload();
         }, 100);
