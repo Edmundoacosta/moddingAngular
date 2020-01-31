@@ -23,7 +23,8 @@ export class CheckoutComponent implements OnInit {
     postalcode: null,
     department: 'Lima',
     district: {
-      price: 0
+      price: 0,
+      name: ''
     },
     country: 'Perú'
   };
@@ -59,6 +60,7 @@ export class CheckoutComponent implements OnInit {
   	this._modService.getUser()
   		.then((res) =>{
         this.user = res['user'];
+        console.log(res);
         this.user.addressOne = `${this.user['addresses'][this.user['addresses'].length-1].name} - ${this.user['addresses'][this.user['addresses'].length-1].district}`;
         this.deliveryAddress.district = this.allDistricts.filter(place => place.name == this.user['addresses'][this.user['addresses'].length-1].district)[0];
         this.deliveryAddress.postalcode = this.user['addresses'][this.user['addresses'].length-1].postalCode;
@@ -103,6 +105,24 @@ export class CheckoutComponent implements OnInit {
   }
   totalPos() {
     return this.totalOrden() + this.comisionPos();
+  }
+
+  proceed(){
+    this.transaction = {
+      products: this.products,
+      addresses: {
+        name: this.user.addressOne,
+        postalCode: this.deliveryAddress.postalcode,
+        department: this.deliveryAddress.department,
+        district: this.deliveryAddress.district.name,
+        country: 'Perú'
+      },
+      status: 'pending',
+      deliveryprice: this.deliveryAddress.district.price,
+      paymentMethod: 'unknown'
+    };
+    console.log(this.transaction);
+    //this._modService.createTransaction()
   }
 
 }
