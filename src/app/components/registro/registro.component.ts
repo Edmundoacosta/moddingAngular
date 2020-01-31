@@ -71,7 +71,7 @@ export class RegistroComponent implements OnInit {
   	this.user = this._fb.group({
   		firstname: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       lastname: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-      rucname: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      rucname: [''],
       id_type: ['', Validators.required],
       id_number: ['', Validators.compose([Validators.required, Validators.minLength(8) ,Validators.maxLength(11)])],
   		email: new FormControl('', [Validators.required, Validators.email]),

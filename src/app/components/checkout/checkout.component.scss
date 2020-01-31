@@ -2,91 +2,102 @@
 .container {
   margin-top: 90px;
 }
-.product-title {
-  text-transform: uppercase;
+.invoice-box{
+  max-width:800px;
+  margin:auto;
+  padding:30px;
+  border:1px solid #eee;
+  box-shadow:0 0 10px rgba(0, 0, 0, .15);
+  font-size:16px;
+  line-height:24px;
+  font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  color:#555;
+  margin-bottom: 40px;
 }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  color: none;
-  background-color: $firstC;
-  border-color: $firstC;
-  #icono {
-    color: white !important;
-    background-color: $thirdC;
-    border: 1.5px solid $thirdC !important;
+
+.invoice-box table{
+  width:100%;
+  line-height:inherit;
+  text-align:left;
+}
+
+.invoice-box table td{
+  padding:5px;
+  vertical-align:top;
+}
+
+.invoice-box table tr td:nth-child(2){
+  text-align:right;
+}
+
+.invoice-box table tr.top table td{
+  padding-bottom:20px;
+}
+
+.invoice-box table tr.top table td.title{
+  font-size:45px;
+  line-height:45px;
+  color:#333;
+}
+
+.invoice-box table tr.information table td{
+  padding-bottom:40px;
+}
+
+.invoice-box table tr.heading td{
+  background:#eee;
+  border-bottom:1px solid #ddd;
+  font-weight:bold;
+}
+
+.invoice-box table tr.details td{
+  padding-bottom:20px;
+}
+
+.invoice-box table tr.item td{
+  border-bottom:1px solid #eee;
+}
+
+.invoice-box table tr.item.last td{
+  border-bottom:none;
+}
+
+.invoice-box table tr.total td:nth-child(2){
+  border-top:2px solid #eee;
+  font-weight:bold;
+}
+.cardcontainer {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.card-body {
+  background: $firstC;
+  p {
+    text-align: justify;
   }
 }
-.nav-tabs .nav-link {
+.card {
   border: none;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  background: $firstC;
 }
-#tabs {
-  margin-left: 23%;
-  padding: 0px 20px;
-  li {
-    margin: 5px 20px;
-    a {
-      text-decoration: none;
-    }
-    a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: $secondC;
-      transition: width .5s;
-    }
-    a:hover::after {
-      width: 100%;
-    }
-    #icono {
-      text-align: center;
-      justify-content: space-between;
-      padding: 7px 8px;
-      border: 1.5px solid $secondC;
-      border-radius: 50%;
-      color: $thirdC;
-      background-size: 250% 250%;
-      background-image: 
-      linear-gradient(to top, $thirdC 50%, transparent 50%);
-      transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
-    }
-    .fa-address-book{
-      margin-left: 35px;
-    }
-    .fa-shopping-cart{
-      margin-left: 45px;
-    }
-    .fa-credit-card{
-      margin-left: 40px;
-    }
-    span {
-      color:black;
-      display:block;
-      text-transform:uppercase;
-    }
-    &:hover {
-      #icono {
-        color: #fff;
-        border: 1.5px solid $thirdC;
-        background-image: 
-        linear-gradient(to top, $thirdC 51%, transparent 50%);
-        background-position: 0 100%;
-        transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
-      }
-      span {
-        color: $thirdC;
-      }
-    }
-  }
+.tip {
+  margin: 15px 0px;
+  text-align: justify;
+}
+.merdiv {
+  background: $firstC;
 }
 .mercado{
   width: 30%;
   text-align: center;
   margin: 0px 20px;
 }
-.nav-tabs {
-  border-bottom: none;
+.texto {
+  float: right;
+}
+.texto1 {
+  float: left;
 }
 #help {
   text-decoration: none;
@@ -129,7 +140,10 @@
     color: $thirdC;
 	}
 }
-/*estilos para el detalle del peido*/
+/*estilos para el detalle del pedido*/
+.product-title {
+  text-transform: uppercase;
+}
 .contenedor {
   margin: 20px auto;
 }
@@ -155,15 +169,15 @@
   border: none;
   background: $firstC;}
 }
-   
-.product-removal {
-  float: left;
-  width: 9%;
-}
-   
+
 .product-line-price {
   float: left;
-  width: 12%;
+  width: 21%;
+  text-align: right;
+}
+.product-line-price-tittle {
+  float: left;
+  width: 21%;
   text-align: right;
 }
    
@@ -191,12 +205,6 @@
 .product .product-price:before, .product .product-line-price:before, .totals-value:before {
   content: 'S/. ';
 }
-   
-/* Body/Header stuff */
-body {
-  padding: 0px 30px 30px 20px;
-  font-weight: 100;
-}
  
 h1 {
   font-weight: 100;
@@ -214,7 +222,7 @@ label {
 .column-labels label {
   padding-bottom: 15px;
   margin-bottom: 15px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid lightgrey;
 }
 .column-labels .product-image, .column-labels .product-details, .column-labels .product-removal {
   text-indent: -9999px;
@@ -224,7 +232,7 @@ label {
 .product {
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid lightgrey;
 }
 .product .product-image {
   text-align: center;
@@ -241,20 +249,6 @@ label {
 }
 .product .product-quantity input {
   width: 40px;
-}
-.product .remove-product {
-  border: 0;
-  padding: 4px 8px;
-  color: $secondC;
-  border: 1.5px solid;
-  background-color: $firstC;
-  font-size: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-.product .remove-product:hover {
-  background-color: $thirdC;
-  color: #fff;
 }
  
 /* Totals section */
@@ -275,28 +269,78 @@ label {
   width: 21%;
   text-align: right;
 }
-.checkout {
-  float: right;
-  border: 0;
-  margin-top: 20px;
-  padding: 6px 25px;
-  color: $secondC;
-  border: 1.5px solid;
-  background-color: $firstC;
-  font-size: 25px;
-  border-radius: 8px;
+/*estilos para los metodos de pago*/
+.applogo {
+  width: 100px;
+  height: 100px;
 }
- 
-.checkout:hover {
-  background-color: $thirdC;
-  color : #fff;
+/*fin de estilos para los metodos de pago*/
+
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
- 
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/*CARDPAYMENT*/
+.cardpayment {
+  margin-left: 10px;
+  .card{
+    background:#16181a;  border-radius:14px; max-width: 350px; display:block; margin:auto;
+    padding:60px; padding-left:20px; padding-right:20px;
+  }
+  label{display:flex; font-size:10px; color:white; opacity:.4;}
+  input{font-family: 'Work Sans', sans-serif;background:transparent; border:none; border-bottom:1px solid transparent; color:#dbdce0; transition: border-bottom .4s;}
+  input:focus{border-bottom:1px solid #1abc9c; outline:none;}
+  .cardnumber{display:block; font-size:20px; margin-bottom:8px; }
+  .dash{float: left; font-size: 15px; margin: 0px 5px;}
+  .name{display:block; font-size:15px; max-width: 40px; float:left; margin-bottom:15px;}
+  .name1{display:block; font-size:15px; max-width: 20px; float:left; margin-bottom:15px;}
+  .ccvm{margin-left: 100px; margin-right: 10px;}
+  .toleft{float:left;}
+  .ccv{width:50px; margin-top:-5px; font-size:15px;}
+}
+/*ENDCARPAYMENT*/
+@media (max-width: 768px) {
+  .dots {
+      &:after {
+          width           : 40px;
+      }
+  
+      &:before {
+          width           : 40px;
+      }
+  }
+  .totals .totals-item label {
+    width: auto;
+  }
+  .totals .totals-item .totals-value {
+    width: auto;
+  }
+  .product-line-price {
+    float: left;
+    width: auto;
+    text-align: right;
+    margin-left: 34px;
+  }
+}
+@media (max-width: 767px) {
+  .dots {
+      &:after {
+          width           : 40px;
+      }
+  
+      &:before {
+          width           : 40px;
+      }
+  }
+}
 /* Make adjustments for tablet */
 @media screen and (max-width: 650px) {
-  .mercado {
-    margin: 0px;
-  }
   .shopping-cart {
     margin: 0;
     padding-top: 20px;
@@ -345,12 +389,67 @@ label {
     float: right;
     width: 70px;
   }
+}
+@media (max-width: 600px){
+  .proceed{transform:translate(250px, 10px);}
+  .col{display:block; margin:auto; width:100%; text-align:center;}
+  .invoice-box table tr.top table td{
+    width:100%;
+    display:block;
+    text-align:center;
+  }
+
+  .invoice-box table tr.information table td{
+      width:100%;
+      display:block;
+      text-align:center;
+  }
+}
+/* Make more adjustments for phone */
+@media (max-width : 463px) {
+  .dots {
+      &:after {
+          width           : 40px;
+      }
+  
+      &:before {
+          width           : 40px;
+      }
+  }
+  .cardpayment {
+    margin-left: -15px;
+  }
+}
+@media (max-width : 421px) {
+  .dots {
+    &:after {
+        width           : 40px;
+    }
+
+    &:before {
+        width           : 40px;
+    }
+  }
+  .mercado{
+    width: 70%;
+    text-align: center;
+  }
+}
+@media (max-width : 375px) {
+  .dots {
+    &:after {
+        width           : 40px;
+    }
+
+    &:before {
+        width           : 40px;
+    }
+  }
   .mercado{
     width: 100%;
     text-align: center;
   }
 }
-/* Make more adjustments for phone */
 @media screen and (max-width: 350px) {
   .product-removal {
     float: right;
@@ -377,162 +476,8 @@ label {
     width: 100%;
     text-align: center;
   }
+  .cardpayment {
+    margin-left: -30px;
+  }
 }
 /*fin de estilos del detalle del pedido*/
-
-/*estilos para los metodos de pago*/
-.applogo {
-  width: 100px;
-  height: 100px;
-
-}
-input[type="radio"] {
-  display: none;
-  height: 20px;
-  width: 20px;
-  display: inline-block;
-  cursor: pointer;
-  vertical-align: middle;
-  background: #FFF;
-  border: 1px solid #d2d2d2;
-  border-radius: 100%;
-  &:hover {
-  	border-color: #c2c2c2;
-  }
-  &:checked {
-  	background:gray;
-  }
-}
-/*fin de estilos para los metodos de pago*/
-
-/* Hide HTML5 Up and Down arrows. */
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-/*responsive tabs*/
-@media (max-width: 1199px) {
-  #tabs {
-      margin-left: 20%;
-  }
-}
-@media (max-width: 991px) {
-  #tabs {
-      margin-left: 7%;
-  }
-}
-@media (max-width: 768px) {
-  #tabs {
-      margin-left: 7%;
-  }
-  .dots {
-      &:after {
-          width           : 40px;
-      }
-  
-      &:before {
-          width           : 40px;
-      }
-  }
-  .mercado{
-    width: 100%;
-    text-align: center;
-  }
-}
-@media (max-width: 767px) {
-  #tabs {
-      margin-left: 3%;
-      li {
-          margin: 0px;
-      }
-  }
-  .dots {
-      &:after {
-          width           : 40px;
-      }
-  
-      &:before {
-          width           : 40px;
-      }
-  }
-  .mercado{
-    width: 100%;
-    text-align: center;
-  }
-}
-@media (max-width : 463px) {
-  #tabs {
-      margin-left: 0%;
-      li {
-          margin: -10px;
-      }
-  }
-  .dots {
-      &:after {
-          width           : 40px;
-      }
-  
-      &:before {
-          width           : 40px;
-      }
-  }
-  .mercado{
-    width: 100%;
-    text-align: center;
-  }
-  
-}
-@media (max-width : 421px) {
-  #tabs {
-    margin-left: 13%;
-    li {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    #check3-tab{
-        margin-left: 60px;
-    }
-  }
-  .dots {
-    &:after {
-        width           : 40px;
-    }
-
-    &:before {
-        width           : 40px;
-    }
-  }
-  .mercado{
-    width: 100%;
-    text-align: center;
-  }
-}
-@media (max-width : 375px) {
-  #tabs {
-    margin-left: 7%;
-    li {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    #check3-tab{
-        margin-left: 60px;
-    }
-  }
-  .dots {
-    &:after {
-        width           : 40px;
-    }
-
-    &:before {
-        width           : 40px;
-    }
-  }
-  .mercado{
-    width: 100%;
-    text-align: center;
-  }
-}
