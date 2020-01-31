@@ -64,6 +64,7 @@ export class CheckoutComponent implements OnInit {
         this.user.addressOne = `${this.user['addresses'][this.user['addresses'].length-1].name} - ${this.user['addresses'][this.user['addresses'].length-1].district}`;
         this.deliveryAddress.district = this.allDistricts.filter(place => place.name == this.user['addresses'][this.user['addresses'].length-1].district)[0];
         this.deliveryAddress.postalcode = this.user['addresses'][this.user['addresses'].length-1].postalCode;
+        this.deliveryAddress.name = `${this.user['addresses'][this.user['addresses'].length-1].name}`;
       });
       this.products = JSON.parse(this.session.getItem('inCart'));
       this.totalPrice();
