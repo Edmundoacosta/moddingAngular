@@ -65,6 +65,7 @@ export class CheckoutComponent implements OnInit {
       });
       this.products = JSON.parse(this.session.getItem('inCart'));
       this.totalPrice();
+      
   }
   onSubmit() {
     this.transaction = {
@@ -87,6 +88,21 @@ export class CheckoutComponent implements OnInit {
   }
   subtotal(){
     return this.totalPrice()-this.igv();
+  }
+  totalOrden(){
+    return this.totalPrice()+this.deliveryAddress.district.price;
+  }
+  comisionTarjeta() {
+    return this.totalOrden() * 0.042; 
+  }
+  totalTarjeta() {
+    return this.totalOrden() + this.comisionTarjeta();
+  }
+  comisionPos() {
+    return this.totalOrden() * 0.04071;
+  }
+  totalPos() {
+    return this.totalOrden() + this.comisionPos();
   }
 
 }
