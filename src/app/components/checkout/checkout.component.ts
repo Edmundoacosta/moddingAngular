@@ -28,6 +28,7 @@ export class CheckoutComponent implements OnInit {
     },
     country: 'Perú'
   };
+  public paymenType:string = 'credit-card';
 
   public transaction; 
   public products:Array<any> = [];
@@ -79,6 +80,9 @@ export class CheckoutComponent implements OnInit {
       ticket: '',
     }
   }
+  payment(type){
+    this.paymenType = type;
+  }
   totalPrice(){
     let total = 0;
     for (let i = 0; i < this.products.length; i++) {
@@ -120,7 +124,7 @@ export class CheckoutComponent implements OnInit {
       },
       status: 'pending',
       deliveryprice: this.deliveryAddress.district.price,
-      paymentMethod: 'unknown'
+      paymentMethod: this.paymenType
     };
     console.log(this.transaction);
     //this._modService.createTransaction()

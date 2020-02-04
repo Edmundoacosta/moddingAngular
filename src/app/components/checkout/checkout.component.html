@@ -161,22 +161,22 @@
                 <h3 class="dots">METODOS DE PAGO</h3>
             </div>
             <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                <li class="nav-item">
+                <li (click)="payment('credit-card')" class="nav-item">
                     <a class="nav-link active" id="card-tab" data-toggle="tab" href="#card" role="tab">
                         <i class="fa fa-credit-card"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li (click)="payment('transaction')" class="nav-item">
                     <a class="nav-link" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab">
                         <i class="fa fa-university"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li (click)="payment('mercado-libre')" class="nav-item">
                     <a class="nav-link" id="qr-tab" data-toggle="tab" href="#qr" role="tab">
                         <i class="fa fa-qrcode"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li (click)="payment('POS')" class="nav-item">
                     <a class="nav-link" id="pos-tab" data-toggle="tab" href="#pos" role="tab">
                         <i class="fa fa-calculator"></i>
                     </a>
