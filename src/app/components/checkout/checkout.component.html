@@ -39,6 +39,10 @@
                         <input [(ngModel)]="user.lastname" class="form-control" type="text" name="lastname">
                     </div>
                 </div>
+                <div class="form-group">
+                    <label>Razón Social</label>
+                    <input [(ngModel)]="user.lastname" class="form-control" type="text" name="lastname">
+                </div>
                 <div class="form-row">
                     <div class="col form-group">
                         <label>Tipo de Identificación</label>
@@ -56,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <label>Dirección</label>
-                    <input [(ngModel)]="user.addressOne" name="address" type="text" class="form-control">
+                    <input [(ngModel)]="deliveryAddress.name" name="address" type="text" class="form-control">
                 </div>
                 <div class="form-row">
                     <div class="col form-group">
@@ -179,8 +183,13 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
+                <div class="buttons">
+                    <button (click)="proceed()" class="btn ec d-block mr-0 ml-auto" >
+                        Finalizar Compra<i class="fa fa-chevron-circle-right ml-2"></i>
+                    </button>
+                </div>
                 <div class="tab-pane fade show active" id="card" role="tabpanel" aria-labelledby="card-tab">
-                    <div class="container">
+                    <div class="contenedorCard">
                         <div class="cardpayment">
                             <div class="card">
                                 <div class="form-group">
@@ -215,7 +224,7 @@
                     <div class="cardcontainer">
                         <div class="card">
                             <div class="card-body text-left">
-                                <img src="../../../../assets/imagenes/metodo de pago/logo bbva.png" alt="" width="200px">
+                                <img class="deposit" src="../../../../assets/imagenes/metodo de pago/logo bbva.png" alt="">
                                 <h5 class="card-title">Cta. corriente soles : 0011-0486-0100179443</h5>
                                 <h5 class="card-title">Cta. corriente dolares : 0011-0486-0100179451</h5>
                                 <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
@@ -223,7 +232,7 @@
                         </div>
                         <div class="card">
                             <div class="card-body text-right">
-                                <img src="../../../../assets/imagenes/metodo de pago/logo interbank.png" alt="" width="200px">
+                                <img class="deposit" src="../../../../assets/imagenes/metodo de pago/logo interbank.png" alt="">
                                 <h5 class="card-title">Cta. corriente soles : 2003002019726</h5>
                                 <h5 class="card-title">Cta. corriente dolares : 2003002019768</h5>
                                 <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
@@ -246,7 +255,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="qr" role="tabpanel" aria-labelledby="qr-tab">
-                    <div class="card my-4">
+                    <div class="card">
                         <div class="card-body">
                             <p class="card-text">
                                 El monto total se cancela a través de la <strong>app de mercado libre</strong>, escaneando el <strong>código QR</strong> en la opción de <strong>pagar con código QR</strong>. Una vez se escanea el <strong>código QR</strong> usted ingresa <strong>el monto total a pagar</strong>.  Cuando el pago se halla efectuado, deberá comunicarse con nosotros <strong>a través de nuestro WhatsApp</strong> para confirmar el pago y su pedido.
@@ -291,9 +300,6 @@
                     </div>
                 </div>
             </div>
-            <div class="buttons">
-                <button (click)="proceed()" class="btn btn-primary">Comprar</button>
-            </div>
         </div>
         <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="confirmation-tab">
             <div class="text-center mt-3"> 
@@ -301,12 +307,15 @@
             </div>
             <div class="invoice-box">
                 <table cellpadding="0" cellspacing="0">
+                    <button class="btn ecx d-block mr-0 ml-auto">
+                        Cerrar<i class="fa fa-times-circle ml-2"></i>
+                    </button>
                     <tr class="top">
                         <td colspan="2">
                             <table>
                                 <tr>
                                     <td class="title">
-                                        <img src="../../../assets/imagenes/logos/logo-color.png" style="width:100%; max-width:300px;">
+                                        <img class="logoresumen" src="../../../assets/imagenes/logos/logo-color.png">
                                     </td>
                                     
                                     <td>
@@ -323,13 +332,13 @@
                             <table>
                                 <tr>
                                     <td>
-                                        Av. larco 123 - dpto 127<br>
-                                        Miraflores, Lima 12345
+                                        {{deliveryAddress.name}}<br>
+                                        {{deliveryAddress.district.name}}, {{deliveryAddress.department}} {{deliveryAddress.postalcode}}
                                     </td>
                                     
                                     <td>
-                                        ECOGOZO S.A.C<br>
-                                        Joel Infante<br>
+                                        ECOGOZO S.A.C<br> 
+                                        {{user.firstname + ' ' + user.lastname}}<br>
                                         joel250598@gmail.com
                                     </td>
                                 </tr>
@@ -352,26 +361,26 @@
                         <td>Precio Total</td>
                     </tr>
                     
-                    <tr class="item last">
-                        <td>Kit Refrigeracion liquida x 2</td>
-                        <td>S/. 20.00</td>
+                    <tr *ngFor="let item of products; let i = 'index'" class="item last">
+                        <td>{{item.name}} x {{item.quantity}}</td>
+                        <td>{{item.price | number:'1.2-2'}}</td>
                     </tr>
                     <tr class="total">
                         <td></td>
                         <td>
-                           Subtotal: S/. 16.40
+                           Subtotal: S/. {{subtotal() | number:'1.2-2'}}
                         </td>
                     </tr>
                     <tr class="total">
                         <td></td>
                         <td>
-                           IGV: S/. 3.60
+                           IGV(18%): S/. {{igv() | number:'1.2-2'}}
                         </td>
                     </tr>
                     <tr class="total">
                         <td></td>
                         <td>
-                           Envio: S/. 10.00
+                           Envio: S/. {{deliveryAddress.district.price | number:'1.2-2'}}
                         </td>
                     </tr>
                     <tr class="total">
@@ -383,7 +392,7 @@
                     <tr class="total">
                         <td></td>
                         <td>
-                            Total: S/. 30.00
+                            Total: S/. {{totalOrden() | number:'1.2-2'}}
                         </td>
                     </tr>
                 </table>

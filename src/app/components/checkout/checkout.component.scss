@@ -2,8 +2,39 @@
 .container {
   margin-top: 90px;
 }
+.buttons {
+  margin-top: 15px;
+  margin-right: 10px;
+}
+.deposit {
+  width: 100%;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: $secondC;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+.nav-link {
+  color: black;
+}
+.contenedorCard {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+}
+.information {
+  text-transform: uppercase;
+}
+.logoresumen {
+  width:100%; 
+  max-width:300px;
+  margin-top: -45px;
+}
 .invoice-box{
-  max-width:800px;
+  max-width:900px;
   margin:auto;
   padding:30px;
   border:1px solid #eee;
@@ -35,9 +66,7 @@
 }
 
 .invoice-box table tr.top table td.title{
-  font-size:45px;
-  line-height:45px;
-  color:#333;
+  margin-top: -10px;
 }
 
 .invoice-box table tr.information table td{
@@ -59,7 +88,7 @@
 }
 
 .invoice-box table tr.item.last td{
-  border-bottom:none;
+  border-bottom:2px solid #ddd;
 }
 
 .invoice-box table tr.total td:nth-child(2){
@@ -112,6 +141,13 @@
   background-color: $firstC;
   border: 1.5px solid;
   border-radius: 8px;
+  &:hover {
+    color: #fff;
+    background-color: $thirdC;
+  }
+}
+.ecx {
+  color: $secondC;
   &:hover {
     color: #fff;
     background-color: $thirdC;
@@ -338,6 +374,9 @@ input[type="number"] {
           width           : 40px;
       }
   }
+  .logoresumen {
+    margin-top: -30px;
+  }
 }
 /* Make adjustments for tablet */
 @media screen and (max-width: 650px) {
@@ -403,6 +442,9 @@ input[type="number"] {
       width:100%;
       display:block;
       text-align:center;
+  }
+  .logoresumen {
+    margin-top: 0px;
   }
 }
 /* Make more adjustments for phone */
