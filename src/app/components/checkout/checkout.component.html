@@ -194,13 +194,13 @@
                             <div class="card">
                                 <div class="form-group">
                                     <label>Card number:</label>
-                                    <input type="number" class="input cardnumber"  placeholder="1234 5678 9101 1121">
+                                    <input type="text" size="20" data-culqi="card[number]" id="card[number]" class="input cardnumber"  placeholder="1234 5678 9101 1121" maxlength="20">
                                     <label >Vencimiento:</label>
-                                    <input type="text" class="input name1"  placeholder="12" maxlength="2">
+                                    <input data-culqi="card[exp_month]" id="card[exp_month]" class="input name1"  placeholder="12" size="2" maxlength="2">
                                     <label class="dash">/</label>
-                                    <input type="text" class="input name"  placeholder="2020" maxlength="4">
+                                    <input data-culqi="card[exp_year]" id="card[exp_year]" class="input name"  placeholder="2020" size="4" maxlength="4">
                                     <label class="toleft ccvm">CCV: </label>
-                                    <input type="text" class="input toleft ccv" placeholder="321" maxlength="3">
+                                    <input type="text" data-culqi="card[cvv]" id="card[cvv]" class="input toleft ccv" placeholder="321" size="4" maxlength="4">
                                 </div>
                             </div>
                         </div>
