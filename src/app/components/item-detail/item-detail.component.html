@@ -18,14 +18,8 @@
 						<div class="tab-pane active pic" id="pic-1">
 							<img [src]="'https://ecogozotest.com:40/public/products/'+product.principalImg"/>
 						</div>
-						<div class="tab-pane pic" id="pic-2">
-							<img [src]="'https://ecogozotest.com:40/public/products/'+product.images[1]"/>
-						</div>
-						<div class="tab-pane pic" id="pic-3">
-							<img [src]="'https://ecogozotest.com:40/public/products/'+product.images[2]"/>
-						</div>
-						<div class="tab-pane pic" id="pic-4">
-							<img [src]="'https://ecogozotest.com:40/public/products/'+product.images[3]"/>
+						<div *ngFor="let img of product.images" class="tab-pane pic" [id]="img._id">
+							<img [src]="'https://ecogozotest.com:40/public/products/'+img"/>
 						</div>
 						<span id="spanimg">Imagen Referencial</span>
 					</div>
@@ -36,19 +30,9 @@
 								<img [src]="'https://ecogozotest.com:40/public/products/'+product.principalImg"/>
 							</a>
 						</li>
-						<li>
-							<a data-target="#pic-2" data-toggle="tab">
-								<img [src]="'https://ecogozotest.com:40/public/products/'+product.images[1]"/>
-							</a>
-						</li>
-						<li>
-							<a data-target="#pic-3" data-toggle="tab">
-								<img [src]="'https://ecogozotest.com:40/public/products/'+product.images[2]"/>
-							</a>
-						</li>
-						<li>
-							<a data-target="#pic-4" data-toggle="tab">
-								<img [src]="'https://ecogozotest.com:40/public/products/'+product.images[3]"/>
+						<li *ngFor="let img of product.images">
+							<a data-target="'#xs' + img._id" data-toggle="tab">
+								<img [src]="'https://ecogozotest.com:40/public/products/'+img"/>
 							</a>
 						</li>
 					</ul>
@@ -61,6 +45,7 @@
 					<div class="medio">
 						<div class="row mx-2 my-1">
 							<h1 class="mt-3">S/. {{product.price | number:'1.2-2'}}</h1>
+							<span>S/. {{product.price + (product.price*0.3) | number:'1.2-2'}}</span>
 						</div>
 						<ul class="mx-4">
 							<li>Precio incluye el IGV</li>
