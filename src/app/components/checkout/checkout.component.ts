@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModdingService } from '../../providers/moddinpc.service';
 import { SessionService } from '../../providers/session.service';
-import { CulqiService } from '../../providers/culqi.service';
 
 @Component({
   selector: 'app-checkout',
@@ -55,8 +54,7 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     public _modService: ModdingService,
-    public session: SessionService,
-    private pago : CulqiService
+    public session: SessionService
     ) { }
 
   ngOnInit() {
@@ -128,8 +126,9 @@ export class CheckoutComponent implements OnInit {
       deliveryprice: this.deliveryAddress.district.price,
       paymentMethod: this.paymenType
     };
-    console.log(this.transaction);
-    //this._modService.createTransaction()
+    this._modService.createTransaction(this.transaction).then((res) => {
+      console.log(res);
+    });
   }
 
 }

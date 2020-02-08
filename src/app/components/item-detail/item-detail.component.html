@@ -18,7 +18,7 @@
 						<div class="tab-pane active pic" id="pic-1">
 							<img [src]="'https://ecogozotest.com:40/public/products/'+product.principalImg"/>
 						</div>
-						<div *ngFor="let img of product.images" class="tab-pane pic" [id]="img._id">
+						<div *ngFor="let img of product.images; let i = 'index'" class="tab-pane pic" [id]="'pic-' + (i+2)">
 							<img [src]="'https://ecogozotest.com:40/public/products/'+img"/>
 						</div>
 						<span id="spanimg">Imagen Referencial</span>
@@ -30,8 +30,8 @@
 								<img [src]="'https://ecogozotest.com:40/public/products/'+product.principalImg"/>
 							</a>
 						</li>
-						<li *ngFor="let img of product.images">
-							<a data-target="'#xs' + img._id" data-toggle="tab">
+						<li *ngFor="let img of product.images; let i = 'index'">
+							<a [attr.data-target]="'#pic-' + (i+2)" data-toggle="tab">
 								<img [src]="'https://ecogozotest.com:40/public/products/'+img"/>
 							</a>
 						</li>
