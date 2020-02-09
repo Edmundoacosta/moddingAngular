@@ -1,11 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 let Culqi: any;
 
-@Injectable({
-  providedIn: 'root'
-})
 export class CulqiService {
   settings: any = {
     title: '',
