@@ -1,8 +1,8 @@
 <div class="spacio"></div>
 <div class="container">
     <ul id="tabs" class="nav nav-tabs text-center">
-        <li *ngFor="let child of childrens" class="nav-item">
-            <a class="nav-link" [id]="child._id" data-toggle="tab" [href]="'#xs' + child._id" role="tab" aria-controls="example" aria-selected="true">
+        <li *ngFor="let child of childrens; let i = 'index'" class="nav-item">
+            <a class="nav-link" [ngClass]="{'active':i==0}" [id]="child._id" data-toggle="tab" [href]="'#xs' + child._id" role="tab" aria-controls="example" aria-selected="true">
                 <span>{{child.name}}</span>
             </a>
         </li>
