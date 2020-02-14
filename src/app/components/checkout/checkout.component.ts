@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModdingService } from '../../providers/moddinpc.service';
 import { SessionService } from '../../providers/session.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-checkout',
@@ -54,7 +57,9 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     public _modService: ModdingService,
-    public session: SessionService
+    public session: SessionService,
+    public router: Router,
+    public toastr: ToastrService,
     ) { }
 
   ngOnInit() {
@@ -129,6 +134,13 @@ export class CheckoutComponent implements OnInit {
     this._modService.createTransaction(this.transaction).then((res) => {
       console.log(res);
     });
+    this.toastr.success('Compra exitosa!','', {
+      timeOut: 1000
+    });
+  }
+
+  close(){
+    this.router.navigate(['/home']);
   }
 
 }

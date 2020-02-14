@@ -16,7 +16,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="confirmation-tab" data-toggle="tab" href="#confirmation" role="tab">
+            <a class="nav-link disabled" id="confirmation-tab" data-toggle="tab" href="#confirmation" role="tab">
                 <i class="fa fa-check-circle"></i>
             </a>
         </li>
@@ -184,7 +184,7 @@
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="buttons">
-                    <button (click)="proceed()" class="btn ec d-block mr-0 ml-auto" >
+                    <button (click)="proceed()" class="btn ec d-block mr-0 ml-auto" data-toggle="tab" href="#confirmation" role="tab">
                         Finalizar Compra<i class="fa fa-chevron-circle-right ml-2"></i>
                     </button>
                 </div>
@@ -306,10 +306,10 @@
                 <h3 class="dots">RESUMEN DE COMPRA</h3>
             </div>
             <div class="invoice-box">
+                <button (click)="close()" class="btn ecx d-block mr-0 ml-auto">
+                    Cerrar<i class="fa fa-times-circle ml-2"></i>
+                </button>
                 <table cellpadding="0" cellspacing="0">
-                    <button class="btn ecx d-block mr-0 ml-auto">
-                        Cerrar<i class="fa fa-times-circle ml-2"></i>
-                    </button>
                     <tr class="top">
                         <td colspan="2">
                             <table>
