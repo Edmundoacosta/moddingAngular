@@ -1,87 +1,48 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: !(isHandset$ | async)}" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
-        <mat-toolbar color="primary">
-            <h5>Menu</h5> 
-            <i (click)="drawer.toggle()" class="fa fa-close"></i>
-        </mat-toolbar>
-        <mat-nav-list>
-            <div class="sidelink">
-                <a (click)="drawer.toggle()" class="nav-link dropdown-toggle" [matMenuTriggerFor]="afterMenu">Categorias</a>
-                <mat-menu class="mt-4" #afterMenu="matMenu" xPosition="after">
-                    <button *ngFor="let item of categories" class="btn btn-ca" [routerLink]="'/categoria/' + item.name">{{item.name}}</button>
-                </mat-menu>
-                <a (click)="drawer.toggle()" class="nav-link" routerLink="/sobre_nosotros" routerLinkActive="active-link">Nosotros</a>
-                <a (click)="drawer.toggle()" class="nav-link" routerLink="/novedades" routerLinkActive="active-link">Novedades</a>
-                <!--
-                <a (click)="sidenav.close()" class="nav-link" routerLink="/zona_gamer" routerLinkActive="active-link">Zona Gamer
-                    <i class="fa fa-gamepad"></i>
-                </a>-->
-                <a (click)="drawer.toggle()" class="nav-link" routerLink="/contact_us" routerLinkActive="active-link">Contactanos</a>
-                <mat-form-field class="text-center">
-                    <input matInput type="text" placeholder="Buscar">
-                </mat-form-field>
-                <div class="sidebutton">
-                    <button (click)="openLogin()" (click)="drawer.toggle()" class="btn btn-ec" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil">
-                        <i class="fa fa-user"></i>
-                    </button>
-                    <button (click)="cart()" (click)="drawer.toggle()" class="btn btn-ec">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span class="badge badge-outline">{{inCart}}</span>
-                    </button>
-                    <button (click)="confirmLogout()" (click)="drawer.toggle()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
-                        <i class="fa fa-sign-out"></i>
-                    </button>
-                </div>
-            </div>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <mat-toolbar>
-            <div class="sideres">
-                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
-                    <mat-icon aria-label="Side nav toggle icon">
-                        <i class="fa fa-bars"></i>
-                    </mat-icon>
-                </button>
-                <a class="navbar-brand" routerLink="/home">
-                    <img id="logoE" src="./assets/imagenes/logos/logo-envi-c.png" alt="">
-                </a>
-            </div>
-            <div class="link">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-ec sticky-top">
+    <a class="navbar-brand" routerLink="/home">
+        <img id="logoE" src="./assets/imagenes/logos/logo-envi-c.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
                 <a class="nav-link" routerLink="/home" routerLinkActive="active-link">Inicio</a>
-                <a class="nav-link dropdown-toggle" [matMenuTriggerFor]="afterMenu">Categorias</a>
-                <mat-menu class="mt-5" #afterMenu="matMenu" yPosition="below">
-                    <button *ngFor="let item of categories" class="btn btn-ca" [routerLink]="'/categoria/' + item.name">{{item.name}}</button>
-                </mat-menu>
-                <a class="nav-link" routerLink="/sobre_nosotros" routerLinkActive="active-link">Nosotros</a>
-                <a class="nav-link" routerLink="/novedades" routerLinkActive="active-link">Novedades</a>
-                <!--
-                <a (click)="sidenav.close()" class="nav-link" routerLink="/zona_gamer" routerLinkActive="active-link">Zona Gamer
-                    <i class="fa fa-gamepad"></i>
-                </a>-->
-                <a class="nav-link" routerLink="/contact_us" routerLinkActive="active-link">Contactanos</a>
-            </div>
-            <span class="spacer"></span>
-            <div class="link">
-                <div class="search-box">
-                    <input type="text" class="search-txt" placeholder="Buscar">
-                    <a class="search-btn mt-1">
-                        <i class="fa fa-search"></i>
-                    </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" *ngFor="let item of categories" class="btn btn-ca" [routerLink]="'/categoria/' + item.name">{{item.name}}</a>
                 </div>
-                <button (click)="openLogin()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil">
-                    <i class="fa fa-user"></i>
-                </button>
-                <button routerLink="/shopping_cart" class="btn btn-ec">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span class="badge badge-outline">{{inCart}}</span>
-                </button>
-                <button *ngIf="logged==true; elseBlock" (click)="confirmLogout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
-                    <i class="fa fa-sign-out"></i>
-                </button>
-            </div>
-        </mat-toolbar>
-        <ng-content></ng-content>
-    </mat-sidenav-content>
-</mat-sidenav-container>  
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/sobre_nosotros" routerLinkActive="active-link">Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/novedades" routerLinkActive="active-link">Novedades</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/contact_us" routerLinkActive="active-link">Contactanos</a>
+            </li>
+        </ul>
+        <div class="searchbar">
+            <input class="search_input" type="text" name="" placeholder="Buscar...">
+            <a class="search_icon"><i class="fa fa-search"></i></a>
+        </div>
+        <div class="link">
+            <a (click)="openLogin()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil">
+                <i class="fa fa-user"></i>
+            </a>
+            <a routerLink="/shopping_cart" class="btn btn-ec">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="badge badge-outline">{{inCart}}</span>
+            </a>
+            <a *ngIf="logged==true; elseBlock" (click)="confirmLogout()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Cerrar Sesión">
+                <i class="fa fa-sign-out"></i>
+            </a>
+        </div>
+    </div>
+</nav>

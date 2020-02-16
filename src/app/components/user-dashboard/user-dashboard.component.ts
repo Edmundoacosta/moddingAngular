@@ -3,13 +3,14 @@ import { ModdingService } from '../../providers/moddinpc.service';
 import { MatDialog } from '@angular/material';
 import { TicketComponent } from '../modals/ticket/ticket.component';
 import { DetailComponent } from '../modals/detail/detail.component';
-
+declare var $: any;
 @Component({
   selector   : 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
   styleUrls  : ['./user-dashboard.component.scss']
 })
 export class UserDashboardComponent implements OnInit {
+  
   public user = {
     firstname: '',
     lastname: '', 

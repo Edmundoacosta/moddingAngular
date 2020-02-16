@@ -64,80 +64,8 @@ h2 {
         }
     }
 }
-/*
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: none;
-    background-color: $firstC;
-    border-color: $firstC;
-    .fa {
-        color: white !important;
-        background-color: $thirdC;
-        border: 1.5px solid $thirdC !important;
-    }
-}
-.nav-tabs .nav-link {
-    border: none;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-}
-#tabs {
-    margin-left: 15%;
-    padding: 20px;
-    
-    li {
-        margin: 10px 20px;
-        a {
-            text-decoration: none;
-        }
-        a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: $secondC;
-            transition: width .5s;
-        }
-        a:hover::after {
-            width: 100%;
-        }
-        i {
-            text-align: center;
-            justify-content: space-between;
-            padding: 7px;
-            border: 1.5px solid $secondC;
-            border-radius: 50%;
-            color: $thirdC;
-            background-size: 250% 250%;
-            background-image: 
-            linear-gradient(to top, $thirdC 50%, transparent 50%);
-            transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
-        }
-        span {
-            color:black;
-            display:block;
-            text-transform:uppercase;
-        }
-        &:hover {
-            i {
-                color: #fff;
-                border: 1.5px solid $thirdC;
-                background-image: 
-                linear-gradient(to top, $thirdC 51%, transparent 50%);
-                background-position: 0 100%;
-                transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
-            }
-            span {
-                color: $thirdC;
-            }
-        }
-    }
-}
-
-.nav-tabs {
-    border-bottom: none;
-}*/
 .spacio {
-    margin-top: 70px;
+    margin-top: 20px;
 }
 /* mobile fix */
 @media (max-width: 768px) {
