@@ -71,10 +71,27 @@ export class MainNavComponent {
       }
     }
 
+    category(categories) {
+      this.router.navigate(['/categoria/'+ categories]);
+    }
+
+    home() {
+      this.router.navigate(['/home']);
+    }
+
+    news() {
+      this.router.navigate(['/novedades']);
+    }
+
+    contact() {
+      this.router.navigate(['/contact_us']);
+    }
+
+    about() {
+      this.router.navigate(['/sobre_nosotros']);
+    }
+
     cart() {
       this.router.navigate(['/shopping_cart']);
-      setTimeout(()=> {
-        location.reload();
-      }, 200);
     }
  }

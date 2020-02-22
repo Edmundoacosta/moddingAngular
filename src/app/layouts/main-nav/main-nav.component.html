@@ -10,22 +10,22 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/home" routerLinkActive="active-link">Inicio</a>
+                <a class="nav-link active" (click)="home()" data-toggle="collapse" data-target=".navbar-collapse.show">Inicio</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" *ngFor="let item of categories" class="btn btn-ca" [routerLink]="'/categoria/' + item.name">{{item.name}}</a>
-                </div>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" *ngFor="let item of categories" class="btn btn-ca" (click)="category(item.name)" data-toggle="collapse" data-target=".navbar-collapse.show">{{item.name}}</a>
+                    </div>
               </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/sobre_nosotros" routerLinkActive="active-link">Nosotros</a>
+                <a class="nav-link" (click)="about()" data-toggle="collapse" data-target=".navbar-collapse.show">Nosotros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/novedades" routerLinkActive="active-link">Novedades</a>
+                <a class="nav-link" (click)="news()" data-toggle="collapse" data-target=".navbar-collapse.show">Novedades</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/contact_us" routerLinkActive="active-link">Contactanos</a>
+                <a class="nav-link" (click)="contact()" data-toggle="collapse" data-target=".navbar-collapse.show">Contactanos</a>
             </li>
         </ul>
         <div class="searchbar">
@@ -33,10 +33,10 @@
             <a class="search_icon"><i class="fa fa-search"></i></a>
         </div>
         <div class="link">
-            <a (click)="openLogin()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil">
+            <a (click)="openLogin()" class="btn btn-ec" data-toggle="modal tooltip" data-placement="bottom" title="Iniciar Sesión / Perfil" data-toggle="collapse" data-target=".navbar-collapse.show">
                 <i class="fa fa-user"></i>
             </a>
-            <a routerLink="/shopping_cart" class="btn btn-ec">
+            <a (click)="cart()" data-toggle="collapse" data-target=".navbar-collapse.show" class="btn btn-ec">
                 <i class="fa fa-shopping-cart"></i>
                 <span class="badge badge-outline">{{inCart}}</span>
             </a>
