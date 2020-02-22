@@ -1,29 +1,29 @@
 <div class="container">
-    <button routerLink="/shopping_cart" class="btn mb-4 ec">REGRESAR AL CARRITO</button>
-    <button routerLink="/categoria/Iluminación" class="btn float-right mb-4 ec">SEGUIR COMPRANDO</button>
-    <ul class="nav nav-tabs" id="tabs" role="tablist">
+    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="check1-tab" data-toggle="tab" href="#check1" role="tab" aria-controls="check1" aria-selected="true">
-                <i id="icono" class="fa fa-address-book"></i>
-                <span>Datos de Envio</span>
+            <a class="nav-link active" id="shipping-tab" data-toggle="tab" href="#shipping" role="tab">
+                <i class="fa fa-address-card"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="check2-tab" data-toggle="tab" href="#check2" role="tab" aria-controls="check2" aria-selected="false">
-                <i id="icono" class="fa fa-shopping-cart"></i>
-                <span>Detalle del pedido</span>
+            <a class="nav-link" id="cart-tab" data-toggle="tab" href="#cart" role="tab">
+                <i class="fa fa-shopping-basket"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="check3-tab" data-toggle="tab" href="#check3" role="tab" aria-controls="check3" aria-selected="false">
-                <i id="icono" class="fa fa-credit-card"></i>
-                <span>Metodos de pago</span>
-          </a>
+            <a class="nav-link" id="payment-tab" data-toggle="tab" href="#payment" role="tab">
+                <i class="fa fa-credit-card"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" id="confirmation-tab" data-toggle="tab" href="#confirmation" role="tab">
+                <i class="fa fa-check-circle"></i>
+            </a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="check1" role="tabpanel" aria-labelledby="check1-tab">
-            <div class="text-center">
+        <div class="tab-pane fade show active" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
+            <div class="text-center mt-3">
                 <h3 class="dots">DATOS DE ENVIO</h3>
             </div>
             <div class="my-3">
@@ -38,6 +38,10 @@
                         <label>Apellidos</label>
                         <input [(ngModel)]="user.lastname" class="form-control" type="text" name="lastname">
                     </div>
+                </div>
+                <div class="form-group">
+                    <label>Razón Social</label>
+                    <input [(ngModel)]="user.lastname" class="form-control" type="text" name="lastname">
                 </div>
                 <div class="form-row">
                     <div class="col form-group">
@@ -56,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <label>Dirección</label>
-                    <input [(ngModel)]="user.addressOne" name="address" type="text" class="form-control">
+                    <input [(ngModel)]="deliveryAddress.name" name="address" type="text" class="form-control">
                 </div>
                 <div class="form-row">
                     <div class="col form-group">
@@ -102,35 +106,32 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="check2" role="tabpanel" aria-labelledby="check2-tab">
+        <div class="tab-pane fade" id="cart" role="tabpanel" aria-labelledby="cart-tab">
+            <div class="text-center mt-3"> 
+                <h3 class="dots">DETALLE DEL PEDIDO</h3>
+            </div>
             <div class="contenedor">
-                <div class="text-center"> 
-                    <h3 class="dots">DETALLE DEL PEDIDO</h3>
-                </div>
                 <div class="my-3">
-                    <h1>Carrito de Compras</h1>
+                    <h1>PRODUCTOS</h1>
                     <div class="shopping-cart">
                         <div class="column-labels">
                             <label class="product-image">Imagen</label>
                             <label class="product-details">Producto</label>
                             <label class="product-price">Precio</label>
                             <label class="product-quantity">Cantidad</label>
-                            <label class="product-removal">Space</label>
-                            <label class="product-line-price">Total</label>
+                            <label class="product-line-price-tittle">Total</label>
                         </div>
                         <div *ngFor="let item of products; let i = 'index'" class="product">
                             <div class="product-image">
-                                <img [src]="'http://174.138.37.189:4444/public/products/'+products[i].principalImg">
+                                <img [src]="'https://ecogozotest.com:40/public/products/'+products[i].principalImg">
                             </div>
                             <div class="product-details">
-                                <h5 class="product-title">{{item.name}}</h5>
-                                <p class="product-description">{{item.description}}</p>
+                                <h5 class="product-title"><strong>{{item.name}}</strong></h5>
                             </div>
                             <div class="product-price">{{item.price}}</div>
                             <div class="product-quantity">
                                 <input class="ml-4" disabled value="{{item.quantity}}" >
                             </div>
-                            <label class="product-removal"></label>
                             <div class="product-line-price">{{item.price*item.quantity | number:'1.2-2'}}</div>
                         </div>
                         <div class="totals">
@@ -148,83 +149,256 @@
                             </div>
                             <div class="totals-item totals-item-total">
                                 <label>Total</label>
-                                <div class="totals-value" id="cart-total">{{totalPrice() + deliveryAddress.district.price | number:'1.2-2'}}</div>
+                                <div class="totals-value" id="cart-total">{{totalOrden() | number:'1.2-2'}}</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="check3" role="tabpanel" aria-labelledby="check3-tab">
-            <div class="text-center">
+        <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
+            <div class="text-center mt-3">
                 <h3 class="dots">METODOS DE PAGO</h3>
             </div>
-            <div class="my-3 ml-3">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                <h5 class="text-left ml-3">Transferencia o Deposito Bancario</h5>
-            </div>
-            <h4 class="text-center">Datos de Nuestras Cuentas</h4>
-            <div class="form-row my-4">
-                <div class="card-deck">
-                    <div class="card">
-                        <div class="card-body">
-                            <img class="card-img-top " src="../../../../assets/imagenes/metodo de pago/logo bbva.png" alt="">
-                            <h5 class="card-title">Cta. corriente soles : 0011-0486-0100179443</h5>
-                            <h5 class="card-title">Cta. corriente dolares : 0011-0486-0100179451</h5>
-                            <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
-                            <p class="card-text">Recuerda que una vez realizado el pago, tienes que confirmar la transferencia o deposito enviándonos tu comprobante de pago o screenshot a nuestro WhatsApp.</p>
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li (click)="payment('credit-card')" class="nav-item">
+                    <a class="nav-link disabled" id="card-tab" data-toggle="tab" href="#card" role="tab">
+                        <i class="fa fa-credit-card"></i>
+                    </a>
+                </li>
+                <li (click)="payment('transaction')" class="nav-item">
+                    <a class="nav-link active" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab">
+                        <i class="fa fa-university"></i>
+                    </a>
+                </li>
+                <li (click)="payment('mercado-libre')" class="nav-item">
+                    <a class="nav-link" id="qr-tab" data-toggle="tab" href="#qr" role="tab">
+                        <i class="fa fa-qrcode"></i>
+                    </a>
+                </li>
+                <li (click)="payment('POS')" class="nav-item">
+                    <a class="nav-link" id="pos-tab" data-toggle="tab" href="#pos" role="tab">
+                        <i class="fa fa-calculator"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="buttons">
+                    <button (click)="proceed()" class="btn ec d-block mr-0 ml-auto" data-toggle="tab" href="#confirmation" role="tab">
+                        Finalizar Compra<i class="fa fa-chevron-circle-right ml-2"></i>
+                    </button>
+                </div>
+                <div class="tab-pane fade show active" id="card" role="tabpanel" aria-labelledby="card-tab">
+                    <div class="contenedorCard">
+                        <div class="cardpayment">
+                            <div class="card">
+                                <div class="form-group">
+                                    <label>Card number:</label>
+                                    <input type="text" size="20" data-culqi="card[number]" id="card[number]" class="input cardnumber"  placeholder="1234 5678 9101 1121" maxlength="20">
+                                    <label >Vencimiento:</label>
+                                    <input data-culqi="card[exp_month]" id="card[exp_month]" class="input name1"  placeholder="12" size="2" maxlength="2">
+                                    <label class="dash">/</label>
+                                    <input data-culqi="card[exp_year]" id="card[exp_year]" class="input name"  placeholder="2020" size="4" maxlength="4">
+                                    <label class="toleft ccvm">CCV: </label>
+                                    <input type="text" data-culqi="card[cvv]" id="card[cvv]" class="input toleft ccv" placeholder="321" size="4" maxlength="4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-left mt-4 texto1">
+                            <p><strong>TOTAL ORDEN</strong>  : </p>
+                            <p><strong>COMISION (4.2%)</strong> : </p>
+                            <p><strong>TOTAL A PAGAR</strong> : </p>
+                        </div>
+                        <div class="text-right mt-4 texto">
+                            <p>S/. {{totalOrden() | number:'1.2-2'}}</p>
+                            <p>S/. {{comisionTarjeta() | number:'1.2-2'}}</p>
+                            <p>S/. {{totalTarjeta() | number:'1.2-2'}}</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="tab-pane fade" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
+                    <div class="tip">
+                        <p class="card-text">Recuerda que una vez realizado el pago, tienes que confirmar la transferencia o deposito enviándonos tu comprobante de pago o screenshot a nuestro WhatsApp.
+                        <strong>Nota:</strong> En caso desee realizar el pago en dolares, deberá contactarse con nosotros a través de nuestro WhatsApp para poder indicarle el tipo cambio y el monto a pagar </p>
+                    </div>
+                    <div class="cardcontainer">
+                        <div class="card">
+                            <div class="card-body text-left">
+                                <img class="deposit" src="../../../../assets/imagenes/metodo de pago/logo bbva.png" alt="">
+                                <h5 class="card-title">Cta. corriente soles : 0011-0486-0100179443</h5>
+                                <h5 class="card-title">Cta. corriente dolares : 0011-0486-0100179451</h5>
+                                <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body text-right">
+                                <img class="deposit" src="../../../../assets/imagenes/metodo de pago/logo interbank.png" alt="">
+                                <h5 class="card-title">Cta. corriente soles : 2003002019726</h5>
+                                <h5 class="card-title">Cta. corriente dolares : 2003002019768</h5>
+                                <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
+                            </div>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <img class="card-img-top" src="../../../../assets/imagenes/metodo de pago/logo interbank.png" alt="">
-                            <h5 class="card-title">Cta. corriente soles : 2003002019726</h5>
-                            <h5 class="card-title">Cta. corriente dolares : 2003002019768</h5>
-                            <h5 class="card-title">Razón Social : ECOGOZO S.A.C</h5>
-                            <p class="card-text">Recuerda que una vez realizado el pago, tienes que confirmar la transferencia o deposito enviándonos tu comprobante de pago o screenshot a nuestro WhatsApp.</p>
+                            <div class="text-left mt-4 texto1">
+                                <p><strong>TOTAL ORDEN</strong>  : </p>
+                                <p><strong>COMISION (0%)</strong> : </p>
+                                <p><strong>TOTAL A PAGAR</strong> : </p>
+                            </div>
+                            <div class="text-right mt-4 texto">
+                                <p>S/. {{totalOrden() | number:'1.2-2'}}</p>
+                                <p>S/. 0</p>
+                                <p>S/. {{totalOrden() | number:'1.2-2'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="qr" role="tabpanel" aria-labelledby="qr-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                El monto total se cancela a través de la <strong>app de mercado libre</strong>, escaneando el <strong>código QR</strong> en la opción de <strong>pagar con código QR</strong>. Una vez se escanea el <strong>código QR</strong> usted ingresa <strong>el monto total a pagar</strong>.  Cuando el pago se halla efectuado, deberá comunicarse con nosotros <strong>a través de nuestro WhatsApp</strong> para confirmar el pago y su pedido.
+                            </p>
+                        </div>
+                        <div class="text-center mb-2 merdiv">
+                            <img class="card-img-bottom mercado" src="../assets/imagenes/metodo de pago/mercadopago-01.png" alt="Card image cap">
+                            <img class="card-img-bottom mercado" src="../assets/imagenes/metodo de pago/qr_mercadopago.png" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <div class="text-left mt-4 texto1">
+                                <p><strong>TOTAL ORDEN</strong>  : </p>
+                                <p><strong>COMISION (0%)</strong> : </p>
+                                <p><strong>TOTAL A PAGAR</strong> : </p>
+                            </div>
+                            <div class="text-right mt-4 texto">
+                                <p>S/. {{totalOrden() | number:'1.2-2'}}</p>
+                                <p>S/. 0</p>
+                                <p>S/. {{totalOrden() | number:'1.2-2'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pos" role="tabpanel" aria-labelledby="pos-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">El monto total se cancela con su tarjeta de crédito o débito al momento de la entrega del o los productos en su dirección de envio mediante nuestro POS. <br>
+                            Aceptamos estos tipos de tarjetas :
+                            </p>
+                            <img class="card-img-bottom" src="../../../../assets/imagenes/metodo de pago/logo_todas_las_tarjetas.png" alt="Card image cap">
+                            <div class="text-left mt-2 texto1">
+                                <p><strong>TOTAL ORDEN</strong>  : </p>
+                                <p><strong>COMISION (4.071%)</strong> : </p>
+                                <p><strong>TOTAL A PAGAR</strong> : </p>
+                            </div>
+                            <div class="text-right mt-2 texto">
+                                <p>S/. {{totalOrden() | number:'1.2-2'}}</p>
+                                <p>S/. {{comisionPos() | number:'1.2-2'}}</p>
+                                <p>S/. {{totalPos() | number:'1.2-2'}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <!--Fin Transferencia deposito-->
-        <!--Visanet Pago Link-->
-            <div class="my-3 ml-3">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
-                <h5 class="text-left ml-3">Mercado Pago</h5>
+        </div>
+        <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="confirmation-tab">
+            <div class="text-center mt-3"> 
+                <h3 class="dots">RESUMEN DE COMPRA</h3>
             </div>
-            <div class="card my-4">
-                <div class="card-body">
-                    <h5 class="card-text">
-                        El monto total se cancela a través de la <strong>app de mercado libre</strong>, escaneando el <strong>código QR</strong> en la opción de <strong>pagar con código QR</strong>. Una vez se escanea el <strong>código QR</strong> usted ingresa <strong>el monto total a pagar</strong> que le aparecerá al momento de presionar el botón de finalizar o también puede visualizar <strong>el monto total a pagar</strong> en la opción de detalle del pedido.
-                    </h5>
-                    <h5 class="card-text">
-                        Cuando el pago se halla efectuado, deberá comunicarse con nosotros <strong>a través de nuestro WhatsApp</strong> para confirmar el pago y su pedido.
-                    </h5>
-                </div>
-                <div class="text-center mb-2 merdiv">
-                    <img class="card-img-bottom mercado" src="../assets/imagenes/metodo de pago/mercadopago-01.png" alt="Card image cap">
-                    <img class="card-img-bottom mercado" src="../assets/imagenes/metodo de pago/qr_mercadopago.png" alt="Card image cap">
-                </div>
-            </div>
-        <!--Fin visanet Pago Link-->
-        <!--Pago con tarjeta de credito o debito-->
-            <div>
-                <div class="my-3 ml-3">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option3" checked>
-                    <h5 class="text-left ml-3">Pago Contra Entrega</h5>
-                </div>
-            </div>
-            <div class="card my-4">
-                <div class="card-body">
-                    <h5 class="card-text">Este método de pago tiene un recargo adicional del 4.071%, el monto total se cancela con su tarjeta de crédito o débito al momento de la entrega del o los productos en su dirección de envio mediante nuestro POS.</h5>
-                    <h5 class="card-text">Aceptamos estos tipos de tarjetas :</h5>
-                </div>
-                <img class="card-img-bottom" src="../../../../assets/imagenes/metodo de pago/logo_todas_las_tarjetas.png" alt="Card image cap">
-            </div>
-        <!--Fin Pago con tarjeta de credito o debito-->
-            <div class="form-group text-right">
-                <button class="btn btn-lg mb-2 ec" role="button" aria-pressed="true">Finalizar</button>
+            <div class="invoice-box">
+                <button (click)="close()" class="btn ecx d-block mr-0 ml-auto">
+                    Cerrar<i class="fa fa-times-circle ml-2"></i>
+                </button>
+                <table cellpadding="0" cellspacing="0">
+                    <tr class="top">
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <td class="title">
+                                        <img class="logoresumen" src="../../../assets/imagenes/logos/logo-color.png">
+                                    </td>
+                                    
+                                    <td>
+                                        Orden #: 123<br>
+                                        Emitida: January 1, 2015<br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <tr class="information">
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <td>
+                                        {{deliveryAddress.name}}<br>
+                                        {{deliveryAddress.district.name}}, {{deliveryAddress.department}} {{deliveryAddress.postalcode}}
+                                    </td>
+                                    
+                                    <td>
+                                        ECOGOZO S.A.C<br> 
+                                        {{user.firstname + ' ' + user.lastname}}<br>
+                                        joel250598@gmail.com
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <tr class="heading">
+                        <td>Metodo de Pago</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr class="details">
+                        <td>Mercado Libre</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr class="heading">
+                        <td>Productos</td>
+                        <td>Precio Total</td>
+                    </tr>
+                    
+                    <tr *ngFor="let item of products; let i = 'index'" class="item last">
+                        <td>{{item.name}} x {{item.quantity}}</td>
+                        <td>{{item.price | number:'1.2-2'}}</td>
+                    </tr>
+                    <tr class="total">
+                        <td></td>
+                        <td>
+                           Subtotal: S/. {{subtotal() | number:'1.2-2'}}
+                        </td>
+                    </tr>
+                    <tr class="total">
+                        <td></td>
+                        <td>
+                           IGV(18%): S/. {{igv() | number:'1.2-2'}}
+                        </td>
+                    </tr>
+                    <tr class="total">
+                        <td></td>
+                        <td>
+                           Envio: S/. {{deliveryAddress.district.price | number:'1.2-2'}}
+                        </td>
+                    </tr>
+                    <tr class="total">
+                        <td></td>
+                        <td>
+                            Comision: S/. 0.00
+                        </td>
+                    </tr>
+                    <tr class="total">
+                        <td></td>
+                        <td>
+                            Total: S/. {{totalOrden() | number:'1.2-2'}}
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
 </div>
+
+

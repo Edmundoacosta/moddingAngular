@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModdingService } from '../../providers/moddinpc.service';
 import { SessionService } from '../../providers/session.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-checkout',
@@ -23,9 +26,14 @@ export class CheckoutComponent implements OnInit {
     postalcode: null,
     department: 'Lima',
     district: {
-      price: 0
-    }
+      price: 0,
+      name: ''
+    },
+    country: 'Perú'
   };
+  public paymenType:string = 'credit-card';
+
+  public transaction; 
   public products:Array<any> = [];
 	public allDepartments:Array<string> = ['Lima'];
   public allDistricts:Array<any> = [
@@ -44,23 +52,41 @@ export class CheckoutComponent implements OnInit {
     { name:'San miguel',price: 19},{ name:'Santa anita',price: 29},{ name:'Santa maria del mar',price: 50},
     { name:'Santa rosa',price: 50},{ name:'Santiago de surco',price: 15},{ name:'Surquillo',price: 15},
     { name:'Villa el salvador',price: 40},{ name:'Villa maria del triunfo',price: 40}];
+  
+    
 
   constructor(
     public _modService: ModdingService,
-    public session: SessionService
+    public session: SessionService,
+    public router: Router,
+    public toastr: ToastrService,
     ) { }
 
   ngOnInit() {
   	this._modService.getUser()
   		.then((res) =>{
         this.user = res['user'];
+        console.log(res);
         this.user.addressOne = `${this.user['addresses'][this.user['addresses'].length-1].name} - ${this.user['addresses'][this.user['addresses'].length-1].district}`;
         this.deliveryAddress.district = this.allDistricts.filter(place => place.name == this.user['addresses'][this.user['addresses'].length-1].district)[0];
         this.deliveryAddress.postalcode = this.user['addresses'][this.user['addresses'].length-1].postalCode;
+        this.deliveryAddress.name = `${this.user['addresses'][this.user['addresses'].length-1].name}`;
       });
       this.products = JSON.parse(this.session.getItem('inCart'));
       this.totalPrice();
-
+      
+  }
+  onSubmit() {
+    this.transaction = {
+      products: this.products,
+      addresses: this.deliveryAddress,
+      status: '',
+      paymentMethod: '',
+      ticket: '',
+    }
+  }
+  payment(type){
+    this.paymenType = type;
   }
   totalPrice(){
     let total = 0;
@@ -74,6 +100,47 @@ export class CheckoutComponent implements OnInit {
   }
   subtotal(){
     return this.totalPrice()-this.igv();
+  }
+  totalOrden(){
+    return this.totalPrice()+this.deliveryAddress.district.price;
+  }
+  comisionTarjeta() {
+    return this.totalOrden() * 0.042; 
+  }
+  totalTarjeta() {
+    return this.totalOrden() + this.comisionTarjeta();
+  }
+  comisionPos() {
+    return this.totalOrden() * 0.04071;
+  }
+  totalPos() {
+    return this.totalOrden() + this.comisionPos();
+  }
+
+  proceed(){
+    this.transaction = {
+      products: this.products,
+      addresses: {
+        name: this.user.addressOne,
+        postalCode: this.deliveryAddress.postalcode,
+        department: this.deliveryAddress.department,
+        district: this.deliveryAddress.district.name,
+        country: 'Perú'
+      },
+      status: 'pending',
+      deliveryprice: this.deliveryAddress.district.price,
+      paymentMethod: this.paymenType
+    };
+    this._modService.createTransaction(this.transaction).then((res) => {
+      console.log(res);
+    });
+    this.toastr.success('Compra exitosa!','', {
+      timeOut: 1000
+    });
+  }
+
+  close(){
+    this.router.navigate(['/home']);
   }
 
 }

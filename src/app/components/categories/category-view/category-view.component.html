@@ -1,31 +1,30 @@
 <div class="spacio"></div>
 <div class="container">
     <ul id="tabs" class="nav nav-tabs text-center">
-        <li *ngFor="let child of childrens" class="nav-item">
-            <a class="nav-link" [id]="child._id" data-toggle="tab" [href]="'#xs' + child._id" role="tab" aria-controls="example" aria-selected="true">
-                <i class="fa fa-desktop"></i>
+        <li *ngFor="let child of childrens; let i = 'index'" class="nav-item">
+            <a class="nav-link" [ngClass]="{'active':i==0}" [id]="child._id" data-toggle="tab" [href]="'#xs' + child._id" role="tab" aria-controls="example" aria-selected="true">
                 <span>{{child.name}}</span>
             </a>
         </li>
     </ul>
 </div>
-
+ 
 <div class="tab-content container mt-3" id="myTabContent">
     <div *ngFor="let child of childrens" class="tab-pane fade" [id]="'xs' + child._id" role="tabpanel">
-        <div class="container mt-3">
+        <div class="container mt-3" >
             <div  *ngFor="let item of child.products; let i ='index'">
-                <div  *ngIf="i%4 == 0" class="row mb-5 show active">
+                <div  *ngIf="i%4 == 0" class="row mb-5 show">
                     <div *ngIf="i < child.products.length" class="col-md-3 col-sm-6 mt-3">
                         <div class="product-grid6">
                             <div class="product-image6">
                                 <a [routerLink]="'/item_detail/' + child.products[i]._id">
-                                    <img class="pic-1" [src]="'http://174.138.37.189:4444/public/products/'+child.products[i].principalImg">
+                                    <img class="pic-1" [src]="'https://ecogozotest.com:40/public/products/'+child.products[i].principalImg">
                                 </a>
                             </div>
                             <div class="product-content">
                                 <h3 class="title">{{child.products[i].name}}</h3>
                                 <div class="price">S/. {{child.products[i].price | number:'1.2-2'}}
-                                    <span>S/. 20.00</span>
+                                    <span>S/. {{child.products[i].price+(child.products[i].price*0.3) | number:'1.2-2'}}</span>
                                 </div> 
                             </div>
                             <ul class="social">
@@ -38,13 +37,13 @@
                         <div class="product-grid6">
                             <div class="product-image6">
                                 <a [routerLink]="'/item_detail/' + child.products[i+1]._id">
-                                    <img class="pic-1" [src]="'http://174.138.37.189:4444/public/products/'+child.products[i+1].principalImg">
+                                    <img class="pic-1" [src]="'https://ecogozotest.com:40/public/products/'+child.products[i+1].principalImg">
                                 </a>
                             </div>
                             <div class="product-content">
                                 <h3 class="title">{{child.products[i+1].name}}</h3>
                                 <div class="price">S/ .{{child.products[i+1].price | number:'1.2-2'}}
-                                    <span>S/. 20.00</span>
+                                    <span>S/. {{child.products[i+1].price+(child.products[i].price*0.3) | number:'1.2-2'}}</span>
                                 </div>
                             </div>
                             <ul class="social">
@@ -57,13 +56,13 @@
                         <div class="product-grid6">
                             <div class="product-image6">
                                 <a [routerLink]="'/item_detail/' + child.products[i+2]._id">
-                                    <img class="pic-1" [src]="'http://174.138.37.189:4444/public/products/'+child.products[i+2].principalImg">
+                                    <img class="pic-1" [src]="'https://ecogozotest.com:40/public/products/'+child.products[i+2].principalImg">
                                 </a>
                             </div>
                             <div class="product-content">
                                 <h3 class="title">{{child.products[i+2].name}}</h3>
                                 <div class="price">S/. {{child.products[i+2].price | number:'1.2-2'}}
-                                    <span>S/. 20.00</span>
+                                    <span>S/. {{child.products[i+2].price+(child.products[i].price*0.3) | number:'1.2-2'}}</span>
                                 </div>
                             </div>
                             <ul class="social">
@@ -76,13 +75,13 @@
                         <div class="product-grid6">
                             <div class="product-image6">
                                 <a [routerLink]="'/item_detail/' + child.products[i+3]._id">
-                                    <img class="pic-1" [src]="'http://174.138.37.189:4444/public/products/'+child.products[i+3].principalImg">
+                                    <img class="pic-1" [src]="'https://ecogozotest.com:40/public/products/'+child.products[i+3].principalImg">
                                 </a>
                             </div>
                             <div class="product-content">
                                 <h3 class="title">{{child.products[i+3].name}}</h3>
                                 <div class="price">S/. {{child.products[i+3].price | number:'1.2-2'}}
-                                    <span>S/. 20.00</span>
+                                    <span>S/. {{child.products[i+3].price+(child.products[i].price*0.3) | number:'1.2-2'}}</span>
                                 </div>
                             </div>
                             <ul class="social">

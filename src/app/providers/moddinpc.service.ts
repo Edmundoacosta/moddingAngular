@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
-let url = 'http://174.138.37.189:4444';
+let url = 'https://ecogozotest.com:40';
 let other = 'http://localhost:4444';
 
 @Injectable({
@@ -201,6 +201,18 @@ export class ModdingService {
 		this.setHeaders();
 		return new Promise((resolve, reject) => {
 			this.http.get(`${url}/products/getById/${id}`, {headers: this.headers})
+				.subscribe(res => {
+					resolve(res);
+				}, (err) => {
+					reject(err);
+				});
+		});
+	}
+
+	createTransaction(transaction){
+		this.setHeaders();
+		return new Promise((resolve, reject) => {
+			this.http.post(`${url}/transactions/create`, transaction, {headers: this.headers})
 				.subscribe(res => {
 					resolve(res);
 				}, (err) => {

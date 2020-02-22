@@ -32,12 +32,6 @@
                                         </mat-form-field>
                                     </div>
                                     <div class="col form-group">
-                                            <!--
-                                        <label>Apellidos</label>
-                                        <input formControlName="lastname" type="text" class="form-control" [ngClass]="{'is-invalid':u.lastname.touched && u.lastname.invalid}">
-                                        <div *ngIf="u.lastname.touched && u.lastname.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.lastname.invalid">Ingrese un apellido válido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <input matInput placeholder="Apellidos" formControlName="lastname" type="text" [formControl]="u.lastname" >
                                             <mat-error *ngIf="lastname.invalid">{{ErrorMessageLastname()}}</mat-error>
@@ -46,32 +40,17 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Tipo de Identificación</label>
-                                        <select formControlName="id_type" class="form-control" [ngClass]="{'is-invalid':u.id_type.touched && u.id_type.invalid}">
-                                            <option value="">Seleccione...</option>
-                                            <option value="dni">DNI</option>
-                                            <option value="ruc">RUC</option>
-                                        </select>
-                                        <div *ngIf="u.id_type.touched && u.id_type.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.id_type.invalid">Elija un tipo de Identificación</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <mat-select placeholder="Tipo de Identificación" formControlName="id_type" [ngClass]="u.id_type">
                                                 <mat-option value="">Seleccione...</mat-option>
                                                 <mat-option value="dni">DNI</mat-option>
-                                                <mat-option value="ruc">CARNET DE EXTRANJERIA</mat-option>
+                                                <mat-option value="ruc">RUC</mat-option>
+                                                <mat-option value="carnet">CARNET DE EXTRANJERIA</mat-option>
                                             </mat-select>
                                             <mat-error *ngIf="id_type.invalid">{{ErrorMessageId_type()}}</mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Número de Identificación</label>
-                                        <input digitOnly formControlName="id_number" type="text" class="form-control" [ngClass]="{'is-invalid':u.id_number.touched && u.id_number.invalid}">
-                                        <div *ngIf="u.id_number.touched && u.id_number.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.id_number.invalid">Ingrese un número de identificación válido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <input matInput digitOnly placeholder="Número de Identificación" type="text" formControlName="id_number" [formControl]="u.id_number" maxlength="11" minlength="8">
                                             <mat-error *ngIf="id_number.invalid">{{ErrorMessageId_number()}}</mat-error>
@@ -80,28 +59,12 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Número de Celular</label>
-                                        <input digitOnly maxlength="9" formControlName="phone" type="text" class="form-control" [ngClass]="{'is-invalid':u.phone.touched && u.phone.invalid}">
-                                        <div *ngIf="u.phone.touched && u.phone.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.phone.invalid">Ingrese un número de celular válido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <input matInput placeholder="Número de Celular" digitOnly minlength="9" maxLength="9" formControlName="phone" type="text" [formControl]="u.phone">
                                             <mat-error *ngIf="phone.invalid">{{ErrorMessagePhone()}}</mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Código Postal
-                                            <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
-                                                <i class="fa fa-question-circle"></i>
-                                            </a>
-                                        </label>
-                                        <input digitOnly maxlength="5" formControlName="postalcode" type="text" class="form-control" [ngClass]="{'is-invalid':u.postalcode.touched && u.postalcode.invalid}">
-                                        <div *ngIf="u.postalcode.touched && u.postalcode.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.postalcode.invalid">Ingrese un código postal válido, de no saber su código postal hacer click en <i class="fa fa-question-circle"></i></div>
-                                        </div>-->
                                         <mat-form-field class="pc">
                                             <input matInput placeholder="Código Postal" digitOnly maxlength="5" formControlName="postalcode" type="text" [formControl]="u.postalcode">
                                             <mat-error *ngIf="phone.invalid">{{ErrorMessagePostalcode()}}</mat-error>
@@ -113,15 +76,6 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Departamento</label>
-                                        <select formControlName="department" class="form-control" [ngClass]="{'is-invalid':u.department.touched && u.department.invalid}">
-                                            <option value="">Seleccione...</option>
-                                            <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
-                                        </select>
-                                        <div *ngIf="u.department.touched && u.department.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.department.invalid">Elija un departamento valido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <mat-select placeholder ="Departamento" formControlName="department" [ngClass]="u.department">
                                                 <mat-option value="">Seleccione...</mat-option>
@@ -131,11 +85,6 @@
                                         </mat-form-field>
                                     </div>
                                     <div class="col form-group">
-                                        <!--
-                                        <label>País</label>
-                                        <select disabled class="form-control">
-                                            <option selected="">Perú</option>
-                                        </select>-->
                                         <mat-form-field class="size">
                                             <mat-select disabled placeholder ="Perú">
                                                 <mat-option value="">Perú</mat-option>
@@ -144,12 +93,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <!--
-                                    <label>Correo Electrónico</label>
-                                    <input formControlName="email" type="email" class="form-control" [ngClass]="{'is-invalid':u.email.touched && u.email.invalid}">
-                                    <div *ngIf="u.email.touched && u.email.invalid" class="invalid-feedback">
-                                        <div *ngIf="u.email.invalid">Ingrese un correo electrónico válido</div>
-                                    </div>-->
                                     <mat-form-field class="size">
                                         <input matInput placeholder="Correo Electrónico" formControlName="email" type="email" [formControl]="u.email">
                                         <mat-error *ngIf="u.email.hasError('email') && !u.email.hasError('required')">
@@ -161,12 +104,6 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="form-group">
-                                    <!--
-                                    <label>Crear Contraseña</label>
-                                    <input formControlName="password" class="form-control" type="password" [ngClass]="{'is-invalid':u.password.touched && u.password.invalid}">
-                                    <div *ngIf="u.password.touched && u.password.invalid" class="invalid-feedback">
-                                        <div *ngIf="u.password.invalid">Ingrese una contraseña con un minimo de 8 caracteres</div>
-                                    </div>-->
                                     <mat-form-field class="size">
                                         <input matInput placeholder="Contraseña" formControlName="password" type="password" [formControl]="u.password">
                                         <mat-error *ngIf="u.password.hasError('required')">
@@ -175,12 +112,6 @@
                                     </mat-form-field>
                                 </div> 
                                 <div class="form-group">
-                                    <!--
-                                    <label>Confirmar Contraseña</label>
-                                    <input formControlName="password2" class="form-control" type="password" [ngClass]="{'is-invalid':u.password2.touched && u.password2.invalid}">
-                                    <div *ngIf="u.password2.touched && u.password2.invalid" class="invalid-feedback">
-                                        <div *ngIf="u.password2.invalid">La contraseña no coincide con la ingresada anteriormente</div>
-                                    </div>-->
                                     <mat-form-field class="size">
                                         <input matInput placeholder="Confirmar Contraseña" formControlName="password2" type="password" [formControl]="u.password2">
                                         <mat-error *ngIf="u.password2.hasError('required')">
@@ -222,24 +153,12 @@
                             <form [formGroup]="user" (ngSubmit)="onSubmit(user.value, user.valid)">
                                 <div class="form-row">
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Nombres </label>   
-                                        <input matInput formControlName="firstname" type="text" class="form-control" [ngClass]="{'is-invalid':u.firstname.touched && u.firstname.invalid}">
-                                        <div *ngIf="u.firstname.touched && u.firstname.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.firstname.invalid">Ingrese un nombre válido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <input matInput placeholder="Nombres del Solicitante" formControlName="firstname" type="text" [formControl]="u.firstname" >
                                             <mat-error *ngIf="firstname.invalid">{{ErrorMessageFirstname()}}</mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col form-group">
-                                            <!--
-                                        <label>Apellidos</label>
-                                        <input formControlName="lastname" type="text" class="form-control" [ngClass]="{'is-invalid':u.lastname.touched && u.lastname.invalid}">
-                                        <div *ngIf="u.lastname.touched && u.lastname.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.lastname.invalid">Ingrese un apellido válido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <input matInput placeholder="Apellidos del Solicitante" formControlName="lastname" type="text" [formControl]="u.lastname" >
                                             <mat-error *ngIf="lastname.invalid">{{ErrorMessageLastname()}}</mat-error>
@@ -256,16 +175,6 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Tipo de Identificación</label>
-                                        <select formControlName="id_type" class="form-control" [ngClass]="{'is-invalid':u.id_type.touched && u.id_type.invalid}">
-                                            <option value="">Seleccione...</option>
-                                            <option value="dni">DNI</option>
-                                            <option value="ruc">RUC</option>
-                                        </select>
-                                        <div *ngIf="u.id_type.touched && u.id_type.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.id_type.invalid">Elija un tipo de Identificación</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <mat-select placeholder="Tipo de Identificación" formControlName="id_type" [ngClass]="u.id_type">
                                                 <mat-option value="">Seleccione...</mat-option>
@@ -275,12 +184,6 @@
                                         </mat-form-field>
                                     </div>
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Número de Identificación</label>
-                                        <input digitOnly formControlName="id_number" type="text" class="form-control" [ngClass]="{'is-invalid':u.id_number.touched && u.id_number.invalid}">
-                                        <div *ngIf="u.id_number.touched && u.id_number.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.id_number.invalid">Ingrese un número de identificación válido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <input matInput digitOnly placeholder="Número de RUC" type="text" formControlName="id_number" [formControl]="u.id_number" maxlength="11" minlength="8">
                                             <mat-error *ngIf="id_number.invalid">{{ErrorMessageId_number()}}</mat-error>
@@ -289,28 +192,12 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Número de Celular</label>
-                                        <input digitOnly maxlength="9" formControlName="phone" type="text" class="form-control" [ngClass]="{'is-invalid':u.phone.touched && u.phone.invalid}">
-                                        <div *ngIf="u.phone.touched && u.phone.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.phone.invalid">Ingrese un número de celular válido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <input matInput placeholder="Número de Celular" digitOnly minlength="9" maxLength="9" formControlName="phone" type="text" [formControl]="u.phone">
                                             <mat-error *ngIf="phone.invalid">{{ErrorMessagePhone()}}</mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Código Postal
-                                            <a target="_blank" href="http://www.codigopostal.gob.pe/pages/invitado/consulta.jsf">
-                                                <i class="fa fa-question-circle"></i>
-                                            </a>
-                                        </label>
-                                        <input digitOnly maxlength="5" formControlName="postalcode" type="text" class="form-control" [ngClass]="{'is-invalid':u.postalcode.touched && u.postalcode.invalid}">
-                                        <div *ngIf="u.postalcode.touched && u.postalcode.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.postalcode.invalid">Ingrese un código postal válido, de no saber su código postal hacer click en <i class="fa fa-question-circle"></i></div>
-                                        </div>-->
                                         <mat-form-field class="pc">
                                             <input matInput placeholder="Código Postal" digitOnly maxlength="5" formControlName="postalcode" type="text" [formControl]="u.postalcode">
                                             <mat-error *ngIf="phone.invalid">{{ErrorMessagePostalcode()}}</mat-error>
@@ -322,15 +209,6 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col form-group">
-                                        <!--
-                                        <label>Departamento</label>
-                                        <select formControlName="department" class="form-control" [ngClass]="{'is-invalid':u.department.touched && u.department.invalid}">
-                                            <option value="">Seleccione...</option>
-                                            <option *ngFor="let dep of allDepartments" [value]="dep">{{dep}}</option>
-                                        </select>
-                                        <div *ngIf="u.department.touched && u.department.invalid" class="invalid-feedback">
-                                            <div *ngIf="u.department.invalid">Elija un departamento valido</div>
-                                        </div>-->
                                         <mat-form-field class="size">
                                             <mat-select placeholder ="Departamento" formControlName="department" [ngClass]="u.department">
                                                 <mat-option value="">Seleccione...</mat-option>
@@ -375,7 +253,7 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-block ec"> Registrarse  </button>
+                                    <button type="submit" class="btn btn-block ec" (click)="onSubmit(user.value, user.valid)"> Registrarse  </button>
                                 </div>
                                 <div class="text-center">  
                                     <small class="text-muted">Haciendo click en el boton 'Registrarse', confirmas que aceptas nuestros <br>

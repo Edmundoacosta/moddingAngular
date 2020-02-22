@@ -21,79 +21,51 @@
 h2 {
     text-transform: uppercase;
 }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: none;
-    background-color: $firstC;
-    border-color: $firstC;
-    .fa {
-        color: white !important;
-        background-color: $thirdC;
-        border: 1.5px solid $thirdC !important;
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav-link.active {
+    color: white;
+    background-color: $secondC;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.nav-item {
+    background-size: 250% 250%;
+    background-image: 
+    linear-gradient(to top, $secondC 50%, transparent 50%);
+    transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    &:hover {
+        background-image:linear-gradient(to top, $secondC 51%, transparent 50%);
+        background-position: 0 100%;
+        transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
-}
-.nav-tabs .nav-link {
-    border: none;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-}
-#tabs {
-    margin-left: 15%;
-    padding: 20px;
-    
-    li {
-        margin: 10px 20px;
-        a {
-            text-decoration: none;
+    a {
+        color: black;
+        text-decoration: none;
+        &:hover {
+            color: white;
         }
-        a::after {
+        &::after {
             content: '';
             display: block;
             width: 0;
             height: 2px;
-            background: $secondC;
-            transition: width .5s;
+            background: $thirdC;
+            transition: width 0.8s;
         }
-        a:hover::after {
+        &:hover::after {
             width: 100%;
-        }
-        i {
-            text-align: center;
-            justify-content: space-between;
-            padding: 7px;
-            border: 1.5px solid $secondC;
-            border-radius: 50%;
-            color: $thirdC;
-            background-size: 250% 250%;
-            background-image: 
-            linear-gradient(to top, $thirdC 50%, transparent 50%);
-            transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
-        }
-        span {
-            color:black;
-            display:block;
-            text-transform:uppercase;
-        }
-        &:hover {
-            i {
-                color: #fff;
-                border: 1.5px solid $thirdC;
-                background-image: 
-                linear-gradient(to top, $thirdC 51%, transparent 50%);
-                background-position: 0 100%;
-                transition: background-position 1000ms, color 1000ms ease, border-color 1000ms ease;
-            }
-            span {
-                color: $thirdC;
-            }
         }
     }
 }
-
-.nav-tabs {
-    border-bottom: none;
-}
 .spacio {
-    margin-top: 70px;
+    margin-top: 20px;
 }
 /* mobile fix */
 @media (max-width: 768px) {
@@ -103,6 +75,7 @@ h2 {
 	.dropdown-lr label {
 		color: #eee;
     }
+    /*
     #tabs {
         margin-left: 8%;
         li {
@@ -112,8 +85,9 @@ h2 {
             margin-top: 10px;
             
         }
-    }
+    }*/
 }
+/*
 @media (max-width : 463px) {
     #tabs {
         margin-left: 8%;
@@ -154,4 +128,4 @@ h2 {
             
         }
     }
-}
+}*/

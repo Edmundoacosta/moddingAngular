@@ -3,13 +3,14 @@ import { ModdingService } from '../../providers/moddinpc.service';
 import { MatDialog } from '@angular/material';
 import { TicketComponent } from '../modals/ticket/ticket.component';
 import { DetailComponent } from '../modals/detail/detail.component';
-
+declare var $: any;
 @Component({
   selector   : 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
   styleUrls  : ['./user-dashboard.component.scss']
 })
 export class UserDashboardComponent implements OnInit {
+  
   public user = {
     firstname: '',
     lastname: '', 
@@ -39,7 +40,35 @@ export class UserDashboardComponent implements OnInit {
   		.then((res) =>{
         this.user = res['user'];
         this.user.addressOne = `${this.user['addresses'][this.user['addresses'].length-1].name} - ${this.user['addresses'][this.user['addresses'].length-1].district}`;
-  		});
+      });
+    var $UpdatePicture = $('[data-picture]');
+    var $UpdateAddress = $('[data-address]');
+    var $UpdatePassword = $('[data-password]');
+
+    $UpdatePicture.click(function() {
+      $UpdatePicture.addClass('is-loading');
+      setTimeout(function() {
+        $UpdatePicture.addClass('is-completed');
+      }, 4000);
+    });
+    $UpdateAddress.click(function() {
+      $UpdateAddress.addClass('is-loading');
+      setTimeout(function() {
+        $UpdateAddress.addClass('is-completed');
+      }, 4000);
+      setTimeout(() => {
+        location.reload();
+      }, 4300);
+    });
+    $UpdatePassword.click(function() {
+      $UpdatePassword.addClass('is-loading');
+      setTimeout(function() {
+        $UpdatePassword.addClass('is-completed');
+      }, 4000);
+      setTimeout(() => {
+        location.reload();
+      }, 4300);
+    });
   }
 
   detail(){
@@ -53,9 +82,6 @@ export class UserDashboardComponent implements OnInit {
   updateAddress(){
     this._modService.addAddress(this.deliveryAddress)
       .then((res) => {
-        setTimeout(() => {
-          location.reload();
-        }, 200);
         console.log(res);
       })
   }
@@ -63,9 +89,6 @@ export class UserDashboardComponent implements OnInit {
   updatePassword(){
     this._modService.updateUser({user: this.user})
       .then((res) => {
-        setTimeout(() => {
-          location.reload();
-        }, 200);
         console.log(res);
       })
   }
