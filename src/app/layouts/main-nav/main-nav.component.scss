@@ -68,3 +68,9 @@ a {
     color:white!important;
     text-decoration:none;
 }
+li {
+    outline: none;
+    a {
+        outline: none;
+    }
+}
